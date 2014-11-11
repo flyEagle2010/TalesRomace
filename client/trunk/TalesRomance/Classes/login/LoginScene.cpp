@@ -16,8 +16,21 @@ Scene* LoginScene::createScene()
 
 LoginScene* LoginScene::create()
 {
+    /*
+     //节点
+     Node* node = CSLoader::createNode("ActionTest/MainScene.csb");
+     this->addChild(node);
+     //动画
+     ActionTimeline* action = CSLoader::createTimeline("ActionTest/MainScene.csb");
+     node->runAction(action);
+     action->gotoFrameAndPlay(0, true);
+     
+     */
+    
     LoginScene* loginScene=new LoginScene();
-    if (loginScene && loginScene->init("publish/login/login.ExportJson")) {
+
+    
+    if (loginScene && loginScene->init("MainScene.csb","home.plist")) {
         loginScene->autorelease();
         return loginScene;
     }
@@ -25,15 +38,12 @@ LoginScene* LoginScene::create()
     return nullptr;
 }
 
-bool LoginScene::init(std::string fileName)
+bool LoginScene::init(std::string fileName,std::string resName)
 {
-    if(!BaseUI::init(fileName))
+    if(!BaseUI::init(fileName,resName))
     {
         return false;
     }
-    ScrollView* scrollView=static_cast<ui::ScrollView*>(layout->getChildByName("scrollView"));
-    Widget* lgintBtn=(Widget*)scrollView->getChildByName("loginBtn");
-    lgintBtn->setVisible(false);
     Size sSize=Director::getInstance()->getOpenGLView()->getFrameSize();
     Size winsize=Director::getInstance()->getWinSize();
     return true;
@@ -43,12 +53,12 @@ void LoginScene::onEnter()
 {
     BaseUI::onEnter();
     
-    this->initGame();
+    //this->initGame();
 }
 
 void LoginScene::resetUI()
 {
-    ScrollView* scrollView=static_cast<ui::ScrollView*>(layout->getChildByName("scrollView"));
+//    ScrollView* scrollView=static_cast<ui::ScrollView*>(layout->getChildByName("scrollView"));
 //    Button* lgintBtn=static_cast<Button*>(scrollView->getChildByName("loginBtn"));
     Widget* lgintBtn=(Widget*)scrollView->getChildByName("loginBtn");
     int num=sData["areaList"].Size();
@@ -86,8 +96,8 @@ void LoginScene::resetUI()
     
     //如果没记录过账号和密码，将刚刚注册的登录账号和密码记录下来
     //将注册界面隐藏
-    auto registerBottom=static_cast<Widget*>(layout->getChildByName("registerBottom"));
-    registerBottom->setVisible(false);
+//    auto registerBottom=static_cast<Widget*>(layout->getChildByName("registerBottom"));
+//    registerBottom->setVisible(false);
     
     //添加一个字符串数据到指定key
     UserDefault::getInstance()->setStringForKey("account",accountInput->getStringValue());
@@ -109,7 +119,7 @@ void LoginScene::initGame()
 //    WebHttp::getInstance()->send(HTTP_URL, CC_CALLBACK_1(LoginScene::initGameCallback, this),str.c_str());
     
     //用以判断是否记录账号和密码,没有则弹出弹窗，填写用户名及密码，有则直接登录进入选择服务器界面
-    auto registerBottom=static_cast<Widget*>(layout->getChildByName("registerBottom"));
+//    auto registerBottom=static_cast<Widget*>(layout->getChildByName("registerBottom"));
     auto accountStr =UserDefault::getInstance()->getStringForKey("account");
     auto passwordStr =UserDefault::getInstance()->getStringForKey("password");
     
@@ -165,7 +175,7 @@ void LoginScene::onDlgClose(rapidjson::Value &data)
 void LoginScene::touchEvent(Ref *pSender, Widget::TouchEventType type)
 {
     auto button=static_cast<Button*>(pSender);
-    if(type!=TouchEventType::ENDED){
+//    if(type!=TouchEventType::ENDED){
         return;
     }
     switch (button->getTag()) {
@@ -183,7 +193,7 @@ void LoginScene::touchEvent(Ref *pSender, Widget::TouchEventType type)
 void LoginScene::touchServerEvent(Ref *pSender, Widget::TouchEventType type)
 {
     auto button=static_cast<Button*>(pSender);
-    if(type!=TouchEventType::ENDED){
+//    if(type!=TouchEventType::ENDED){
         return;
     }
     Manager::getInstance()->socket=new Socket();

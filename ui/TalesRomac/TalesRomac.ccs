@@ -1,0 +1,29 @@
+<Solution>
+  <PropertyGroup Name="TalesRomac" Version="2.0.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="MainScene.csd" />
+        <Project Name="LoginScene.csd" />
+        <Image Name="home.png" />
+        <PlistImageFolder PListFile="home.plist" LastPlistWriteTime="2014-11-10T22:44:08+08:00" LastImageWriteTime="2014-11-10T22:44:08+08:00" Name=".home_PList.Dir">
+          <PlistImageFile Name="VIP.png" Key="VIP.png" />
+          <PlistImageFile Name="add.png" Key="add.png" />
+          <PlistImageFile Name="bianzu.png" Key="bianzu.png" />
+          <PlistImageFile Name="chouka.png" Key="chouka.png" />
+          <PlistImageFile Name="daoju.png" Key="daoju.png" />
+          <PlistImageFile Name="dibian.png" Key="dibian.png" />
+          <PlistImageFile Name="gowu.png" Key="gowu.png" />
+          <PlistImageFile Name="mainBg.png" Key="mainBg.png" />
+          <PlistImageFile Name="qianbi.png" Key="qianbi.png" />
+          <PlistImageFile Name="qiandao.png" Key="qiandao.png" />
+          <PlistImageFile Name="richeng.png" Key="richeng.png" />
+          <PlistImageFile Name="shuxing.png" Key="shuxing.png" />
+          <PlistImageFile Name="tili.png" Key="tili.png" />
+          <PlistImageFile Name="youjian.png" Key="youjian.png" />
+          <PlistImageFile Name="zuanshi.png" Key="zuanshi.png" />
+        </PlistImageFolder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

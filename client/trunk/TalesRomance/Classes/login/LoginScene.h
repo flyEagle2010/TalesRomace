@@ -17,7 +17,7 @@ public:
 
     static cocos2d::Scene* createScene();
     static LoginScene* create();
-    virtual bool init(std::string fileName);
+    virtual bool init(std::string fileName,std::string resName);
     virtual void onEnter();
     virtual void onExit();
     virtual void resetUI();

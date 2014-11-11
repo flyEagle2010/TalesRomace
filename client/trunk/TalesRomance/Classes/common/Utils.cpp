@@ -34,21 +34,21 @@ double Utils::distance(Vec2 sp,Vec2 ep)
 std::vector<int> Utils::randSeveral(int num,bool isRepeat)
 {
     std::vector<int> arr;
-    for(int i=0;i<num;i++)
-    {
-        int item=random()%num;
-        if(isRepeat)
-        {
-            arr.push_back(item);
-            continue;
-        }
-        if( find(arr.begin(),arr.end(),item) == arr.end())
-        {
-            i--;
-        }else{
-            arr.push_back(item);
-        }
-    }
+//    for(int i=0;i<num;i++)
+//    {
+//        int item=random()%num;
+//        if(isRepeat)
+//        {
+//            arr.push_back(item);
+//            continue;
+//        }
+//        if( find(arr.begin(),arr.end(),item) == arr.end())
+//        {
+//            i--;
+//        }else{
+//            arr.push_back(item);
+//        }
+//    }
     return arr;
 }
 

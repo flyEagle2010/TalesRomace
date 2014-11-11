@@ -15,7 +15,6 @@
 #include "ui/CocosGUI.h"
 #include "cocostudio/CocoStudio.h"
 #include "CircleMove.h"
-#include "Chat.h"
 #include "Clip.h"
 #include <map>
 USING_NS_CC;
@@ -29,12 +28,11 @@ public:
     static HomeScene* create();
     virtual void onEnter();
     virtual void onExit();
-	virtual bool init(std::string fileName,bool isScence=false);
+	virtual bool init(std::string fileName,std::string resName);
     void initUi();
 private:
     void initNetEvent();
     Layout *comLayout;
-    Chat* chat;
     void intAnimation(string plist,string effectName,int fps,int moveSpeed,float scale,Vec2 starP,Vec2 endP);
     void touchBuildEvent(Ref *pSender, TouchEventType type);
     void touchButtonEvent(Ref *pSender, TouchEventType type);

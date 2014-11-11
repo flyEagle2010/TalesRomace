@@ -17,7 +17,7 @@ Scene* HomeScene::createScene(){
 HomeScene* HomeScene::create()
 {
     HomeScene* homeScene=new HomeScene();
-    if (homeScene && homeScene->init("publish/homeUi/homeUI.ExportJson",false))
+    if (homeScene && homeScene->init("MainScene.csb","home.plist"))
     {
         homeScene->autorelease();
         return homeScene;
@@ -26,83 +26,20 @@ HomeScene* HomeScene::create()
     return nullptr;
 }
 
-bool HomeScene::init(std::string fileName,bool isScence)
+bool HomeScene::init(std::string fileName,std::string resName)
 {
-	if(!BaseUI::init(fileName,isScence))
+	if(!BaseUI::init(fileName,resName))
     {
 		return false;
 	}
     Size dSize(1136,640);
     Size size=Director::getInstance()->getOpenGLView()->getDesignResolutionSize();
-    float scale=fmin(size.width/dSize.width,size.height/dSize.height);
-//    scale=1;
-    std::vector<std::string> buildNames={"img_hecheng","img_tiaozhan","img_hero","img_shichang","img_zhaohuan","img_fuben"};
+    //float scale=fmin(size.width/dSize.width,size.height/dSize.height);
 
-    comLayout=layout;
-    for (int i=1; i<4; i++) {
-        float random=1+CCRANDOM_0_1();
-        Vec2 p=Vec2(size.width-100*i, size.height-80-10*i*scale);
-        this->intAnimation("effect/home_bird.plist", "home_bird", 5*random, 5*random, 0.3*random,p,Vec2(0, size.height-80*i*scale));
-    }
     
-    this->intAnimation("effect/airship.plist", "airship", 8, 50, 1,Vec2(-100, size.height/2+100),Vec2(size.width+100, size.height/2+100));
-    
-    auto widget=static_cast<Widget*>(comLayout->getChildByName("home_botom"));
-    widget->setLocalZOrder(3);
-    widget->setPosition(Vec2(size.width/2, 0+widget->getContentSize().height*scale/2));
-    widget->setScale(scale);
-    
-    
-    
-    Button* btnProp = (Button*)widget->getChildByName("btn_prop");
-    btnProp->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchButtonEvent, this));
-    
-    Button* btnGroup = (Button*)widget->getChildByName("btn_group");
-    btnGroup->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchButtonEvent, this));
-    
-    Button* btn_dower=(Button*)widget->getChildByName("btn_dower");
-    btn_dower->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchButtonEvent, this));
-    
-    Widget* homeTop=static_cast<Widget*>(comLayout->getChildByName("home_top"));
-//    widget->setPosition(Vec2(0, (size.height-widget->getContentSize().height*scale/2)));
-    homeTop->setPosition(Vec2(0, (size.height-homeTop->getContentSize().height*scale)));//
-    homeTop->setLocalZOrder(3);
-    homeTop->setScale(scale);
-    
-    Widget*centerPg = static_cast<Widget*>(homeTop->getChildByName("centerPg"));//
-    
-    Widget* currencyIcon=static_cast<Widget*>(centerPg->getChildByName("currencyIcon"));//
-    currencyIcon->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchIconEvent, this));//
-    
-    Widget* diamondIcon=static_cast<Widget*>(centerPg->getChildByName("diamondIcon"));//
-    diamondIcon->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchIconEvent, this));//
-                                       
-    Widget* staminaIcon=static_cast<Widget*>(centerPg->getChildByName("staminaIcon"));//
-    staminaIcon->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchIconEvent, this));//
-  
-    widget=static_cast<Widget*>(comLayout->getChildByName("home_build"));
-    widget->setLocalZOrder(2);
-    widget->setPosition(Vec2((size.width-widget->getContentSize().width)/2, (size.height-widget->getContentSize().height)/2));
-    for (std::string name : buildNames)
-    {
-        ImageView* image=(ImageView*)widget->getChildByName(name);
-        image->setTouchEnabled(true);
-        image->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchBuildEvent, this));
-    }
-    widget=(Widget*)comLayout->getChildByName("btnChat");
-    widget->setPosition(Vec2(widget->getContentSize().width*scale/2, 200));
-    widget->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchButtonEvent, this));
-    widget->setLocalZOrder(2);
-    widget->setScale(scale);
-    this->setTouchEnabled(true);
-    this->setEnabled(true);
-    this->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchBuildEvent, this));
     
     
     this->initUi();
-    this->chat=Chat::create();
-    this->addChild(this->chat,CHAT_LAY);//
-    this->chat->setVisible(false);
     
 	return true;
 }
@@ -159,32 +96,26 @@ void HomeScene::touchButtonEvent(Ref* pSender,TouchEventType type)
     }
     switch(type)
     {
-        case TouchEventType::BEGAN:
+        case TouchEventType::TOUCH_EVENT_BEGAN:
             
             break;
-        case TouchEventType::MOVED:
-            break;
-        case TouchEventType::ENDED:
+   
+        case TouchEventType::TOUCH_EVENT_ENDED:
             switch (button->getTag()) {
                 case 10065://聊天按钮
                 {
-                    this->chat->show();//
                     break;
                 }
                 case 10037://下面最右边的按钮
                 {
-//                    Bag* bag = Bag::create();
-//                    bag->show();
                     break;
                 }
                 case 10034:
                 {
-//                    Formation::create(this)->show();
                     break;
                 }
                 case 10036:
                 {
-//                    Compose::create()->show();
                     break;
                 }
                     
@@ -202,13 +133,12 @@ void HomeScene::touchBuildEvent(cocos2d::Ref *pSender, TouchEventType type)
     auto sprite=static_cast<Sprite*>(pSender);
     switch (type)
     {
-        case TouchEventType::BEGAN:
+        case TouchEventType::TOUCH_EVENT_BEGAN:
             sprite->stopAllActions();
             sprite->runAction(Sequence::create(ScaleTo::create(0.15,1.1),ScaleTo::create(0.15, 1),NULL) );
             break;
-        case TouchEventType::MOVED:
-            break;
-        case TouchEventType::ENDED:
+       
+        case TouchEventType::TOUCH_EVENT_ENDED:
         {
             switch (sprite->getTag())
             
@@ -267,11 +197,11 @@ void HomeScene::touchIconEvent(Ref *pSender, TouchEventType type)
     auto sprite=static_cast<Sprite*>(pSender);
     switch (type)
     {
-        case TouchEventType::BEGAN:
+        case TouchEventType::TOUCH_EVENT_BEGAN:
             sprite->stopAllActions();
             sprite->runAction(Sequence::create(ScaleTo::create(0.15,1.1),ScaleTo::create(0.15, 1),NULL) );
             break;
-        case TouchEventType::ENDED:
+        case TouchEventType::TOUCH_EVENT_ENDED:
             break;
         default:
             break;
