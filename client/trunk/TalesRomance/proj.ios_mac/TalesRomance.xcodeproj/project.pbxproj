@@ -147,6 +147,7 @@
 		BFCFE6061A11BC5000DADAA6 /* res in Resources */ = {isa = PBXBuildFile; fileRef = BFCFE6051A11BC5000DADAA6 /* res */; };
 		BFCFE6081A11CEFA00DADAA6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCFE6071A11CEFA00DADAA6 /* Security.framework */; };
 		BFCFE60B1A11E1C400DADAA6 /* round.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCFE60A1A11E1C400DADAA6 /* round.png */; };
+		BFCFE60F1A1211C600DADAA6 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCFE60D1A1211C600DADAA6 /* Map.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -424,6 +425,8 @@
 		BFCFE6051A11BC5000DADAA6 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../../../../ui/TalesRomac/res; sourceTree = "<group>"; };
 		BFCFE6071A11CEFA00DADAA6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		BFCFE60A1A11E1C400DADAA6 /* round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round.png; sourceTree = "<group>"; };
+		BFCFE60D1A1211C600DADAA6 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
+		BFCFE60E1A1211C600DADAA6 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -559,6 +562,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BFCFE60C1A12117200DADAA6 /* map */,
 				BFCFE4E11A11BC1800DADAA6 /* common */,
 				BFCFE4FF1A11BC1800DADAA6 /* global */,
 				BFCFE5031A11BC1800DADAA6 /* google */,
@@ -959,6 +963,15 @@
 			path = common;
 			sourceTree = "<group>";
 		};
+		BFCFE60C1A12117200DADAA6 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				BFCFE60D1A1211C600DADAA6 /* Map.cpp */,
+				BFCFE60E1A1211C600DADAA6 /* Map.h */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1146,6 +1159,7 @@
 				BFCFE5F71A11BC1800DADAA6 /* XCraft.cpp in Sources */,
 				BFCFE5C31A11BC1800DADAA6 /* dynamic_message.cc in Sources */,
 				BFCFE5D91A11BC1800DADAA6 /* structurally_valid.cc in Sources */,
+				BFCFE60F1A1211C600DADAA6 /* Map.cpp in Sources */,
 				BFCFE5C21A11BC1800DADAA6 /* descriptor_database.cc in Sources */,
 				BFCFE5FE1A11BC1800DADAA6 /* XNode.cpp in Sources */,
 				BFCFE5B61A11BC1800DADAA6 /* TabBar.cpp in Sources */,
