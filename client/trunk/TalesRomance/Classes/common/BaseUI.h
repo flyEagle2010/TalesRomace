@@ -19,7 +19,7 @@ using namespace cocostudio;
 
 using namespace cocos2d;
 using namespace ui;
-class BaseUI:public Node {
+class BaseUI:public Widget {
 public:
     virtual void initNetEvent(){};
     virtual void onDlgClose(rapidjson::Value &data);
@@ -28,7 +28,7 @@ public:
     virtual void show(BaseUI* preUI,int effectType=0);
     virtual void show(int effectType=0);//当前层没有背景
     virtual void clear(bool isDel);
-    virtual void touchEvent(Ref *pSender, Widget::TouchEventType type){};
+    virtual void onButtonClick(Ref *pSender){};
     virtual void resetUI(){};
     Node* ui;
     

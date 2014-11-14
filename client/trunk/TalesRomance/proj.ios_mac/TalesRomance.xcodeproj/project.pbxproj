@@ -147,6 +147,13 @@
 		BFCFE6061A11BC5000DADAA6 /* res in Resources */ = {isa = PBXBuildFile; fileRef = BFCFE6051A11BC5000DADAA6 /* res */; };
 		BFCFE6081A11CEFA00DADAA6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCFE6071A11CEFA00DADAA6 /* Security.framework */; };
 		BFCFE60B1A11E1C400DADAA6 /* round.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCFE60A1A11E1C400DADAA6 /* round.png */; };
+		BFCFE60F1A1211C600DADAA6 /* Maze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCFE60D1A1211C600DADAA6 /* Maze.cpp */; };
+		BFDE9D611A1358EF00B4DA09 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDE9D601A1358EF00B4DA09 /* background.png */; };
+		BFDE9D631A13599A00B4DA09 /* tree_block.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDE9D621A13599A00B4DA09 /* tree_block.png */; };
+		BFDE9D6E1A14923300B4DA09 /* BattleMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDE9D681A14923300B4DA09 /* BattleMgr.cpp */; };
+		BFDE9D6F1A14923300B4DA09 /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDE9D6A1A14923300B4DA09 /* BattleScene.cpp */; };
+		BFDE9D701A14923300B4DA09 /* Hero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDE9D6C1A14923300B4DA09 /* Hero.cpp */; };
+		BFDE9D731A14925B00B4DA09 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDE9D711A14925B00B4DA09 /* Card.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -424,6 +431,19 @@
 		BFCFE6051A11BC5000DADAA6 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../../../../ui/TalesRomac/res; sourceTree = "<group>"; };
 		BFCFE6071A11CEFA00DADAA6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		BFCFE60A1A11E1C400DADAA6 /* round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round.png; sourceTree = "<group>"; };
+		BFCFE60D1A1211C600DADAA6 /* Maze.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Maze.cpp; sourceTree = "<group>"; };
+		BFCFE60E1A1211C600DADAA6 /* Maze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maze.h; sourceTree = "<group>"; };
+		BFDE9D601A1358EF00B4DA09 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		BFDE9D621A13599A00B4DA09 /* tree_block.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tree_block.png; path = ../../../../../ui/TalesRomac/res/tree_block.png; sourceTree = "<group>"; };
+		BFDE9D681A14923300B4DA09 /* BattleMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleMgr.cpp; sourceTree = "<group>"; };
+		BFDE9D691A14923300B4DA09 /* BattleMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleMgr.h; sourceTree = "<group>"; };
+		BFDE9D6A1A14923300B4DA09 /* BattleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleScene.cpp; sourceTree = "<group>"; };
+		BFDE9D6B1A14923300B4DA09 /* BattleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
+		BFDE9D6C1A14923300B4DA09 /* Hero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hero.cpp; sourceTree = "<group>"; };
+		BFDE9D6D1A14923300B4DA09 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
+		BFDE9D711A14925B00B4DA09 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
+		BFDE9D721A14925B00B4DA09 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		BFDE9D741A1496E000B4DA09 /* fconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fconfig.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -559,11 +579,13 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BFDE9D641A1490CE00B4DA09 /* battle */,
 				BFCFE4E11A11BC1800DADAA6 /* common */,
 				BFCFE4FF1A11BC1800DADAA6 /* global */,
 				BFCFE5031A11BC1800DADAA6 /* google */,
 				BFCFE5631A11BC1800DADAA6 /* home */,
 				BFCFE5681A11BC1800DADAA6 /* login */,
+				BFCFE60C1A12117200DADAA6 /* map */,
 				BFCFE56B1A11BC1800DADAA6 /* net */,
 				BFCFE5751A11BC1800DADAA6 /* proto */,
 				BFCFE58C1A11BC1800DADAA6 /* update */,
@@ -954,9 +976,36 @@
 		BFCFE6091A11E1C400DADAA6 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				BFDE9D621A13599A00B4DA09 /* tree_block.png */,
+				BFDE9D601A1358EF00B4DA09 /* background.png */,
 				BFCFE60A1A11E1C400DADAA6 /* round.png */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		BFCFE60C1A12117200DADAA6 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				BFCFE60D1A1211C600DADAA6 /* Maze.cpp */,
+				BFCFE60E1A1211C600DADAA6 /* Maze.h */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
+		BFDE9D641A1490CE00B4DA09 /* battle */ = {
+			isa = PBXGroup;
+			children = (
+				BFDE9D741A1496E000B4DA09 /* fconfig.h */,
+				BFDE9D681A14923300B4DA09 /* BattleMgr.cpp */,
+				BFDE9D691A14923300B4DA09 /* BattleMgr.h */,
+				BFDE9D6A1A14923300B4DA09 /* BattleScene.cpp */,
+				BFDE9D6B1A14923300B4DA09 /* BattleScene.h */,
+				BFDE9D6C1A14923300B4DA09 /* Hero.cpp */,
+				BFDE9D6D1A14923300B4DA09 /* Hero.h */,
+				BFDE9D711A14925B00B4DA09 /* Card.cpp */,
+				BFDE9D721A14925B00B4DA09 /* Card.h */,
+			);
+			path = battle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1074,6 +1123,7 @@
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
+				BFDE9D631A13599A00B4DA09 /* tree_block.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
@@ -1084,6 +1134,7 @@
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				BFDE9D611A1358EF00B4DA09 /* background.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1116,10 +1167,13 @@
 				BFCFE5F21A11BC1800DADAA6 /* message.pb.cc in Sources */,
 				BFCFE5BC1A11BC1800DADAA6 /* ShaderNode.cpp in Sources */,
 				BFCFE5D81A11BC1800DADAA6 /* stringprintf.cc in Sources */,
+				BFDE9D701A14923300B4DA09 /* Hero.cpp in Sources */,
+				BFDE9D6F1A14923300B4DA09 /* BattleScene.cpp in Sources */,
 				BFCFE5E61A11BC1800DADAA6 /* Socket.cpp in Sources */,
 				BFCFE5EF1A11BC1800DADAA6 /* gate.pb.cc in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				BFCFE5B41A11BC1800DADAA6 /* NewPageView.cpp in Sources */,
+				BFDE9D6E1A14923300B4DA09 /* BattleMgr.cpp in Sources */,
 				BFCFE5F61A11BC1800DADAA6 /* XBuff.cpp in Sources */,
 				BFCFE5B91A11BC1800DADAA6 /* JValue.cpp in Sources */,
 				BFCFE5F11A11BC1800DADAA6 /* item.pb.cc in Sources */,
@@ -1132,6 +1186,7 @@
 				BFCFE5C41A11BC1800DADAA6 /* extension_set.cc in Sources */,
 				BFCFE5C81A11BC1800DADAA6 /* coded_stream.cc in Sources */,
 				BFCFE5C51A11BC1800DADAA6 /* extension_set_heavy.cc in Sources */,
+				BFDE9D731A14925B00B4DA09 /* Card.cpp in Sources */,
 				BFCFE5BF1A11BC1800DADAA6 /* descriptor.cc in Sources */,
 				BFCFE5CD1A11BC1800DADAA6 /* zero_copy_stream_impl.cc in Sources */,
 				BFCFE5BE1A11BC1800DADAA6 /* Manager.cpp in Sources */,
@@ -1146,6 +1201,7 @@
 				BFCFE5F71A11BC1800DADAA6 /* XCraft.cpp in Sources */,
 				BFCFE5C31A11BC1800DADAA6 /* dynamic_message.cc in Sources */,
 				BFCFE5D91A11BC1800DADAA6 /* structurally_valid.cc in Sources */,
+				BFCFE60F1A1211C600DADAA6 /* Maze.cpp in Sources */,
 				BFCFE5C21A11BC1800DADAA6 /* descriptor_database.cc in Sources */,
 				BFCFE5FE1A11BC1800DADAA6 /* XNode.cpp in Sources */,
 				BFCFE5B61A11BC1800DADAA6 /* TabBar.cpp in Sources */,

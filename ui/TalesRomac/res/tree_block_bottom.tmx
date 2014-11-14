@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="6" height="5" tilewidth="115" tileheight="115">
+ <tileset firstgid="1" name="tree_block" tilewidth="115" tileheight="115">
+  <image source="tree_block.png" width="512" height="1035"/>
+ </tileset>
+ <layer name="bottom" width="6" height="5">
+  <data encoding="base64" compression="zlib">
+   eJwTY2Bg4EDDgkDMC8RcUMwNpfmAmBEPZsUixg/EwlAsAsUCQAwAPuQBCQ==
+  </data>
+ </layer>
+ <layer name="top" width="6" height="5">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBgUGQgHSiSqQ8GAB9oAGQ=
+  </data>
+ </layer>
+ <objectgroup name="top">
+  <object name="0" x="115" y="0" width="115" height="115">
+   <properties>
+    <property name="id" value="0"/>
+   </properties>
+  </object>
+  <object name="1" x="230" y="230" width="115" height="115">
+   <properties>
+    <property name="id" value="1"/>
+   </properties>
+  </object>
+  <object name="2" x="345" y="230" width="115" height="115">
+   <properties>
+    <property name="id" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

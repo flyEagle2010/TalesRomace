@@ -32,55 +32,17 @@ bool HomeScene::init(std::string fileName,std::string resName)
     {
 		return false;
 	}
-    Size dSize(1136,640);
-    Size size=Director::getInstance()->getOpenGLView()->getDesignResolutionSize();
-    //float scale=fmin(size.width/dSize.width,size.height/dSize.height);
-
+    this->top=dynamic_cast<Widget*>(this->ui->getChildByName("top"));
+    this->bottom=dynamic_cast<Widget*>(this->ui->getChildByName("bottom"));
     
-    
+    for(int i=0;i<7;i++){
+        Widget* widget=dynamic_cast<Widget*>(this->bottom->getChildByTag(100+i));
+        widget->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchButtonEvent,this));
+    }
     
     this->initUi();
-    
+
 	return true;
-}
-
-void HomeScene::intAnimation(string plist,string effectName,int fps,int moveSpeed,float scale,Vec2 starP,Vec2 endP)
-{
-    Clip* clip=Clip::create(plist,effectName,fps);
-    comLayout->addChild(clip,1);
-    clip->setScale(scale);
-    clip->play(true);
-    clip->setPosition(starP);
-    auto move = MoveBy::create(abs(endP.x-starP.x)/moveSpeed, Vec2(endP.x-starP.x,0));
-    auto moveBack=move->reverse();
-    auto delay=DelayTime::create(2);
-    auto seq = Sequence::create(
-                                CallFuncN::create(CC_CALLBACK_0(Clip::setScaleX, clip,scale)),
-                                move,
-                                delay,
-                                CallFuncN::create(CC_CALLBACK_0(Clip::setScaleX, clip,-scale)),
-                                moveBack,
-                                delay->clone(),NULL);
-    clip->runAction(RepeatForever::create(seq));
-
-}
-
-void HomeScene::initUi()
-{
-    PRole role=Manager::getInstance()->getRoleData()->role();
-    auto widget=static_cast<Widget*>(comLayout->getChildByName("home_top"));
-    
-    Widget* leftPg = static_cast<Widget*>(widget->getChildByName("leftPg"));
-    static_cast<Text*>(leftPg->getChildByName("txt_name"))->setString(role.rolename());
-    
-    static_cast<TextAtlas*>(leftPg->getChildByName("vipLevelLabel"))->setString(Value(role.viplvl()).asString());
-    static_cast<TextAtlas*>(leftPg->getChildByName("levelLabel"))->setString(Value(role.level()).asString());
-    
-    widget=static_cast<Widget*>(widget->getChildByName("centerPg"));
-    static_cast<Text*>(widget->getChildByName("txt_currency"))->setString(Value(role.rmb()).asString());
-    static_cast<Text*>(widget->getChildByName("txt_diamond"))->setString(Value(role.coin()).asString());
-    static_cast<Text*>(widget->getChildByName("txt_stamina"))->setString(Value(role.stamina()).asString());
-    
 }
 
 void HomeScene::onEnter()
@@ -88,125 +50,66 @@ void HomeScene::onEnter()
     BaseUI::onEnter();
 }
 
-void HomeScene::touchButtonEvent(Ref* pSender,TouchEventType type)
+void HomeScene::initUi()
 {
-    auto button=static_cast<Button*>(pSender);
-    if (!button) {
+
+}
+
+void HomeScene::intAnimation()
+{
+    
+}
+
+void HomeScene::touchButtonEvent(cocos2d::Ref *pSender, TouchEventType type)
+{
+    auto sprite=static_cast<Sprite*>(pSender);
+  
+    if(type==TouchEventType::BEGAN){
+        sprite->stopAllActions();
+        sprite->runAction(Sequence::create(ScaleTo::create(0.15,1.1),ScaleTo::create(0.15, 1),NULL) );
+    }
+       
+    if(type!=TouchEventType::ENDED){
         return;
     }
-    switch(type)
-    {
-        case TouchEventType::TOUCH_EVENT_BEGAN:
-            
-            break;
-   
-        case TouchEventType::TOUCH_EVENT_ENDED:
-            switch (button->getTag()) {
-                case 10065://聊天按钮
-                {
-                    break;
-                }
-                case 10037://下面最右边的按钮
-                {
-                    break;
-                }
-                case 10034:
-                {
-                    break;
-                }
-                case 10036:
-                {
-                    break;
-                }
-                    
-                default:
-                    break;
-            }
-            break;
-        default:
-            break;
-    }
-}
 
-void HomeScene::touchBuildEvent(cocos2d::Ref *pSender, TouchEventType type)
-{
-    auto sprite=static_cast<Sprite*>(pSender);
-    switch (type)
+    switch (sprite->getTag())
     {
-        case TouchEventType::TOUCH_EVENT_BEGAN:
-            sprite->stopAllActions();
-            sprite->runAction(Sequence::create(ScaleTo::create(0.15,1.1),ScaleTo::create(0.15, 1),NULL) );
-            break;
-       
-        case TouchEventType::TOUCH_EVENT_ENDED:
+        case 100: //属性
         {
-            switch (sprite->getTag())
-            
-            {
-                case 10001: //竞技场
-                {
-                    
-                    //gate->setPosition(Vec2(0,0));
-                    break;
-
-                }
-                case 10002: //市场
-                {                
-                    
-                    break;
-
-                }
-                case 10003: //战场pve
-                {
-//                    Gate* gate = Gate::create();
-//                    gate->show();
-                    //this->addChild(gate);
-//                    GateMap* gateMap=GateMap::create(this, "100");
-//                    gateMap->show();
-                    break;
-                }
-                case 10004: //英雄编队（卡组）
-                {
-                    
-                    break;
-                }
-                case 10005: //英雄属性
-                {
-//                    RoleAllList*roleAllList = RoleAllList::create();
-//                    roleAllList->show();
-                        break;
-                }
-                case 10006: //召唤
-                {
-//                    RoleList* roleList = RoleList::create();
-//                    roleList->show();
-                    break;
-                }
-                default:
-                    break;
-            }
+            Maze* maze=Maze::create();
+            maze->show(this,1);
+            break;
         }
+        case 101: //日程
+        {
             break;
+        }
+        case 102: //道具
+        {                
+            break;
+        }
+        case 103: //组队
+        {
+            break;
+        }
+        case 104: //卡牌
+        {
+            break;
+        }
+        case 105: //邮件
+        {
+            break;
+        }
+        case 106: //购物
+        {
+//          RoleList* roleList = RoleList::create();
+//          roleList->show();
+            break;
+        }
         default:
             break;
     }
-}
-
-void HomeScene::touchIconEvent(Ref *pSender, TouchEventType type)
-{
-    auto sprite=static_cast<Sprite*>(pSender);
-    switch (type)
-    {
-        case TouchEventType::TOUCH_EVENT_BEGAN:
-            sprite->stopAllActions();
-            sprite->runAction(Sequence::create(ScaleTo::create(0.15,1.1),ScaleTo::create(0.15, 1),NULL) );
-            break;
-        case TouchEventType::TOUCH_EVENT_ENDED:
-            break;
-        default:
-            break;
-    }
-
 }
 
 void HomeScene::initNetEvent()
@@ -235,5 +138,5 @@ void HomeScene::onExit()
 {
     BaseUI::onExit();
     this->removeAllChildrenWithCleanup(true);
-    TextureCache::getInstance()->removeAllTextures();
+    Director::getInstance()->getTextureCache()->removeAllTextures();
 }

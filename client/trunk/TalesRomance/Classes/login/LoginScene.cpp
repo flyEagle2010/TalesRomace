@@ -16,21 +16,9 @@ Scene* LoginScene::createScene()
 
 LoginScene* LoginScene::create()
 {
-    /*
-     //节点
-     Node* node = CSLoader::createNode("ActionTest/MainScene.csb");
-     this->addChild(node);
-     //动画
-     ActionTimeline* action = CSLoader::createTimeline("ActionTest/MainScene.csb");
-     node->runAction(action);
-     action->gotoFrameAndPlay(0, true);
-     
-     */
-    
     LoginScene* loginScene=new LoginScene();
 
-    
-    if (loginScene && loginScene->init("MainScene.csb","home.plist")) {
+    if (loginScene && loginScene->init("LoginScene.csb","login.plist")) {
         loginScene->autorelease();
         return loginScene;
     }
@@ -44,104 +32,70 @@ bool LoginScene::init(std::string fileName,std::string resName)
     {
         return false;
     }
-    Size sSize=Director::getInstance()->getOpenGLView()->getFrameSize();
-    Size winsize=Director::getInstance()->getWinSize();
     return true;
 }
 
 void LoginScene::onEnter()
 {
     BaseUI::onEnter();
+    this->accountPage=this->ui->getChildByName("accountPage");
+    this->serverPage=this->ui->getChildByName("serverPage");
+    this->serverPage->setVisible(false);
     
-    //this->initGame();
-}
-
-void LoginScene::resetUI()
-{
-//    ScrollView* scrollView=static_cast<ui::ScrollView*>(layout->getChildByName("scrollView"));
-//    Button* lgintBtn=static_cast<Button*>(scrollView->getChildByName("loginBtn"));
-    Widget* lgintBtn=(Widget*)scrollView->getChildByName("loginBtn");
-    int num=sData["areaList"].Size();
-    Size size=Size(scrollView->getInnerContainerSize().width,(lgintBtn->getContentSize().height+50)*num/2);
-    scrollView->setInnerContainerSize(size);
+    this->accountTxt=dynamic_cast<TextField*>(this->accountPage->getChildByName("accountTxt"));
+    this->passwordTxt=dynamic_cast<TextField*>(this->accountPage->getChildByName("passTxt"));
+    this->btn_login=dynamic_cast<Button*>(this->accountPage->getChildByName("btn_login"));
+    this->btn_login->addClickEventListener(CC_CALLBACK_1(LoginScene::onButtonClick, this));
     
-    //清除容器
-    this->serverItems.clear();
-    
-    //根据服务器给的数据添加多少个服选项
-    for (int i = 0;i<this->sData["areaList"].Size();i++)
-    {
-        Button* newItem = dynamic_cast<Button*>(lgintBtn->clone());
-        //将选服按钮存储起来
-        this->serverItems.pushBack(newItem);
-        newItem->setTag(i);
-        newItem->setTitleText(sData["areaList"][i]["name"].GetString());
-        newItem->setTitleColor(Color3B(0, 0, 0));
-        newItem->setVisible(true);
-        
-        scrollView->addChild(newItem);
-        
-        Size sSize=scrollView->getInnerContainerSize();
-        Size itemSize=newItem->getContentSize();
-        
-        float x=(sSize.width/2-itemSize.width)/2.0+sSize.width/2*(i%2)+80;
-        float y=sSize.height-itemSize.height*(i/2+1);
-        newItem->setPosition(Vec2(x,y));
-        newItem->addTouchEventListener(CC_CALLBACK_2(LoginScene::touchServerEvent,this));
-    }
-//    this->setSeverItemsMouseEnable(true);
-
-    lgintBtn->removeFromParent();//移除舞台上的单个按钮
-    
-    
-    //如果没记录过账号和密码，将刚刚注册的登录账号和密码记录下来
-    //将注册界面隐藏
-//    auto registerBottom=static_cast<Widget*>(layout->getChildByName("registerBottom"));
-//    registerBottom->setVisible(false);
-    
-    //添加一个字符串数据到指定key
-    UserDefault::getInstance()->setStringForKey("account",accountInput->getStringValue());
-    UserDefault::getInstance()->setStringForKey("password",passwordInput->getStringValue());
-    
-    //提交,生成xml文件
-    UserDefault::getInstance()->flush();
-
+    this->initAccount();
 }
 
 //init 游戏服务器 服务器认证
-void LoginScene::initGame()
+void LoginScene::initAccount()
 {
-    //DeviceInfo d;
-    //log("uuid:%s",d.getUUID());
-    //std::string str="account="+Value(d.getUUID()).asString()+"&password="+d.getUUID();
-    
-//    std::string str="account=shuzl&password=123";
-//    WebHttp::getInstance()->send(HTTP_URL, CC_CALLBACK_1(LoginScene::initGameCallback, this),str.c_str());
-    
-    //用以判断是否记录账号和密码,没有则弹出弹窗，填写用户名及密码，有则直接登录进入选择服务器界面
-//    auto registerBottom=static_cast<Widget*>(layout->getChildByName("registerBottom"));
     auto accountStr =UserDefault::getInstance()->getStringForKey("account");
     auto passwordStr =UserDefault::getInstance()->getStringForKey("password");
-    
-    registerBottom->setVisible(true);
-    Button* sureBtn=(Button*)registerBottom->getChildByName("sureBtn");
-    accountInput=static_cast<TextField*>(registerBottom->getChildByName("accountInput"));
-    passwordInput=static_cast<TextField*>(registerBottom->getChildByName("passwordInput"));
-    sureBtn->setTouchEnabled(true);
-    sureBtn->addTouchEventListener(CC_CALLBACK_2(LoginScene::touchEvent,this));
-    
-    if (accountStr != "" && passwordStr != "") {
-        accountInput->setText(UserDefault::getInstance()->getStringForKey("account"));
-        passwordInput->setText(UserDefault::getInstance()->getStringForKey("password"));
-    }else{
-        accountInput->setText("");
-        passwordInput->setText("");
-    }
+
+    this->accountTxt->setString(accountStr);
+    this->passwordTxt->setString(passwordStr);
 }
 
-void LoginScene::webSend(std::string str)
+
+void LoginScene::resetUI()
 {
-    WebHttp::getInstance()->send(HTTP_URL, CC_CALLBACK_1(LoginScene::initGameCallback, this),str.c_str());
+    ScrollView* scrollView=dynamic_cast<ScrollView*>(serverPage->getChildByName("serverList"));
+    Button* groupBtn=dynamic_cast<Button*>(scrollView->getChildByName("btn_serverGroup"));
+    groupBtn->setTitleText("1-5区");
+    int serverNum=this->sData["areaList"].Size();
+    std::vector<Button*> buttons={groupBtn};
+
+    for(int i=1;i<serverNum/5;i++){
+        Button* btn=dynamic_cast<Button*>(groupBtn->clone());
+        btn->setTitleText("");
+        scrollView->addChild(btn);
+        buttons.push_back(btn);
+    }
+    this->tabBar=TabBar::create(buttons);
+    this->tabBar->retain();
+    
+    
+    int pNum=MIN(serverNum,5);
+    int i=0;
+    Button* serverBtn=dynamic_cast<Button*>(this->serverPage->getChildByName("btn_server"));
+    serverBtn->setTitleText(this->sData["areaList"][i]["name"].GetString());
+    serverBtn->setTag(this->sData["areaList"][i]["id"].GetInt());
+    
+    Vec2 start=serverBtn->getPosition();
+    Size size=serverBtn->getContentSize();
+    for(i=1;i<pNum;i++){
+        rapidjson::Value& v=this->sData["areaList"][i];
+        Button* btn=dynamic_cast<Button*>(serverBtn->clone());
+        btn->setTitleText(v["name"].GetString());
+        btn->setTag(v["id"].GetInt());
+        this->serverPage->addChild(btn);
+        btn->setPosition(start+Vec2((i%2)*(size.width+10),-(i/2)*(size.height+30)));
+        btn->addClickEventListener(CC_CALLBACK_1(LoginScene::onButtonClick, this));
+    }
 }
 
 void LoginScene::initGameCallback(std::vector<char> *data)
@@ -156,51 +110,43 @@ void LoginScene::initGameCallback(std::vector<char> *data)
     }else{
         this->resetUI();
     }
-}
-//设置是否可以点击选择服务器按钮
-void LoginScene::setSeverItemsMouseEnable(bool isCan)
-{
-    for (int i = 0; i<this->serverItems.size(); ++i) {
-        this->serverItems.at(i)->setTouchEnabled(isCan);
-    }
-}
-
-void LoginScene::onDlgClose(rapidjson::Value &data)
-{
-    BaseUI::onDlgClose(data);
-    std::string btnName=data.GetString();
-    log("you click confirm %s",btnName.c_str());
+    this->btn_login->setTouchEnabled(true);
+    this->accountPage->setVisible(false);
+    this->serverPage->setVisible(true);
+    
+    //添加一个字符串数据到指定key
+    UserDefault::getInstance()->setStringForKey("account",accountTxt->getString());
+    UserDefault::getInstance()->setStringForKey("password",passwordTxt->getString());
+    //提交,生成xml文件
+    UserDefault::getInstance()->flush();
 }
 
-void LoginScene::touchEvent(Ref *pSender, Widget::TouchEventType type)
+void LoginScene::onButtonClick(Ref *pSender)
 {
     auto button=static_cast<Button*>(pSender);
-//    if(type!=TouchEventType::ENDED){
+    int tag=button->getTag();
+    //登陆
+    if(tag==101) {
+        Manager::getInstance()->switchScence(HomeScene::createScene());
+        return;
+        std::string str="account="+this->accountTxt->getString()+"&password="+this->passwordTxt->getString();
+        WebHttp::getInstance()->send(HTTP_URL, CC_CALLBACK_1(LoginScene::initGameCallback, this),str.c_str());
+        button->setTouchEnabled(false);
         return;
     }
-    switch (button->getTag()) {
-        case 11203://注册确定按钮
-            if (accountInput->getStringValue() != ""  && passwordInput->getStringValue() != "") {
-                std::string str="account="+this->accountInput->getStringValue()+"&password="+this->passwordInput->getStringValue();//"account=shuzl&password=123";
-                this->webSend(str);
-            }
-            break;
-        default:
-            break;
-    }
-}
-
-void LoginScene::touchServerEvent(Ref *pSender, Widget::TouchEventType type)
-{
-    auto button=static_cast<Button*>(pSender);
-//    if(type!=TouchEventType::ENDED){
+    // 选组
+    if(tag>300){
+        this->tabBar->setIndex(tag-301);
         return;
     }
-    Manager::getInstance()->socket=new Socket();
-    string ip=this->sData["areaList"][button->getTag()]["ip"].GetString();
-    int port=this->sData["areaList"][button->getTag()]["port"].GetInt();
-    Manager::getInstance()->socket->init(ip, port);
-    this->setSeverItemsMouseEnable(false);
+    //选服
+    if(tag <= this->sData["areaList"].Size()){
+        Manager::getInstance()->socket=new Socket();
+        string ip=this->sData["areaList"][tag-1]["ip"].GetString();
+        int port=this->sData["areaList"][tag-1]["port"].GetInt();
+        Manager::getInstance()->socket->init(ip, port);
+    }
+        
 }
 
 void LoginScene::initNetEvent(){
@@ -215,8 +161,6 @@ void LoginScene::initNetEvent(){
                 auto scene=HomeScene::createScene();
                 Manager::getInstance()->switchScence(scene);
                 Manager::getInstance()->showMsg("进入单机模式，本地数据启动");
-                
-                this->setSeverItemsMouseEnable(true);
 #endif
                 break;
             }
@@ -245,6 +189,8 @@ void LoginScene::initNetEvent(){
 }
 void LoginScene::onExit()
 {
+    //this->tabBar->release();
+
     BaseUI::onExit();
 }
 

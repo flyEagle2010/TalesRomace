@@ -23,6 +23,39 @@
           <PlistImageFile Name="youjian.png" Key="youjian.png" />
           <PlistImageFile Name="zuanshi.png" Key="zuanshi.png" />
         </PlistImageFolder>
+        <PlistImageFolder PListFile="login.plist" LastPlistWriteTime="2014-11-11T16:17:24+08:00" LastImageWriteTime="2014-11-11T16:17:24+08:00" Name=".login_PList.Dir">
+          <PlistImageFile Name="14.png" Key="14.png" />
+          <PlistImageFile Name="15.png" Key="15.png" />
+          <PlistImageFile Name="background.png" Key="background.png" />
+          <PlistImageFile Name="login_account login_1.png" Key="login_account login_1.png" />
+          <PlistImageFile Name="login_account login_2.png" Key="login_account login_2.png" />
+          <PlistImageFile Name="login_account login_3.png" Key="login_account login_3.png" />
+          <PlistImageFile Name="login_account login_close_1.png" Key="login_account login_close_1.png" />
+          <PlistImageFile Name="login_account login_close_2.png" Key="login_account login_close_2.png" />
+          <PlistImageFile Name="login_account login_plank_1.png" Key="login_account login_plank_1.png" />
+          <PlistImageFile Name="login_account login_plank_2.png" Key="login_account login_plank_2.png" />
+          <PlistImageFile Name="login_account login_plank_3.png" Key="login_account login_plank_3.png" />
+          <PlistImageFile Name="login_account login_plank_4.png" Key="login_account login_plank_4.png" />
+          <PlistImageFile Name="login_account login_plank_7.png" Key="login_account login_plank_7.png" />
+          <PlistImageFile Name="login_busy_1.png" Key="login_busy_1.png" />
+          <PlistImageFile Name="login_busy_2.png" Key="login_busy_2.png" />
+          <PlistImageFile Name="login_crowd_1.png" Key="login_crowd_1.png" />
+          <PlistImageFile Name="login_crowd_2.png" Key="login_crowd_2.png" />
+          <PlistImageFile Name="login_fluent_1.png" Key="login_fluent_1.png" />
+          <PlistImageFile Name="login_fluent_2.png" Key="login_fluent_2.png" />
+          <PlistImageFile Name="login_in_1.png" Key="login_in_1.png" />
+          <PlistImageFile Name="login_in_2.png" Key="login_in_2.png" />
+          <PlistImageFile Name="login_in_3.png" Key="login_in_3.png" />
+          <PlistImageFile Name="login_in_4.png" Key="login_in_4.png" />
+          <PlistImageFile Name="login_maintain_1.png" Key="login_maintain_1.png" />
+          <PlistImageFile Name="login_maintain_2.png" Key="login_maintain_2.png" />
+          <PlistImageFile Name="login_plank.png" Key="login_plank.png" />
+          <PlistImageFile Name="login_plank_1.png" Key="login_plank_1.png" />
+          <PlistImageFile Name="login_plank_2.png" Key="login_plank_2.png" />
+        </PlistImageFolder>
+        <Image Name="login.png" />
+        <TmxFile Name="tree_block_bottom.tmx" />
+        <Project Name="Layer.csd" />
       </RootFolder>
     </Group>
   </SolutionFolder>

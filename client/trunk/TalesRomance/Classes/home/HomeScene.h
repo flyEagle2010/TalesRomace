@@ -16,7 +16,9 @@
 #include "cocostudio/CocoStudio.h"
 #include "CircleMove.h"
 #include "Clip.h"
-#include <map>
+
+#include "Maze.h"
+
 USING_NS_CC;
 using namespace ui;
 using namespace cocostudio;
@@ -30,13 +32,18 @@ public:
     virtual void onExit();
 	virtual bool init(std::string fileName,std::string resName);
     void initUi();
+
 private:
     void initNetEvent();
-    Layout *comLayout;
-    void intAnimation(string plist,string effectName,int fps,int moveSpeed,float scale,Vec2 starP,Vec2 endP);
-    void touchBuildEvent(Ref *pSender, TouchEventType type);
-    void touchButtonEvent(Ref *pSender, TouchEventType type);
-    void touchIconEvent(Ref *pSender, TouchEventType type);
+    void intAnimation();
+    void touchButtonEvent(Ref* pSender, TouchEventType type);
+
+    //void onClick(Ref *pSender);
+    //void touchButtonEvent(Ref *pSender, TouchEventType type);
+    //void touchIconEvent(Ref *pSender, TouchEventType type);
+    
+    Widget* top;
+    Widget* bottom;
     
 };
 

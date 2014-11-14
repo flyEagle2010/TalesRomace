@@ -9,7 +9,9 @@
 #include "BaseUI.h"
 bool BaseUI::init(std::string fileName,std::string resName)
 {
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/"+resName);
+    if(resName != ""){
+        SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/"+resName);
+    }
     this->ui=CSLoader::createNode("res/"+fileName);
 
     this->addChild(ui,0);
@@ -30,6 +32,11 @@ void BaseUI::onEnter()
 
 void BaseUI::show(BaseUI* preUI,int effectType)
 {
+    preUI->addChild(this);
+    preUI->setOpacity(200);
+    return;
+    
+    
     if(preUI)
     {
         this->preUI=preUI;
