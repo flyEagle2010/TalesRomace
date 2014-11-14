@@ -54,8 +54,11 @@
           <PlistImageFile Name="login_plank_2.png" Key="login_plank_2.png" />
         </PlistImageFolder>
         <Image Name="login.png" />
+<<<<<<< HEAD
         <TmxFile Name="tree_block_bottom.tmx" />
         <Project Name="Layer.csd" />
+=======
+>>>>>>> e81b2949965b4a72e3c8ebb74864fc58037b4a33
       </RootFolder>
     </Group>
   </SolutionFolder>

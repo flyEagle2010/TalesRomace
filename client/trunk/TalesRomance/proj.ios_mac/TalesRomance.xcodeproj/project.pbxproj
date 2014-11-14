@@ -147,6 +147,7 @@
 		BFCFE6061A11BC5000DADAA6 /* res in Resources */ = {isa = PBXBuildFile; fileRef = BFCFE6051A11BC5000DADAA6 /* res */; };
 		BFCFE6081A11CEFA00DADAA6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCFE6071A11CEFA00DADAA6 /* Security.framework */; };
 		BFCFE60B1A11E1C400DADAA6 /* round.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCFE60A1A11E1C400DADAA6 /* round.png */; };
+<<<<<<< HEAD
 		BFCFE60F1A1211C600DADAA6 /* Maze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCFE60D1A1211C600DADAA6 /* Maze.cpp */; };
 		BFDE9D611A1358EF00B4DA09 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDE9D601A1358EF00B4DA09 /* background.png */; };
 		BFDE9D631A13599A00B4DA09 /* tree_block.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDE9D621A13599A00B4DA09 /* tree_block.png */; };
@@ -154,6 +155,9 @@
 		BFDE9D6F1A14923300B4DA09 /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDE9D6A1A14923300B4DA09 /* BattleScene.cpp */; };
 		BFDE9D701A14923300B4DA09 /* Hero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDE9D6C1A14923300B4DA09 /* Hero.cpp */; };
 		BFDE9D731A14925B00B4DA09 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDE9D711A14925B00B4DA09 /* Card.cpp */; };
+=======
+		BFCFE60F1A1211C600DADAA6 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCFE60D1A1211C600DADAA6 /* Map.cpp */; };
+>>>>>>> e81b2949965b4a72e3c8ebb74864fc58037b4a33
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -431,6 +435,7 @@
 		BFCFE6051A11BC5000DADAA6 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../../../../ui/TalesRomac/res; sourceTree = "<group>"; };
 		BFCFE6071A11CEFA00DADAA6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		BFCFE60A1A11E1C400DADAA6 /* round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round.png; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		BFCFE60D1A1211C600DADAA6 /* Maze.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Maze.cpp; sourceTree = "<group>"; };
 		BFCFE60E1A1211C600DADAA6 /* Maze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maze.h; sourceTree = "<group>"; };
 		BFDE9D601A1358EF00B4DA09 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -444,6 +449,10 @@
 		BFDE9D711A14925B00B4DA09 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
 		BFDE9D721A14925B00B4DA09 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		BFDE9D741A1496E000B4DA09 /* fconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fconfig.h; sourceTree = "<group>"; };
+=======
+		BFCFE60D1A1211C600DADAA6 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
+		BFCFE60E1A1211C600DADAA6 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+>>>>>>> e81b2949965b4a72e3c8ebb74864fc58037b4a33
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -579,7 +588,11 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				BFDE9D641A1490CE00B4DA09 /* battle */,
+=======
+				BFCFE60C1A12117200DADAA6 /* map */,
+>>>>>>> e81b2949965b4a72e3c8ebb74864fc58037b4a33
 				BFCFE4E11A11BC1800DADAA6 /* common */,
 				BFCFE4FF1A11BC1800DADAA6 /* global */,
 				BFCFE5031A11BC1800DADAA6 /* google */,
@@ -986,12 +999,18 @@
 		BFCFE60C1A12117200DADAA6 /* map */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				BFCFE60D1A1211C600DADAA6 /* Maze.cpp */,
 				BFCFE60E1A1211C600DADAA6 /* Maze.h */,
+=======
+				BFCFE60D1A1211C600DADAA6 /* Map.cpp */,
+				BFCFE60E1A1211C600DADAA6 /* Map.h */,
+>>>>>>> e81b2949965b4a72e3c8ebb74864fc58037b4a33
 			);
 			path = map;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		BFDE9D641A1490CE00B4DA09 /* battle */ = {
 			isa = PBXGroup;
 			children = (
@@ -1008,6 +1027,8 @@
 			path = battle;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> e81b2949965b4a72e3c8ebb74864fc58037b4a33
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1201,7 +1222,11 @@
 				BFCFE5F71A11BC1800DADAA6 /* XCraft.cpp in Sources */,
 				BFCFE5C31A11BC1800DADAA6 /* dynamic_message.cc in Sources */,
 				BFCFE5D91A11BC1800DADAA6 /* structurally_valid.cc in Sources */,
+<<<<<<< HEAD
 				BFCFE60F1A1211C600DADAA6 /* Maze.cpp in Sources */,
+=======
+				BFCFE60F1A1211C600DADAA6 /* Map.cpp in Sources */,
+>>>>>>> e81b2949965b4a72e3c8ebb74864fc58037b4a33
 				BFCFE5C21A11BC1800DADAA6 /* descriptor_database.cc in Sources */,
 				BFCFE5FE1A11BC1800DADAA6 /* XNode.cpp in Sources */,
 				BFCFE5B61A11BC1800DADAA6 /* TabBar.cpp in Sources */,
