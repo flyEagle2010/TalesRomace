@@ -1,5 +1,5 @@
 <GameProjectFile>
-  <PropertyGroup Type="Layer" Name="Layer" ID="6ffeaf4b-263b-4d48-a3df-7eca13216e0c" Version="2.0.0.0" />
+  <PropertyGroup Type="Layer" Name="Maze" ID="6ffeaf4b-263b-4d48-a3df-7eca13216e0c" Version="2.0.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1" />
@@ -11,6 +11,18 @@
         <Size X="1136" Y="640" />
         <PrePosition X="0" Y="0" />
         <PreSize X="0" Y="0" />
+        <Children>
+          <NodeObjectData Name="Map_1" ActionTag="94" FrameEvent="" Tag="45" ObjectIndex="1" ctype="GameMapObjectData">
+            <Position X="230.0004" Y="41.33342" />
+            <Scale ScaleX="1" ScaleY="1" />
+            <AnchorPoint />
+            <CColor A="255" R="255" G="255" B="255" />
+            <Size X="690" Y="575" />
+            <PrePosition X="0.2024651" Y="0.06458347" />
+            <PreSize X="0" Y="0" />
+            <FileData Type="Normal" Path="tree_block_bottom.tmx" />
+          </NodeObjectData>
+        </Children>
         <SingleColor A="255" R="0" G="0" B="0" />
         <FirstColor A="255" R="0" G="0" B="0" />
         <EndColor A="255" R="255" G="255" B="255" />
