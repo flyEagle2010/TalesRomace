@@ -6,7 +6,7 @@
         <Project Name="MainScene.csd" />
         <Project Name="LoginScene.csd" />
         <Image Name="home.png" />
-        <PlistImageFolder PListFile="home.plist" LastPlistWriteTime="2014-11-16T09:58:51+08:00" LastImageWriteTime="2014-11-16T09:58:51+08:00" Name=".home_PList.Dir">
+        <PlistImageFolder PListFile="home.plist" LastPlistWriteTime="2014-11-17T16:34:20+08:00" LastImageWriteTime="2014-11-17T16:34:20+08:00" Name=".home_PList.Dir">
           <PlistImageFile Name="VIP.png" Key="VIP.png" />
           <PlistImageFile Name="add.png" Key="add.png" />
           <PlistImageFile Name="bianzu.png" Key="bianzu.png" />
@@ -23,7 +23,7 @@
           <PlistImageFile Name="youjian.png" Key="youjian.png" />
           <PlistImageFile Name="zuanshi.png" Key="zuanshi.png" />
         </PlistImageFolder>
-        <PlistImageFolder PListFile="login.plist" LastPlistWriteTime="2014-11-16T09:58:51+08:00" LastImageWriteTime="2014-11-16T09:58:51+08:00" Name=".login_PList.Dir">
+        <PlistImageFolder PListFile="login.plist" LastPlistWriteTime="2014-11-17T16:34:20+08:00" LastImageWriteTime="2014-11-17T16:34:20+08:00" Name=".login_PList.Dir">
           <PlistImageFile Name="14.png" Key="14.png" />
           <PlistImageFile Name="15.png" Key="15.png" />
           <PlistImageFile Name="background.png" Key="background.png" />
@@ -56,16 +56,20 @@
         <Image Name="login.png" />
         <TmxFile Name="tree_block_bottom.tmx" />
         <Project Name="Maze.csd" />
-        <Project Name="BattleScene.csd" />
-        <Project Name="battle.csd" />
-        <PlistImageFolder PListFile="battle.plist" LastPlistWriteTime="2014-11-16T11:43:35+08:00" LastImageWriteTime="2014-11-16T11:43:35+08:00" Name=".battle_PList.Dir">
+        <PlistImageFolder PListFile="fight.plist" LastPlistWriteTime="2014-11-17T18:12:05+08:00" LastImageWriteTime="2014-11-17T18:12:05+08:00" Name=".fight_PList.Dir">
           <PlistImageFile Name="battle_Blood of the Daedra_1.png" Key="battle_Blood of the Daedra_1.png" />
           <PlistImageFile Name="battle_Blood of the Daedra_2.png" Key="battle_Blood of the Daedra_2.png" />
           <PlistImageFile Name="battle_bottom.png" Key="battle_bottom.png" />
           <PlistImageFile Name="battle_enemy.png" Key="battle_enemy.png" />
           <PlistImageFile Name="fightBg.png" Key="fightBg.png" />
         </PlistImageFolder>
-        <Image Name="battle.png" />
+        <Image Name="fight.png" />
+        <Image Name="tree_block.png" />
+        <Project Name="BattleScene.csd" />
+        <Folder Name="common">
+          <Image Name="card_100.png" />
+        </Folder>
+        <Project Name="Card.csd" />
       </RootFolder>
     </Group>
   </SolutionFolder>

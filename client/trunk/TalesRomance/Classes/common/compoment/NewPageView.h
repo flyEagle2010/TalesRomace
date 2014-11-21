@@ -18,7 +18,7 @@ class NewPageView:public PageView{
 public:
     static NewPageView* create();
 protected:
-    virtual void handleReleaseLogic(const Vec2 &touchPoint);
+    virtual void handleReleaseLogic(Touch *touch) ;
     virtual bool scrollPages(float touchOffset);
 };
 #endif /* defined(__fancyHeart__NewPageView__) */

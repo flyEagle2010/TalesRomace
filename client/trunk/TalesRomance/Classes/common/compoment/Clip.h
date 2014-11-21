@@ -23,6 +23,9 @@ public:
     virtual void onExit();
     float play(bool isLoop=false);
     void play(int times);
+    void play(int times,float duration);
+    
+    void playNext(int times,float duration);
     Animation* animation;
 };
 #endif /* defined(__dotaLink__Clip__) */

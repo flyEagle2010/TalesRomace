@@ -10,9 +10,9 @@
 bool BaseUI::init(std::string fileName,std::string resName)
 {
     if(resName != ""){
-        SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/"+resName);
+        SpriteFrameCache::getInstance()->addSpriteFramesWithFile(""+resName);
     }
-    this->ui=CSLoader::createNode("res/"+fileName);
+    this->ui=CSLoader::createNode(""+fileName);
 
     this->addChild(ui,0);
     return true;

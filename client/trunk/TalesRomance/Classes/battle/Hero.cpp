@@ -29,28 +29,17 @@ bool Hero::init(std::string fPath,std::string rPath,int pos)
     this->pos=pos;
 	//init ui
     float scale=fPath=="huLi.json"?0.25:0.5;
-    this->skeletonNode = SkeletonAnimation::createWithFile(fPath, rPath, BattleMgr::getInstance()->heroScale*scale);
+    this->skeletonNode = SkeletonAnimation::createWithFile(fPath, rPath, 0.5);
 
-    if(this->pos>4){
-        this->skeletonNode->setScale(1,1);
-    }else{
+    if(this->pos<1){
         this->skeletonNode->setScale(-1,1);
+    }else{
+        this->skeletonNode->setScale(1,1);
     }
     this->addChild(skeletonNode);
     this->skeletonNode->setEndListener(CC_CALLBACK_1(Hero::onAnimationEnd, this));
     
-    spBone* body=this->skeletonNode->findBone("body");
-    this->hpBg=Sprite::create("battle_HP_1.png");
-    this->addChild(hpBg);
-    this->hpBg->setPosition(Vec2(body->worldX,body->worldY)+Vec2(0,200));
-
-    this->hpBar=ProgressTimer::create(Sprite::create("battle_HP_2.png"));
-    this->addChild(hpBar);
-    this->hpBar->setPosition(Vec2(body->worldX,body->worldY)+Vec2(0,200));
-    this->hpBar->setType(ProgressTimer::Type::BAR);
-    this->hpBar->setMidpoint(Vec2(0,0));
-    this->hpBar->setBarChangeRate(Vec2(1, 0));
-    this->hpBar->setPercentage(100.);
+ 
 	return true;
 }
 
@@ -217,7 +206,6 @@ void Hero::fallHp(PHit& phit)
     label->runAction(Sequence::create(scale1,DelayTime::create(0.3),sp3,cf4, NULL));
 
     //this->hpBar->runAction(ProgressTo::create(0.3, phit.perhp()));
-    this->hpBar->setPercentage(phit.perhp());
 }
 
 void Hero::hitWord()
@@ -248,8 +236,6 @@ void Hero::onAnimationEnd(int trackIndex)
         {
             Sequence* sq=Sequence::create(DelayTime::create(0.2),FadeOut::create(2.0),CallFunc::create(CC_CALLBACK_0(Hero::dieClear, this)), NULL);
             this->skeletonNode->runAction(sq);
-            this->hpBg->setVisible(false);
-            this->hpBar->setVisible(false);
             this->stopAllActions();
             break;
         }

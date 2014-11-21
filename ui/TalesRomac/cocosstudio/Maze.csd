@@ -12,13 +12,13 @@
         <PrePosition X="0" Y="0" />
         <PreSize X="0" Y="0" />
         <Children>
-          <NodeObjectData Name="Map_1" ActionTag="94" FrameEvent="" Tag="45" ObjectIndex="1" ctype="GameMapObjectData">
-            <Position X="230.0004" Y="41.33342" />
+          <NodeObjectData Name="Map_1" ActionTag="149" FrameEvent="" Tag="39" ObjectIndex="1" ctype="GameMapObjectData">
+            <Position X="252.238" Y="24.78227" />
             <Scale ScaleX="1" ScaleY="1" />
             <AnchorPoint />
             <CColor A="255" R="255" G="255" B="255" />
             <Size X="690" Y="575" />
-            <PrePosition X="0.2024651" Y="0.06458347" />
+            <PrePosition X="0.2220405" Y="0.0387223" />
             <PreSize X="0" Y="0" />
             <FileData Type="Normal" Path="tree_block_bottom.tmx" />
           </NodeObjectData>

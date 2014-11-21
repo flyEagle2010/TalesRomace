@@ -35,7 +35,7 @@ bool NewPageView::scrollPages(float touchOffset)
 }
 
 
-void NewPageView::handleReleaseLogic(const Vec2 &touchPoint)
+void NewPageView::handleReleaseLogic(Touch *touch)
 {
     if (_pages.size() <= 0)
     {

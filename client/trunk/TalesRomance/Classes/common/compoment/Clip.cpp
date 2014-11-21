@@ -43,6 +43,9 @@ bool Clip::init(std::string plistFile,std::string frameName,int fps)
     for(int i=1;i<=map.size();i++){
         std::string imgName=frameName+"_"+Value(i).asString()+".png";
         SpriteFrame* pFrame=SpriteFrameCache::getInstance()->getSpriteFrameByName(imgName);
+        if(!pFrame){
+            pFrame=frames.at(i-2);
+        }
         frames.pushBack(pFrame);
     }
     

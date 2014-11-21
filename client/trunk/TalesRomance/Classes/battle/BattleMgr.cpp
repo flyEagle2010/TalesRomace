@@ -25,7 +25,7 @@ void BattleMgr::init()
     
     //this->initHero(heros);
     //this->heroNum=heros.size();
-    this->groupID=this->groups.at(0);
+    //this->groupID=this->groups.at(0);
 
 }
 

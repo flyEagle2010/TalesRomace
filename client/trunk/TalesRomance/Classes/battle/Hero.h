@@ -70,8 +70,6 @@ public:
     void attackedEffect();
     
     int pos;
-    bool isDie;
-    ProgressTimer* hpBar;
     SkeletonAnimation* skeletonNode;
 
 

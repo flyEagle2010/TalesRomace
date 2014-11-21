@@ -10,5 +10,20 @@
 #define __TalesRomance__Card__
 
 #include <stdio.h>
+#include "BaseUI.h"
+#include "Clip.h"
+
+class Card : public BaseUI
+{
+public:
+    static Card* create(int index);
+    bool init();
+    
+    void move(float delay);
+    void useSkill();
+    void mergeToHero();
+private:
+    int index;
+};
 
 #endif /* defined(__TalesRomance__Card__) */

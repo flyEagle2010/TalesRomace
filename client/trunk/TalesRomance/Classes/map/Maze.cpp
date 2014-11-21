@@ -21,7 +21,7 @@ Maze* Maze::create()
 
 bool Maze::init()
 {
-    BaseUI::init("Layer.csb", "tree_block.plist");
+    BaseUI::init("Maze.csb", "");
     this->map = TMXTiledMap::create("res/tree_block_bottom.tmx");
     addChild(map, 0);
     Size wsize=Director::getInstance()->getWinSize();
@@ -59,8 +59,12 @@ void Maze::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unusedEvent)
     if(sprite){
         this->topLayer->removeTileAt(grid);
     }
-    TMXObjectGroup* objectGroup=this->map->getObjectGroup("top");
-    ValueMap valueMap=objectGroup->getObject("1");
+    //TMXObjectGroup* objectGroup=this->map->getObjectGroup("top");
+    //ValueMap valueMap=objectGroup->getObject("1");
+    
+    BattleMgr::getInstance()->init();
+    
+    return;
     
     //int tileGrid=this->topLayer->getTileGIDAt(grid);
     int itemType=6;

@@ -17,6 +17,8 @@
 #include "external/json/rapidjson.h"
 #include "BattleMgr.h"
 #include "Clip.h"
+#include "Hero.h"
+#include "Card.h"
 
 USING_NS_CC;
 using namespace ui;
@@ -31,27 +33,27 @@ public:
 	virtual bool init();
     virtual void onEnter();
     virtual void onExit();
-    virtual void initNetEvent();
     virtual void touchButtonEvent(cocos2d::Ref *pSender, Widget::TouchEventType type);
-    void interceptTouchEvent(Widget::TouchEventType event, Widget *sender, Touch *touch);
-
-    void resetProgress();
-    void setNpcIcon(int num,bool isKill);
-    void initNpcIcon(int num);
+    
 private:
-    int duration=180;
-    bool isPause;
+    void startAnimation();
+    void initHero();
+    void playRound();
+    
+    void playCard();
+    void attack();
+    void petAttack();
+    
+    Hero* hero;
+    Hero* npc;
+    Vector<Card*> cards;
 public:
-    Widget* heroNode;
-    Widget* bossInfo;
-    Widget* npcInfo;
-    Widget* progress;
-    Widget* skillNode;
-    Widget* top;
+    Node* heroNode;
     
-    
+    Node* heroInfo1;
+    Node* heroInfo2;
+    Node* title;
+    Node* bottom;
     Sprite* bg;
-    void bounceTo(FighterMgr* mf);
-    void tick(float dt);
 };
 #endif /* defined(__fancyHeart__BattleScene__) */

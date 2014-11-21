@@ -5,7 +5,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ShaderNode.h"
 
-
+#include "BattleMgr.h"
 Scene* LoginScene::createScene()
 {
     auto scene = Scene::create();
@@ -128,6 +128,7 @@ void LoginScene::onButtonClick(Ref *pSender)
     //登陆
     if(tag==101) {
         Manager::getInstance()->switchScence(HomeScene::createScene());
+//        BattleMgr::getInstance()->init();
         return;
         std::string str="account="+this->accountTxt->getString()+"&password="+this->passwordTxt->getString();
         WebHttp::getInstance()->send(HTTP_URL, CC_CALLBACK_1(LoginScene::initGameCallback, this),str.c_str());
