@@ -22,7 +22,7 @@ void BattleMgr::init()
     auto scene=BattleScene::createScene();
     Manager::getInstance()->switchScence(scene);
 
-    
+    this->view=(BattleScene*)scene->getChildByTag(0);
     //this->initHero(heros);
     //this->heroNum=heros.size();
     //this->groupID=this->groups.at(0);

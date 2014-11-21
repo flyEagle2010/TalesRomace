@@ -46,7 +46,6 @@ public:
     void clearDieNpc(int pos);
     void clear();
     
-    rapidjson::Value data;
     BattleScene* view;
     bool isOver;
     int npcNum;

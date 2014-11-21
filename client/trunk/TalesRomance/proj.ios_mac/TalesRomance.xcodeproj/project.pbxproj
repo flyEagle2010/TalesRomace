@@ -60,6 +60,15 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		BFB770F11A1F2BB30079450E /* neZha.json in Resources */ = {isa = PBXBuildFile; fileRef = BFB770F01A1F2BB30079450E /* neZha.json */; };
+		BFB770F31A1F33CD0079450E /* longNv.json in Resources */ = {isa = PBXBuildFile; fileRef = BFB770F21A1F33CD0079450E /* longNv.json */; };
+		BFB770F61A1F374E0079450E /* hurt_fire2.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFB770F41A1F374E0079450E /* hurt_fire2.plist */; };
+		BFB770F71A1F374E0079450E /* hurt_fire2.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB770F51A1F374E0079450E /* hurt_fire2.png */; };
+		BFB770FE1A1F3CF00079450E /* immunity.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB770F91A1F3CF00079450E /* immunity.png */; };
+		BFB770FF1A1F3CF00079450E /* miss.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB770FA1A1F3CF00079450E /* miss.png */; };
+		BFB771001A1F3CF00079450E /* num_heal.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB770FB1A1F3CF00079450E /* num_heal.png */; };
+		BFB771011A1F3CF00079450E /* num_hit.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB770FC1A1F3CF00079450E /* num_hit.png */; };
+		BFB771021A1F3CF00079450E /* num_hp.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB770FD1A1F3CF00079450E /* num_hp.png */; };
 		BFDAB3151A1A0E2100E450EC /* BattleMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB23F1A1A0E2100E450EC /* BattleMgr.cpp */; };
 		BFDAB3161A1A0E2100E450EC /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2411A1A0E2100E450EC /* BattleScene.cpp */; };
 		BFDAB3171A1A0E2100E450EC /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2431A1A0E2100E450EC /* Card.cpp */; };
@@ -169,7 +178,6 @@
 		BFDAB39C1A1B0B0000E450EC /* bg_snowfield1.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB38E1A1B0B0000E450EC /* bg_snowfield1.png */; };
 		BFDAB39D1A1B0B0000E450EC /* bg_snowfield2.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB38F1A1B0B0000E450EC /* bg_snowfield2.png */; };
 		BFDAB3C41A1B116600E450EC /* longNv.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3A01A1B116600E450EC /* longNv.atlas */; };
-		BFDAB3C51A1B116600E450EC /* longNv.json in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3A11A1B116600E450EC /* longNv.json */; };
 		BFDAB3C61A1B116600E450EC /* longNv.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3A21A1B116600E450EC /* longNv.png */; };
 		BFDAB3C71A1B116600E450EC /* longNv2.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3A31A1B116600E450EC /* longNv2.png */; };
 		BFDAB3C81A1B116600E450EC /* longNv3.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3A41A1B116600E450EC /* longNv3.png */; };
@@ -182,7 +190,6 @@
 		BFDAB3CF1A1B116600E450EC /* man20.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3AD1A1B116600E450EC /* man20.plist */; };
 		BFDAB3D01A1B116600E450EC /* man20.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3AE1A1B116600E450EC /* man20.png */; };
 		BFDAB3D11A1B116600E450EC /* neZha.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3B01A1B116600E450EC /* neZha.atlas */; };
-		BFDAB3D21A1B116600E450EC /* neZha.json in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3B11A1B116600E450EC /* neZha.json */; };
 		BFDAB3D31A1B116600E450EC /* neZha.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3B21A1B116600E450EC /* neZha.png */; };
 		BFDAB3D41A1B116600E450EC /* neZha2.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3B31A1B116600E450EC /* neZha2.png */; };
 		BFDAB3D51A1B116600E450EC /* neZha3.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3B41A1B116600E450EC /* neZha3.png */; };
@@ -304,6 +311,15 @@
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BFB770F01A1F2BB30079450E /* neZha.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = neZha.json; sourceTree = "<group>"; };
+		BFB770F21A1F33CD0079450E /* longNv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = longNv.json; sourceTree = "<group>"; };
+		BFB770F41A1F374E0079450E /* hurt_fire2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hurt_fire2.plist; sourceTree = "<group>"; };
+		BFB770F51A1F374E0079450E /* hurt_fire2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hurt_fire2.png; sourceTree = "<group>"; };
+		BFB770F91A1F3CF00079450E /* immunity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = immunity.png; sourceTree = "<group>"; };
+		BFB770FA1A1F3CF00079450E /* miss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = miss.png; sourceTree = "<group>"; };
+		BFB770FB1A1F3CF00079450E /* num_heal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num_heal.png; sourceTree = "<group>"; };
+		BFB770FC1A1F3CF00079450E /* num_hit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num_hit.png; sourceTree = "<group>"; };
+		BFB770FD1A1F3CF00079450E /* num_hp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num_hp.png; sourceTree = "<group>"; };
 		BFDAB23F1A1A0E2100E450EC /* BattleMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleMgr.cpp; sourceTree = "<group>"; };
 		BFDAB2401A1A0E2100E450EC /* BattleMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleMgr.h; sourceTree = "<group>"; };
 		BFDAB2411A1A0E2100E450EC /* BattleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleScene.cpp; sourceTree = "<group>"; };
@@ -523,7 +539,6 @@
 		BFDAB38E1A1B0B0000E450EC /* bg_snowfield1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_snowfield1.png; sourceTree = "<group>"; };
 		BFDAB38F1A1B0B0000E450EC /* bg_snowfield2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_snowfield2.png; sourceTree = "<group>"; };
 		BFDAB3A01A1B116600E450EC /* longNv.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = longNv.atlas; sourceTree = "<group>"; };
-		BFDAB3A11A1B116600E450EC /* longNv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = longNv.json; sourceTree = "<group>"; };
 		BFDAB3A21A1B116600E450EC /* longNv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = longNv.png; sourceTree = "<group>"; };
 		BFDAB3A31A1B116600E450EC /* longNv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = longNv2.png; sourceTree = "<group>"; };
 		BFDAB3A41A1B116600E450EC /* longNv3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = longNv3.png; sourceTree = "<group>"; };
@@ -536,7 +551,6 @@
 		BFDAB3AD1A1B116600E450EC /* man20.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = man20.plist; sourceTree = "<group>"; };
 		BFDAB3AE1A1B116600E450EC /* man20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man20.png; sourceTree = "<group>"; };
 		BFDAB3B01A1B116600E450EC /* neZha.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = neZha.atlas; sourceTree = "<group>"; };
-		BFDAB3B11A1B116600E450EC /* neZha.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = neZha.json; sourceTree = "<group>"; };
 		BFDAB3B21A1B116600E450EC /* neZha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neZha.png; sourceTree = "<group>"; };
 		BFDAB3B31A1B116600E450EC /* neZha2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neZha2.png; sourceTree = "<group>"; };
 		BFDAB3B41A1B116600E450EC /* neZha3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neZha3.png; sourceTree = "<group>"; };
@@ -689,6 +703,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BFB770F81A1F3CF00079450E /* fight */,
 				BF0BAA1A1A1DDCDB00B64D82 /* effect */,
 				BFDAB4081A1B2ADC00E450EC /* BattleScene.csb */,
 				BFDAB4091A1B2ADC00E450EC /* Card.csb */,
@@ -788,12 +803,26 @@
 		BF0BAA1A1A1DDCDB00B64D82 /* effect */ = {
 			isa = PBXGroup;
 			children = (
+				BFB770F41A1F374E0079450E /* hurt_fire2.plist */,
+				BFB770F51A1F374E0079450E /* hurt_fire2.png */,
 				BF0BAA1F1A1DE33300B64D82 /* posui.plist */,
 				BF0BAA201A1DE33300B64D82 /* posui.png */,
 				BF0BAA1B1A1DDCDB00B64D82 /* kpps.plist */,
 				BF0BAA1C1A1DDCDB00B64D82 /* kpps.png */,
 			);
 			path = effect;
+			sourceTree = "<group>";
+		};
+		BFB770F81A1F3CF00079450E /* fight */ = {
+			isa = PBXGroup;
+			children = (
+				BFB770F91A1F3CF00079450E /* immunity.png */,
+				BFB770FA1A1F3CF00079450E /* miss.png */,
+				BFB770FB1A1F3CF00079450E /* num_heal.png */,
+				BFB770FC1A1F3CF00079450E /* num_hit.png */,
+				BFB770FD1A1F3CF00079450E /* num_hp.png */,
+			);
+			path = fight;
 			sourceTree = "<group>";
 		};
 		BFDAB23E1A1A0E2100E450EC /* battle */ = {
@@ -1159,8 +1188,8 @@
 		BFDAB39F1A1B116600E450EC /* longnv */ = {
 			isa = PBXGroup;
 			children = (
+				BFB770F21A1F33CD0079450E /* longNv.json */,
 				BFDAB3A01A1B116600E450EC /* longNv.atlas */,
-				BFDAB3A11A1B116600E450EC /* longNv.json */,
 				BFDAB3A21A1B116600E450EC /* longNv.png */,
 				BFDAB3A31A1B116600E450EC /* longNv2.png */,
 				BFDAB3A41A1B116600E450EC /* longNv3.png */,
@@ -1193,8 +1222,8 @@
 		BFDAB3AF1A1B116600E450EC /* neZha */ = {
 			isa = PBXGroup;
 			children = (
+				BFB770F01A1F2BB30079450E /* neZha.json */,
 				BFDAB3B01A1B116600E450EC /* neZha.atlas */,
-				BFDAB3B11A1B116600E450EC /* neZha.json */,
 				BFDAB3B21A1B116600E450EC /* neZha.png */,
 				BFDAB3B31A1B116600E450EC /* neZha2.png */,
 				BFDAB3B41A1B116600E450EC /* neZha3.png */,
@@ -1334,6 +1363,7 @@
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				BF0BAA1D1A1DDCDB00B64D82 /* kpps.plist in Resources */,
+				BFB770F31A1F33CD0079450E /* longNv.json in Resources */,
 				BFDAB3DB1A1B116600E450EC /* huLi.json in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				BFDAB3D51A1B116600E450EC /* neZha3.png in Resources */,
@@ -1365,6 +1395,7 @@
 				BFDAB3CF1A1B116600E450EC /* man20.plist in Resources */,
 				BFDAB3CD1A1B116600E450EC /* man animation0.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
+				BFB770F11A1F2BB30079450E /* neZha.json in Resources */,
 				BFDAB3951A1B0B0000E450EC /* bg_forest1.png in Resources */,
 				BFDAB3CA1A1B116600E450EC /* longNv5.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
@@ -1372,9 +1403,12 @@
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				BFDAB3D81A1B116600E450EC /* neZha6.png in Resources */,
 				BFDAB3E01A1B116600E450EC /* zhu.ExportJson in Resources */,
+				BFB770FF1A1F3CF00079450E /* miss.png in Resources */,
 				BFDAB41E1A1B2ADC00E450EC /* home.png in Resources */,
+				BFB771001A1F3CF00079450E /* num_heal.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				BFDAB41A1A1B2ADC00E450EC /* Default in Resources */,
+				BFB771011A1F3CF00079450E /* num_hit.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				BFDAB39C1A1B0B0000E450EC /* bg_snowfield1.png in Resources */,
 				BFDAB3E21A1B116600E450EC /* zhu0.png in Resources */,
@@ -1387,13 +1421,13 @@
 				BFDAB3C41A1B116600E450EC /* longNv.atlas in Resources */,
 				BFDAB3CB1A1B116600E450EC /* man animation.ExportJson in Resources */,
 				BFDAB3DA1A1B116600E450EC /* huLi.atlas in Resources */,
+				BFB770FE1A1F3CF00079450E /* immunity.png in Resources */,
 				BFDAB3CC1A1B116600E450EC /* man animation0.plist in Resources */,
 				BFDAB3DC1A1B116600E450EC /* huLi.png in Resources */,
 				BFDAB4251A1B2ADC00E450EC /* tree_block.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				BFDAB3CE1A1B116600E450EC /* man2.ExportJson in Resources */,
 				BFDAB41F1A1B2ADC00E450EC /* login.plist in Resources */,
-				BFDAB3D21A1B116600E450EC /* neZha.json in Resources */,
 				BFDAB3D91A1B116600E450EC /* neZha7.png in Resources */,
 				BFDAB3DD1A1B116600E450EC /* huLi2.png in Resources */,
 				BFDAB3D11A1B116600E450EC /* neZha.atlas in Resources */,
@@ -1402,6 +1436,8 @@
 				BFDAB3DF1A1B116600E450EC /* huLi4.png in Resources */,
 				BFDAB3D01A1B116600E450EC /* man20.png in Resources */,
 				BFDAB37A1A1A106200E450EC /* round.png in Resources */,
+				BFB770F61A1F374E0079450E /* hurt_fire2.plist in Resources */,
+				BFB770F71A1F374E0079450E /* hurt_fire2.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				BFDAB3C71A1B116600E450EC /* longNv2.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
@@ -1411,7 +1447,6 @@
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				BFDAB3DE1A1B116600E450EC /* huLi3.png in Resources */,
 				BFDAB3D61A1B116600E450EC /* neZha4.png in Resources */,
-				BFDAB3C51A1B116600E450EC /* longNv.json in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				BFDAB41C1A1B2ADC00E450EC /* fight.png in Resources */,
 				BFDAB3981A1B0B0000E450EC /* bg_island1.png in Resources */,
@@ -1419,6 +1454,7 @@
 				BFDAB41B1A1B2ADC00E450EC /* fight.plist in Resources */,
 				BFDAB3C61A1B116600E450EC /* longNv.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
+				BFB771021A1F3CF00079450E /* num_hp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

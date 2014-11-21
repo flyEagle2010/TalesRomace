@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "BaseUI.h"
 #include "Clip.h"
+#include "BattleMgr.h"
 
 class Card : public BaseUI
 {
@@ -22,6 +23,7 @@ public:
     void move(float delay);
     void useSkill();
     void mergeToHero();
+    void playEnd();
 private:
     int index;
 };

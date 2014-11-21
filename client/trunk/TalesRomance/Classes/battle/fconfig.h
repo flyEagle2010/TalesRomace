@@ -22,6 +22,8 @@
 
 enum TrackIndex{
     ANI_COMMON,
+    ANI_ATTACK,
+    ANI_ATTACKED,
     ANI_DIE,
     ANI_WIN
 };

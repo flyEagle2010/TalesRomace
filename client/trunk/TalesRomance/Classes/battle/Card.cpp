@@ -44,13 +44,21 @@ void Card::move(float delay)
 
 void Card::useSkill()
 {
-    this->ui->setScale(0.2);
-    Clip* clip=Clip::create("posui.plist", "posui",5);
+    this->ui->setVisible(false);
+    Clip* clip=Clip::create("kpps.plist", "kpps",12);
     this->addChild(clip);
     clip->setScale(3);
     float duration=clip->play();
     
-    this->runAction(Sequence::create(DelayTime::create(duration),MoveTo::create(0.2, Vec2(300,400)), NULL));
+    Vec2 end=BattleMgr::getInstance()->view->hero->getPosition()+Vec2(0,150);
+    CallFunc* cf=CallFunc::create(std::bind(&Card::playEnd, this));
+    this->runAction(Sequence::create(Spawn::create(ScaleTo::create(duration, 0),MoveTo::create(duration, end),NULL),cf, NULL));
+}
+
+void Card::playEnd()
+{
+    BattleMgr::getInstance()->view->attack();
+    this->removeFromParent();
 }
 
 void Card::mergeToHero()

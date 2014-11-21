@@ -85,8 +85,8 @@ void BattleScene::initHero()
     this->hero->setPosition(Vec2(0,0));
     this->npc->setPosition(Vec2(wsize.width,0));
     
-    this->hero->runAction(JumpTo::create(0.6, Vec2(wsize.width/2.-200,wsize.height/3.0), 400, 1));
-    this->npc->runAction(JumpTo::create(0.6, Vec2(wsize.width/2.+200,wsize.height/3.0), 400, 1));
+    this->hero->runAction(JumpTo::create(0.6, Vec2(wsize.width/2.-200,wsize.height/3.0), 300, 1));
+    this->npc->runAction(JumpTo::create(0.6, Vec2(wsize.width/2.+200,wsize.height/3.0), 300, 1));
     
     this->runAction(Sequence::create(DelayTime::create(0.6),CallFunc::create(CC_CALLBACK_0(BattleScene::playRound, this)), NULL));
 }
@@ -111,19 +111,22 @@ void BattleScene::playCard()
         CallFunc* cf=CallFunc::create(std::bind(&Card::useSkill, card));
         card->runAction(Sequence::create(Show::create(),DelayTime::create(0.8*i),sp,SkewTo::create(0.3, 0, 0),cf,NULL));
     }
-    for(int i=0;i<3;i++){
-        
-    }
 }
 
 void BattleScene::attack()
 {
-    
+    this->hero->attack(ani_attack);
 }
 
 void BattleScene::petAttack()
 {
     
+}
+
+void BattleScene::attacked()
+{
+    PHit phit;
+    this->npc->attacked(phit);
 }
 
 void BattleScene::touchButtonEvent(cocos2d::Ref *pSender, Widget::TouchEventType type)

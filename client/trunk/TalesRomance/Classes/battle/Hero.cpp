@@ -38,7 +38,7 @@ bool Hero::init(std::string fPath,std::string rPath,int pos)
     }
     this->addChild(skeletonNode);
     this->skeletonNode->setEndListener(CC_CALLBACK_1(Hero::onAnimationEnd, this));
-    
+    this->skeletonNode->setEventListener(CC_CALLBACK_2(Hero::onSkeletonEvent, this));
  
 	return true;
 }
@@ -74,36 +74,22 @@ void Hero::move(Vec2 vec)
 
 void Hero::attack(std::string actionName)
 {
-    this->setAnimation(TrackIndex::ANI_COMMON, actionName, false);
+    this->setAnimation(TrackIndex::ANI_ATTACK, actionName, false);
     this->skeletonNode->addAnimation(TrackIndex::ANI_COMMON, ani_idle, true);
 }
 
 void Hero::attacked(PHit& pHit)
 {
-    this->fallHp(pHit);
+//    this->fallHp(pHit);
+    this->setAnimation(TrackIndex::ANI_ATTACKED ,ani_attacked, false);
+    this->skeletonNode->addAnimation(TrackIndex::ANI_COMMON, ani_idle, true);
     
-    std::string name="";
-    if(this->skeletonNode->getCurrent()){
-        name=this->skeletonNode->getCurrent()->animation->name;
-    }
-    
-    if(name==ani_onAir || name==ani_onAirAttacked){
-        this->skeletonNode->clearTrack();
-        this->setAnimation(TrackIndex::ANI_COMMON, ani_onAirAttacked, false);
-        this->skeletonNode->addAnimation(TrackIndex::ANI_COMMON, ani_onAir, true);
-        this->attackedEffect();
-    }
-    else if(name!=ani_defence && name!= ani_attack && name!=ani_skillAttack1 && name!=ani_skillAttack2 && name!=ani_win){
-        this->setAnimation(TrackIndex::ANI_COMMON ,ani_attacked, false);
-        this->skeletonNode->addAnimation(TrackIndex::ANI_COMMON, ani_idle, true);
-        
-        this->attackedEffect();
-    }
+    this->attackedEffect();
 }
 
 void Hero::attackedEffect()
 {
-    Clip* clip=Clip::create("hurt_wuli.plist", "hurt_wuli",20);
+    Clip* clip=Clip::create("hurt_fire2.plist", "hurt_fire2",20);
     this->addChild(clip,2);
     //Vec2 pos=Vec2(this->skeletonNode->convertToWorldSpace(Vec2(bone->worldX,bone->worldY)));
 
@@ -228,6 +214,19 @@ void Hero::setAnimation(int trackIndex, std::string animName ,bool loop)
     this->skeletonNode->setToSetupPose();
     this->skeletonNode->setAnimation(trackIndex, animName, loop);
 }
+
+void Hero::onSkeletonEvent(int trackIndex, spEvent* event)
+{
+    log("%d event: %s, %d, %f, %s", trackIndex, event->data->name, event->intValue, event->floatValue, event->stringValue);
+    if(trackIndex==TrackIndex::ANI_ATTACK){
+        BattleMgr::getInstance()->view->attacked();
+    }
+    if(trackIndex==TrackIndex::ANI_ATTACKED){
+        PHit phit;
+        phit.set_hp(200);
+        this->fallHp(phit);
+    }
+};
 
 void Hero::onAnimationEnd(int trackIndex)
 {

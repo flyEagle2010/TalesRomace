@@ -81,5 +81,7 @@ private:
     void onFrameEvent(Bone *bone, const std::string& frameEventName, int originFrameIndex, int currentFrameIndex);
     void animationEvent(Armature *armature, MovementEventType movementType, const std::string& movementID);
     void onAnimationEnd(int trackIndex);
+    void onSkeletonEvent(int trackIndex,spEvent* event);
+   
 };
 #endif /* defined(__fancyHeart__Hero__) */

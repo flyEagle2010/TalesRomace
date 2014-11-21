@@ -25,7 +25,7 @@ using namespace ui;
 using namespace cocostudio;
 class FData;
 class FighterMgr;
-class SkillIcon;
+class Card;
 class BattleScene:public BaseUI{
 public:
 	static Scene* createScene();
@@ -35,25 +35,26 @@ public:
     virtual void onExit();
     virtual void touchButtonEvent(cocos2d::Ref *pSender, Widget::TouchEventType type);
     
+    void attack();
+    void attacked();
 private:
     void startAnimation();
     void initHero();
     void playRound();
     
     void playCard();
-    void attack();
     void petAttack();
     
-    Hero* hero;
-    Hero* npc;
+
     Vector<Card*> cards;
 public:
     Node* heroNode;
-    
     Node* heroInfo1;
     Node* heroInfo2;
     Node* title;
     Node* bottom;
     Sprite* bg;
+    Hero* hero;
+    Hero* npc;
 };
 #endif /* defined(__fancyHeart__BattleScene__) */
