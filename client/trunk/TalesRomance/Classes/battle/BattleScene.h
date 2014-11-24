@@ -19,6 +19,7 @@
 #include "Clip.h"
 #include "Hero.h"
 #include "Card.h"
+#include "StandDraw.h"
 
 USING_NS_CC;
 using namespace ui;
@@ -47,6 +48,7 @@ private:
     
 
     Vector<Card*> cards;
+    Size wsize;
 public:
     Node* heroNode;
     Node* heroInfo1;
@@ -56,5 +58,6 @@ public:
     Sprite* bg;
     Hero* hero;
     Hero* npc;
+    Hero* pet;
 };
 #endif /* defined(__fancyHeart__BattleScene__) */

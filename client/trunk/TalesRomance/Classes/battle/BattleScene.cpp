@@ -32,8 +32,10 @@ bool BattleScene::init(){
     if(!BaseUI::init("BattleScene.csb","fight.plist")){
         return false;
     }
+    this->wsize=Director::getInstance()->getWinSize();
+    
     this->bg=Sprite::create("bg_china1.png");
-    bg->setPosition(Vec2(568,320));
+    bg->setPosition(Vec2(wsize.width*0.5,wsize.height*0.5));
     this->addChild(bg,-1);
     
     this->heroNode=Node::create();
@@ -99,7 +101,6 @@ void BattleScene::playRound()
 
 void BattleScene::playCard()
 {
-    Size wsize=Director::getInstance()->getWinSize();
     for(int i=0;i<3;i++){
         Card* card=this->cards.at(i);
         Size csize=card->getContentSize();
@@ -120,7 +121,13 @@ void BattleScene::attack()
 
 void BattleScene::petAttack()
 {
+    this->pet=Hero::create("neZha.json", "neZha.atlas", 2);
+    this->heroNode->addChild(pet);
     
+    CallFunc* cf=CallFunc::create(std::bind(&Hero::run, this->pet));
+    JumpTo* jump=JumpTo::create(0.6, Vec2(wsize.width/2.+200,wsize.height/3.0), 200, 1);
+    Sequence* sq=Sequence::create(jump,cf, NULL);
+    this->pet->runAction(sq);
 }
 
 void BattleScene::attacked()

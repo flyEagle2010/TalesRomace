@@ -17,19 +17,19 @@ Hero* Hero::create(std::string fPath,std::string rPath,int pos)
     {
         pRet->autorelease();
         return pRet;
-    }else{
-        delete pRet;
-        pRet = NULL;
-        return NULL;
     }
+    
+    CC_SAFE_DELETE(pRet);
+    
+    return nullptr;
 }
 
 bool Hero::init(std::string fPath,std::string rPath,int pos)
 {
     this->pos=pos;
 	//init ui
-    float scale=fPath=="huLi.json"?0.25:0.5;
-    this->skeletonNode = SkeletonAnimation::createWithFile(fPath, rPath, 0.5);
+    float scale=0.5;
+    this->skeletonNode = SkeletonAnimation::createWithFile(fPath, rPath, scale);
 
     if(this->pos<1){
         this->skeletonNode->setScale(-1,1);
@@ -56,9 +56,6 @@ void Hero::stand()
 
 void Hero::run()
 {
-    if(this->getActionByTag(ACTION_RUN_TAG)){
-        this->stopActionByTag(ACTION_RUN_TAG);
-    }
     Vec2 vec(pos>4?-1100:1100,0);
     MoveBy* move=MoveBy::create(5, vec);
     move->setTag(ACTION_RUN_TAG);
@@ -80,7 +77,6 @@ void Hero::attack(std::string actionName)
 
 void Hero::attacked(PHit& pHit)
 {
-//    this->fallHp(pHit);
     this->setAnimation(TrackIndex::ANI_ATTACKED ,ani_attacked, false);
     this->skeletonNode->addAnimation(TrackIndex::ANI_COMMON, ani_idle, true);
     
@@ -91,8 +87,6 @@ void Hero::attackedEffect()
 {
     Clip* clip=Clip::create("hurt_fire2.plist", "hurt_fire2",20);
     this->addChild(clip,2);
-    //Vec2 pos=Vec2(this->skeletonNode->convertToWorldSpace(Vec2(bone->worldX,bone->worldY)));
-
     spBone* bone=this->skeletonNode->findBone("body");
     clip->setPosition(Vec2(bone->worldX,bone->worldY));
     clip->play();
@@ -117,8 +111,6 @@ void Hero::defence(PHit& pHit)
         this->skeletonNode->addAnimation(0, ani_idle, true);
     }
     Clip* clip=Clip::create("dun.plist", "dun",10);
-    //clip->setPosition(this->getPosition()+Vec2(0,60));
-    //BattleMgr::getInstance()->view->addChild(clip,2);
     this->addChild(clip,2);
     if(this->pos>4){
         clip->setScale(0.5,0.5);
@@ -178,8 +170,7 @@ void Hero::fallHp(PHit& phit)
     label->setString(str);
     label->setScale(1);
     BattleMgr::getInstance()->view->addChild(label,2);
-//    this->addChild(label);
-    //Vec2 pos=this->skeletonNode->getPosition();
+    
     label->setPosition(this->convertToWorldSpace(Vec2(body->worldX,body->worldY+100)));
     ScaleTo* scale1=ScaleTo::create(0.15, 0.5);
     
@@ -191,7 +182,6 @@ void Hero::fallHp(PHit& phit)
     
     label->runAction(Sequence::create(scale1,DelayTime::create(0.3),sp3,cf4, NULL));
 
-    //this->hpBar->runAction(ProgressTo::create(0.3, phit.perhp()));
 }
 
 void Hero::hitWord()
@@ -231,6 +221,14 @@ void Hero::onSkeletonEvent(int trackIndex, spEvent* event)
 void Hero::onAnimationEnd(int trackIndex)
 {
     switch (trackIndex) {
+        case TrackIndex::ANI_ATTACK:
+        {
+            StandDraw* sdraw=StandDraw::create();
+            BattleMgr::getInstance()->view->addChild(sdraw,2);
+            sdraw->setPosition(Vec2(0,320));
+            sdraw->play();
+            break;
+        }
         case TrackIndex::ANI_DIE:
         {
             Sequence* sq=Sequence::create(DelayTime::create(0.2),FadeOut::create(2.0),CallFunc::create(CC_CALLBACK_0(Hero::dieClear, this)), NULL);

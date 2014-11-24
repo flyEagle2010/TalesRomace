@@ -222,6 +222,7 @@
 		BFDAB4231A1B2ADC00E450EC /* Maze.csb in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB4141A1B2ADC00E450EC /* Maze.csb */; };
 		BFDAB4241A1B2ADC00E450EC /* tree_block_bottom.tmx in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB4151A1B2ADC00E450EC /* tree_block_bottom.tmx */; };
 		BFDAB4251A1B2ADC00E450EC /* tree_block.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB4161A1B2ADC00E450EC /* tree_block.png */; };
+		BFE241C41A22DA140030771C /* StandDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE241C21A22DA140030771C /* StandDraw.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -583,6 +584,8 @@
 		BFDAB4141A1B2ADC00E450EC /* Maze.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = Maze.csb; path = ../../../../ui/TalesRomac/res/Maze.csb; sourceTree = "<group>"; };
 		BFDAB4151A1B2ADC00E450EC /* tree_block_bottom.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tree_block_bottom.tmx; path = ../../../../ui/TalesRomac/res/tree_block_bottom.tmx; sourceTree = "<group>"; };
 		BFDAB4161A1B2ADC00E450EC /* tree_block.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tree_block.png; path = ../../../../ui/TalesRomac/res/tree_block.png; sourceTree = "<group>"; };
+		BFE241C21A22DA140030771C /* StandDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StandDraw.cpp; sourceTree = "<group>"; };
+		BFE241C31A22DA140030771C /* StandDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandDraw.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -837,6 +840,8 @@
 				BFDAB2451A1A0E2100E450EC /* fconfig.h */,
 				BFDAB2461A1A0E2100E450EC /* Hero.cpp */,
 				BFDAB2471A1A0E2100E450EC /* Hero.h */,
+				BFE241C21A22DA140030771C /* StandDraw.cpp */,
+				BFE241C31A22DA140030771C /* StandDraw.h */,
 			);
 			path = battle;
 			sourceTree = "<group>";
@@ -1531,6 +1536,7 @@
 				BFDAB36A1A1A0E2100E450EC /* XRoleData.cpp in Sources */,
 				BFDAB3411A1A0E2100E450EC /* stringprintf.cc in Sources */,
 				BFDAB33B1A1A0E2100E450EC /* repeated_field.cc in Sources */,
+				BFE241C41A22DA140030771C /* StandDraw.cpp in Sources */,
 				BFDAB32B1A1A0E2100E450EC /* descriptor_database.cc in Sources */,
 				BFDAB31E1A1A0E2100E450EC /* RotateList.cpp in Sources */,
 				BFDAB3171A1A0E2100E450EC /* Card.cpp in Sources */,

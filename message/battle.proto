@@ -1,0 +1,34 @@
+
+message PBattle{
+	repeated PFightItem heros=1;
+	repeated PRound rounds=2;
+	repeated int32 items=3; //获得道具
+	required int32 gold=4; //获得金币
+	required int32 exp=5; //获得经验
+}
+	
+message PFightItem{
+	required int32 id=1; //id
+	required int32 hp=2; //初始血量
+	required string name=3; //名字
+	required string icon=4; //头像
+	required string avatar=5; //形象
+	required string friendID=6; //好友id
+	required string friendName=7; //好友名字
+	required string friendIcon=8; //
+	required string friendAvatar=9; //
+}
+
+message PRound{
+	required int32 target=1; // 目标0对方 1自己
+	repeated int32 cards=2; //角色使用的卡牌
+	repeated bool useCardSkills=3; //卡牌技能是否生效
+	repeated int32 effects=4; //普通攻击产生的效果
+	required int32 hp=5; //普通攻击伤害
+	
+	required int32 aoyiSkillID=6; //奥义技能id
+	required int32 aoyiHp=7; // 奥义伤害
+	repeated int32 aoyiEffects=8; //奥义产生的效果
+
+	repeated int32 delBuffs=9; //取消的buff
+}

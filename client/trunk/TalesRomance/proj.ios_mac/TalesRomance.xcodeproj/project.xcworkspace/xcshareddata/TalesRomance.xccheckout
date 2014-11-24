@@ -6,19 +6,15 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>894E0617-AE3D-4263-A5B8-E2D114D7D434</string>
-	<key>IDESourceControlProjectName</key>
-	<string>TalesRomance</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6866A8115BE2B58BEDDFC8E6395DBA8162D47727</key>
 		<string>https://github.com/flyEagle2010/TalesRomace.git</string>
 	</dict>
-	<key>IDESourceControlProjectPath</key>
-	<string>client/trunk/TalesRomance/proj.ios_mac/TalesRomance.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6866A8115BE2B58BEDDFC8E6395DBA8162D47727</key>
-		<string>../../../../../..</string>
+		<string>talesromace/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/flyEagle2010/TalesRomace.git</string>
@@ -34,7 +30,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>6866A8115BE2B58BEDDFC8E6395DBA8162D47727</string>
 			<key>IDESourceControlWCCName</key>
-			<string>TalesRomace</string>
+			<string>talesromace</string>
 		</dict>
 	</array>
 </dict>
