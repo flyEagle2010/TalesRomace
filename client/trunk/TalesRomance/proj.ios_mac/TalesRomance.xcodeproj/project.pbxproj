@@ -73,6 +73,9 @@
 		BFCCB4481A2609CC0049CFE8 /* battle.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4461A2609CC0049CFE8 /* battle.png */; };
 		BFCCB44C1A2712BD0049CFE8 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB44B1A2712BD0049CFE8 /* test.png */; };
 		BFCCB4521A2837450049CFE8 /* battleBg.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4511A2837450049CFE8 /* battleBg.png */; };
+		BFCCB4561A2879910049CFE8 /* map.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4531A2879910049CFE8 /* map.plist */; };
+		BFCCB4571A2879910049CFE8 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4541A2879910049CFE8 /* map.png */; };
+		BFCCB4581A2879910049CFE8 /* MapScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4551A2879910049CFE8 /* MapScene.csb */; };
 		BFD09E4A1A24749D00992CDA /* tree_block_top.tmx in Resources */ = {isa = PBXBuildFile; fileRef = BFD09E491A24749D00992CDA /* tree_block_top.tmx */; };
 		BFD09E4E1A24971600992CDA /* maze_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD09E4B1A24971600992CDA /* maze_bg.png */; };
 		BFD09E4F1A24971600992CDA /* maze.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFD09E4C1A24971600992CDA /* maze.plist */; };
@@ -337,6 +340,9 @@
 		BFCCB4461A2609CC0049CFE8 /* battle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = battle.png; path = ../../../../ui/TalesRomac/res/battle.png; sourceTree = "<group>"; };
 		BFCCB44B1A2712BD0049CFE8 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		BFCCB4511A2837450049CFE8 /* battleBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battleBg.png; sourceTree = "<group>"; };
+		BFCCB4531A2879910049CFE8 /* map.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = map.plist; path = ../../../../ui/TalesRomac/res/map.plist; sourceTree = "<group>"; };
+		BFCCB4541A2879910049CFE8 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = ../../../../ui/TalesRomac/res/map.png; sourceTree = "<group>"; };
+		BFCCB4551A2879910049CFE8 /* MapScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = MapScene.csb; path = ../../../../ui/TalesRomac/res/MapScene.csb; sourceTree = "<group>"; };
 		BFD09E491A24749D00992CDA /* tree_block_top.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tree_block_top.tmx; path = ../../../../ui/TalesRomac/res/tree_block_top.tmx; sourceTree = "<group>"; };
 		BFD09E4B1A24971600992CDA /* maze_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maze_bg.png; path = ../../../../ui/TalesRomac/res/maze_bg.png; sourceTree = "<group>"; };
 		BFD09E4C1A24971600992CDA /* maze.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = maze.plist; path = ../../../../ui/TalesRomac/res/maze.plist; sourceTree = "<group>"; };
@@ -732,6 +738,9 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BFCCB4531A2879910049CFE8 /* map.plist */,
+				BFCCB4541A2879910049CFE8 /* map.png */,
+				BFCCB4551A2879910049CFE8 /* MapScene.csb */,
 				BFCCB4451A2609CC0049CFE8 /* battle.plist */,
 				BFCCB4461A2609CC0049CFE8 /* battle.png */,
 				BFD09E571A257F7500992CDA /* effect */,
@@ -1449,6 +1458,7 @@
 				BF0BAA211A1DE33300B64D82 /* posui.plist in Resources */,
 				BFDAB3CF1A1B116600E450EC /* man20.plist in Resources */,
 				BFDAB3CD1A1B116600E450EC /* man animation0.png in Resources */,
+				BFCCB4571A2879910049CFE8 /* map.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				BFD09E5C1A257F7500992CDA /* aoyi.plist in Resources */,
 				BFB770F11A1F2BB30079450E /* neZha.json in Resources */,
@@ -1485,6 +1495,7 @@
 				BFB770FE1A1F3CF00079450E /* immunity.png in Resources */,
 				BFDAB3CC1A1B116600E450EC /* man animation0.plist in Resources */,
 				BFDAB3DC1A1B116600E450EC /* huLi.png in Resources */,
+				BFCCB4581A2879910049CFE8 /* MapScene.csb in Resources */,
 				BFDAB4251A1B2ADC00E450EC /* tree_block.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				BFDAB3CE1A1B116600E450EC /* man2.ExportJson in Resources */,
@@ -1493,6 +1504,7 @@
 				BFDAB3DD1A1B116600E450EC /* huLi2.png in Resources */,
 				BFDAB3D11A1B116600E450EC /* neZha.atlas in Resources */,
 				BFDAB32A1A1A0E2100E450EC /* descriptor.proto in Resources */,
+				BFCCB4561A2879910049CFE8 /* map.plist in Resources */,
 				BFDAB3931A1B0B0000E450EC /* bg_dreamland1.png in Resources */,
 				BFDAB3DF1A1B116600E450EC /* huLi4.png in Resources */,
 				BFD09E5D1A257F7500992CDA /* aoyi.png in Resources */,
