@@ -2,33 +2,50 @@
 message PBattle{
 	repeated PFightItem heros=1;
 	repeated PRound rounds=2;
-	repeated int32 items=3; //获得道具
+	repeated int32 cards=3; //卡牌
 	required int32 gold=4; //获得金币
-	required int32 exp=5; //获得经验
+	required int64 winnerID=5; // 胜利者id
+	required int32 type=6; //战斗类型 1 pvp 2pve 
 }
 	
 message PFightItem{
-	required int32 id=1; //id
+	required int64 id=1; //id
 	required int32 hp=2; //初始血量
 	required string name=3; //名字
-	required string icon=4; //头像
-	required string avatar=5; //形象
-	required string friendID=6; //好友id
-	required string friendName=7; //好友名字
-	required string friendIcon=8; //
-	required string friendAvatar=9; //
+	required int32 xid=4; //角色的 excelid
+	required int64 friendID=5; //好友id
+	required string friendName=6; //好友名字
+	required int32 friendXid=7; //好友的xid
+	
 }
 
 message PRound{
-	required int32 target=1; // 目标0对方 1自己
-	repeated int32 cards=2; //角色使用的卡牌
-	repeated bool useCardSkills=3; //卡牌技能是否生效
-	repeated int32 effects=4; //普通攻击产生的效果
-	required int32 hp=5; //普通攻击伤害
-	
-	required int32 aoyiSkillID=6; //奥义技能id
-	required int32 aoyiHp=7; // 奥义伤害
-	repeated int32 aoyiEffects=8; //奥义产生的效果
+	required int32 source=1;//攻击者 0玩家 1敌人
+	required bool isSkip=2;//是否跳过
+	repeated Phurt cards=3; //角色使用的卡牌
+	optional int32 aoyiSkillID=4; //奥义技能id
 
-	repeated int32 delBuffs=9; //取消的buff
+	repeated string leftIcons=5; //取消的buff icon
+	repeated int32 leftStates=6; // 取消的 状态
+
+	repeated int32 buffHps=7; //回合开始的时候自己掉血
+	required int32 leftHp=8; //回合开始buff掉完血后的剩余血量
+}
+
+message Phurt{
+	optional int32 card=1; //角色使用的卡牌 xid
+	required bool skillID=2; //卡牌技能是否生效
+	repeated PTarget targets=3; 
+	optional int32 level=4; //卡牌等级
+	optional int32 star=5; //卡牌星级
+}
+
+message PTarget{
+	required int32 targetID=1; //0自己的牌 1自己角色 2地方角色
+	repeated int32 state=2; //0什么都没有 1不能行动 2不能施法 3不能放奥义 （对主角的） ，当前身上的
+	repeated string buffIcon=3; //buff小图标 当前身上的
+	required int32 hp=4; //血量变化 负的减血 
+	required int32 leftHp=5;
+	required int32 hpTypes=6; //伤害类型 0物理 1法术 2无
+	required int32 skillID=7; //主技能或者buffer id
 }

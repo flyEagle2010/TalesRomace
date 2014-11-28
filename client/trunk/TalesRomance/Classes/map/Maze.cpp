@@ -22,14 +22,25 @@ Maze* Maze::create()
 bool Maze::init()
 {
     BaseUI::init("Maze.csb", "");
+    
     this->map = TMXTiledMap::create("res/tree_block_bottom.tmx");
-    addChild(map, 0);
+    this->addChild(map, 0);
     Size wsize=Director::getInstance()->getWinSize();
     Size mapSize=this->map->getContentSize();
-    this->map->setPosition(Vec2((wsize.width-mapSize.width)/2.0,(wsize.height-mapSize.height)/2.0));
+    this->map->setPosition(Vec2(152,36));
     
     this->topLayer=this->map->getLayer("top");
     
+    this->goldLabel=(Label*)this->ui->getChildByName("goldLabel");
+    this->hpLabel=(Label*)this->ui->getChildByName("hpLabel");
+    this->numLabel=(Label*)this->ui->getChildByName("numLabel");
+    this->icon=(Sprite*)this->ui->getChildByName("icon");
+    this->hpIcon=(Sprite*)this->ui->getChildByName("hpIcon");
+    
+    Button* btn=(Button*)this->ui->getChildByName("btn_exit");
+    btn->addClickEventListener(CC_CALLBACK_1(Maze::clickButtonEvent,this));
+    
+    this->resetUI();
     
     auto listener = EventListenerTouchOneByOne::create();
     listener->onTouchBegan = [&](Touch *touch, Event *unused_event)->bool {return true;};
@@ -42,7 +53,15 @@ bool Maze::init()
 void Maze::onEnter()
 {
     BaseUI::onEnter();
- 
+}
+
+void Maze::resetUI()
+{
+    this->goldLabel->setString(Value(30).asString());
+    this->hpLabel->setString(Value(20).asString()+"/"+Value(100).asString());
+    this->numLabel->setString(Value(3).asString());
+    //this->icon->setDisplayFrame(Sprite::create("")->displayFrame());
+    //this->hpIcon->setDisplayFrame(Sprite::create("")->displayFrame());
 }
 
 Vec2 Maze::position2Grid(Vec2 position)
@@ -93,9 +112,17 @@ void Maze::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unusedEvent)
     }
 }
 
-void Maze::touchButtonEvent(Ref* pSender, TouchEventType type)
+void Maze::clickButtonEvent(Ref* pSender)
 {
-    
+    Button* btn=(Button*)pSender;
+    switch (btn->getTag()) {
+        case 5:
+            this->clear(true);
+            break;
+            
+        default:
+            break;
+    }
 }
 
 void Maze::initNetEvent()

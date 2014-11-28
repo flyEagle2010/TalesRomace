@@ -28,7 +28,7 @@ bool Hero::init(std::string fPath,std::string rPath,int pos)
 {
     this->pos=pos;
 	//init ui
-    float scale=0.5;
+    float scale=0.7;
     this->skeletonNode = SkeletonAnimation::createWithFile(fPath, rPath, scale);
 
     if(this->pos<1){
@@ -221,12 +221,10 @@ void Hero::onSkeletonEvent(int trackIndex, spEvent* event)
 void Hero::onAnimationEnd(int trackIndex)
 {
     switch (trackIndex) {
+            
         case TrackIndex::ANI_ATTACK:
         {
-            StandDraw* sdraw=StandDraw::create();
-            BattleMgr::getInstance()->view->addChild(sdraw,2);
-            sdraw->setPosition(Vec2(0,320));
-            sdraw->play();
+           
             break;
         }
         case TrackIndex::ANI_DIE:

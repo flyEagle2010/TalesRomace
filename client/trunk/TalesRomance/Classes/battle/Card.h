@@ -19,13 +19,15 @@ class Card : public BaseUI
 public:
     static Card* create(int index);
     bool init();
-    
-    void move(float delay);
+    void reset(int index,int groupNum,Value data);
+    void move();
     void useSkill();
     void mergeToHero();
     void playEnd();
 private:
     int index;
+    int groupNum;
+    Value data;
 };
 
 #endif /* defined(__TalesRomance__Card__) */

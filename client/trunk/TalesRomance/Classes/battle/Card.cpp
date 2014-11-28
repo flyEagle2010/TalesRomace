@@ -29,17 +29,22 @@ bool Card::init()
     return true;
 }
 
-void Card::move(float delay)
+void Card::reset(int index, int groupNum, cocos2d::Value data)
+{
+    this->index=index;
+    this->groupNum=groupNum;
+    this->data=data;
+}
+
+void Card::move()
 {
     Size wsize=Director::getInstance()->getWinSize();
-    Spawn* sp=Spawn::create(MoveTo::create(0.3, Vec2(wsize.width/2+(index-1)*150,wsize.height/2)),ScaleTo::create(0.3, 0.6), NULL);
     
-    Repeat* rp= Repeat::create(RotateBy::create(0.2, 360), 3);
-    
-    Spawn* sp2=Spawn::create(MoveTo::create(0.5, Vec2(400,450)),ScaleTo::create(0.5, 0), NULL);
-    Sequence* sq2=Sequence::create(sp2,CallFunc::create(CC_CALLBACK_0(Card::removeFromParent, this)), NULL);
-
-    this->runAction(Sequence::create(DelayTime::create(delay),sp,rp,sq2,nullptr));
+    MoveBy* move=MoveBy::create(0.3, Vec2(100*(2-index)+100,0));
+    Spawn* spaw=Spawn::create(MoveTo::create(0.3, Vec2(wsize.width*0.5+200*(1-index),wsize.height*0.5)),ScaleTo::create(0.3, 0.8),SkewBy::create(0.3, 0, 30), NULL);
+    SkewTo* skew=SkewTo::create(0.2, 0, 0);
+    CallFunc* cf=CallFunc::create(CC_CALLBACK_0(Card::useSkill, this));
+    this->runAction(Sequence::create(DelayTime::create(index*0.3),Show::create(),move,DelayTime::create(0.2),spaw, skew,DelayTime::create(0.8*(groupNum-index)),cf,NULL));
 }
 
 void Card::useSkill()
@@ -52,12 +57,15 @@ void Card::useSkill()
     
     Vec2 end=BattleMgr::getInstance()->view->hero->getPosition()+Vec2(0,150);
     CallFunc* cf=CallFunc::create(std::bind(&Card::playEnd, this));
-    this->runAction(Sequence::create(Spawn::create(ScaleTo::create(duration, 0),MoveTo::create(duration, end),NULL),cf, NULL));
+    this->runAction(Sequence::create(Spawn::create(ScaleTo::create(duration, 0),MoveTo::create(duration, end),NULL),DelayTime::create(0.5),cf, NULL));
 }
 
 void Card::playEnd()
 {
-    BattleMgr::getInstance()->view->attack();
+    if(this->index==groupNum-1){
+        BattleMgr::getInstance()->view->attack();
+    }
+    
     this->removeFromParent();
 }
 

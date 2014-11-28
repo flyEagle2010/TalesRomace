@@ -48,6 +48,7 @@ void LoginScene::onEnter()
     this->btn_login->addClickEventListener(CC_CALLBACK_1(LoginScene::onButtonClick, this));
     
     this->initAccount();
+    
 }
 
 //init 游戏服务器 服务器认证

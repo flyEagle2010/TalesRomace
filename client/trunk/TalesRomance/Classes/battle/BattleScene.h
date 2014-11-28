@@ -39,21 +39,23 @@ public:
     void attack();
     void attacked();
 private:
+    void initInfo(Node* node);
     void startAnimation();
     void initHero();
     void playRound();
     
     void playCard();
     void petAttack();
+    void showBuff();
+    void playEffect(std::string name);
     
-
+    
     Vector<Card*> cards;
     Size wsize;
 public:
     Node* heroNode;
     Node* heroInfo1;
     Node* heroInfo2;
-    Node* title;
     Node* bottom;
     Sprite* bg;
     Hero* hero;

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/login/LoginScene.cpp"
-            timestampString = "437915902.149821"
+            timestampString = "438843320.522722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "LoginScene::onButtonClick(Ref *pSender)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/battle/BattleScene.cpp"
-            timestampString = "438514264.075312"
+            timestampString = "438851189.888974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137">
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "BattleScene::playEffect(std::string name)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -40,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/battle/BattleScene.cpp"
-            timestampString = "438514264.075312"
+            timestampString = "438848287.248455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "BattleScene::initHero()"
             landmarkType = "5">
          </BreakpointContent>
@@ -94,6 +96,22 @@
             startingLineNumber = "31"
             endingLineNumber = "31"
             landmarkName = "Hero::init(std::string fPath,std::string rPath,int pos)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/battle/Hero.cpp"
+            timestampString = "438676635.422827"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "Hero::onAnimationEnd(int trackIndex)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

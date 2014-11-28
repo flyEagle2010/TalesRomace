@@ -38,12 +38,18 @@ public:
     virtual void onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unusedEvent);
 private:
     void initNetEvent();
-    void touchButtonEvent(Ref* pSender, TouchEventType type);
-    
+    void clickButtonEvent(Ref* pSender);
+    void resetUI();
     Vec2 position2Grid(Vec2 position);
 
 private:
     TMXTiledMap* map;
     TMXLayer* topLayer;
+    
+    Label* goldLabel;
+    Label* hpLabel;
+    Label* numLabel;
+    Sprite* icon;
+    Sprite* hpIcon;
 };
 #endif /* defined(__TalesRomance__Map__) */

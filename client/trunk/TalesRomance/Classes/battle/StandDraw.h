@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "cocos2d.h"
 #include "BaseUI.h"
+#include "Clip.h"
 
 class StandDraw : public LayerColor
 {
@@ -19,6 +20,10 @@ public:
     static StandDraw* create();
     bool init();
     void play();
+private:
+    Sprite* bg;
+    Clip* clip;
+    Sprite* icon;
 };
 
 #endif /* defined(__TalesRomance__StandDraw__) */

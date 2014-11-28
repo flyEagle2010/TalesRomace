@@ -1,5 +1,5 @@
 <Solution>
-  <PropertyGroup Name="TalesRomac" Version="2.0.0.0" Type="CocosStudio" />
+  <PropertyGroup Name="TalesRomac" Version="2.0.2.0" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
@@ -56,20 +56,30 @@
         <Image Name="login.png" />
         <TmxFile Name="tree_block_bottom.tmx" />
         <Project Name="Maze.csd" />
-        <PlistImageFolder PListFile="fight.plist" LastPlistWriteTime="2014-11-17T18:12:05+08:00" LastImageWriteTime="2014-11-17T18:12:05+08:00" Name=".fight_PList.Dir">
-          <PlistImageFile Name="battle_Blood of the Daedra_1.png" Key="battle_Blood of the Daedra_1.png" />
-          <PlistImageFile Name="battle_Blood of the Daedra_2.png" Key="battle_Blood of the Daedra_2.png" />
-          <PlistImageFile Name="battle_bottom.png" Key="battle_bottom.png" />
-          <PlistImageFile Name="battle_enemy.png" Key="battle_enemy.png" />
-          <PlistImageFile Name="fightBg.png" Key="fightBg.png" />
-        </PlistImageFolder>
-        <Image Name="fight.png" />
         <Image Name="tree_block.png" />
         <Project Name="BattleScene.csd" />
         <Folder Name="common">
           <Image Name="card_100.png" />
         </Folder>
         <Project Name="Card.csd" />
+        <PlistImageFolder PListFile="maze.plist" LastPlistWriteTime="2014-11-25T17:13:21+08:00" LastImageWriteTime="2014-11-25T17:13:21+08:00" Name=".maze_PList.Dir">
+          <PlistImageFile Name="maze_bg.png" Key="maze_bg.png" />
+          <PlistImageFile Name="maze_btn_exit1.png" Key="maze_btn_exit1.png" />
+          <PlistImageFile Name="maze_hpIcon.png" Key="maze_hpIcon.png" />
+          <PlistImageFile Name="maze_icon.png" Key="maze_icon.png" />
+          <PlistImageFile Name="maze_numBg.png" Key="maze_numBg.png" />
+          <PlistImageFile Name="maze_progress.png" Key="maze_progress.png" />
+        </PlistImageFolder>
+        <Image Name="maze.png" />
+        <Image Name="maze_bg.png" />
+        <PlistImageFolder PListFile="battle.plist" LastPlistWriteTime="2014-11-27T13:38:17+08:00" LastImageWriteTime="2014-11-27T13:38:17+08:00" Name=".battle_PList.Dir">
+          <PlistImageFile Name="battleFaceFrame.png" Key="battleFaceFrame.png" />
+          <PlistImageFile Name="battleFaceTopFrame.png" Key="battleFaceTopFrame.png" />
+          <PlistImageFile Name="battleXueTiao.png" Key="battleXueTiao.png" />
+          <PlistImageFile Name="partnerFaceBig_11.png" Key="partnerFaceBig_11.png" />
+          <PlistImageFile Name="partnerFaceSmall_11.png" Key="partnerFaceSmall_11.png" />
+        </PlistImageFolder>
+        <Image Name="battle.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

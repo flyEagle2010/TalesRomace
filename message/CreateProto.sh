@@ -1,1 +1,1 @@
-protoc -I$PROTOIN --cpp_out=$PROTOOUT $PROTOIN/*.proto
+protoc -I "/Users/qinliangliang/Documents/svn/TalesRomace/message" --cpp_out="/Users/qinliangliang/Documents/svn/TalesRomace/client/trunk/TalesRomance/Classes/proto" /Users/qinliangliang/Documents/svn/TalesRomace/message/*.proto
