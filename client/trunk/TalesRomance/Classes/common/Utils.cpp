@@ -29,6 +29,14 @@ double Utils::distance(Vec2 sp,Vec2 ep)
     return sqrt((ep.x-sp.x)*(ep.x-sp.x)+(ep.y-sp.y)*(ep.y-sp.y));
 }
 
+void Utils::setStar(Vector<cocos2d::Sprite *> vec, int num)
+{
+    for(int i=0;i<vec.size();i++)
+    {
+        vec.at(i)->setVisible(i<num);
+    }
+}
+
 
 
 std::vector<int> Utils::randSeveral(int num,bool isRepeat)

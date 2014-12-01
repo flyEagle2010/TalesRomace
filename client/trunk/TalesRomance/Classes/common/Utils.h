@@ -23,7 +23,7 @@ public:
 
     static double distance(Vec2 sp,Vec2 ep);
     
-  
+    static void setStar(Vector<Sprite*> vec,int num);
     
     static std::vector<int> randSeveral(int num,bool isRepeat);
     //字符替换如getLang("购买{1},花费{2}金币","武器","10");

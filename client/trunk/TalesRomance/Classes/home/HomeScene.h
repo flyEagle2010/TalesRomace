@@ -18,6 +18,8 @@
 #include "Clip.h"
 
 #include "Maze.h"
+#include "GateInfo.h"
+#include "Team.h"
 
 USING_NS_CC;
 using namespace ui;

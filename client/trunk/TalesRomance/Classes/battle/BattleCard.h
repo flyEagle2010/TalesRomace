@@ -1,23 +1,23 @@
 //
-//  Card.h
+//  BattleCard.h
 //  TalesRomance
 //
 //  Created by 秦亮亮 on 14/11/13.
 //
 //
 
-#ifndef __TalesRomance__Card__
-#define __TalesRomance__Card__
+#ifndef __TalesRomance__BattleCard__
+#define __TalesRomance__BattleCard__
 
 #include <stdio.h>
 #include "BaseUI.h"
 #include "Clip.h"
 #include "BattleMgr.h"
 
-class Card : public BaseUI
+class BattleCard : public BaseUI
 {
 public:
-    static Card* create(int index);
+    static BattleCard* create(int index);
     bool init();
     void reset(int index,int groupNum,Value data);
     void move();
@@ -30,4 +30,4 @@ private:
     Value data;
 };
 
-#endif /* defined(__TalesRomance__Card__) */
+#endif /* defined(__TalesRomance__BattleCard__) */

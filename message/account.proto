@@ -3,9 +3,9 @@ option java_outer_classname = "AccountProBuf";
 
 
 
-import "item.proto";
-import "gate.proto";
-import "npc.proto";
+//import "item.proto";
+//import "gate.proto";
+//import "npc.proto";
 message LoginReq{
   required string account = 1;
   required string key = 2;

@@ -49,12 +49,12 @@ bool BattleScene::init(){
  
     
     for(int i=0;i<3;i++){
-        Card* card=Card::create(i);
-        card->setScale(0.35);
-        card->setVisible(false);
-        card->setPosition(Vec2(0,60));
-        this->heroNode->addChild(card,1);
-        this->cards.pushBack(card);
+        BattleCard* BattleCard=BattleCard::create(i);
+        BattleCard->setScale(0.35);
+        BattleCard->setVisible(false);
+        BattleCard->setPosition(Vec2(0,60));
+        this->heroNode->addChild(BattleCard,1);
+        this->BattleCards.pushBack(BattleCard);
     }
     return true;
 }
@@ -108,16 +108,16 @@ void BattleScene::initHero()
 
 void BattleScene::playRound()
 {
-    this->playCard();
+    this->playBattleCard();
     
 }
 
-void BattleScene::playCard()
+void BattleScene::playBattleCard()
 {
     for(int i=0;i<3;i++){
-        Card* card=this->cards.at(i);
-        card->reset(i, 3, Value(3));
-        card->move();
+        BattleCard* BattleCard=this->BattleCards.at(i);
+        BattleCard->reset(i, 3, Value(3));
+        BattleCard->move();
     }
 }
 

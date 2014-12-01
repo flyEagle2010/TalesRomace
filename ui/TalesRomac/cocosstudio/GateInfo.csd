@@ -110,12 +110,12 @@
             <PreSize X="0.2289" Y="0.1406" />
           </NodeObjectData>
           <NodeObjectData Name="staminaLabel" ActionTag="-353413721" FrameEvent="" Tag="72" ObjectIndex="4" FontSize="18" LabelText="消耗:10" ctype="TextObjectData">
-            <Position X="761.2854" Y="523.2065" />
+            <Position X="761.2854" Y="522.2064" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5119" ScaleY="0.4529" />
             <CColor A="255" R="45" G="20" B="0" />
             <Size X="61.0000" Y="21.0000" />
-            <PrePosition X="0.6701" Y="0.8175" />
+            <PrePosition X="0.6701" Y="0.8159" />
             <PreSize X="0.0000" Y="0.0000" />
           </NodeObjectData>
           <NodeObjectData Name="numLabel" ActionTag="2114379408" FrameEvent="" Tag="73" ObjectIndex="5" FontSize="18" LabelText="进入次数:10/30" ctype="TextObjectData">
@@ -136,7 +136,7 @@
             <PrePosition X="0.4170" Y="0.6500" />
             <PreSize X="0.0000" Y="0.0000" />
           </NodeObjectData>
-          <NodeObjectData Name="friendList" ActionTag="-1860173837" FrameEvent="" Tag="75" ObjectIndex="1" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+          <NodeObjectData Name="friendList" ActionTag="-1860173837" FrameEvent="" Tag="75" ObjectIndex="1" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="Horizontal" ctype="ScrollViewObjectData">
             <Position X="183.4256" Y="37.8780" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint />
@@ -148,7 +148,7 @@
             <FirstColor A="255" R="255" G="150" B="100" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
-            <InnerNodeSize Width="600" Height="160" />
+            <InnerNodeSize Width="600" Height="200" />
           </NodeObjectData>
           <NodeObjectData Name="btn_back" ActionTag="1752867308" FrameEvent="" Tag="1002" ObjectIndex="1" TouchEnable="True" FontSize="36" ButtonText="返回" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
             <Position X="900.3650" Y="90.7049" />
@@ -283,7 +283,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="cardType_4.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_begin" ActionTag="895554537" FrameEvent="" Tag="1000" ObjectIndex="2" TouchEnable="True" FontSize="24" ButtonText="扫荡" Scale9Width="133" Scale9Height="52" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_clear" ActionTag="895554537" FrameEvent="" Tag="1000" ObjectIndex="2" TouchEnable="True" FontSize="24" ButtonText="扫荡" Scale9Width="133" Scale9Height="52" ctype="ButtonObjectData">
             <Position X="758.4310" Y="245.2103" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -296,7 +296,7 @@
             <PressedFileData Type="PlistSubImage" Path="BntSaoDang_2.png" Plist="gateInfo.plist" />
             <NormalFileData Type="PlistSubImage" Path="BntSaoDang_1.png" Plist="gateInfo.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_clear" ActionTag="-844196043" FrameEvent="" Tag="1001" ObjectIndex="4" TouchEnable="True" FontSize="24" ButtonText="开始" Scale9Width="133" Scale9Height="52" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_begin" ActionTag="-844196043" FrameEvent="" Tag="1001" ObjectIndex="4" TouchEnable="True" FontSize="24" ButtonText="开始" Scale9Width="133" Scale9Height="52" ctype="ButtonObjectData">
             <Position X="891.5298" Y="245.2103" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -308,6 +308,90 @@
             <DisabledFileData Type="PlistSubImage" Path="BntKaiShi_0.png" Plist="gateInfo.plist" />
             <PressedFileData Type="PlistSubImage" Path="BntKaiShi_2.png" Plist="gateInfo.plist" />
             <NormalFileData Type="PlistSubImage" Path="BntKaiShi_1.png" Plist="gateInfo.plist" />
+          </NodeObjectData>
+          <NodeObjectData Name="atkLabel1" ActionTag="1187366693" FrameEvent="" Tag="172" ObjectIndex="15" FontSize="24" LabelText="999999" ctype="TextObjectData">
+            <Position X="858.9139" Y="461.9830" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="45" G="20" B="0" />
+            <Size X="80.0000" Y="28.0000" />
+            <PrePosition X="0.7561" Y="0.7218" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </NodeObjectData>
+          <NodeObjectData Name="atkLabel2" ActionTag="1219202619" FrameEvent="" Tag="173" ObjectIndex="16" FontSize="24" LabelText="999999" ctype="TextObjectData">
+            <Position X="858.9140" Y="388.1667" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="45" G="20" B="0" />
+            <Size X="80.0000" Y="28.0000" />
+            <PrePosition X="0.7561" Y="0.6065" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </NodeObjectData>
+          <NodeObjectData Name="atkLabel3" ActionTag="-1548877755" FrameEvent="" Tag="174" ObjectIndex="17" FontSize="24" LabelText="999999" ctype="TextObjectData">
+            <Position X="858.9135" Y="318.1999" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="45" G="20" B="0" />
+            <Size X="80.0000" Y="28.0000" />
+            <PrePosition X="0.7561" Y="0.4972" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </NodeObjectData>
+          <NodeObjectData Name="group1" ActionTag="-459818798" FrameEvent="" Tag="175" ObjectIndex="18" FontSize="24" LabelText="1" ctype="TextObjectData">
+            <Position X="733.9963" Y="464.8313" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="45" G="20" B="0" />
+            <Size X="13.0000" Y="28.0000" />
+            <PrePosition X="0.6461" Y="0.7263" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </NodeObjectData>
+          <NodeObjectData Name="group2" ActionTag="-347474302" FrameEvent="" Tag="176" ObjectIndex="19" FontSize="24" LabelText="3" ctype="TextObjectData">
+            <Position X="733.9963" Y="315.8307" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="45" G="20" B="0" />
+            <Size X="13.0000" Y="28.0000" />
+            <PrePosition X="0.6461" Y="0.4935" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </NodeObjectData>
+          <NodeObjectData Name="group3" ActionTag="669333894" FrameEvent="" Tag="177" ObjectIndex="20" FontSize="24" LabelText="2" ctype="TextObjectData">
+            <Position X="733.9963" Y="388.8293" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="45" G="20" B="0" />
+            <Size X="13.0000" Y="28.0000" />
+            <PrePosition X="0.6461" Y="0.6075" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </NodeObjectData>
+          <NodeObjectData Name="groupRim1" ActionTag="-1448282771" FrameEvent="" Tag="2000" ObjectIndex="21" ctype="SpriteObjectData">
+            <Position X="823.5000" Y="462.5000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <Size X="261.0000" Y="75.0000" />
+            <PrePosition X="0.7249" Y="0.7227" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="PlistSubImage" Path="teamSelect.png" Plist="gateInfo.plist" />
+          </NodeObjectData>
+          <NodeObjectData Name="groupRim2" ActionTag="-1087242513" FrameEvent="" Tag="2001" ObjectIndex="22" ctype="SpriteObjectData">
+            <Position X="823.5000" Y="388.5000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <Size X="261.0000" Y="75.0000" />
+            <PrePosition X="0.7249" Y="0.6070" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="PlistSubImage" Path="teamSelect.png" Plist="gateInfo.plist" />
+          </NodeObjectData>
+          <NodeObjectData Name="groupRim3" ActionTag="-1676134105" FrameEvent="" Tag="2002" ObjectIndex="23" ctype="SpriteObjectData">
+            <Position X="823.5000" Y="314.5000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <Size X="261.0000" Y="75.0000" />
+            <PrePosition X="0.7249" Y="0.4914" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="PlistSubImage" Path="teamSelect.png" Plist="gateInfo.plist" />
           </NodeObjectData>
         </Children>
         <SingleColor A="255" R="0" G="0" B="0" />

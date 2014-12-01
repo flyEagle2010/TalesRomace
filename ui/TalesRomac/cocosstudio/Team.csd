@@ -100,7 +100,7 @@
             <PressedFileData Type="PlistSubImage" Path="BtnReturn_2.png" Plist="common.plist" />
             <NormalFileData Type="PlistSubImage" Path="BtnReturn_1.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="aoyiList" ActionTag="-884952497" FrameEvent="" Tag="41" ObjectIndex="1" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+          <NodeObjectData Name="aoyiList" ActionTag="-884952497" FrameEvent="" Tag="41" ObjectIndex="1" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
             <Position X="212.9366" Y="110.4950" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint />
@@ -114,7 +114,7 @@
             <ColorVector ScaleY="1.0000" />
             <InnerNodeSize Width="250" Height="300" />
           </NodeObjectData>
-          <NodeObjectData Name="cardList" ActionTag="-1730654876" FrameEvent="" Tag="42" ObjectIndex="2" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+          <NodeObjectData Name="cardList" ActionTag="-1730654876" FrameEvent="" Tag="42" ObjectIndex="2" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
             <Position X="521.5157" Y="154.6342" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint />

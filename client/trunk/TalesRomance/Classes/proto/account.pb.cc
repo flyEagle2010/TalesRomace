@@ -21,15 +21,12 @@ namespace {
 const ::google::protobuf::Descriptor* LoginReq_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   LoginReq_reflection_ = NULL;
-const ::google::protobuf::Descriptor* PGroup_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  PGroup_reflection_ = NULL;
 const ::google::protobuf::Descriptor* LoginResp_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   LoginResp_reflection_ = NULL;
-const ::google::protobuf::Descriptor* PSaveGroups_descriptor_ = NULL;
+const ::google::protobuf::Descriptor* CreateRoleReq_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
-  PSaveGroups_reflection_ = NULL;
+  CreateRoleReq_reflection_ = NULL;
 const ::google::protobuf::Descriptor* PRole_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   PRole_reflection_ = NULL;
@@ -63,30 +60,10 @@ void protobuf_AssignDesc_account_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(LoginReq));
-  PGroup_descriptor_ = file->message_type(1);
-  static const int PGroup_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PGroup, groupid_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PGroup, npcid_),
-  };
-  PGroup_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      PGroup_descriptor_,
-      PGroup::default_instance_,
-      PGroup_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PGroup, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PGroup, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PGroup));
-  LoginResp_descriptor_ = file->message_type(2);
-  static const int LoginResp_offsets_[6] = {
+  LoginResp_descriptor_ = file->message_type(1);
+  static const int LoginResp_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LoginResp, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LoginResp, role_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LoginResp, itemlist_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LoginResp, npclist_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LoginResp, gate_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LoginResp, groups_),
   };
   LoginResp_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -99,32 +76,35 @@ void protobuf_AssignDesc_account_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(LoginResp));
-  PSaveGroups_descriptor_ = file->message_type(3);
-  static const int PSaveGroups_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PSaveGroups, groups_),
+  CreateRoleReq_descriptor_ = file->message_type(2);
+  static const int CreateRoleReq_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CreateRoleReq, spriteid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CreateRoleReq, rolename_),
   };
-  PSaveGroups_reflection_ =
+  CreateRoleReq_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
-      PSaveGroups_descriptor_,
-      PSaveGroups::default_instance_,
-      PSaveGroups_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PSaveGroups, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PSaveGroups, _unknown_fields_),
+      CreateRoleReq_descriptor_,
+      CreateRoleReq::default_instance_,
+      CreateRoleReq_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CreateRoleReq, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CreateRoleReq, _unknown_fields_),
       -1,
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PSaveGroups));
-  PRole_descriptor_ = file->message_type(4);
-  static const int PRole_offsets_[9] = {
+      sizeof(CreateRoleReq));
+  PRole_descriptor_ = file->message_type(3);
+  static const int PRole_offsets_[11] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, roleid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, rolename_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, level_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, viplvl_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, coin_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, rmb_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, stamina_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, exp_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, groupid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, lefthpitemnum_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, curhp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, ranking_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, curlibid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRole, userid_),
   };
   PRole_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -137,13 +117,14 @@ void protobuf_AssignDesc_account_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(PRole));
-  PUpRole_descriptor_ = file->message_type(5);
-  static const int PUpRole_offsets_[5] = {
+  PUpRole_descriptor_ = file->message_type(4);
+  static const int PUpRole_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PUpRole, fieldtype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PUpRole, addvalue_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PUpRole, finalvalue_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PUpRole, itemtype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PUpRole, updatepkid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PUpRole, param_),
   };
   PUpRole_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -171,11 +152,9 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     LoginReq_descriptor_, &LoginReq::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PGroup_descriptor_, &PGroup::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     LoginResp_descriptor_, &LoginResp::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PSaveGroups_descriptor_, &PSaveGroups::default_instance());
+    CreateRoleReq_descriptor_, &CreateRoleReq::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     PRole_descriptor_, &PRole::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -187,12 +166,10 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void protobuf_ShutdownFile_account_2eproto() {
   delete LoginReq::default_instance_;
   delete LoginReq_reflection_;
-  delete PGroup::default_instance_;
-  delete PGroup_reflection_;
   delete LoginResp::default_instance_;
   delete LoginResp_reflection_;
-  delete PSaveGroups::default_instance_;
-  delete PSaveGroups_reflection_;
+  delete CreateRoleReq::default_instance_;
+  delete CreateRoleReq_reflection_;
   delete PRole::default_instance_;
   delete PRole_reflection_;
   delete PUpRole::default_instance_;
@@ -205,39 +182,31 @@ void protobuf_AddDesc_account_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::protobuf_AddDesc_item_2eproto();
-  ::protobuf_AddDesc_gate_2eproto();
-  ::protobuf_AddDesc_npc_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\raccount.proto\032\nitem.proto\032\ngate.proto\032"
-    "\tnpc.proto\"8\n\010LoginReq\022\017\n\007account\030\001 \002(\t\022"
-    "\013\n\003key\030\002 \002(\t\022\016\n\006areaId\030\003 \002(\005\"(\n\006PGroup\022\017"
-    "\n\007groupId\030\001 \002(\005\022\r\n\005npcId\030\002 \003(\003\"\226\001\n\tLogin"
-    "Resp\022\016\n\006result\030\001 \002(\005\022\024\n\004role\030\002 \001(\0132\006.PRo"
-    "le\022\030\n\010itemList\030\003 \003(\0132\006.PItem\022\026\n\007npcList\030"
-    "\004 \003(\0132\005.PNpc\022\030\n\004gate\030\005 \001(\0132\n.PGateResp\022\027"
-    "\n\006groups\030\006 \003(\0132\007.PGroup\"&\n\013PSaveGroups\022\027"
-    "\n\006groups\030\006 \003(\0132\007.PGroup\"\222\001\n\005PRole\022\016\n\006rol"
-    "eId\030\001 \002(\003\022\020\n\010roleName\030\002 \002(\t\022\r\n\005level\030\003 \002"
-    "(\005\022\016\n\006vipLvl\030\004 \002(\005\022\014\n\004coin\030\005 \002(\005\022\013\n\003rmb\030"
-    "\006 \002(\005\022\017\n\007stamina\030\007 \002(\005\022\013\n\003exp\030\010 \002(\005\022\017\n\007g"
-    "roupId\030\t \002(\005\"h\n\007PUpRole\022\021\n\tfieldType\030\001 \002"
-    "(\005\022\020\n\010addValue\030\002 \002(\005\022\022\n\nfinalValue\030\003 \002(\005"
-    "\022\020\n\010itemType\030\004 \002(\t\022\022\n\nupdatePkId\030\005 \002(\003B1"
-    "\n com.doteyplay.game.message.protoB\rAcco"
-    "untProBuf", 649);
+    "\n\raccount.proto\"8\n\010LoginReq\022\017\n\007account\030\001"
+    " \002(\t\022\013\n\003key\030\002 \002(\t\022\016\n\006areaId\030\003 \002(\005\"1\n\tLog"
+    "inResp\022\016\n\006result\030\001 \002(\005\022\024\n\004role\030\002 \001(\0132\006.P"
+    "Role\"3\n\rCreateRoleReq\022\020\n\010spriteId\030\001 \002(\005\022"
+    "\020\n\010roleName\030\002 \002(\t\"\276\001\n\005PRole\022\016\n\006roleId\030\001 "
+    "\002(\003\022\020\n\010roleName\030\002 \002(\t\022\016\n\006vipLvl\030\003 \002(\005\022\014\n"
+    "\004coin\030\004 \002(\005\022\013\n\003rmb\030\005 \002(\005\022\017\n\007stamina\030\006 \002("
+    "\005\022\025\n\rleftHpItemNum\030\007 \002(\005\022\r\n\005curHp\030\010 \002(\005\022"
+    "\017\n\007ranking\030\t \002(\005\022\020\n\010curLibId\030\n \002(\005\022\016\n\006us"
+    "erId\030\013 \002(\003\"w\n\007PUpRole\022\021\n\tfieldType\030\001 \002(\005"
+    "\022\020\n\010addValue\030\002 \002(\005\022\022\n\nfinalValue\030\003 \002(\005\022\020"
+    "\n\010itemType\030\004 \002(\t\022\022\n\nupdatePkId\030\005 \002(\003\022\r\n\005"
+    "param\030\006 \001(\tB1\n com.doteyplay.game.messag"
+    "e.protoB\rAccountProBuf", 542);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "account.proto", &protobuf_RegisterTypes);
   LoginReq::default_instance_ = new LoginReq();
-  PGroup::default_instance_ = new PGroup();
   LoginResp::default_instance_ = new LoginResp();
-  PSaveGroups::default_instance_ = new PSaveGroups();
+  CreateRoleReq::default_instance_ = new CreateRoleReq();
   PRole::default_instance_ = new PRole();
   PUpRole::default_instance_ = new PUpRole();
   LoginReq::default_instance_->InitAsDefaultInstance();
-  PGroup::default_instance_->InitAsDefaultInstance();
   LoginResp::default_instance_->InitAsDefaultInstance();
-  PSaveGroups::default_instance_->InitAsDefaultInstance();
+  CreateRoleReq::default_instance_->InitAsDefaultInstance();
   PRole::default_instance_->InitAsDefaultInstance();
   PUpRole::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_account_2eproto);
@@ -576,269 +545,8 @@ void LoginReq::Swap(LoginReq* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int PGroup::kGroupIdFieldNumber;
-const int PGroup::kNpcIdFieldNumber;
-#endif  // !_MSC_VER
-
-PGroup::PGroup()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-}
-
-void PGroup::InitAsDefaultInstance() {
-}
-
-PGroup::PGroup(const PGroup& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-}
-
-void PGroup::SharedCtor() {
-  _cached_size_ = 0;
-  groupid_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-PGroup::~PGroup() {
-  SharedDtor();
-}
-
-void PGroup::SharedDtor() {
-  if (this != default_instance_) {
-  }
-}
-
-void PGroup::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* PGroup::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return PGroup_descriptor_;
-}
-
-const PGroup& PGroup::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_account_2eproto();
-  return *default_instance_;
-}
-
-PGroup* PGroup::default_instance_ = NULL;
-
-PGroup* PGroup::New() const {
-  return new PGroup;
-}
-
-void PGroup::Clear() {
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    groupid_ = 0;
-  }
-  npcid_.Clear();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool PGroup::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
-  ::google::protobuf::uint32 tag;
-  while ((tag = input->ReadTag()) != 0) {
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 groupId = 1;
-      case 1: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &groupid_)));
-          set_has_groupid();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(16)) goto parse_npcId;
-        break;
-      }
-
-      // repeated int64 npcId = 2;
-      case 2: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_npcId:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
-                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
-                 1, 16, input, this->mutable_npcid())));
-        } else if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag)
-                   == ::google::protobuf::internal::WireFormatLite::
-                      WIRETYPE_LENGTH_DELIMITED) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
-                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
-                 input, this->mutable_npcid())));
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(16)) goto parse_npcId;
-        if (input->ExpectAtEnd()) return true;
-        break;
-      }
-
-      default: {
-      handle_uninterpreted:
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          return true;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-  return true;
-#undef DO_
-}
-
-void PGroup::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // required int32 groupId = 1;
-  if (has_groupid()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->groupid(), output);
-  }
-
-  // repeated int64 npcId = 2;
-  for (int i = 0; i < this->npcid_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(
-      2, this->npcid(i), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-}
-
-::google::protobuf::uint8* PGroup::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // required int32 groupId = 1;
-  if (has_groupid()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->groupid(), target);
-  }
-
-  // repeated int64 npcId = 2;
-  for (int i = 0; i < this->npcid_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteInt64ToArray(2, this->npcid(i), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  return target;
-}
-
-int PGroup::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required int32 groupId = 1;
-    if (has_groupid()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->groupid());
-    }
-
-  }
-  // repeated int64 npcId = 2;
-  {
-    int data_size = 0;
-    for (int i = 0; i < this->npcid_size(); i++) {
-      data_size += ::google::protobuf::internal::WireFormatLite::
-        Int64Size(this->npcid(i));
-    }
-    total_size += 1 * this->npcid_size() + data_size;
-  }
-
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void PGroup::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const PGroup* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PGroup*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void PGroup::MergeFrom(const PGroup& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  npcid_.MergeFrom(from.npcid_);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_groupid()) {
-      set_groupid(from.groupid());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void PGroup::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void PGroup::CopyFrom(const PGroup& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool PGroup::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
-
-  return true;
-}
-
-void PGroup::Swap(PGroup* other) {
-  if (other != this) {
-    std::swap(groupid_, other->groupid_);
-    npcid_.Swap(&other->npcid_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata PGroup::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = PGroup_descriptor_;
-  metadata.reflection = PGroup_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
 const int LoginResp::kResultFieldNumber;
 const int LoginResp::kRoleFieldNumber;
-const int LoginResp::kItemListFieldNumber;
-const int LoginResp::kNpcListFieldNumber;
-const int LoginResp::kGateFieldNumber;
-const int LoginResp::kGroupsFieldNumber;
 #endif  // !_MSC_VER
 
 LoginResp::LoginResp()
@@ -848,7 +556,6 @@ LoginResp::LoginResp()
 
 void LoginResp::InitAsDefaultInstance() {
   role_ = const_cast< ::PRole*>(&::PRole::default_instance());
-  gate_ = const_cast< ::PGateResp*>(&::PGateResp::default_instance());
 }
 
 LoginResp::LoginResp(const LoginResp& from)
@@ -861,7 +568,6 @@ void LoginResp::SharedCtor() {
   _cached_size_ = 0;
   result_ = 0;
   role_ = NULL;
-  gate_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -872,7 +578,6 @@ LoginResp::~LoginResp() {
 void LoginResp::SharedDtor() {
   if (this != default_instance_) {
     delete role_;
-    delete gate_;
   }
 }
 
@@ -903,13 +608,7 @@ void LoginResp::Clear() {
     if (has_role()) {
       if (role_ != NULL) role_->::PRole::Clear();
     }
-    if (has_gate()) {
-      if (gate_ != NULL) gate_->::PGateResp::Clear();
-    }
   }
-  itemlist_.Clear();
-  npclist_.Clear();
-  groups_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -945,65 +644,6 @@ bool LoginResp::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(26)) goto parse_itemList;
-        break;
-      }
-
-      // repeated .PItem itemList = 3;
-      case 3: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_itemList:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_itemlist()));
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(26)) goto parse_itemList;
-        if (input->ExpectTag(34)) goto parse_npcList;
-        break;
-      }
-
-      // repeated .PNpc npcList = 4;
-      case 4: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_npcList:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_npclist()));
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(34)) goto parse_npcList;
-        if (input->ExpectTag(42)) goto parse_gate;
-        break;
-      }
-
-      // optional .PGateResp gate = 5;
-      case 5: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_gate:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_gate()));
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(50)) goto parse_groups;
-        break;
-      }
-
-      // repeated .PGroup groups = 6;
-      case 6: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_groups:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_groups()));
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(50)) goto parse_groups;
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -1037,30 +677,6 @@ void LoginResp::SerializeWithCachedSizes(
       2, this->role(), output);
   }
 
-  // repeated .PItem itemList = 3;
-  for (int i = 0; i < this->itemlist_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->itemlist(i), output);
-  }
-
-  // repeated .PNpc npcList = 4;
-  for (int i = 0; i < this->npclist_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->npclist(i), output);
-  }
-
-  // optional .PGateResp gate = 5;
-  if (has_gate()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->gate(), output);
-  }
-
-  // repeated .PGroup groups = 6;
-  for (int i = 0; i < this->groups_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, this->groups(i), output);
-  }
-
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1079,34 +695,6 @@ void LoginResp::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->role(), target);
-  }
-
-  // repeated .PItem itemList = 3;
-  for (int i = 0; i < this->itemlist_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->itemlist(i), target);
-  }
-
-  // repeated .PNpc npcList = 4;
-  for (int i = 0; i < this->npclist_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        4, this->npclist(i), target);
-  }
-
-  // optional .PGateResp gate = 5;
-  if (has_gate()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        5, this->gate(), target);
-  }
-
-  // repeated .PGroup groups = 6;
-  for (int i = 0; i < this->groups_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        6, this->groups(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1134,38 +722,7 @@ int LoginResp::ByteSize() const {
           this->role());
     }
 
-    // optional .PGateResp gate = 5;
-    if (has_gate()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->gate());
-    }
-
   }
-  // repeated .PItem itemList = 3;
-  total_size += 1 * this->itemlist_size();
-  for (int i = 0; i < this->itemlist_size(); i++) {
-    total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->itemlist(i));
-  }
-
-  // repeated .PNpc npcList = 4;
-  total_size += 1 * this->npclist_size();
-  for (int i = 0; i < this->npclist_size(); i++) {
-    total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->npclist(i));
-  }
-
-  // repeated .PGroup groups = 6;
-  total_size += 1 * this->groups_size();
-  for (int i = 0; i < this->groups_size(); i++) {
-    total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->groups(i));
-  }
-
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -1191,18 +748,12 @@ void LoginResp::MergeFrom(const ::google::protobuf::Message& from) {
 
 void LoginResp::MergeFrom(const LoginResp& from) {
   GOOGLE_CHECK_NE(&from, this);
-  itemlist_.MergeFrom(from.itemlist_);
-  npclist_.MergeFrom(from.npclist_);
-  groups_.MergeFrom(from.groups_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_result()) {
       set_result(from.result());
     }
     if (from.has_role()) {
       mutable_role()->::PRole::MergeFrom(from.role());
-    }
-    if (from.has_gate()) {
-      mutable_gate()->::PGateResp::MergeFrom(from.gate());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1226,18 +777,6 @@ bool LoginResp::IsInitialized() const {
   if (has_role()) {
     if (!this->role().IsInitialized()) return false;
   }
-  for (int i = 0; i < itemlist_size(); i++) {
-    if (!this->itemlist(i).IsInitialized()) return false;
-  }
-  for (int i = 0; i < npclist_size(); i++) {
-    if (!this->npclist(i).IsInitialized()) return false;
-  }
-  if (has_gate()) {
-    if (!this->gate().IsInitialized()) return false;
-  }
-  for (int i = 0; i < groups_size(); i++) {
-    if (!this->groups(i).IsInitialized()) return false;
-  }
   return true;
 }
 
@@ -1245,10 +784,6 @@ void LoginResp::Swap(LoginResp* other) {
   if (other != this) {
     std::swap(result_, other->result_);
     std::swap(role_, other->role_);
-    itemlist_.Swap(&other->itemlist_);
-    npclist_.Swap(&other->npclist_);
-    std::swap(gate_, other->gate_);
-    groups_.Swap(&other->groups_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -1267,81 +802,111 @@ void LoginResp::Swap(LoginResp* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int PSaveGroups::kGroupsFieldNumber;
+const int CreateRoleReq::kSpriteIdFieldNumber;
+const int CreateRoleReq::kRoleNameFieldNumber;
 #endif  // !_MSC_VER
 
-PSaveGroups::PSaveGroups()
+CreateRoleReq::CreateRoleReq()
   : ::google::protobuf::Message() {
   SharedCtor();
 }
 
-void PSaveGroups::InitAsDefaultInstance() {
+void CreateRoleReq::InitAsDefaultInstance() {
 }
 
-PSaveGroups::PSaveGroups(const PSaveGroups& from)
+CreateRoleReq::CreateRoleReq(const CreateRoleReq& from)
   : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
 }
 
-void PSaveGroups::SharedCtor() {
+void CreateRoleReq::SharedCtor() {
   _cached_size_ = 0;
+  spriteid_ = 0;
+  rolename_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
-PSaveGroups::~PSaveGroups() {
+CreateRoleReq::~CreateRoleReq() {
   SharedDtor();
 }
 
-void PSaveGroups::SharedDtor() {
+void CreateRoleReq::SharedDtor() {
+  if (rolename_ != &::google::protobuf::internal::kEmptyString) {
+    delete rolename_;
+  }
   if (this != default_instance_) {
   }
 }
 
-void PSaveGroups::SetCachedSize(int size) const {
+void CreateRoleReq::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* PSaveGroups::descriptor() {
+const ::google::protobuf::Descriptor* CreateRoleReq::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return PSaveGroups_descriptor_;
+  return CreateRoleReq_descriptor_;
 }
 
-const PSaveGroups& PSaveGroups::default_instance() {
+const CreateRoleReq& CreateRoleReq::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_account_2eproto();
   return *default_instance_;
 }
 
-PSaveGroups* PSaveGroups::default_instance_ = NULL;
+CreateRoleReq* CreateRoleReq::default_instance_ = NULL;
 
-PSaveGroups* PSaveGroups::New() const {
-  return new PSaveGroups;
+CreateRoleReq* CreateRoleReq::New() const {
+  return new CreateRoleReq;
 }
 
-void PSaveGroups::Clear() {
-  groups_.Clear();
+void CreateRoleReq::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    spriteid_ = 0;
+    if (has_rolename()) {
+      if (rolename_ != &::google::protobuf::internal::kEmptyString) {
+        rolename_->clear();
+      }
+    }
+  }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
 
-bool PSaveGroups::MergePartialFromCodedStream(
+bool CreateRoleReq::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) return false
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .PGroup groups = 6;
-      case 6: {
+      // required int32 spriteId = 1;
+      case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_groups:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_groups()));
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &spriteid_)));
+          set_has_spriteid();
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(50)) goto parse_groups;
+        if (input->ExpectTag(18)) goto parse_roleName;
+        break;
+      }
+
+      // required string roleName = 2;
+      case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_roleName:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_rolename()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+            this->rolename().data(), this->rolename().length(),
+            ::google::protobuf::internal::WireFormat::PARSE);
+        } else {
+          goto handle_uninterpreted;
+        }
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -1362,12 +927,20 @@ bool PSaveGroups::MergePartialFromCodedStream(
 #undef DO_
 }
 
-void PSaveGroups::SerializeWithCachedSizes(
+void CreateRoleReq::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .PGroup groups = 6;
-  for (int i = 0; i < this->groups_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, this->groups(i), output);
+  // required int32 spriteId = 1;
+  if (has_spriteid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->spriteid(), output);
+  }
+
+  // required string roleName = 2;
+  if (has_rolename()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->rolename().data(), this->rolename().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      2, this->rolename(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -1376,13 +949,21 @@ void PSaveGroups::SerializeWithCachedSizes(
   }
 }
 
-::google::protobuf::uint8* PSaveGroups::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* CreateRoleReq::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .PGroup groups = 6;
-  for (int i = 0; i < this->groups_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        6, this->groups(i), target);
+  // required int32 spriteId = 1;
+  if (has_spriteid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->spriteid(), target);
+  }
+
+  // required string roleName = 2;
+  if (has_rolename()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->rolename().data(), this->rolename().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->rolename(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1392,17 +973,25 @@ void PSaveGroups::SerializeWithCachedSizes(
   return target;
 }
 
-int PSaveGroups::ByteSize() const {
+int CreateRoleReq::ByteSize() const {
   int total_size = 0;
 
-  // repeated .PGroup groups = 6;
-  total_size += 1 * this->groups_size();
-  for (int i = 0; i < this->groups_size(); i++) {
-    total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->groups(i));
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required int32 spriteId = 1;
+    if (has_spriteid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->spriteid());
+    }
 
+    // required string roleName = 2;
+    if (has_rolename()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->rolename());
+    }
+
+  }
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -1414,10 +1003,10 @@ int PSaveGroups::ByteSize() const {
   return total_size;
 }
 
-void PSaveGroups::MergeFrom(const ::google::protobuf::Message& from) {
+void CreateRoleReq::MergeFrom(const ::google::protobuf::Message& from) {
   GOOGLE_CHECK_NE(&from, this);
-  const PSaveGroups* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PSaveGroups*>(
+  const CreateRoleReq* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CreateRoleReq*>(
       &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -1426,46 +1015,52 @@ void PSaveGroups::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void PSaveGroups::MergeFrom(const PSaveGroups& from) {
+void CreateRoleReq::MergeFrom(const CreateRoleReq& from) {
   GOOGLE_CHECK_NE(&from, this);
-  groups_.MergeFrom(from.groups_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_spriteid()) {
+      set_spriteid(from.spriteid());
+    }
+    if (from.has_rolename()) {
+      set_rolename(from.rolename());
+    }
+  }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
-void PSaveGroups::CopyFrom(const ::google::protobuf::Message& from) {
+void CreateRoleReq::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void PSaveGroups::CopyFrom(const PSaveGroups& from) {
+void CreateRoleReq::CopyFrom(const CreateRoleReq& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool PSaveGroups::IsInitialized() const {
+bool CreateRoleReq::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
-  for (int i = 0; i < groups_size(); i++) {
-    if (!this->groups(i).IsInitialized()) return false;
-  }
   return true;
 }
 
-void PSaveGroups::Swap(PSaveGroups* other) {
+void CreateRoleReq::Swap(CreateRoleReq* other) {
   if (other != this) {
-    groups_.Swap(&other->groups_);
+    std::swap(spriteid_, other->spriteid_);
+    std::swap(rolename_, other->rolename_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
   }
 }
 
-::google::protobuf::Metadata PSaveGroups::GetMetadata() const {
+::google::protobuf::Metadata CreateRoleReq::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = PSaveGroups_descriptor_;
-  metadata.reflection = PSaveGroups_reflection_;
+  metadata.descriptor = CreateRoleReq_descriptor_;
+  metadata.reflection = CreateRoleReq_reflection_;
   return metadata;
 }
 
@@ -1475,13 +1070,15 @@ void PSaveGroups::Swap(PSaveGroups* other) {
 #ifndef _MSC_VER
 const int PRole::kRoleIdFieldNumber;
 const int PRole::kRoleNameFieldNumber;
-const int PRole::kLevelFieldNumber;
 const int PRole::kVipLvlFieldNumber;
 const int PRole::kCoinFieldNumber;
 const int PRole::kRmbFieldNumber;
 const int PRole::kStaminaFieldNumber;
-const int PRole::kExpFieldNumber;
-const int PRole::kGroupIdFieldNumber;
+const int PRole::kLeftHpItemNumFieldNumber;
+const int PRole::kCurHpFieldNumber;
+const int PRole::kRankingFieldNumber;
+const int PRole::kCurLibIdFieldNumber;
+const int PRole::kUserIdFieldNumber;
 #endif  // !_MSC_VER
 
 PRole::PRole()
@@ -1502,13 +1099,15 @@ void PRole::SharedCtor() {
   _cached_size_ = 0;
   roleid_ = GOOGLE_LONGLONG(0);
   rolename_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  level_ = 0;
   viplvl_ = 0;
   coin_ = 0;
   rmb_ = 0;
   stamina_ = 0;
-  exp_ = 0;
-  groupid_ = 0;
+  lefthpitemnum_ = 0;
+  curhp_ = 0;
+  ranking_ = 0;
+  curlibid_ = 0;
+  userid_ = GOOGLE_LONGLONG(0);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1553,15 +1152,17 @@ void PRole::Clear() {
         rolename_->clear();
       }
     }
-    level_ = 0;
     viplvl_ = 0;
     coin_ = 0;
     rmb_ = 0;
     stamina_ = 0;
-    exp_ = 0;
+    lefthpitemnum_ = 0;
+    curhp_ = 0;
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    groupid_ = 0;
+    ranking_ = 0;
+    curlibid_ = 0;
+    userid_ = GOOGLE_LONGLONG(0);
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -1601,28 +1202,12 @@ bool PRole::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(24)) goto parse_level;
+        if (input->ExpectTag(24)) goto parse_vipLvl;
         break;
       }
 
-      // required int32 level = 3;
+      // required int32 vipLvl = 3;
       case 3: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_level:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &level_)));
-          set_has_level();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(32)) goto parse_vipLvl;
-        break;
-      }
-
-      // required int32 vipLvl = 4;
-      case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_vipLvl:
@@ -1633,12 +1218,12 @@ bool PRole::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(40)) goto parse_coin;
+        if (input->ExpectTag(32)) goto parse_coin;
         break;
       }
 
-      // required int32 coin = 5;
-      case 5: {
+      // required int32 coin = 4;
+      case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_coin:
@@ -1649,12 +1234,12 @@ bool PRole::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(48)) goto parse_rmb;
+        if (input->ExpectTag(40)) goto parse_rmb;
         break;
       }
 
-      // required int32 rmb = 6;
-      case 6: {
+      // required int32 rmb = 5;
+      case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_rmb:
@@ -1665,12 +1250,12 @@ bool PRole::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(56)) goto parse_stamina;
+        if (input->ExpectTag(48)) goto parse_stamina;
         break;
       }
 
-      // required int32 stamina = 7;
-      case 7: {
+      // required int32 stamina = 6;
+      case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_stamina:
@@ -1681,35 +1266,83 @@ bool PRole::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(64)) goto parse_exp;
+        if (input->ExpectTag(56)) goto parse_leftHpItemNum;
         break;
       }
 
-      // required int32 exp = 8;
-      case 8: {
+      // required int32 leftHpItemNum = 7;
+      case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_exp:
+         parse_leftHpItemNum:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &exp_)));
-          set_has_exp();
+                 input, &lefthpitemnum_)));
+          set_has_lefthpitemnum();
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(72)) goto parse_groupId;
+        if (input->ExpectTag(64)) goto parse_curHp;
         break;
       }
 
-      // required int32 groupId = 9;
+      // required int32 curHp = 8;
+      case 8: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_curHp:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &curhp_)));
+          set_has_curhp();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(72)) goto parse_ranking;
+        break;
+      }
+
+      // required int32 ranking = 9;
       case 9: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_groupId:
+         parse_ranking:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &groupid_)));
-          set_has_groupid();
+                 input, &ranking_)));
+          set_has_ranking();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(80)) goto parse_curLibId;
+        break;
+      }
+
+      // required int32 curLibId = 10;
+      case 10: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_curLibId:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &curlibid_)));
+          set_has_curlibid();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(88)) goto parse_userId;
+        break;
+      }
+
+      // required int64 userId = 11;
+      case 11: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_userId:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &userid_)));
+          set_has_userid();
         } else {
           goto handle_uninterpreted;
         }
@@ -1749,39 +1382,49 @@ void PRole::SerializeWithCachedSizes(
       2, this->rolename(), output);
   }
 
-  // required int32 level = 3;
-  if (has_level()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->level(), output);
-  }
-
-  // required int32 vipLvl = 4;
+  // required int32 vipLvl = 3;
   if (has_viplvl()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->viplvl(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->viplvl(), output);
   }
 
-  // required int32 coin = 5;
+  // required int32 coin = 4;
   if (has_coin()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->coin(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->coin(), output);
   }
 
-  // required int32 rmb = 6;
+  // required int32 rmb = 5;
   if (has_rmb()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->rmb(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->rmb(), output);
   }
 
-  // required int32 stamina = 7;
+  // required int32 stamina = 6;
   if (has_stamina()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->stamina(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->stamina(), output);
   }
 
-  // required int32 exp = 8;
-  if (has_exp()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->exp(), output);
+  // required int32 leftHpItemNum = 7;
+  if (has_lefthpitemnum()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->lefthpitemnum(), output);
   }
 
-  // required int32 groupId = 9;
-  if (has_groupid()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->groupid(), output);
+  // required int32 curHp = 8;
+  if (has_curhp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->curhp(), output);
+  }
+
+  // required int32 ranking = 9;
+  if (has_ranking()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->ranking(), output);
+  }
+
+  // required int32 curLibId = 10;
+  if (has_curlibid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(10, this->curlibid(), output);
+  }
+
+  // required int64 userId = 11;
+  if (has_userid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(11, this->userid(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -1807,39 +1450,49 @@ void PRole::SerializeWithCachedSizes(
         2, this->rolename(), target);
   }
 
-  // required int32 level = 3;
-  if (has_level()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->level(), target);
-  }
-
-  // required int32 vipLvl = 4;
+  // required int32 vipLvl = 3;
   if (has_viplvl()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->viplvl(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->viplvl(), target);
   }
 
-  // required int32 coin = 5;
+  // required int32 coin = 4;
   if (has_coin()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->coin(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->coin(), target);
   }
 
-  // required int32 rmb = 6;
+  // required int32 rmb = 5;
   if (has_rmb()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->rmb(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->rmb(), target);
   }
 
-  // required int32 stamina = 7;
+  // required int32 stamina = 6;
   if (has_stamina()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->stamina(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->stamina(), target);
   }
 
-  // required int32 exp = 8;
-  if (has_exp()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->exp(), target);
+  // required int32 leftHpItemNum = 7;
+  if (has_lefthpitemnum()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->lefthpitemnum(), target);
   }
 
-  // required int32 groupId = 9;
-  if (has_groupid()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->groupid(), target);
+  // required int32 curHp = 8;
+  if (has_curhp()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->curhp(), target);
+  }
+
+  // required int32 ranking = 9;
+  if (has_ranking()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->ranking(), target);
+  }
+
+  // required int32 curLibId = 10;
+  if (has_curlibid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(10, this->curlibid(), target);
+  }
+
+  // required int64 userId = 11;
+  if (has_userid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(11, this->userid(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1867,55 +1520,69 @@ int PRole::ByteSize() const {
           this->rolename());
     }
 
-    // required int32 level = 3;
-    if (has_level()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->level());
-    }
-
-    // required int32 vipLvl = 4;
+    // required int32 vipLvl = 3;
     if (has_viplvl()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->viplvl());
     }
 
-    // required int32 coin = 5;
+    // required int32 coin = 4;
     if (has_coin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->coin());
     }
 
-    // required int32 rmb = 6;
+    // required int32 rmb = 5;
     if (has_rmb()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->rmb());
     }
 
-    // required int32 stamina = 7;
+    // required int32 stamina = 6;
     if (has_stamina()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->stamina());
     }
 
-    // required int32 exp = 8;
-    if (has_exp()) {
+    // required int32 leftHpItemNum = 7;
+    if (has_lefthpitemnum()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->exp());
+          this->lefthpitemnum());
+    }
+
+    // required int32 curHp = 8;
+    if (has_curhp()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->curhp());
     }
 
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    // required int32 groupId = 9;
-    if (has_groupid()) {
+    // required int32 ranking = 9;
+    if (has_ranking()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->groupid());
+          this->ranking());
+    }
+
+    // required int32 curLibId = 10;
+    if (has_curlibid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->curlibid());
+    }
+
+    // required int64 userId = 11;
+    if (has_userid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int64Size(
+          this->userid());
     }
 
   }
@@ -1951,9 +1618,6 @@ void PRole::MergeFrom(const PRole& from) {
     if (from.has_rolename()) {
       set_rolename(from.rolename());
     }
-    if (from.has_level()) {
-      set_level(from.level());
-    }
     if (from.has_viplvl()) {
       set_viplvl(from.viplvl());
     }
@@ -1966,13 +1630,22 @@ void PRole::MergeFrom(const PRole& from) {
     if (from.has_stamina()) {
       set_stamina(from.stamina());
     }
-    if (from.has_exp()) {
-      set_exp(from.exp());
+    if (from.has_lefthpitemnum()) {
+      set_lefthpitemnum(from.lefthpitemnum());
+    }
+    if (from.has_curhp()) {
+      set_curhp(from.curhp());
     }
   }
   if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    if (from.has_groupid()) {
-      set_groupid(from.groupid());
+    if (from.has_ranking()) {
+      set_ranking(from.ranking());
+    }
+    if (from.has_curlibid()) {
+      set_curlibid(from.curlibid());
+    }
+    if (from.has_userid()) {
+      set_userid(from.userid());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1991,7 +1664,7 @@ void PRole::CopyFrom(const PRole& from) {
 }
 
 bool PRole::IsInitialized() const {
-  if ((_has_bits_[0] & 0x000001ff) != 0x000001ff) return false;
+  if ((_has_bits_[0] & 0x000007ff) != 0x000007ff) return false;
 
   return true;
 }
@@ -2000,13 +1673,15 @@ void PRole::Swap(PRole* other) {
   if (other != this) {
     std::swap(roleid_, other->roleid_);
     std::swap(rolename_, other->rolename_);
-    std::swap(level_, other->level_);
     std::swap(viplvl_, other->viplvl_);
     std::swap(coin_, other->coin_);
     std::swap(rmb_, other->rmb_);
     std::swap(stamina_, other->stamina_);
-    std::swap(exp_, other->exp_);
-    std::swap(groupid_, other->groupid_);
+    std::swap(lefthpitemnum_, other->lefthpitemnum_);
+    std::swap(curhp_, other->curhp_);
+    std::swap(ranking_, other->ranking_);
+    std::swap(curlibid_, other->curlibid_);
+    std::swap(userid_, other->userid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -2030,6 +1705,7 @@ const int PUpRole::kAddValueFieldNumber;
 const int PUpRole::kFinalValueFieldNumber;
 const int PUpRole::kItemTypeFieldNumber;
 const int PUpRole::kUpdatePkIdFieldNumber;
+const int PUpRole::kParamFieldNumber;
 #endif  // !_MSC_VER
 
 PUpRole::PUpRole()
@@ -2053,6 +1729,7 @@ void PUpRole::SharedCtor() {
   finalvalue_ = 0;
   itemtype_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   updatepkid_ = GOOGLE_LONGLONG(0);
+  param_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -2063,6 +1740,9 @@ PUpRole::~PUpRole() {
 void PUpRole::SharedDtor() {
   if (itemtype_ != &::google::protobuf::internal::kEmptyString) {
     delete itemtype_;
+  }
+  if (param_ != &::google::protobuf::internal::kEmptyString) {
+    delete param_;
   }
   if (this != default_instance_) {
   }
@@ -2100,6 +1780,11 @@ void PUpRole::Clear() {
       }
     }
     updatepkid_ = GOOGLE_LONGLONG(0);
+    if (has_param()) {
+      if (param_ != &::google::protobuf::internal::kEmptyString) {
+        param_->clear();
+      }
+    }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -2187,6 +1872,23 @@ bool PUpRole::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
+        if (input->ExpectTag(50)) goto parse_param;
+        break;
+      }
+
+      // optional string param = 6;
+      case 6: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_param:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_param()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+            this->param().data(), this->param().length(),
+            ::google::protobuf::internal::WireFormat::PARSE);
+        } else {
+          goto handle_uninterpreted;
+        }
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -2238,6 +1940,15 @@ void PUpRole::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(5, this->updatepkid(), output);
   }
 
+  // optional string param = 6;
+  if (has_param()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->param().data(), this->param().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      6, this->param(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -2274,6 +1985,16 @@ void PUpRole::SerializeWithCachedSizes(
   // required int64 updatePkId = 5;
   if (has_updatepkid()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(5, this->updatepkid(), target);
+  }
+
+  // optional string param = 6;
+  if (has_param()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->param().data(), this->param().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->param(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -2322,6 +2043,13 @@ int PUpRole::ByteSize() const {
           this->updatepkid());
     }
 
+    // optional string param = 6;
+    if (has_param()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->param());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -2364,6 +2092,9 @@ void PUpRole::MergeFrom(const PUpRole& from) {
     if (from.has_updatepkid()) {
       set_updatepkid(from.updatepkid());
     }
+    if (from.has_param()) {
+      set_param(from.param());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -2393,6 +2124,7 @@ void PUpRole::Swap(PUpRole* other) {
     std::swap(finalvalue_, other->finalvalue_);
     std::swap(itemtype_, other->itemtype_);
     std::swap(updatepkid_, other->updatepkid_);
+    std::swap(param_, other->param_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

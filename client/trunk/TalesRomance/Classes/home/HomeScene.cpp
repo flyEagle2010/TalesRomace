@@ -77,12 +77,13 @@ void HomeScene::touchButtonEvent(cocos2d::Ref *pSender, TouchEventType type)
     {
         case 100: //属性
         {
-            Maze* maze=Maze::create();
-            maze->show(this,1);
+            GateInfo* gate=GateInfo::create();
+            gate->show(this,1);
             break;
         }
         case 101: //日程
         {
+
             break;
         }
         case 102: //道具
@@ -91,6 +92,8 @@ void HomeScene::touchButtonEvent(cocos2d::Ref *pSender, TouchEventType type)
         }
         case 103: //组队
         {
+            Team* team=Team::create();
+            team->show(this,1);
             break;
         }
         case 104: //卡牌

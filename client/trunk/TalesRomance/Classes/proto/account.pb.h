@@ -24,9 +24,6 @@
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "item.pb.h"
-#include "gate.pb.h"
-#include "npc.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Internal implementation detail -- do not call these.
@@ -35,9 +32,8 @@ void protobuf_AssignDesc_account_2eproto();
 void protobuf_ShutdownFile_account_2eproto();
 
 class LoginReq;
-class PGroup;
 class LoginResp;
-class PSaveGroups;
+class CreateRoleReq;
 class PRole;
 class PUpRole;
 
@@ -155,101 +151,6 @@ class LoginReq : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class PGroup : public ::google::protobuf::Message {
- public:
-  PGroup();
-  virtual ~PGroup();
-
-  PGroup(const PGroup& from);
-
-  inline PGroup& operator=(const PGroup& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const PGroup& default_instance();
-
-  void Swap(PGroup* other);
-
-  // implements Message ----------------------------------------------
-
-  PGroup* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const PGroup& from);
-  void MergeFrom(const PGroup& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // required int32 groupId = 1;
-  inline bool has_groupid() const;
-  inline void clear_groupid();
-  static const int kGroupIdFieldNumber = 1;
-  inline ::google::protobuf::int32 groupid() const;
-  inline void set_groupid(::google::protobuf::int32 value);
-
-  // repeated int64 npcId = 2;
-  inline int npcid_size() const;
-  inline void clear_npcid();
-  static const int kNpcIdFieldNumber = 2;
-  inline ::google::protobuf::int64 npcid(int index) const;
-  inline void set_npcid(int index, ::google::protobuf::int64 value);
-  inline void add_npcid(::google::protobuf::int64 value);
-  inline const ::google::protobuf::RepeatedField< ::google::protobuf::int64 >&
-      npcid() const;
-  inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
-      mutable_npcid();
-
-  // @@protoc_insertion_point(class_scope:PGroup)
- private:
-  inline void set_has_groupid();
-  inline void clear_has_groupid();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::RepeatedField< ::google::protobuf::int64 > npcid_;
-  ::google::protobuf::int32 groupid_;
-
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
-
-  friend void  protobuf_AddDesc_account_2eproto();
-  friend void protobuf_AssignDesc_account_2eproto();
-  friend void protobuf_ShutdownFile_account_2eproto();
-
-  void InitAsDefaultInstance();
-  static PGroup* default_instance_;
-};
-// -------------------------------------------------------------------
-
 class LoginResp : public ::google::protobuf::Message {
  public:
   LoginResp();
@@ -320,71 +221,20 @@ class LoginResp : public ::google::protobuf::Message {
   inline ::PRole* release_role();
   inline void set_allocated_role(::PRole* role);
 
-  // repeated .PItem itemList = 3;
-  inline int itemlist_size() const;
-  inline void clear_itemlist();
-  static const int kItemListFieldNumber = 3;
-  inline const ::PItem& itemlist(int index) const;
-  inline ::PItem* mutable_itemlist(int index);
-  inline ::PItem* add_itemlist();
-  inline const ::google::protobuf::RepeatedPtrField< ::PItem >&
-      itemlist() const;
-  inline ::google::protobuf::RepeatedPtrField< ::PItem >*
-      mutable_itemlist();
-
-  // repeated .PNpc npcList = 4;
-  inline int npclist_size() const;
-  inline void clear_npclist();
-  static const int kNpcListFieldNumber = 4;
-  inline const ::PNpc& npclist(int index) const;
-  inline ::PNpc* mutable_npclist(int index);
-  inline ::PNpc* add_npclist();
-  inline const ::google::protobuf::RepeatedPtrField< ::PNpc >&
-      npclist() const;
-  inline ::google::protobuf::RepeatedPtrField< ::PNpc >*
-      mutable_npclist();
-
-  // optional .PGateResp gate = 5;
-  inline bool has_gate() const;
-  inline void clear_gate();
-  static const int kGateFieldNumber = 5;
-  inline const ::PGateResp& gate() const;
-  inline ::PGateResp* mutable_gate();
-  inline ::PGateResp* release_gate();
-  inline void set_allocated_gate(::PGateResp* gate);
-
-  // repeated .PGroup groups = 6;
-  inline int groups_size() const;
-  inline void clear_groups();
-  static const int kGroupsFieldNumber = 6;
-  inline const ::PGroup& groups(int index) const;
-  inline ::PGroup* mutable_groups(int index);
-  inline ::PGroup* add_groups();
-  inline const ::google::protobuf::RepeatedPtrField< ::PGroup >&
-      groups() const;
-  inline ::google::protobuf::RepeatedPtrField< ::PGroup >*
-      mutable_groups();
-
   // @@protoc_insertion_point(class_scope:LoginResp)
  private:
   inline void set_has_result();
   inline void clear_has_result();
   inline void set_has_role();
   inline void clear_has_role();
-  inline void set_has_gate();
-  inline void clear_has_gate();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::PRole* role_;
-  ::google::protobuf::RepeatedPtrField< ::PItem > itemlist_;
-  ::google::protobuf::RepeatedPtrField< ::PNpc > npclist_;
-  ::PGateResp* gate_;
-  ::google::protobuf::RepeatedPtrField< ::PGroup > groups_;
   ::google::protobuf::int32 result_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
 
   friend void  protobuf_AddDesc_account_2eproto();
   friend void protobuf_AssignDesc_account_2eproto();
@@ -395,14 +245,14 @@ class LoginResp : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class PSaveGroups : public ::google::protobuf::Message {
+class CreateRoleReq : public ::google::protobuf::Message {
  public:
-  PSaveGroups();
-  virtual ~PSaveGroups();
+  CreateRoleReq();
+  virtual ~CreateRoleReq();
 
-  PSaveGroups(const PSaveGroups& from);
+  CreateRoleReq(const CreateRoleReq& from);
 
-  inline PSaveGroups& operator=(const PSaveGroups& from) {
+  inline CreateRoleReq& operator=(const CreateRoleReq& from) {
     CopyFrom(from);
     return *this;
   }
@@ -416,17 +266,17 @@ class PSaveGroups : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const PSaveGroups& default_instance();
+  static const CreateRoleReq& default_instance();
 
-  void Swap(PSaveGroups* other);
+  void Swap(CreateRoleReq* other);
 
   // implements Message ----------------------------------------------
 
-  PSaveGroups* New() const;
+  CreateRoleReq* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const PSaveGroups& from);
-  void MergeFrom(const PSaveGroups& from);
+  void CopyFrom(const CreateRoleReq& from);
+  void MergeFrom(const CreateRoleReq& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -449,34 +299,46 @@ class PSaveGroups : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .PGroup groups = 6;
-  inline int groups_size() const;
-  inline void clear_groups();
-  static const int kGroupsFieldNumber = 6;
-  inline const ::PGroup& groups(int index) const;
-  inline ::PGroup* mutable_groups(int index);
-  inline ::PGroup* add_groups();
-  inline const ::google::protobuf::RepeatedPtrField< ::PGroup >&
-      groups() const;
-  inline ::google::protobuf::RepeatedPtrField< ::PGroup >*
-      mutable_groups();
+  // required int32 spriteId = 1;
+  inline bool has_spriteid() const;
+  inline void clear_spriteid();
+  static const int kSpriteIdFieldNumber = 1;
+  inline ::google::protobuf::int32 spriteid() const;
+  inline void set_spriteid(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:PSaveGroups)
+  // required string roleName = 2;
+  inline bool has_rolename() const;
+  inline void clear_rolename();
+  static const int kRoleNameFieldNumber = 2;
+  inline const ::std::string& rolename() const;
+  inline void set_rolename(const ::std::string& value);
+  inline void set_rolename(const char* value);
+  inline void set_rolename(const char* value, size_t size);
+  inline ::std::string* mutable_rolename();
+  inline ::std::string* release_rolename();
+  inline void set_allocated_rolename(::std::string* rolename);
+
+  // @@protoc_insertion_point(class_scope:CreateRoleReq)
  private:
+  inline void set_has_spriteid();
+  inline void clear_has_spriteid();
+  inline void set_has_rolename();
+  inline void clear_has_rolename();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::PGroup > groups_;
+  ::std::string* rolename_;
+  ::google::protobuf::int32 spriteid_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
 
   friend void  protobuf_AddDesc_account_2eproto();
   friend void protobuf_AssignDesc_account_2eproto();
   friend void protobuf_ShutdownFile_account_2eproto();
 
   void InitAsDefaultInstance();
-  static PSaveGroups* default_instance_;
+  static CreateRoleReq* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -553,54 +415,68 @@ class PRole : public ::google::protobuf::Message {
   inline ::std::string* release_rolename();
   inline void set_allocated_rolename(::std::string* rolename);
 
-  // required int32 level = 3;
-  inline bool has_level() const;
-  inline void clear_level();
-  static const int kLevelFieldNumber = 3;
-  inline ::google::protobuf::int32 level() const;
-  inline void set_level(::google::protobuf::int32 value);
-
-  // required int32 vipLvl = 4;
+  // required int32 vipLvl = 3;
   inline bool has_viplvl() const;
   inline void clear_viplvl();
-  static const int kVipLvlFieldNumber = 4;
+  static const int kVipLvlFieldNumber = 3;
   inline ::google::protobuf::int32 viplvl() const;
   inline void set_viplvl(::google::protobuf::int32 value);
 
-  // required int32 coin = 5;
+  // required int32 coin = 4;
   inline bool has_coin() const;
   inline void clear_coin();
-  static const int kCoinFieldNumber = 5;
+  static const int kCoinFieldNumber = 4;
   inline ::google::protobuf::int32 coin() const;
   inline void set_coin(::google::protobuf::int32 value);
 
-  // required int32 rmb = 6;
+  // required int32 rmb = 5;
   inline bool has_rmb() const;
   inline void clear_rmb();
-  static const int kRmbFieldNumber = 6;
+  static const int kRmbFieldNumber = 5;
   inline ::google::protobuf::int32 rmb() const;
   inline void set_rmb(::google::protobuf::int32 value);
 
-  // required int32 stamina = 7;
+  // required int32 stamina = 6;
   inline bool has_stamina() const;
   inline void clear_stamina();
-  static const int kStaminaFieldNumber = 7;
+  static const int kStaminaFieldNumber = 6;
   inline ::google::protobuf::int32 stamina() const;
   inline void set_stamina(::google::protobuf::int32 value);
 
-  // required int32 exp = 8;
-  inline bool has_exp() const;
-  inline void clear_exp();
-  static const int kExpFieldNumber = 8;
-  inline ::google::protobuf::int32 exp() const;
-  inline void set_exp(::google::protobuf::int32 value);
+  // required int32 leftHpItemNum = 7;
+  inline bool has_lefthpitemnum() const;
+  inline void clear_lefthpitemnum();
+  static const int kLeftHpItemNumFieldNumber = 7;
+  inline ::google::protobuf::int32 lefthpitemnum() const;
+  inline void set_lefthpitemnum(::google::protobuf::int32 value);
 
-  // required int32 groupId = 9;
-  inline bool has_groupid() const;
-  inline void clear_groupid();
-  static const int kGroupIdFieldNumber = 9;
-  inline ::google::protobuf::int32 groupid() const;
-  inline void set_groupid(::google::protobuf::int32 value);
+  // required int32 curHp = 8;
+  inline bool has_curhp() const;
+  inline void clear_curhp();
+  static const int kCurHpFieldNumber = 8;
+  inline ::google::protobuf::int32 curhp() const;
+  inline void set_curhp(::google::protobuf::int32 value);
+
+  // required int32 ranking = 9;
+  inline bool has_ranking() const;
+  inline void clear_ranking();
+  static const int kRankingFieldNumber = 9;
+  inline ::google::protobuf::int32 ranking() const;
+  inline void set_ranking(::google::protobuf::int32 value);
+
+  // required int32 curLibId = 10;
+  inline bool has_curlibid() const;
+  inline void clear_curlibid();
+  static const int kCurLibIdFieldNumber = 10;
+  inline ::google::protobuf::int32 curlibid() const;
+  inline void set_curlibid(::google::protobuf::int32 value);
+
+  // required int64 userId = 11;
+  inline bool has_userid() const;
+  inline void clear_userid();
+  static const int kUserIdFieldNumber = 11;
+  inline ::google::protobuf::int64 userid() const;
+  inline void set_userid(::google::protobuf::int64 value);
 
   // @@protoc_insertion_point(class_scope:PRole)
  private:
@@ -608,8 +484,6 @@ class PRole : public ::google::protobuf::Message {
   inline void clear_has_roleid();
   inline void set_has_rolename();
   inline void clear_has_rolename();
-  inline void set_has_level();
-  inline void clear_has_level();
   inline void set_has_viplvl();
   inline void clear_has_viplvl();
   inline void set_has_coin();
@@ -618,25 +492,33 @@ class PRole : public ::google::protobuf::Message {
   inline void clear_has_rmb();
   inline void set_has_stamina();
   inline void clear_has_stamina();
-  inline void set_has_exp();
-  inline void clear_has_exp();
-  inline void set_has_groupid();
-  inline void clear_has_groupid();
+  inline void set_has_lefthpitemnum();
+  inline void clear_has_lefthpitemnum();
+  inline void set_has_curhp();
+  inline void clear_has_curhp();
+  inline void set_has_ranking();
+  inline void clear_has_ranking();
+  inline void set_has_curlibid();
+  inline void clear_has_curlibid();
+  inline void set_has_userid();
+  inline void clear_has_userid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 roleid_;
   ::std::string* rolename_;
-  ::google::protobuf::int32 level_;
   ::google::protobuf::int32 viplvl_;
   ::google::protobuf::int32 coin_;
   ::google::protobuf::int32 rmb_;
   ::google::protobuf::int32 stamina_;
-  ::google::protobuf::int32 exp_;
-  ::google::protobuf::int32 groupid_;
+  ::google::protobuf::int32 lefthpitemnum_;
+  ::google::protobuf::int32 curhp_;
+  ::google::protobuf::int32 ranking_;
+  ::google::protobuf::int32 curlibid_;
+  ::google::protobuf::int64 userid_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(9 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(11 + 31) / 32];
 
   friend void  protobuf_AddDesc_account_2eproto();
   friend void protobuf_AssignDesc_account_2eproto();
@@ -741,6 +623,18 @@ class PUpRole : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 updatepkid() const;
   inline void set_updatepkid(::google::protobuf::int64 value);
 
+  // optional string param = 6;
+  inline bool has_param() const;
+  inline void clear_param();
+  static const int kParamFieldNumber = 6;
+  inline const ::std::string& param() const;
+  inline void set_param(const ::std::string& value);
+  inline void set_param(const char* value);
+  inline void set_param(const char* value, size_t size);
+  inline ::std::string* mutable_param();
+  inline ::std::string* release_param();
+  inline void set_allocated_param(::std::string* param);
+
   // @@protoc_insertion_point(class_scope:PUpRole)
  private:
   inline void set_has_fieldtype();
@@ -753,6 +647,8 @@ class PUpRole : public ::google::protobuf::Message {
   inline void clear_has_itemtype();
   inline void set_has_updatepkid();
   inline void clear_has_updatepkid();
+  inline void set_has_param();
+  inline void clear_has_param();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -760,10 +656,11 @@ class PUpRole : public ::google::protobuf::Message {
   ::google::protobuf::int32 addvalue_;
   ::std::string* itemtype_;
   ::google::protobuf::int64 updatepkid_;
+  ::std::string* param_;
   ::google::protobuf::int32 finalvalue_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(5 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
 
   friend void  protobuf_AddDesc_account_2eproto();
   friend void protobuf_AssignDesc_account_2eproto();
@@ -943,57 +840,6 @@ inline void LoginReq::set_areaid(::google::protobuf::int32 value) {
 
 // -------------------------------------------------------------------
 
-// PGroup
-
-// required int32 groupId = 1;
-inline bool PGroup::has_groupid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void PGroup::set_has_groupid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void PGroup::clear_has_groupid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void PGroup::clear_groupid() {
-  groupid_ = 0;
-  clear_has_groupid();
-}
-inline ::google::protobuf::int32 PGroup::groupid() const {
-  return groupid_;
-}
-inline void PGroup::set_groupid(::google::protobuf::int32 value) {
-  set_has_groupid();
-  groupid_ = value;
-}
-
-// repeated int64 npcId = 2;
-inline int PGroup::npcid_size() const {
-  return npcid_.size();
-}
-inline void PGroup::clear_npcid() {
-  npcid_.Clear();
-}
-inline ::google::protobuf::int64 PGroup::npcid(int index) const {
-  return npcid_.Get(index);
-}
-inline void PGroup::set_npcid(int index, ::google::protobuf::int64 value) {
-  npcid_.Set(index, value);
-}
-inline void PGroup::add_npcid(::google::protobuf::int64 value) {
-  npcid_.Add(value);
-}
-inline const ::google::protobuf::RepeatedField< ::google::protobuf::int64 >&
-PGroup::npcid() const {
-  return npcid_;
-}
-inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
-PGroup::mutable_npcid() {
-  return &npcid_;
-}
-
-// -------------------------------------------------------------------
-
 // LoginResp
 
 // required int32 result = 1;
@@ -1056,146 +902,100 @@ inline void LoginResp::set_allocated_role(::PRole* role) {
   }
 }
 
-// repeated .PItem itemList = 3;
-inline int LoginResp::itemlist_size() const {
-  return itemlist_.size();
-}
-inline void LoginResp::clear_itemlist() {
-  itemlist_.Clear();
-}
-inline const ::PItem& LoginResp::itemlist(int index) const {
-  return itemlist_.Get(index);
-}
-inline ::PItem* LoginResp::mutable_itemlist(int index) {
-  return itemlist_.Mutable(index);
-}
-inline ::PItem* LoginResp::add_itemlist() {
-  return itemlist_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::PItem >&
-LoginResp::itemlist() const {
-  return itemlist_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::PItem >*
-LoginResp::mutable_itemlist() {
-  return &itemlist_;
-}
-
-// repeated .PNpc npcList = 4;
-inline int LoginResp::npclist_size() const {
-  return npclist_.size();
-}
-inline void LoginResp::clear_npclist() {
-  npclist_.Clear();
-}
-inline const ::PNpc& LoginResp::npclist(int index) const {
-  return npclist_.Get(index);
-}
-inline ::PNpc* LoginResp::mutable_npclist(int index) {
-  return npclist_.Mutable(index);
-}
-inline ::PNpc* LoginResp::add_npclist() {
-  return npclist_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::PNpc >&
-LoginResp::npclist() const {
-  return npclist_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::PNpc >*
-LoginResp::mutable_npclist() {
-  return &npclist_;
-}
-
-// optional .PGateResp gate = 5;
-inline bool LoginResp::has_gate() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void LoginResp::set_has_gate() {
-  _has_bits_[0] |= 0x00000010u;
-}
-inline void LoginResp::clear_has_gate() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-inline void LoginResp::clear_gate() {
-  if (gate_ != NULL) gate_->::PGateResp::Clear();
-  clear_has_gate();
-}
-inline const ::PGateResp& LoginResp::gate() const {
-  return gate_ != NULL ? *gate_ : *default_instance_->gate_;
-}
-inline ::PGateResp* LoginResp::mutable_gate() {
-  set_has_gate();
-  if (gate_ == NULL) gate_ = new ::PGateResp;
-  return gate_;
-}
-inline ::PGateResp* LoginResp::release_gate() {
-  clear_has_gate();
-  ::PGateResp* temp = gate_;
-  gate_ = NULL;
-  return temp;
-}
-inline void LoginResp::set_allocated_gate(::PGateResp* gate) {
-  delete gate_;
-  gate_ = gate;
-  if (gate) {
-    set_has_gate();
-  } else {
-    clear_has_gate();
-  }
-}
-
-// repeated .PGroup groups = 6;
-inline int LoginResp::groups_size() const {
-  return groups_.size();
-}
-inline void LoginResp::clear_groups() {
-  groups_.Clear();
-}
-inline const ::PGroup& LoginResp::groups(int index) const {
-  return groups_.Get(index);
-}
-inline ::PGroup* LoginResp::mutable_groups(int index) {
-  return groups_.Mutable(index);
-}
-inline ::PGroup* LoginResp::add_groups() {
-  return groups_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::PGroup >&
-LoginResp::groups() const {
-  return groups_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::PGroup >*
-LoginResp::mutable_groups() {
-  return &groups_;
-}
-
 // -------------------------------------------------------------------
 
-// PSaveGroups
+// CreateRoleReq
 
-// repeated .PGroup groups = 6;
-inline int PSaveGroups::groups_size() const {
-  return groups_.size();
+// required int32 spriteId = 1;
+inline bool CreateRoleReq::has_spriteid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void PSaveGroups::clear_groups() {
-  groups_.Clear();
+inline void CreateRoleReq::set_has_spriteid() {
+  _has_bits_[0] |= 0x00000001u;
 }
-inline const ::PGroup& PSaveGroups::groups(int index) const {
-  return groups_.Get(index);
+inline void CreateRoleReq::clear_has_spriteid() {
+  _has_bits_[0] &= ~0x00000001u;
 }
-inline ::PGroup* PSaveGroups::mutable_groups(int index) {
-  return groups_.Mutable(index);
+inline void CreateRoleReq::clear_spriteid() {
+  spriteid_ = 0;
+  clear_has_spriteid();
 }
-inline ::PGroup* PSaveGroups::add_groups() {
-  return groups_.Add();
+inline ::google::protobuf::int32 CreateRoleReq::spriteid() const {
+  return spriteid_;
 }
-inline const ::google::protobuf::RepeatedPtrField< ::PGroup >&
-PSaveGroups::groups() const {
-  return groups_;
+inline void CreateRoleReq::set_spriteid(::google::protobuf::int32 value) {
+  set_has_spriteid();
+  spriteid_ = value;
 }
-inline ::google::protobuf::RepeatedPtrField< ::PGroup >*
-PSaveGroups::mutable_groups() {
-  return &groups_;
+
+// required string roleName = 2;
+inline bool CreateRoleReq::has_rolename() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CreateRoleReq::set_has_rolename() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CreateRoleReq::clear_has_rolename() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CreateRoleReq::clear_rolename() {
+  if (rolename_ != &::google::protobuf::internal::kEmptyString) {
+    rolename_->clear();
+  }
+  clear_has_rolename();
+}
+inline const ::std::string& CreateRoleReq::rolename() const {
+  return *rolename_;
+}
+inline void CreateRoleReq::set_rolename(const ::std::string& value) {
+  set_has_rolename();
+  if (rolename_ == &::google::protobuf::internal::kEmptyString) {
+    rolename_ = new ::std::string;
+  }
+  rolename_->assign(value);
+}
+inline void CreateRoleReq::set_rolename(const char* value) {
+  set_has_rolename();
+  if (rolename_ == &::google::protobuf::internal::kEmptyString) {
+    rolename_ = new ::std::string;
+  }
+  rolename_->assign(value);
+}
+inline void CreateRoleReq::set_rolename(const char* value, size_t size) {
+  set_has_rolename();
+  if (rolename_ == &::google::protobuf::internal::kEmptyString) {
+    rolename_ = new ::std::string;
+  }
+  rolename_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* CreateRoleReq::mutable_rolename() {
+  set_has_rolename();
+  if (rolename_ == &::google::protobuf::internal::kEmptyString) {
+    rolename_ = new ::std::string;
+  }
+  return rolename_;
+}
+inline ::std::string* CreateRoleReq::release_rolename() {
+  clear_has_rolename();
+  if (rolename_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = rolename_;
+    rolename_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void CreateRoleReq::set_allocated_rolename(::std::string* rolename) {
+  if (rolename_ != &::google::protobuf::internal::kEmptyString) {
+    delete rolename_;
+  }
+  if (rolename) {
+    set_has_rolename();
+    rolename_ = rolename;
+  } else {
+    clear_has_rolename();
+    rolename_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
 }
 
 // -------------------------------------------------------------------
@@ -1294,37 +1094,15 @@ inline void PRole::set_allocated_rolename(::std::string* rolename) {
   }
 }
 
-// required int32 level = 3;
-inline bool PRole::has_level() const {
+// required int32 vipLvl = 3;
+inline bool PRole::has_viplvl() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void PRole::set_has_level() {
+inline void PRole::set_has_viplvl() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void PRole::clear_has_level() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void PRole::clear_level() {
-  level_ = 0;
-  clear_has_level();
-}
-inline ::google::protobuf::int32 PRole::level() const {
-  return level_;
-}
-inline void PRole::set_level(::google::protobuf::int32 value) {
-  set_has_level();
-  level_ = value;
-}
-
-// required int32 vipLvl = 4;
-inline bool PRole::has_viplvl() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void PRole::set_has_viplvl() {
-  _has_bits_[0] |= 0x00000008u;
-}
 inline void PRole::clear_has_viplvl() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void PRole::clear_viplvl() {
   viplvl_ = 0;
@@ -1338,15 +1116,15 @@ inline void PRole::set_viplvl(::google::protobuf::int32 value) {
   viplvl_ = value;
 }
 
-// required int32 coin = 5;
+// required int32 coin = 4;
 inline bool PRole::has_coin() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void PRole::set_has_coin() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void PRole::clear_has_coin() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void PRole::clear_coin() {
   coin_ = 0;
@@ -1360,15 +1138,15 @@ inline void PRole::set_coin(::google::protobuf::int32 value) {
   coin_ = value;
 }
 
-// required int32 rmb = 6;
+// required int32 rmb = 5;
 inline bool PRole::has_rmb() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void PRole::set_has_rmb() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void PRole::clear_has_rmb() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void PRole::clear_rmb() {
   rmb_ = 0;
@@ -1382,15 +1160,15 @@ inline void PRole::set_rmb(::google::protobuf::int32 value) {
   rmb_ = value;
 }
 
-// required int32 stamina = 7;
+// required int32 stamina = 6;
 inline bool PRole::has_stamina() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void PRole::set_has_stamina() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void PRole::clear_has_stamina() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void PRole::clear_stamina() {
   stamina_ = 0;
@@ -1404,48 +1182,114 @@ inline void PRole::set_stamina(::google::protobuf::int32 value) {
   stamina_ = value;
 }
 
-// required int32 exp = 8;
-inline bool PRole::has_exp() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+// required int32 leftHpItemNum = 7;
+inline bool PRole::has_lefthpitemnum() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
-inline void PRole::set_has_exp() {
-  _has_bits_[0] |= 0x00000080u;
+inline void PRole::set_has_lefthpitemnum() {
+  _has_bits_[0] |= 0x00000040u;
 }
-inline void PRole::clear_has_exp() {
-  _has_bits_[0] &= ~0x00000080u;
+inline void PRole::clear_has_lefthpitemnum() {
+  _has_bits_[0] &= ~0x00000040u;
 }
-inline void PRole::clear_exp() {
-  exp_ = 0;
-  clear_has_exp();
+inline void PRole::clear_lefthpitemnum() {
+  lefthpitemnum_ = 0;
+  clear_has_lefthpitemnum();
 }
-inline ::google::protobuf::int32 PRole::exp() const {
-  return exp_;
+inline ::google::protobuf::int32 PRole::lefthpitemnum() const {
+  return lefthpitemnum_;
 }
-inline void PRole::set_exp(::google::protobuf::int32 value) {
-  set_has_exp();
-  exp_ = value;
+inline void PRole::set_lefthpitemnum(::google::protobuf::int32 value) {
+  set_has_lefthpitemnum();
+  lefthpitemnum_ = value;
 }
 
-// required int32 groupId = 9;
-inline bool PRole::has_groupid() const {
+// required int32 curHp = 8;
+inline bool PRole::has_curhp() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void PRole::set_has_curhp() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void PRole::clear_has_curhp() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void PRole::clear_curhp() {
+  curhp_ = 0;
+  clear_has_curhp();
+}
+inline ::google::protobuf::int32 PRole::curhp() const {
+  return curhp_;
+}
+inline void PRole::set_curhp(::google::protobuf::int32 value) {
+  set_has_curhp();
+  curhp_ = value;
+}
+
+// required int32 ranking = 9;
+inline bool PRole::has_ranking() const {
   return (_has_bits_[0] & 0x00000100u) != 0;
 }
-inline void PRole::set_has_groupid() {
+inline void PRole::set_has_ranking() {
   _has_bits_[0] |= 0x00000100u;
 }
-inline void PRole::clear_has_groupid() {
+inline void PRole::clear_has_ranking() {
   _has_bits_[0] &= ~0x00000100u;
 }
-inline void PRole::clear_groupid() {
-  groupid_ = 0;
-  clear_has_groupid();
+inline void PRole::clear_ranking() {
+  ranking_ = 0;
+  clear_has_ranking();
 }
-inline ::google::protobuf::int32 PRole::groupid() const {
-  return groupid_;
+inline ::google::protobuf::int32 PRole::ranking() const {
+  return ranking_;
 }
-inline void PRole::set_groupid(::google::protobuf::int32 value) {
-  set_has_groupid();
-  groupid_ = value;
+inline void PRole::set_ranking(::google::protobuf::int32 value) {
+  set_has_ranking();
+  ranking_ = value;
+}
+
+// required int32 curLibId = 10;
+inline bool PRole::has_curlibid() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void PRole::set_has_curlibid() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void PRole::clear_has_curlibid() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void PRole::clear_curlibid() {
+  curlibid_ = 0;
+  clear_has_curlibid();
+}
+inline ::google::protobuf::int32 PRole::curlibid() const {
+  return curlibid_;
+}
+inline void PRole::set_curlibid(::google::protobuf::int32 value) {
+  set_has_curlibid();
+  curlibid_ = value;
+}
+
+// required int64 userId = 11;
+inline bool PRole::has_userid() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void PRole::set_has_userid() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void PRole::clear_has_userid() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void PRole::clear_userid() {
+  userid_ = GOOGLE_LONGLONG(0);
+  clear_has_userid();
+}
+inline ::google::protobuf::int64 PRole::userid() const {
+  return userid_;
+}
+inline void PRole::set_userid(::google::protobuf::int64 value) {
+  set_has_userid();
+  userid_ = value;
 }
 
 // -------------------------------------------------------------------
@@ -1608,6 +1452,76 @@ inline ::google::protobuf::int64 PUpRole::updatepkid() const {
 inline void PUpRole::set_updatepkid(::google::protobuf::int64 value) {
   set_has_updatepkid();
   updatepkid_ = value;
+}
+
+// optional string param = 6;
+inline bool PUpRole::has_param() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void PUpRole::set_has_param() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void PUpRole::clear_has_param() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void PUpRole::clear_param() {
+  if (param_ != &::google::protobuf::internal::kEmptyString) {
+    param_->clear();
+  }
+  clear_has_param();
+}
+inline const ::std::string& PUpRole::param() const {
+  return *param_;
+}
+inline void PUpRole::set_param(const ::std::string& value) {
+  set_has_param();
+  if (param_ == &::google::protobuf::internal::kEmptyString) {
+    param_ = new ::std::string;
+  }
+  param_->assign(value);
+}
+inline void PUpRole::set_param(const char* value) {
+  set_has_param();
+  if (param_ == &::google::protobuf::internal::kEmptyString) {
+    param_ = new ::std::string;
+  }
+  param_->assign(value);
+}
+inline void PUpRole::set_param(const char* value, size_t size) {
+  set_has_param();
+  if (param_ == &::google::protobuf::internal::kEmptyString) {
+    param_ = new ::std::string;
+  }
+  param_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* PUpRole::mutable_param() {
+  set_has_param();
+  if (param_ == &::google::protobuf::internal::kEmptyString) {
+    param_ = new ::std::string;
+  }
+  return param_;
+}
+inline ::std::string* PUpRole::release_param() {
+  clear_has_param();
+  if (param_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = param_;
+    param_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void PUpRole::set_allocated_param(::std::string* param) {
+  if (param_ != &::google::protobuf::internal::kEmptyString) {
+    delete param_;
+  }
+  if (param) {
+    set_has_param();
+    param_ = param;
+  } else {
+    clear_has_param();
+    param_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
 }
 
 

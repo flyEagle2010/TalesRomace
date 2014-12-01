@@ -18,7 +18,7 @@
 #include "BattleMgr.h"
 #include "Clip.h"
 #include "Hero.h"
-#include "Card.h"
+#include "BattleCard.h"
 #include "StandDraw.h"
 
 USING_NS_CC;
@@ -26,7 +26,7 @@ using namespace ui;
 using namespace cocostudio;
 class FData;
 class FighterMgr;
-class Card;
+class BattleCard;
 class BattleScene:public BaseUI{
 public:
 	static Scene* createScene();
@@ -44,13 +44,13 @@ private:
     void initHero();
     void playRound();
     
-    void playCard();
+    void playBattleCard();
     void petAttack();
     void showBuff();
     void playEffect(std::string name);
     
     
-    Vector<Card*> cards;
+    Vector<BattleCard*> BattleCards;
     Size wsize;
 public:
     Node* heroNode;

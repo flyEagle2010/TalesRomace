@@ -111,7 +111,7 @@
             <key>renWuKuang_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{829,582},{50,20}}</string>
+                <string>{{906,582},{50,20}}</string>
                 <key>offset</key>
                 <string>{-57,161}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>renWuKuang_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{829,582},{50,20}}</string>
+                <string>{{906,582},{50,20}}</string>
                 <key>offset</key>
                 <string>{-57,161}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>renWuKuang_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{829,582},{50,20}}</string>
+                <string>{{906,582},{50,20}}</string>
                 <key>offset</key>
                 <string>{-57,161}</string>
                 <key>rotated</key>
@@ -150,7 +150,7 @@
             <key>renWuKuang_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{829,582},{50,20}}</string>
+                <string>{{906,582},{50,20}}</string>
                 <key>offset</key>
                 <string>{-57,161}</string>
                 <key>rotated</key>
@@ -159,6 +159,19 @@
                 <string>{{13,14},{50,20}}</string>
                 <key>sourceSize</key>
                 <string>{190,370}</string>
+            </dict>
+            <key>teamSelect.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{829,582},{261,75}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{261,75}}</string>
+                <key>sourceSize</key>
+                <string>{261,75}</string>
             </dict>
             <key>yaoQingHuoBanBg.png</key>
             <dict>
@@ -183,7 +196,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:176c2b55774b2adc91355629d43931ce:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:a3a0556fbd61569b77b3551825a4abb8:1/1$</string>
             <key>textureFileName</key>
             <string>gateInfo.png</string>
         </dict>

@@ -44,12 +44,13 @@ void protobuf_AssignDesc_battle_2eproto() {
       "battle.proto");
   GOOGLE_CHECK(file != NULL);
   PBattle_descriptor_ = file->message_type(0);
-  static const int PBattle_offsets_[5] = {
+  static const int PBattle_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PBattle, heros_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PBattle, rounds_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PBattle, cards_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PBattle, gold_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PBattle, exp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PBattle, winnerid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PBattle, type_),
   };
   PBattle_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -63,16 +64,14 @@ void protobuf_AssignDesc_battle_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(PBattle));
   PFightItem_descriptor_ = file->message_type(1);
-  static const int PFightItem_offsets_[9] = {
+  static const int PFightItem_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PFightItem, id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PFightItem, hp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PFightItem, name_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PFightItem, icon_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PFightItem, avatar_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PFightItem, xid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PFightItem, friendid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PFightItem, friendname_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PFightItem, friendicon_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PFightItem, friendavatar_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PFightItem, friendxid_),
   };
   PFightItem_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -86,14 +85,13 @@ void protobuf_AssignDesc_battle_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(PFightItem));
   PRound_descriptor_ = file->message_type(2);
-  static const int PRound_offsets_[9] = {
+  static const int PRound_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRound, source_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRound, isskip_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRound, target_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRound, cards_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRound, aoyiskillid_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRound, delicons_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRound, delstates_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRound, lefticons_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRound, leftstates_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRound, buffhps_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PRound, lefthp_),
   };
@@ -109,10 +107,12 @@ void protobuf_AssignDesc_battle_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(PRound));
   Phurt_descriptor_ = file->message_type(3);
-  static const int Phurt_offsets_[3] = {
+  static const int Phurt_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Phurt, card_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Phurt, skillid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Phurt, targets_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Phurt, level_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Phurt, star_),
   };
   Phurt_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -126,13 +126,14 @@ void protobuf_AssignDesc_battle_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(Phurt));
   PTarget_descriptor_ = file->message_type(4);
-  static const int PTarget_offsets_[6] = {
+  static const int PTarget_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PTarget, targetid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PTarget, state_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PTarget, bufficon_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PTarget, hp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PTarget, lefthp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PTarget, hptypes_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PTarget, skillid_),
   };
   PTarget_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -191,22 +192,22 @@ void protobuf_AddDesc_battle_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\014battle.proto\"h\n\007PBattle\022\032\n\005heros\030\001 \003(\013"
+    "\n\014battle.proto\"{\n\007PBattle\022\032\n\005heros\030\001 \003(\013"
     "2\013.PFightItem\022\027\n\006rounds\030\002 \003(\0132\007.PRound\022\r"
-    "\n\005cards\030\003 \003(\005\022\014\n\004gold\030\004 \002(\005\022\013\n\003exp\030\005 \002(\005"
-    "\"\240\001\n\nPFightItem\022\n\n\002id\030\001 \002(\005\022\n\n\002hp\030\002 \002(\005\022"
-    "\014\n\004name\030\003 \002(\t\022\014\n\004icon\030\004 \002(\t\022\016\n\006avatar\030\005 "
-    "\002(\t\022\020\n\010friendID\030\006 \002(\t\022\022\n\nfriendName\030\007 \002("
-    "\t\022\022\n\nfriendIcon\030\010 \002(\t\022\024\n\014friendAvatar\030\t "
-    "\002(\t\"\252\001\n\006PRound\022\016\n\006source\030\001 \002(\005\022\016\n\006isSkip"
-    "\030\002 \002(\010\022\016\n\006target\030\003 \001(\005\022\025\n\005cards\030\004 \003(\0132\006."
-    "Phurt\022\023\n\013aoyiSkillID\030\005 \001(\005\022\020\n\010delIcons\030\006"
-    " \003(\t\022\021\n\tdelStates\030\007 \003(\005\022\017\n\007buffHps\030\010 \003(\005"
-    "\022\016\n\006leftHp\030\t \002(\005\"A\n\005Phurt\022\014\n\004card\030\001 \001(\005\022"
-    "\017\n\007skillID\030\002 \002(\010\022\031\n\007targets\030\003 \003(\0132\010.PTar"
-    "get\"i\n\007PTarget\022\020\n\010targetID\030\001 \002(\005\022\r\n\005stat"
-    "e\030\002 \003(\005\022\020\n\010buffIcon\030\003 \003(\t\022\n\n\002hp\030\004 \002(\005\022\016\n"
-    "\006leftHp\030\005 \002(\005\022\017\n\007hpTypes\030\006 \002(\005", 630);
+    "\n\005cards\030\003 \003(\005\022\014\n\004gold\030\004 \002(\005\022\020\n\010winnerID\030"
+    "\005 \002(\003\022\014\n\004type\030\006 \002(\005\"x\n\nPFightItem\022\n\n\002id\030"
+    "\001 \002(\003\022\n\n\002hp\030\002 \002(\005\022\014\n\004name\030\003 \002(\t\022\013\n\003xid\030\004"
+    " \002(\005\022\020\n\010friendID\030\005 \002(\003\022\022\n\nfriendName\030\006 \002"
+    "(\t\022\021\n\tfriendXid\030\007 \002(\005\"\234\001\n\006PRound\022\016\n\006sour"
+    "ce\030\001 \002(\005\022\016\n\006isSkip\030\002 \002(\010\022\025\n\005cards\030\003 \003(\0132"
+    "\006.Phurt\022\023\n\013aoyiSkillID\030\004 \001(\005\022\021\n\tleftIcon"
+    "s\030\005 \003(\t\022\022\n\nleftStates\030\006 \003(\005\022\017\n\007buffHps\030\007"
+    " \003(\005\022\016\n\006leftHp\030\010 \002(\005\"^\n\005Phurt\022\014\n\004card\030\001 "
+    "\001(\005\022\017\n\007skillID\030\002 \002(\010\022\031\n\007targets\030\003 \003(\0132\010."
+    "PTarget\022\r\n\005level\030\004 \001(\005\022\014\n\004star\030\005 \001(\005\"z\n\007"
+    "PTarget\022\020\n\010targetID\030\001 \002(\005\022\r\n\005state\030\002 \003(\005"
+    "\022\020\n\010buffIcon\030\003 \003(\t\022\n\n\002hp\030\004 \002(\005\022\016\n\006leftHp"
+    "\030\005 \002(\005\022\017\n\007hpTypes\030\006 \002(\005\022\017\n\007skillID\030\007 \002(\005", 640);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "battle.proto", &protobuf_RegisterTypes);
   PBattle::default_instance_ = new PBattle();
@@ -236,7 +237,8 @@ const int PBattle::kHerosFieldNumber;
 const int PBattle::kRoundsFieldNumber;
 const int PBattle::kCardsFieldNumber;
 const int PBattle::kGoldFieldNumber;
-const int PBattle::kExpFieldNumber;
+const int PBattle::kWinnerIDFieldNumber;
+const int PBattle::kTypeFieldNumber;
 #endif  // !_MSC_VER
 
 PBattle::PBattle()
@@ -256,7 +258,8 @@ PBattle::PBattle(const PBattle& from)
 void PBattle::SharedCtor() {
   _cached_size_ = 0;
   gold_ = 0;
-  exp_ = 0;
+  winnerid_ = GOOGLE_LONGLONG(0);
+  type_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -293,7 +296,8 @@ PBattle* PBattle::New() const {
 void PBattle::Clear() {
   if (_has_bits_[3 / 32] & (0xffu << (3 % 32))) {
     gold_ = 0;
-    exp_ = 0;
+    winnerid_ = GOOGLE_LONGLONG(0);
+    type_ = 0;
   }
   heros_.Clear();
   rounds_.Clear();
@@ -372,19 +376,35 @@ bool PBattle::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(40)) goto parse_exp;
+        if (input->ExpectTag(40)) goto parse_winnerID;
         break;
       }
 
-      // required int32 exp = 5;
+      // required int64 winnerID = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_exp:
+         parse_winnerID:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &winnerid_)));
+          set_has_winnerid();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(48)) goto parse_type;
+        break;
+      }
+
+      // required int32 type = 6;
+      case 6: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_type:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &exp_)));
-          set_has_exp();
+                 input, &type_)));
+          set_has_type();
         } else {
           goto handle_uninterpreted;
         }
@@ -433,9 +453,14 @@ void PBattle::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->gold(), output);
   }
 
-  // required int32 exp = 5;
-  if (has_exp()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->exp(), output);
+  // required int64 winnerID = 5;
+  if (has_winnerid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(5, this->winnerid(), output);
+  }
+
+  // required int32 type = 6;
+  if (has_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->type(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -471,9 +496,14 @@ void PBattle::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->gold(), target);
   }
 
-  // required int32 exp = 5;
-  if (has_exp()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->exp(), target);
+  // required int64 winnerID = 5;
+  if (has_winnerid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(5, this->winnerid(), target);
+  }
+
+  // required int32 type = 6;
+  if (has_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->type(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -494,11 +524,18 @@ int PBattle::ByteSize() const {
           this->gold());
     }
 
-    // required int32 exp = 5;
-    if (has_exp()) {
+    // required int64 winnerID = 5;
+    if (has_winnerid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int64Size(
+          this->winnerid());
+    }
+
+    // required int32 type = 6;
+    if (has_type()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->exp());
+          this->type());
     }
 
   }
@@ -560,8 +597,11 @@ void PBattle::MergeFrom(const PBattle& from) {
     if (from.has_gold()) {
       set_gold(from.gold());
     }
-    if (from.has_exp()) {
-      set_exp(from.exp());
+    if (from.has_winnerid()) {
+      set_winnerid(from.winnerid());
+    }
+    if (from.has_type()) {
+      set_type(from.type());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -580,7 +620,7 @@ void PBattle::CopyFrom(const PBattle& from) {
 }
 
 bool PBattle::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000018) != 0x00000018) return false;
+  if ((_has_bits_[0] & 0x00000038) != 0x00000038) return false;
 
   for (int i = 0; i < heros_size(); i++) {
     if (!this->heros(i).IsInitialized()) return false;
@@ -597,7 +637,8 @@ void PBattle::Swap(PBattle* other) {
     rounds_.Swap(&other->rounds_);
     cards_.Swap(&other->cards_);
     std::swap(gold_, other->gold_);
-    std::swap(exp_, other->exp_);
+    std::swap(winnerid_, other->winnerid_);
+    std::swap(type_, other->type_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -619,12 +660,10 @@ void PBattle::Swap(PBattle* other) {
 const int PFightItem::kIdFieldNumber;
 const int PFightItem::kHpFieldNumber;
 const int PFightItem::kNameFieldNumber;
-const int PFightItem::kIconFieldNumber;
-const int PFightItem::kAvatarFieldNumber;
+const int PFightItem::kXidFieldNumber;
 const int PFightItem::kFriendIDFieldNumber;
 const int PFightItem::kFriendNameFieldNumber;
-const int PFightItem::kFriendIconFieldNumber;
-const int PFightItem::kFriendAvatarFieldNumber;
+const int PFightItem::kFriendXidFieldNumber;
 #endif  // !_MSC_VER
 
 PFightItem::PFightItem()
@@ -643,15 +682,13 @@ PFightItem::PFightItem(const PFightItem& from)
 
 void PFightItem::SharedCtor() {
   _cached_size_ = 0;
-  id_ = 0;
+  id_ = GOOGLE_LONGLONG(0);
   hp_ = 0;
   name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  icon_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  avatar_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  friendid_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  xid_ = 0;
+  friendid_ = GOOGLE_LONGLONG(0);
   friendname_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  friendicon_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  friendavatar_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  friendxid_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -663,23 +700,8 @@ void PFightItem::SharedDtor() {
   if (name_ != &::google::protobuf::internal::kEmptyString) {
     delete name_;
   }
-  if (icon_ != &::google::protobuf::internal::kEmptyString) {
-    delete icon_;
-  }
-  if (avatar_ != &::google::protobuf::internal::kEmptyString) {
-    delete avatar_;
-  }
-  if (friendid_ != &::google::protobuf::internal::kEmptyString) {
-    delete friendid_;
-  }
   if (friendname_ != &::google::protobuf::internal::kEmptyString) {
     delete friendname_;
-  }
-  if (friendicon_ != &::google::protobuf::internal::kEmptyString) {
-    delete friendicon_;
-  }
-  if (friendavatar_ != &::google::protobuf::internal::kEmptyString) {
-    delete friendavatar_;
   }
   if (this != default_instance_) {
   }
@@ -708,45 +730,21 @@ PFightItem* PFightItem::New() const {
 
 void PFightItem::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    id_ = 0;
+    id_ = GOOGLE_LONGLONG(0);
     hp_ = 0;
     if (has_name()) {
       if (name_ != &::google::protobuf::internal::kEmptyString) {
         name_->clear();
       }
     }
-    if (has_icon()) {
-      if (icon_ != &::google::protobuf::internal::kEmptyString) {
-        icon_->clear();
-      }
-    }
-    if (has_avatar()) {
-      if (avatar_ != &::google::protobuf::internal::kEmptyString) {
-        avatar_->clear();
-      }
-    }
-    if (has_friendid()) {
-      if (friendid_ != &::google::protobuf::internal::kEmptyString) {
-        friendid_->clear();
-      }
-    }
+    xid_ = 0;
+    friendid_ = GOOGLE_LONGLONG(0);
     if (has_friendname()) {
       if (friendname_ != &::google::protobuf::internal::kEmptyString) {
         friendname_->clear();
       }
     }
-    if (has_friendicon()) {
-      if (friendicon_ != &::google::protobuf::internal::kEmptyString) {
-        friendicon_->clear();
-      }
-    }
-  }
-  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    if (has_friendavatar()) {
-      if (friendavatar_ != &::google::protobuf::internal::kEmptyString) {
-        friendavatar_->clear();
-      }
-    }
+    friendxid_ = 0;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -758,12 +756,12 @@ bool PFightItem::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 id = 1;
+      // required int64 id = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
                  input, &id_)));
           set_has_id();
         } else {
@@ -802,63 +800,44 @@ bool PFightItem::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(34)) goto parse_icon;
+        if (input->ExpectTag(32)) goto parse_xid;
         break;
       }
 
-      // required string icon = 4;
+      // required int32 xid = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_icon:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_icon()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->icon().data(), this->icon().length(),
-            ::google::protobuf::internal::WireFormat::PARSE);
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_xid:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &xid_)));
+          set_has_xid();
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(42)) goto parse_avatar;
+        if (input->ExpectTag(40)) goto parse_friendID;
         break;
       }
 
-      // required string avatar = 5;
+      // required int64 friendID = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_avatar:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_avatar()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->avatar().data(), this->avatar().length(),
-            ::google::protobuf::internal::WireFormat::PARSE);
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(50)) goto parse_friendID;
-        break;
-      }
-
-      // required string friendID = 6;
-      case 6: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_friendID:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_friendid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->friendid().data(), this->friendid().length(),
-            ::google::protobuf::internal::WireFormat::PARSE);
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &friendid_)));
+          set_has_friendid();
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(58)) goto parse_friendName;
+        if (input->ExpectTag(50)) goto parse_friendName;
         break;
       }
 
-      // required string friendName = 7;
-      case 7: {
+      // required string friendName = 6;
+      case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_friendName:
@@ -870,37 +849,19 @@ bool PFightItem::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(66)) goto parse_friendIcon;
+        if (input->ExpectTag(56)) goto parse_friendXid;
         break;
       }
 
-      // required string friendIcon = 8;
-      case 8: {
+      // required int32 friendXid = 7;
+      case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_friendIcon:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_friendicon()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->friendicon().data(), this->friendicon().length(),
-            ::google::protobuf::internal::WireFormat::PARSE);
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(74)) goto parse_friendAvatar;
-        break;
-      }
-
-      // required string friendAvatar = 9;
-      case 9: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_friendAvatar:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_friendavatar()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->friendavatar().data(), this->friendavatar().length(),
-            ::google::protobuf::internal::WireFormat::PARSE);
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_friendXid:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &friendxid_)));
+          set_has_friendxid();
         } else {
           goto handle_uninterpreted;
         }
@@ -926,9 +887,9 @@ bool PFightItem::MergePartialFromCodedStream(
 
 void PFightItem::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // required int32 id = 1;
+  // required int64 id = 1;
   if (has_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->id(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->id(), output);
   }
 
   // required int32 hp = 2;
@@ -945,58 +906,28 @@ void PFightItem::SerializeWithCachedSizes(
       3, this->name(), output);
   }
 
-  // required string icon = 4;
-  if (has_icon()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->icon().data(), this->icon().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      4, this->icon(), output);
+  // required int32 xid = 4;
+  if (has_xid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->xid(), output);
   }
 
-  // required string avatar = 5;
-  if (has_avatar()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->avatar().data(), this->avatar().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      5, this->avatar(), output);
-  }
-
-  // required string friendID = 6;
+  // required int64 friendID = 5;
   if (has_friendid()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->friendid().data(), this->friendid().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      6, this->friendid(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(5, this->friendid(), output);
   }
 
-  // required string friendName = 7;
+  // required string friendName = 6;
   if (has_friendname()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->friendname().data(), this->friendname().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      7, this->friendname(), output);
+      6, this->friendname(), output);
   }
 
-  // required string friendIcon = 8;
-  if (has_friendicon()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->friendicon().data(), this->friendicon().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      8, this->friendicon(), output);
-  }
-
-  // required string friendAvatar = 9;
-  if (has_friendavatar()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->friendavatar().data(), this->friendavatar().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      9, this->friendavatar(), output);
+  // required int32 friendXid = 7;
+  if (has_friendxid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->friendxid(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -1007,9 +938,9 @@ void PFightItem::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* PFightItem::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // required int32 id = 1;
+  // required int64 id = 1;
   if (has_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->id(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->id(), target);
   }
 
   // required int32 hp = 2;
@@ -1027,64 +958,29 @@ void PFightItem::SerializeWithCachedSizes(
         3, this->name(), target);
   }
 
-  // required string icon = 4;
-  if (has_icon()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->icon().data(), this->icon().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->icon(), target);
+  // required int32 xid = 4;
+  if (has_xid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->xid(), target);
   }
 
-  // required string avatar = 5;
-  if (has_avatar()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->avatar().data(), this->avatar().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->avatar(), target);
-  }
-
-  // required string friendID = 6;
+  // required int64 friendID = 5;
   if (has_friendid()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->friendid().data(), this->friendid().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        6, this->friendid(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(5, this->friendid(), target);
   }
 
-  // required string friendName = 7;
+  // required string friendName = 6;
   if (has_friendname()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->friendname().data(), this->friendname().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        7, this->friendname(), target);
+        6, this->friendname(), target);
   }
 
-  // required string friendIcon = 8;
-  if (has_friendicon()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->friendicon().data(), this->friendicon().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        8, this->friendicon(), target);
-  }
-
-  // required string friendAvatar = 9;
-  if (has_friendavatar()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->friendavatar().data(), this->friendavatar().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        9, this->friendavatar(), target);
+  // required int32 friendXid = 7;
+  if (has_friendxid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->friendxid(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1098,10 +994,10 @@ int PFightItem::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required int32 id = 1;
+    // required int64 id = 1;
     if (has_id()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
+        ::google::protobuf::internal::WireFormatLite::Int64Size(
           this->id());
     }
 
@@ -1119,48 +1015,32 @@ int PFightItem::ByteSize() const {
           this->name());
     }
 
-    // required string icon = 4;
-    if (has_icon()) {
+    // required int32 xid = 4;
+    if (has_xid()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->icon());
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->xid());
     }
 
-    // required string avatar = 5;
-    if (has_avatar()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->avatar());
-    }
-
-    // required string friendID = 6;
+    // required int64 friendID = 5;
     if (has_friendid()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
+        ::google::protobuf::internal::WireFormatLite::Int64Size(
           this->friendid());
     }
 
-    // required string friendName = 7;
+    // required string friendName = 6;
     if (has_friendname()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->friendname());
     }
 
-    // required string friendIcon = 8;
-    if (has_friendicon()) {
+    // required int32 friendXid = 7;
+    if (has_friendxid()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->friendicon());
-    }
-
-  }
-  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    // required string friendAvatar = 9;
-    if (has_friendavatar()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->friendavatar());
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->friendxid());
     }
 
   }
@@ -1199,11 +1079,8 @@ void PFightItem::MergeFrom(const PFightItem& from) {
     if (from.has_name()) {
       set_name(from.name());
     }
-    if (from.has_icon()) {
-      set_icon(from.icon());
-    }
-    if (from.has_avatar()) {
-      set_avatar(from.avatar());
+    if (from.has_xid()) {
+      set_xid(from.xid());
     }
     if (from.has_friendid()) {
       set_friendid(from.friendid());
@@ -1211,13 +1088,8 @@ void PFightItem::MergeFrom(const PFightItem& from) {
     if (from.has_friendname()) {
       set_friendname(from.friendname());
     }
-    if (from.has_friendicon()) {
-      set_friendicon(from.friendicon());
-    }
-  }
-  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    if (from.has_friendavatar()) {
-      set_friendavatar(from.friendavatar());
+    if (from.has_friendxid()) {
+      set_friendxid(from.friendxid());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1236,7 +1108,7 @@ void PFightItem::CopyFrom(const PFightItem& from) {
 }
 
 bool PFightItem::IsInitialized() const {
-  if ((_has_bits_[0] & 0x000001ff) != 0x000001ff) return false;
+  if ((_has_bits_[0] & 0x0000007f) != 0x0000007f) return false;
 
   return true;
 }
@@ -1246,12 +1118,10 @@ void PFightItem::Swap(PFightItem* other) {
     std::swap(id_, other->id_);
     std::swap(hp_, other->hp_);
     std::swap(name_, other->name_);
-    std::swap(icon_, other->icon_);
-    std::swap(avatar_, other->avatar_);
+    std::swap(xid_, other->xid_);
     std::swap(friendid_, other->friendid_);
     std::swap(friendname_, other->friendname_);
-    std::swap(friendicon_, other->friendicon_);
-    std::swap(friendavatar_, other->friendavatar_);
+    std::swap(friendxid_, other->friendxid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -1272,11 +1142,10 @@ void PFightItem::Swap(PFightItem* other) {
 #ifndef _MSC_VER
 const int PRound::kSourceFieldNumber;
 const int PRound::kIsSkipFieldNumber;
-const int PRound::kTargetFieldNumber;
 const int PRound::kCardsFieldNumber;
 const int PRound::kAoyiSkillIDFieldNumber;
-const int PRound::kDelIconsFieldNumber;
-const int PRound::kDelStatesFieldNumber;
+const int PRound::kLeftIconsFieldNumber;
+const int PRound::kLeftStatesFieldNumber;
 const int PRound::kBuffHpsFieldNumber;
 const int PRound::kLeftHpFieldNumber;
 #endif  // !_MSC_VER
@@ -1299,7 +1168,6 @@ void PRound::SharedCtor() {
   _cached_size_ = 0;
   source_ = 0;
   isskip_ = false;
-  target_ = 0;
   aoyiskillid_ = 0;
   lefthp_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1339,15 +1207,12 @@ void PRound::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     source_ = 0;
     isskip_ = false;
-    target_ = 0;
     aoyiskillid_ = 0;
-  }
-  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     lefthp_ = 0;
   }
   cards_.Clear();
-  delicons_.Clear();
-  delstates_.Clear();
+  lefticons_.Clear();
+  leftstates_.Clear();
   buffhps_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -1386,28 +1251,12 @@ bool PRound::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(24)) goto parse_target;
+        if (input->ExpectTag(26)) goto parse_cards;
         break;
       }
 
-      // optional int32 target = 3;
+      // repeated .Phurt cards = 3;
       case 3: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_target:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &target_)));
-          set_has_target();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(34)) goto parse_cards;
-        break;
-      }
-
-      // repeated .Phurt cards = 4;
-      case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_cards:
@@ -1416,13 +1265,13 @@ bool PRound::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(34)) goto parse_cards;
-        if (input->ExpectTag(40)) goto parse_aoyiSkillID;
+        if (input->ExpectTag(26)) goto parse_cards;
+        if (input->ExpectTag(32)) goto parse_aoyiSkillID;
         break;
       }
 
-      // optional int32 aoyiSkillID = 5;
-      case 5: {
+      // optional int32 aoyiSkillID = 4;
+      case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_aoyiSkillID:
@@ -1433,59 +1282,59 @@ bool PRound::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(50)) goto parse_delIcons;
+        if (input->ExpectTag(42)) goto parse_leftIcons;
         break;
       }
 
-      // repeated string delIcons = 6;
-      case 6: {
+      // repeated string leftIcons = 5;
+      case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_delIcons:
+         parse_leftIcons:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_delicons()));
+                input, this->add_lefticons()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->delicons(this->delicons_size() - 1).data(),
-            this->delicons(this->delicons_size() - 1).length(),
+            this->lefticons(this->lefticons_size() - 1).data(),
+            this->lefticons(this->lefticons_size() - 1).length(),
             ::google::protobuf::internal::WireFormat::PARSE);
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(50)) goto parse_delIcons;
-        if (input->ExpectTag(56)) goto parse_delStates;
+        if (input->ExpectTag(42)) goto parse_leftIcons;
+        if (input->ExpectTag(48)) goto parse_leftStates;
         break;
       }
 
-      // repeated int32 delStates = 7;
-      case 7: {
+      // repeated int32 leftStates = 6;
+      case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_delStates:
+         parse_leftStates:
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 1, 56, input, this->mutable_delstates())));
+                 1, 48, input, this->mutable_leftstates())));
         } else if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag)
                    == ::google::protobuf::internal::WireFormatLite::
                       WIRETYPE_LENGTH_DELIMITED) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, this->mutable_delstates())));
+                 input, this->mutable_leftstates())));
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(56)) goto parse_delStates;
-        if (input->ExpectTag(64)) goto parse_buffHps;
+        if (input->ExpectTag(48)) goto parse_leftStates;
+        if (input->ExpectTag(56)) goto parse_buffHps;
         break;
       }
 
-      // repeated int32 buffHps = 8;
-      case 8: {
+      // repeated int32 buffHps = 7;
+      case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_buffHps:
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 1, 64, input, this->mutable_buffhps())));
+                 1, 56, input, this->mutable_buffhps())));
         } else if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag)
                    == ::google::protobuf::internal::WireFormatLite::
                       WIRETYPE_LENGTH_DELIMITED) {
@@ -1495,13 +1344,13 @@ bool PRound::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(64)) goto parse_buffHps;
-        if (input->ExpectTag(72)) goto parse_leftHp;
+        if (input->ExpectTag(56)) goto parse_buffHps;
+        if (input->ExpectTag(64)) goto parse_leftHp;
         break;
       }
 
-      // required int32 leftHp = 9;
-      case 9: {
+      // required int32 leftHp = 8;
+      case 8: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_leftHp:
@@ -1544,46 +1393,41 @@ void PRound::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->isskip(), output);
   }
 
-  // optional int32 target = 3;
-  if (has_target()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->target(), output);
-  }
-
-  // repeated .Phurt cards = 4;
+  // repeated .Phurt cards = 3;
   for (int i = 0; i < this->cards_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->cards(i), output);
+      3, this->cards(i), output);
   }
 
-  // optional int32 aoyiSkillID = 5;
+  // optional int32 aoyiSkillID = 4;
   if (has_aoyiskillid()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->aoyiskillid(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->aoyiskillid(), output);
   }
 
-  // repeated string delIcons = 6;
-  for (int i = 0; i < this->delicons_size(); i++) {
+  // repeated string leftIcons = 5;
+  for (int i = 0; i < this->lefticons_size(); i++) {
   ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-    this->delicons(i).data(), this->delicons(i).length(),
+    this->lefticons(i).data(), this->lefticons(i).length(),
     ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      6, this->delicons(i), output);
+      5, this->lefticons(i), output);
   }
 
-  // repeated int32 delStates = 7;
-  for (int i = 0; i < this->delstates_size(); i++) {
+  // repeated int32 leftStates = 6;
+  for (int i = 0; i < this->leftstates_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(
-      7, this->delstates(i), output);
+      6, this->leftstates(i), output);
   }
 
-  // repeated int32 buffHps = 8;
+  // repeated int32 buffHps = 7;
   for (int i = 0; i < this->buffhps_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(
-      8, this->buffhps(i), output);
+      7, this->buffhps(i), output);
   }
 
-  // required int32 leftHp = 9;
+  // required int32 leftHp = 8;
   if (has_lefthp()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->lefthp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->lefthp(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -1604,47 +1448,42 @@ void PRound::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->isskip(), target);
   }
 
-  // optional int32 target = 3;
-  if (has_target()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->target(), target);
-  }
-
-  // repeated .Phurt cards = 4;
+  // repeated .Phurt cards = 3;
   for (int i = 0; i < this->cards_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->cards(i), target);
+        3, this->cards(i), target);
   }
 
-  // optional int32 aoyiSkillID = 5;
+  // optional int32 aoyiSkillID = 4;
   if (has_aoyiskillid()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->aoyiskillid(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->aoyiskillid(), target);
   }
 
-  // repeated string delIcons = 6;
-  for (int i = 0; i < this->delicons_size(); i++) {
+  // repeated string leftIcons = 5;
+  for (int i = 0; i < this->lefticons_size(); i++) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->delicons(i).data(), this->delicons(i).length(),
+      this->lefticons(i).data(), this->lefticons(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(6, this->delicons(i), target);
+      WriteStringToArray(5, this->lefticons(i), target);
   }
 
-  // repeated int32 delStates = 7;
-  for (int i = 0; i < this->delstates_size(); i++) {
+  // repeated int32 leftStates = 6;
+  for (int i = 0; i < this->leftstates_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteInt32ToArray(7, this->delstates(i), target);
+      WriteInt32ToArray(6, this->leftstates(i), target);
   }
 
-  // repeated int32 buffHps = 8;
+  // repeated int32 buffHps = 7;
   for (int i = 0; i < this->buffhps_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteInt32ToArray(8, this->buffhps(i), target);
+      WriteInt32ToArray(7, this->buffhps(i), target);
   }
 
-  // required int32 leftHp = 9;
+  // required int32 leftHp = 8;
   if (has_lefthp()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->lefthp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->lefthp(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1670,23 +1509,14 @@ int PRound::ByteSize() const {
       total_size += 1 + 1;
     }
 
-    // optional int32 target = 3;
-    if (has_target()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->target());
-    }
-
-    // optional int32 aoyiSkillID = 5;
+    // optional int32 aoyiSkillID = 4;
     if (has_aoyiskillid()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->aoyiskillid());
     }
 
-  }
-  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    // required int32 leftHp = 9;
+    // required int32 leftHp = 8;
     if (has_lefthp()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -1694,7 +1524,7 @@ int PRound::ByteSize() const {
     }
 
   }
-  // repeated .Phurt cards = 4;
+  // repeated .Phurt cards = 3;
   total_size += 1 * this->cards_size();
   for (int i = 0; i < this->cards_size(); i++) {
     total_size +=
@@ -1702,24 +1532,24 @@ int PRound::ByteSize() const {
         this->cards(i));
   }
 
-  // repeated string delIcons = 6;
-  total_size += 1 * this->delicons_size();
-  for (int i = 0; i < this->delicons_size(); i++) {
+  // repeated string leftIcons = 5;
+  total_size += 1 * this->lefticons_size();
+  for (int i = 0; i < this->lefticons_size(); i++) {
     total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->delicons(i));
+      this->lefticons(i));
   }
 
-  // repeated int32 delStates = 7;
+  // repeated int32 leftStates = 6;
   {
     int data_size = 0;
-    for (int i = 0; i < this->delstates_size(); i++) {
+    for (int i = 0; i < this->leftstates_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        Int32Size(this->delstates(i));
+        Int32Size(this->leftstates(i));
     }
-    total_size += 1 * this->delstates_size() + data_size;
+    total_size += 1 * this->leftstates_size() + data_size;
   }
 
-  // repeated int32 buffHps = 8;
+  // repeated int32 buffHps = 7;
   {
     int data_size = 0;
     for (int i = 0; i < this->buffhps_size(); i++) {
@@ -1755,8 +1585,8 @@ void PRound::MergeFrom(const ::google::protobuf::Message& from) {
 void PRound::MergeFrom(const PRound& from) {
   GOOGLE_CHECK_NE(&from, this);
   cards_.MergeFrom(from.cards_);
-  delicons_.MergeFrom(from.delicons_);
-  delstates_.MergeFrom(from.delstates_);
+  lefticons_.MergeFrom(from.lefticons_);
+  leftstates_.MergeFrom(from.leftstates_);
   buffhps_.MergeFrom(from.buffhps_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_source()) {
@@ -1765,14 +1595,9 @@ void PRound::MergeFrom(const PRound& from) {
     if (from.has_isskip()) {
       set_isskip(from.isskip());
     }
-    if (from.has_target()) {
-      set_target(from.target());
-    }
     if (from.has_aoyiskillid()) {
       set_aoyiskillid(from.aoyiskillid());
     }
-  }
-  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     if (from.has_lefthp()) {
       set_lefthp(from.lefthp());
     }
@@ -1793,7 +1618,7 @@ void PRound::CopyFrom(const PRound& from) {
 }
 
 bool PRound::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000103) != 0x00000103) return false;
+  if ((_has_bits_[0] & 0x00000083) != 0x00000083) return false;
 
   for (int i = 0; i < cards_size(); i++) {
     if (!this->cards(i).IsInitialized()) return false;
@@ -1805,11 +1630,10 @@ void PRound::Swap(PRound* other) {
   if (other != this) {
     std::swap(source_, other->source_);
     std::swap(isskip_, other->isskip_);
-    std::swap(target_, other->target_);
     cards_.Swap(&other->cards_);
     std::swap(aoyiskillid_, other->aoyiskillid_);
-    delicons_.Swap(&other->delicons_);
-    delstates_.Swap(&other->delstates_);
+    lefticons_.Swap(&other->lefticons_);
+    leftstates_.Swap(&other->leftstates_);
     buffhps_.Swap(&other->buffhps_);
     std::swap(lefthp_, other->lefthp_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
@@ -1833,6 +1657,8 @@ void PRound::Swap(PRound* other) {
 const int Phurt::kCardFieldNumber;
 const int Phurt::kSkillIDFieldNumber;
 const int Phurt::kTargetsFieldNumber;
+const int Phurt::kLevelFieldNumber;
+const int Phurt::kStarFieldNumber;
 #endif  // !_MSC_VER
 
 Phurt::Phurt()
@@ -1853,6 +1679,8 @@ void Phurt::SharedCtor() {
   _cached_size_ = 0;
   card_ = 0;
   skillid_ = false;
+  level_ = 0;
+  star_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1890,6 +1718,8 @@ void Phurt::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     card_ = 0;
     skillid_ = false;
+    level_ = 0;
+    star_ = 0;
   }
   targets_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1944,6 +1774,38 @@ bool Phurt::MergePartialFromCodedStream(
           goto handle_uninterpreted;
         }
         if (input->ExpectTag(26)) goto parse_targets;
+        if (input->ExpectTag(32)) goto parse_level;
+        break;
+      }
+
+      // optional int32 level = 4;
+      case 4: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_level:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &level_)));
+          set_has_level();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(40)) goto parse_star;
+        break;
+      }
+
+      // optional int32 star = 5;
+      case 5: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_star:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &star_)));
+          set_has_star();
+        } else {
+          goto handle_uninterpreted;
+        }
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -1982,6 +1844,16 @@ void Phurt::SerializeWithCachedSizes(
       3, this->targets(i), output);
   }
 
+  // optional int32 level = 4;
+  if (has_level()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->level(), output);
+  }
+
+  // optional int32 star = 5;
+  if (has_star()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->star(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -2007,6 +1879,16 @@ void Phurt::SerializeWithCachedSizes(
         3, this->targets(i), target);
   }
 
+  // optional int32 level = 4;
+  if (has_level()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->level(), target);
+  }
+
+  // optional int32 star = 5;
+  if (has_star()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->star(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -2028,6 +1910,20 @@ int Phurt::ByteSize() const {
     // required bool skillID = 2;
     if (has_skillid()) {
       total_size += 1 + 1;
+    }
+
+    // optional int32 level = 4;
+    if (has_level()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->level());
+    }
+
+    // optional int32 star = 5;
+    if (has_star()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->star());
     }
 
   }
@@ -2072,6 +1968,12 @@ void Phurt::MergeFrom(const Phurt& from) {
     if (from.has_skillid()) {
       set_skillid(from.skillid());
     }
+    if (from.has_level()) {
+      set_level(from.level());
+    }
+    if (from.has_star()) {
+      set_star(from.star());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -2102,6 +2004,8 @@ void Phurt::Swap(Phurt* other) {
     std::swap(card_, other->card_);
     std::swap(skillid_, other->skillid_);
     targets_.Swap(&other->targets_);
+    std::swap(level_, other->level_);
+    std::swap(star_, other->star_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -2126,6 +2030,7 @@ const int PTarget::kBuffIconFieldNumber;
 const int PTarget::kHpFieldNumber;
 const int PTarget::kLeftHpFieldNumber;
 const int PTarget::kHpTypesFieldNumber;
+const int PTarget::kSkillIDFieldNumber;
 #endif  // !_MSC_VER
 
 PTarget::PTarget()
@@ -2148,6 +2053,7 @@ void PTarget::SharedCtor() {
   hp_ = 0;
   lefthp_ = 0;
   hptypes_ = 0;
+  skillid_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -2187,6 +2093,7 @@ void PTarget::Clear() {
     hp_ = 0;
     lefthp_ = 0;
     hptypes_ = 0;
+    skillid_ = 0;
   }
   state_.Clear();
   bufficon_.Clear();
@@ -2300,6 +2207,22 @@ bool PTarget::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
+        if (input->ExpectTag(56)) goto parse_skillID;
+        break;
+      }
+
+      // required int32 skillID = 7;
+      case 7: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_skillID:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &skillid_)));
+          set_has_skillid();
+        } else {
+          goto handle_uninterpreted;
+        }
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -2357,6 +2280,11 @@ void PTarget::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->hptypes(), output);
   }
 
+  // required int32 skillID = 7;
+  if (has_skillid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->skillid(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -2400,6 +2328,11 @@ void PTarget::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->hptypes(), target);
   }
 
+  // required int32 skillID = 7;
+  if (has_skillid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->skillid(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -2437,6 +2370,13 @@ int PTarget::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->hptypes());
+    }
+
+    // required int32 skillID = 7;
+    if (has_skillid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->skillid());
     }
 
   }
@@ -2497,6 +2437,9 @@ void PTarget::MergeFrom(const PTarget& from) {
     if (from.has_hptypes()) {
       set_hptypes(from.hptypes());
     }
+    if (from.has_skillid()) {
+      set_skillid(from.skillid());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -2514,7 +2457,7 @@ void PTarget::CopyFrom(const PTarget& from) {
 }
 
 bool PTarget::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000039) != 0x00000039) return false;
+  if ((_has_bits_[0] & 0x00000079) != 0x00000079) return false;
 
   return true;
 }
@@ -2527,6 +2470,7 @@ void PTarget::Swap(PTarget* other) {
     std::swap(hp_, other->hp_);
     std::swap(lefthp_, other->lefthp_);
     std::swap(hptypes_, other->hptypes_);
+    std::swap(skillid_, other->skillid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

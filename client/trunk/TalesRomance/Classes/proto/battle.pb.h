@@ -136,30 +136,40 @@ class PBattle : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 gold() const;
   inline void set_gold(::google::protobuf::int32 value);
 
-  // required int32 exp = 5;
-  inline bool has_exp() const;
-  inline void clear_exp();
-  static const int kExpFieldNumber = 5;
-  inline ::google::protobuf::int32 exp() const;
-  inline void set_exp(::google::protobuf::int32 value);
+  // required int64 winnerID = 5;
+  inline bool has_winnerid() const;
+  inline void clear_winnerid();
+  static const int kWinnerIDFieldNumber = 5;
+  inline ::google::protobuf::int64 winnerid() const;
+  inline void set_winnerid(::google::protobuf::int64 value);
+
+  // required int32 type = 6;
+  inline bool has_type() const;
+  inline void clear_type();
+  static const int kTypeFieldNumber = 6;
+  inline ::google::protobuf::int32 type() const;
+  inline void set_type(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:PBattle)
  private:
   inline void set_has_gold();
   inline void clear_has_gold();
-  inline void set_has_exp();
-  inline void clear_has_exp();
+  inline void set_has_winnerid();
+  inline void clear_has_winnerid();
+  inline void set_has_type();
+  inline void clear_has_type();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedPtrField< ::PFightItem > heros_;
   ::google::protobuf::RepeatedPtrField< ::PRound > rounds_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > cards_;
+  ::google::protobuf::int64 winnerid_;
   ::google::protobuf::int32 gold_;
-  ::google::protobuf::int32 exp_;
+  ::google::protobuf::int32 type_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(5 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
 
   friend void  protobuf_AddDesc_battle_2eproto();
   friend void protobuf_AssignDesc_battle_2eproto();
@@ -224,12 +234,12 @@ class PFightItem : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required int32 id = 1;
+  // required int64 id = 1;
   inline bool has_id() const;
   inline void clear_id();
   static const int kIdFieldNumber = 1;
-  inline ::google::protobuf::int32 id() const;
-  inline void set_id(::google::protobuf::int32 value);
+  inline ::google::protobuf::int64 id() const;
+  inline void set_id(::google::protobuf::int64 value);
 
   // required int32 hp = 2;
   inline bool has_hp() const;
@@ -250,46 +260,24 @@ class PFightItem : public ::google::protobuf::Message {
   inline ::std::string* release_name();
   inline void set_allocated_name(::std::string* name);
 
-  // required string icon = 4;
-  inline bool has_icon() const;
-  inline void clear_icon();
-  static const int kIconFieldNumber = 4;
-  inline const ::std::string& icon() const;
-  inline void set_icon(const ::std::string& value);
-  inline void set_icon(const char* value);
-  inline void set_icon(const char* value, size_t size);
-  inline ::std::string* mutable_icon();
-  inline ::std::string* release_icon();
-  inline void set_allocated_icon(::std::string* icon);
+  // required int32 xid = 4;
+  inline bool has_xid() const;
+  inline void clear_xid();
+  static const int kXidFieldNumber = 4;
+  inline ::google::protobuf::int32 xid() const;
+  inline void set_xid(::google::protobuf::int32 value);
 
-  // required string avatar = 5;
-  inline bool has_avatar() const;
-  inline void clear_avatar();
-  static const int kAvatarFieldNumber = 5;
-  inline const ::std::string& avatar() const;
-  inline void set_avatar(const ::std::string& value);
-  inline void set_avatar(const char* value);
-  inline void set_avatar(const char* value, size_t size);
-  inline ::std::string* mutable_avatar();
-  inline ::std::string* release_avatar();
-  inline void set_allocated_avatar(::std::string* avatar);
-
-  // required string friendID = 6;
+  // required int64 friendID = 5;
   inline bool has_friendid() const;
   inline void clear_friendid();
-  static const int kFriendIDFieldNumber = 6;
-  inline const ::std::string& friendid() const;
-  inline void set_friendid(const ::std::string& value);
-  inline void set_friendid(const char* value);
-  inline void set_friendid(const char* value, size_t size);
-  inline ::std::string* mutable_friendid();
-  inline ::std::string* release_friendid();
-  inline void set_allocated_friendid(::std::string* friendid);
+  static const int kFriendIDFieldNumber = 5;
+  inline ::google::protobuf::int64 friendid() const;
+  inline void set_friendid(::google::protobuf::int64 value);
 
-  // required string friendName = 7;
+  // required string friendName = 6;
   inline bool has_friendname() const;
   inline void clear_friendname();
-  static const int kFriendNameFieldNumber = 7;
+  static const int kFriendNameFieldNumber = 6;
   inline const ::std::string& friendname() const;
   inline void set_friendname(const ::std::string& value);
   inline void set_friendname(const char* value);
@@ -298,29 +286,12 @@ class PFightItem : public ::google::protobuf::Message {
   inline ::std::string* release_friendname();
   inline void set_allocated_friendname(::std::string* friendname);
 
-  // required string friendIcon = 8;
-  inline bool has_friendicon() const;
-  inline void clear_friendicon();
-  static const int kFriendIconFieldNumber = 8;
-  inline const ::std::string& friendicon() const;
-  inline void set_friendicon(const ::std::string& value);
-  inline void set_friendicon(const char* value);
-  inline void set_friendicon(const char* value, size_t size);
-  inline ::std::string* mutable_friendicon();
-  inline ::std::string* release_friendicon();
-  inline void set_allocated_friendicon(::std::string* friendicon);
-
-  // required string friendAvatar = 9;
-  inline bool has_friendavatar() const;
-  inline void clear_friendavatar();
-  static const int kFriendAvatarFieldNumber = 9;
-  inline const ::std::string& friendavatar() const;
-  inline void set_friendavatar(const ::std::string& value);
-  inline void set_friendavatar(const char* value);
-  inline void set_friendavatar(const char* value, size_t size);
-  inline ::std::string* mutable_friendavatar();
-  inline ::std::string* release_friendavatar();
-  inline void set_allocated_friendavatar(::std::string* friendavatar);
+  // required int32 friendXid = 7;
+  inline bool has_friendxid() const;
+  inline void clear_friendxid();
+  static const int kFriendXidFieldNumber = 7;
+  inline ::google::protobuf::int32 friendxid() const;
+  inline void set_friendxid(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:PFightItem)
  private:
@@ -330,33 +301,27 @@ class PFightItem : public ::google::protobuf::Message {
   inline void clear_has_hp();
   inline void set_has_name();
   inline void clear_has_name();
-  inline void set_has_icon();
-  inline void clear_has_icon();
-  inline void set_has_avatar();
-  inline void clear_has_avatar();
+  inline void set_has_xid();
+  inline void clear_has_xid();
   inline void set_has_friendid();
   inline void clear_has_friendid();
   inline void set_has_friendname();
   inline void clear_has_friendname();
-  inline void set_has_friendicon();
-  inline void clear_has_friendicon();
-  inline void set_has_friendavatar();
-  inline void clear_has_friendavatar();
+  inline void set_has_friendxid();
+  inline void clear_has_friendxid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::int32 id_;
-  ::google::protobuf::int32 hp_;
+  ::google::protobuf::int64 id_;
   ::std::string* name_;
-  ::std::string* icon_;
-  ::std::string* avatar_;
-  ::std::string* friendid_;
+  ::google::protobuf::int32 hp_;
+  ::google::protobuf::int32 xid_;
+  ::google::protobuf::int64 friendid_;
   ::std::string* friendname_;
-  ::std::string* friendicon_;
-  ::std::string* friendavatar_;
+  ::google::protobuf::int32 friendxid_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(9 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(7 + 31) / 32];
 
   friend void  protobuf_AddDesc_battle_2eproto();
   friend void protobuf_AssignDesc_battle_2eproto();
@@ -435,17 +400,10 @@ class PRound : public ::google::protobuf::Message {
   inline bool isskip() const;
   inline void set_isskip(bool value);
 
-  // optional int32 target = 3;
-  inline bool has_target() const;
-  inline void clear_target();
-  static const int kTargetFieldNumber = 3;
-  inline ::google::protobuf::int32 target() const;
-  inline void set_target(::google::protobuf::int32 value);
-
-  // repeated .Phurt cards = 4;
+  // repeated .Phurt cards = 3;
   inline int cards_size() const;
   inline void clear_cards();
-  static const int kCardsFieldNumber = 4;
+  static const int kCardsFieldNumber = 3;
   inline const ::Phurt& cards(int index) const;
   inline ::Phurt* mutable_cards(int index);
   inline ::Phurt* add_cards();
@@ -454,45 +412,45 @@ class PRound : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Phurt >*
       mutable_cards();
 
-  // optional int32 aoyiSkillID = 5;
+  // optional int32 aoyiSkillID = 4;
   inline bool has_aoyiskillid() const;
   inline void clear_aoyiskillid();
-  static const int kAoyiSkillIDFieldNumber = 5;
+  static const int kAoyiSkillIDFieldNumber = 4;
   inline ::google::protobuf::int32 aoyiskillid() const;
   inline void set_aoyiskillid(::google::protobuf::int32 value);
 
-  // repeated string delIcons = 6;
-  inline int delicons_size() const;
-  inline void clear_delicons();
-  static const int kDelIconsFieldNumber = 6;
-  inline const ::std::string& delicons(int index) const;
-  inline ::std::string* mutable_delicons(int index);
-  inline void set_delicons(int index, const ::std::string& value);
-  inline void set_delicons(int index, const char* value);
-  inline void set_delicons(int index, const char* value, size_t size);
-  inline ::std::string* add_delicons();
-  inline void add_delicons(const ::std::string& value);
-  inline void add_delicons(const char* value);
-  inline void add_delicons(const char* value, size_t size);
-  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& delicons() const;
-  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_delicons();
+  // repeated string leftIcons = 5;
+  inline int lefticons_size() const;
+  inline void clear_lefticons();
+  static const int kLeftIconsFieldNumber = 5;
+  inline const ::std::string& lefticons(int index) const;
+  inline ::std::string* mutable_lefticons(int index);
+  inline void set_lefticons(int index, const ::std::string& value);
+  inline void set_lefticons(int index, const char* value);
+  inline void set_lefticons(int index, const char* value, size_t size);
+  inline ::std::string* add_lefticons();
+  inline void add_lefticons(const ::std::string& value);
+  inline void add_lefticons(const char* value);
+  inline void add_lefticons(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& lefticons() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_lefticons();
 
-  // repeated int32 delStates = 7;
-  inline int delstates_size() const;
-  inline void clear_delstates();
-  static const int kDelStatesFieldNumber = 7;
-  inline ::google::protobuf::int32 delstates(int index) const;
-  inline void set_delstates(int index, ::google::protobuf::int32 value);
-  inline void add_delstates(::google::protobuf::int32 value);
+  // repeated int32 leftStates = 6;
+  inline int leftstates_size() const;
+  inline void clear_leftstates();
+  static const int kLeftStatesFieldNumber = 6;
+  inline ::google::protobuf::int32 leftstates(int index) const;
+  inline void set_leftstates(int index, ::google::protobuf::int32 value);
+  inline void add_leftstates(::google::protobuf::int32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
-      delstates() const;
+      leftstates() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
-      mutable_delstates();
+      mutable_leftstates();
 
-  // repeated int32 buffHps = 8;
+  // repeated int32 buffHps = 7;
   inline int buffhps_size() const;
   inline void clear_buffhps();
-  static const int kBuffHpsFieldNumber = 8;
+  static const int kBuffHpsFieldNumber = 7;
   inline ::google::protobuf::int32 buffhps(int index) const;
   inline void set_buffhps(int index, ::google::protobuf::int32 value);
   inline void add_buffhps(::google::protobuf::int32 value);
@@ -501,10 +459,10 @@ class PRound : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_buffhps();
 
-  // required int32 leftHp = 9;
+  // required int32 leftHp = 8;
   inline bool has_lefthp() const;
   inline void clear_lefthp();
-  static const int kLeftHpFieldNumber = 9;
+  static const int kLeftHpFieldNumber = 8;
   inline ::google::protobuf::int32 lefthp() const;
   inline void set_lefthp(::google::protobuf::int32 value);
 
@@ -514,8 +472,6 @@ class PRound : public ::google::protobuf::Message {
   inline void clear_has_source();
   inline void set_has_isskip();
   inline void clear_has_isskip();
-  inline void set_has_target();
-  inline void clear_has_target();
   inline void set_has_aoyiskillid();
   inline void clear_has_aoyiskillid();
   inline void set_has_lefthp();
@@ -526,15 +482,14 @@ class PRound : public ::google::protobuf::Message {
   ::google::protobuf::int32 source_;
   bool isskip_;
   ::google::protobuf::RepeatedPtrField< ::Phurt > cards_;
-  ::google::protobuf::int32 target_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> lefticons_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > leftstates_;
   ::google::protobuf::int32 aoyiskillid_;
-  ::google::protobuf::RepeatedPtrField< ::std::string> delicons_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > delstates_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > buffhps_;
   ::google::protobuf::int32 lefthp_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > buffhps_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(9 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(8 + 31) / 32];
 
   friend void  protobuf_AddDesc_battle_2eproto();
   friend void protobuf_AssignDesc_battle_2eproto();
@@ -625,21 +580,41 @@ class Phurt : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::PTarget >*
       mutable_targets();
 
+  // optional int32 level = 4;
+  inline bool has_level() const;
+  inline void clear_level();
+  static const int kLevelFieldNumber = 4;
+  inline ::google::protobuf::int32 level() const;
+  inline void set_level(::google::protobuf::int32 value);
+
+  // optional int32 star = 5;
+  inline bool has_star() const;
+  inline void clear_star();
+  static const int kStarFieldNumber = 5;
+  inline ::google::protobuf::int32 star() const;
+  inline void set_star(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:Phurt)
  private:
   inline void set_has_card();
   inline void clear_has_card();
   inline void set_has_skillid();
   inline void clear_has_skillid();
+  inline void set_has_level();
+  inline void clear_has_level();
+  inline void set_has_star();
+  inline void clear_has_star();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int32 card_;
   bool skillid_;
   ::google::protobuf::RepeatedPtrField< ::PTarget > targets_;
+  ::google::protobuf::int32 level_;
+  ::google::protobuf::int32 star_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(5 + 31) / 32];
 
   friend void  protobuf_AddDesc_battle_2eproto();
   friend void protobuf_AssignDesc_battle_2eproto();
@@ -760,6 +735,13 @@ class PTarget : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 hptypes() const;
   inline void set_hptypes(::google::protobuf::int32 value);
 
+  // required int32 skillID = 7;
+  inline bool has_skillid() const;
+  inline void clear_skillid();
+  static const int kSkillIDFieldNumber = 7;
+  inline ::google::protobuf::int32 skillid() const;
+  inline void set_skillid(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:PTarget)
  private:
   inline void set_has_targetid();
@@ -770,6 +752,8 @@ class PTarget : public ::google::protobuf::Message {
   inline void clear_has_lefthp();
   inline void set_has_hptypes();
   inline void clear_has_hptypes();
+  inline void set_has_skillid();
+  inline void clear_has_skillid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -779,9 +763,10 @@ class PTarget : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::std::string> bufficon_;
   ::google::protobuf::int32 lefthp_;
   ::google::protobuf::int32 hptypes_;
+  ::google::protobuf::int32 skillid_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(7 + 31) / 32];
 
   friend void  protobuf_AddDesc_battle_2eproto();
   friend void protobuf_AssignDesc_battle_2eproto();
@@ -894,33 +879,55 @@ inline void PBattle::set_gold(::google::protobuf::int32 value) {
   gold_ = value;
 }
 
-// required int32 exp = 5;
-inline bool PBattle::has_exp() const {
+// required int64 winnerID = 5;
+inline bool PBattle::has_winnerid() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void PBattle::set_has_exp() {
+inline void PBattle::set_has_winnerid() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void PBattle::clear_has_exp() {
+inline void PBattle::clear_has_winnerid() {
   _has_bits_[0] &= ~0x00000010u;
 }
-inline void PBattle::clear_exp() {
-  exp_ = 0;
-  clear_has_exp();
+inline void PBattle::clear_winnerid() {
+  winnerid_ = GOOGLE_LONGLONG(0);
+  clear_has_winnerid();
 }
-inline ::google::protobuf::int32 PBattle::exp() const {
-  return exp_;
+inline ::google::protobuf::int64 PBattle::winnerid() const {
+  return winnerid_;
 }
-inline void PBattle::set_exp(::google::protobuf::int32 value) {
-  set_has_exp();
-  exp_ = value;
+inline void PBattle::set_winnerid(::google::protobuf::int64 value) {
+  set_has_winnerid();
+  winnerid_ = value;
+}
+
+// required int32 type = 6;
+inline bool PBattle::has_type() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void PBattle::set_has_type() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void PBattle::clear_has_type() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void PBattle::clear_type() {
+  type_ = 0;
+  clear_has_type();
+}
+inline ::google::protobuf::int32 PBattle::type() const {
+  return type_;
+}
+inline void PBattle::set_type(::google::protobuf::int32 value) {
+  set_has_type();
+  type_ = value;
 }
 
 // -------------------------------------------------------------------
 
 // PFightItem
 
-// required int32 id = 1;
+// required int64 id = 1;
 inline bool PFightItem::has_id() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -931,13 +938,13 @@ inline void PFightItem::clear_has_id() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void PFightItem::clear_id() {
-  id_ = 0;
+  id_ = GOOGLE_LONGLONG(0);
   clear_has_id();
 }
-inline ::google::protobuf::int32 PFightItem::id() const {
+inline ::google::protobuf::int64 PFightItem::id() const {
   return id_;
 }
-inline void PFightItem::set_id(::google::protobuf::int32 value) {
+inline void PFightItem::set_id(::google::protobuf::int64 value) {
   set_has_id();
   id_ = value;
 }
@@ -1034,225 +1041,59 @@ inline void PFightItem::set_allocated_name(::std::string* name) {
   }
 }
 
-// required string icon = 4;
-inline bool PFightItem::has_icon() const {
+// required int32 xid = 4;
+inline bool PFightItem::has_xid() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void PFightItem::set_has_icon() {
+inline void PFightItem::set_has_xid() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void PFightItem::clear_has_icon() {
+inline void PFightItem::clear_has_xid() {
   _has_bits_[0] &= ~0x00000008u;
 }
-inline void PFightItem::clear_icon() {
-  if (icon_ != &::google::protobuf::internal::kEmptyString) {
-    icon_->clear();
-  }
-  clear_has_icon();
+inline void PFightItem::clear_xid() {
+  xid_ = 0;
+  clear_has_xid();
 }
-inline const ::std::string& PFightItem::icon() const {
-  return *icon_;
+inline ::google::protobuf::int32 PFightItem::xid() const {
+  return xid_;
 }
-inline void PFightItem::set_icon(const ::std::string& value) {
-  set_has_icon();
-  if (icon_ == &::google::protobuf::internal::kEmptyString) {
-    icon_ = new ::std::string;
-  }
-  icon_->assign(value);
-}
-inline void PFightItem::set_icon(const char* value) {
-  set_has_icon();
-  if (icon_ == &::google::protobuf::internal::kEmptyString) {
-    icon_ = new ::std::string;
-  }
-  icon_->assign(value);
-}
-inline void PFightItem::set_icon(const char* value, size_t size) {
-  set_has_icon();
-  if (icon_ == &::google::protobuf::internal::kEmptyString) {
-    icon_ = new ::std::string;
-  }
-  icon_->assign(reinterpret_cast<const char*>(value), size);
-}
-inline ::std::string* PFightItem::mutable_icon() {
-  set_has_icon();
-  if (icon_ == &::google::protobuf::internal::kEmptyString) {
-    icon_ = new ::std::string;
-  }
-  return icon_;
-}
-inline ::std::string* PFightItem::release_icon() {
-  clear_has_icon();
-  if (icon_ == &::google::protobuf::internal::kEmptyString) {
-    return NULL;
-  } else {
-    ::std::string* temp = icon_;
-    icon_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-    return temp;
-  }
-}
-inline void PFightItem::set_allocated_icon(::std::string* icon) {
-  if (icon_ != &::google::protobuf::internal::kEmptyString) {
-    delete icon_;
-  }
-  if (icon) {
-    set_has_icon();
-    icon_ = icon;
-  } else {
-    clear_has_icon();
-    icon_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  }
+inline void PFightItem::set_xid(::google::protobuf::int32 value) {
+  set_has_xid();
+  xid_ = value;
 }
 
-// required string avatar = 5;
-inline bool PFightItem::has_avatar() const {
+// required int64 friendID = 5;
+inline bool PFightItem::has_friendid() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void PFightItem::set_has_avatar() {
+inline void PFightItem::set_has_friendid() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void PFightItem::clear_has_avatar() {
+inline void PFightItem::clear_has_friendid() {
   _has_bits_[0] &= ~0x00000010u;
 }
-inline void PFightItem::clear_avatar() {
-  if (avatar_ != &::google::protobuf::internal::kEmptyString) {
-    avatar_->clear();
-  }
-  clear_has_avatar();
-}
-inline const ::std::string& PFightItem::avatar() const {
-  return *avatar_;
-}
-inline void PFightItem::set_avatar(const ::std::string& value) {
-  set_has_avatar();
-  if (avatar_ == &::google::protobuf::internal::kEmptyString) {
-    avatar_ = new ::std::string;
-  }
-  avatar_->assign(value);
-}
-inline void PFightItem::set_avatar(const char* value) {
-  set_has_avatar();
-  if (avatar_ == &::google::protobuf::internal::kEmptyString) {
-    avatar_ = new ::std::string;
-  }
-  avatar_->assign(value);
-}
-inline void PFightItem::set_avatar(const char* value, size_t size) {
-  set_has_avatar();
-  if (avatar_ == &::google::protobuf::internal::kEmptyString) {
-    avatar_ = new ::std::string;
-  }
-  avatar_->assign(reinterpret_cast<const char*>(value), size);
-}
-inline ::std::string* PFightItem::mutable_avatar() {
-  set_has_avatar();
-  if (avatar_ == &::google::protobuf::internal::kEmptyString) {
-    avatar_ = new ::std::string;
-  }
-  return avatar_;
-}
-inline ::std::string* PFightItem::release_avatar() {
-  clear_has_avatar();
-  if (avatar_ == &::google::protobuf::internal::kEmptyString) {
-    return NULL;
-  } else {
-    ::std::string* temp = avatar_;
-    avatar_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-    return temp;
-  }
-}
-inline void PFightItem::set_allocated_avatar(::std::string* avatar) {
-  if (avatar_ != &::google::protobuf::internal::kEmptyString) {
-    delete avatar_;
-  }
-  if (avatar) {
-    set_has_avatar();
-    avatar_ = avatar;
-  } else {
-    clear_has_avatar();
-    avatar_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  }
-}
-
-// required string friendID = 6;
-inline bool PFightItem::has_friendid() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-inline void PFightItem::set_has_friendid() {
-  _has_bits_[0] |= 0x00000020u;
-}
-inline void PFightItem::clear_has_friendid() {
-  _has_bits_[0] &= ~0x00000020u;
-}
 inline void PFightItem::clear_friendid() {
-  if (friendid_ != &::google::protobuf::internal::kEmptyString) {
-    friendid_->clear();
-  }
+  friendid_ = GOOGLE_LONGLONG(0);
   clear_has_friendid();
 }
-inline const ::std::string& PFightItem::friendid() const {
-  return *friendid_;
-}
-inline void PFightItem::set_friendid(const ::std::string& value) {
-  set_has_friendid();
-  if (friendid_ == &::google::protobuf::internal::kEmptyString) {
-    friendid_ = new ::std::string;
-  }
-  friendid_->assign(value);
-}
-inline void PFightItem::set_friendid(const char* value) {
-  set_has_friendid();
-  if (friendid_ == &::google::protobuf::internal::kEmptyString) {
-    friendid_ = new ::std::string;
-  }
-  friendid_->assign(value);
-}
-inline void PFightItem::set_friendid(const char* value, size_t size) {
-  set_has_friendid();
-  if (friendid_ == &::google::protobuf::internal::kEmptyString) {
-    friendid_ = new ::std::string;
-  }
-  friendid_->assign(reinterpret_cast<const char*>(value), size);
-}
-inline ::std::string* PFightItem::mutable_friendid() {
-  set_has_friendid();
-  if (friendid_ == &::google::protobuf::internal::kEmptyString) {
-    friendid_ = new ::std::string;
-  }
+inline ::google::protobuf::int64 PFightItem::friendid() const {
   return friendid_;
 }
-inline ::std::string* PFightItem::release_friendid() {
-  clear_has_friendid();
-  if (friendid_ == &::google::protobuf::internal::kEmptyString) {
-    return NULL;
-  } else {
-    ::std::string* temp = friendid_;
-    friendid_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-    return temp;
-  }
-}
-inline void PFightItem::set_allocated_friendid(::std::string* friendid) {
-  if (friendid_ != &::google::protobuf::internal::kEmptyString) {
-    delete friendid_;
-  }
-  if (friendid) {
-    set_has_friendid();
-    friendid_ = friendid;
-  } else {
-    clear_has_friendid();
-    friendid_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  }
+inline void PFightItem::set_friendid(::google::protobuf::int64 value) {
+  set_has_friendid();
+  friendid_ = value;
 }
 
-// required string friendName = 7;
+// required string friendName = 6;
 inline bool PFightItem::has_friendname() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void PFightItem::set_has_friendname() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void PFightItem::clear_has_friendname() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void PFightItem::clear_friendname() {
   if (friendname_ != &::google::protobuf::internal::kEmptyString) {
@@ -1314,144 +1155,26 @@ inline void PFightItem::set_allocated_friendname(::std::string* friendname) {
   }
 }
 
-// required string friendIcon = 8;
-inline bool PFightItem::has_friendicon() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+// required int32 friendXid = 7;
+inline bool PFightItem::has_friendxid() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
-inline void PFightItem::set_has_friendicon() {
-  _has_bits_[0] |= 0x00000080u;
+inline void PFightItem::set_has_friendxid() {
+  _has_bits_[0] |= 0x00000040u;
 }
-inline void PFightItem::clear_has_friendicon() {
-  _has_bits_[0] &= ~0x00000080u;
+inline void PFightItem::clear_has_friendxid() {
+  _has_bits_[0] &= ~0x00000040u;
 }
-inline void PFightItem::clear_friendicon() {
-  if (friendicon_ != &::google::protobuf::internal::kEmptyString) {
-    friendicon_->clear();
-  }
-  clear_has_friendicon();
+inline void PFightItem::clear_friendxid() {
+  friendxid_ = 0;
+  clear_has_friendxid();
 }
-inline const ::std::string& PFightItem::friendicon() const {
-  return *friendicon_;
+inline ::google::protobuf::int32 PFightItem::friendxid() const {
+  return friendxid_;
 }
-inline void PFightItem::set_friendicon(const ::std::string& value) {
-  set_has_friendicon();
-  if (friendicon_ == &::google::protobuf::internal::kEmptyString) {
-    friendicon_ = new ::std::string;
-  }
-  friendicon_->assign(value);
-}
-inline void PFightItem::set_friendicon(const char* value) {
-  set_has_friendicon();
-  if (friendicon_ == &::google::protobuf::internal::kEmptyString) {
-    friendicon_ = new ::std::string;
-  }
-  friendicon_->assign(value);
-}
-inline void PFightItem::set_friendicon(const char* value, size_t size) {
-  set_has_friendicon();
-  if (friendicon_ == &::google::protobuf::internal::kEmptyString) {
-    friendicon_ = new ::std::string;
-  }
-  friendicon_->assign(reinterpret_cast<const char*>(value), size);
-}
-inline ::std::string* PFightItem::mutable_friendicon() {
-  set_has_friendicon();
-  if (friendicon_ == &::google::protobuf::internal::kEmptyString) {
-    friendicon_ = new ::std::string;
-  }
-  return friendicon_;
-}
-inline ::std::string* PFightItem::release_friendicon() {
-  clear_has_friendicon();
-  if (friendicon_ == &::google::protobuf::internal::kEmptyString) {
-    return NULL;
-  } else {
-    ::std::string* temp = friendicon_;
-    friendicon_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-    return temp;
-  }
-}
-inline void PFightItem::set_allocated_friendicon(::std::string* friendicon) {
-  if (friendicon_ != &::google::protobuf::internal::kEmptyString) {
-    delete friendicon_;
-  }
-  if (friendicon) {
-    set_has_friendicon();
-    friendicon_ = friendicon;
-  } else {
-    clear_has_friendicon();
-    friendicon_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  }
-}
-
-// required string friendAvatar = 9;
-inline bool PFightItem::has_friendavatar() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-inline void PFightItem::set_has_friendavatar() {
-  _has_bits_[0] |= 0x00000100u;
-}
-inline void PFightItem::clear_has_friendavatar() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-inline void PFightItem::clear_friendavatar() {
-  if (friendavatar_ != &::google::protobuf::internal::kEmptyString) {
-    friendavatar_->clear();
-  }
-  clear_has_friendavatar();
-}
-inline const ::std::string& PFightItem::friendavatar() const {
-  return *friendavatar_;
-}
-inline void PFightItem::set_friendavatar(const ::std::string& value) {
-  set_has_friendavatar();
-  if (friendavatar_ == &::google::protobuf::internal::kEmptyString) {
-    friendavatar_ = new ::std::string;
-  }
-  friendavatar_->assign(value);
-}
-inline void PFightItem::set_friendavatar(const char* value) {
-  set_has_friendavatar();
-  if (friendavatar_ == &::google::protobuf::internal::kEmptyString) {
-    friendavatar_ = new ::std::string;
-  }
-  friendavatar_->assign(value);
-}
-inline void PFightItem::set_friendavatar(const char* value, size_t size) {
-  set_has_friendavatar();
-  if (friendavatar_ == &::google::protobuf::internal::kEmptyString) {
-    friendavatar_ = new ::std::string;
-  }
-  friendavatar_->assign(reinterpret_cast<const char*>(value), size);
-}
-inline ::std::string* PFightItem::mutable_friendavatar() {
-  set_has_friendavatar();
-  if (friendavatar_ == &::google::protobuf::internal::kEmptyString) {
-    friendavatar_ = new ::std::string;
-  }
-  return friendavatar_;
-}
-inline ::std::string* PFightItem::release_friendavatar() {
-  clear_has_friendavatar();
-  if (friendavatar_ == &::google::protobuf::internal::kEmptyString) {
-    return NULL;
-  } else {
-    ::std::string* temp = friendavatar_;
-    friendavatar_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-    return temp;
-  }
-}
-inline void PFightItem::set_allocated_friendavatar(::std::string* friendavatar) {
-  if (friendavatar_ != &::google::protobuf::internal::kEmptyString) {
-    delete friendavatar_;
-  }
-  if (friendavatar) {
-    set_has_friendavatar();
-    friendavatar_ = friendavatar;
-  } else {
-    clear_has_friendavatar();
-    friendavatar_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  }
+inline void PFightItem::set_friendxid(::google::protobuf::int32 value) {
+  set_has_friendxid();
+  friendxid_ = value;
 }
 
 // -------------------------------------------------------------------
@@ -1502,29 +1225,7 @@ inline void PRound::set_isskip(bool value) {
   isskip_ = value;
 }
 
-// optional int32 target = 3;
-inline bool PRound::has_target() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void PRound::set_has_target() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void PRound::clear_has_target() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void PRound::clear_target() {
-  target_ = 0;
-  clear_has_target();
-}
-inline ::google::protobuf::int32 PRound::target() const {
-  return target_;
-}
-inline void PRound::set_target(::google::protobuf::int32 value) {
-  set_has_target();
-  target_ = value;
-}
-
-// repeated .Phurt cards = 4;
+// repeated .Phurt cards = 3;
 inline int PRound::cards_size() const {
   return cards_.size();
 }
@@ -1549,15 +1250,15 @@ PRound::mutable_cards() {
   return &cards_;
 }
 
-// optional int32 aoyiSkillID = 5;
+// optional int32 aoyiSkillID = 4;
 inline bool PRound::has_aoyiskillid() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void PRound::set_has_aoyiskillid() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void PRound::clear_has_aoyiskillid() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void PRound::clear_aoyiskillid() {
   aoyiskillid_ = 0;
@@ -1571,76 +1272,76 @@ inline void PRound::set_aoyiskillid(::google::protobuf::int32 value) {
   aoyiskillid_ = value;
 }
 
-// repeated string delIcons = 6;
-inline int PRound::delicons_size() const {
-  return delicons_.size();
+// repeated string leftIcons = 5;
+inline int PRound::lefticons_size() const {
+  return lefticons_.size();
 }
-inline void PRound::clear_delicons() {
-  delicons_.Clear();
+inline void PRound::clear_lefticons() {
+  lefticons_.Clear();
 }
-inline const ::std::string& PRound::delicons(int index) const {
-  return delicons_.Get(index);
+inline const ::std::string& PRound::lefticons(int index) const {
+  return lefticons_.Get(index);
 }
-inline ::std::string* PRound::mutable_delicons(int index) {
-  return delicons_.Mutable(index);
+inline ::std::string* PRound::mutable_lefticons(int index) {
+  return lefticons_.Mutable(index);
 }
-inline void PRound::set_delicons(int index, const ::std::string& value) {
-  delicons_.Mutable(index)->assign(value);
+inline void PRound::set_lefticons(int index, const ::std::string& value) {
+  lefticons_.Mutable(index)->assign(value);
 }
-inline void PRound::set_delicons(int index, const char* value) {
-  delicons_.Mutable(index)->assign(value);
+inline void PRound::set_lefticons(int index, const char* value) {
+  lefticons_.Mutable(index)->assign(value);
 }
-inline void PRound::set_delicons(int index, const char* value, size_t size) {
-  delicons_.Mutable(index)->assign(
+inline void PRound::set_lefticons(int index, const char* value, size_t size) {
+  lefticons_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* PRound::add_delicons() {
-  return delicons_.Add();
+inline ::std::string* PRound::add_lefticons() {
+  return lefticons_.Add();
 }
-inline void PRound::add_delicons(const ::std::string& value) {
-  delicons_.Add()->assign(value);
+inline void PRound::add_lefticons(const ::std::string& value) {
+  lefticons_.Add()->assign(value);
 }
-inline void PRound::add_delicons(const char* value) {
-  delicons_.Add()->assign(value);
+inline void PRound::add_lefticons(const char* value) {
+  lefticons_.Add()->assign(value);
 }
-inline void PRound::add_delicons(const char* value, size_t size) {
-  delicons_.Add()->assign(reinterpret_cast<const char*>(value), size);
+inline void PRound::add_lefticons(const char* value, size_t size) {
+  lefticons_.Add()->assign(reinterpret_cast<const char*>(value), size);
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-PRound::delicons() const {
-  return delicons_;
+PRound::lefticons() const {
+  return lefticons_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-PRound::mutable_delicons() {
-  return &delicons_;
+PRound::mutable_lefticons() {
+  return &lefticons_;
 }
 
-// repeated int32 delStates = 7;
-inline int PRound::delstates_size() const {
-  return delstates_.size();
+// repeated int32 leftStates = 6;
+inline int PRound::leftstates_size() const {
+  return leftstates_.size();
 }
-inline void PRound::clear_delstates() {
-  delstates_.Clear();
+inline void PRound::clear_leftstates() {
+  leftstates_.Clear();
 }
-inline ::google::protobuf::int32 PRound::delstates(int index) const {
-  return delstates_.Get(index);
+inline ::google::protobuf::int32 PRound::leftstates(int index) const {
+  return leftstates_.Get(index);
 }
-inline void PRound::set_delstates(int index, ::google::protobuf::int32 value) {
-  delstates_.Set(index, value);
+inline void PRound::set_leftstates(int index, ::google::protobuf::int32 value) {
+  leftstates_.Set(index, value);
 }
-inline void PRound::add_delstates(::google::protobuf::int32 value) {
-  delstates_.Add(value);
+inline void PRound::add_leftstates(::google::protobuf::int32 value) {
+  leftstates_.Add(value);
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
-PRound::delstates() const {
-  return delstates_;
+PRound::leftstates() const {
+  return leftstates_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
-PRound::mutable_delstates() {
-  return &delstates_;
+PRound::mutable_leftstates() {
+  return &leftstates_;
 }
 
-// repeated int32 buffHps = 8;
+// repeated int32 buffHps = 7;
 inline int PRound::buffhps_size() const {
   return buffhps_.size();
 }
@@ -1665,15 +1366,15 @@ PRound::mutable_buffhps() {
   return &buffhps_;
 }
 
-// required int32 leftHp = 9;
+// required int32 leftHp = 8;
 inline bool PRound::has_lefthp() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void PRound::set_has_lefthp() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void PRound::clear_has_lefthp() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void PRound::clear_lefthp() {
   lefthp_ = 0;
@@ -1758,6 +1459,50 @@ Phurt::targets() const {
 inline ::google::protobuf::RepeatedPtrField< ::PTarget >*
 Phurt::mutable_targets() {
   return &targets_;
+}
+
+// optional int32 level = 4;
+inline bool Phurt::has_level() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void Phurt::set_has_level() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void Phurt::clear_has_level() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void Phurt::clear_level() {
+  level_ = 0;
+  clear_has_level();
+}
+inline ::google::protobuf::int32 Phurt::level() const {
+  return level_;
+}
+inline void Phurt::set_level(::google::protobuf::int32 value) {
+  set_has_level();
+  level_ = value;
+}
+
+// optional int32 star = 5;
+inline bool Phurt::has_star() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void Phurt::set_has_star() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void Phurt::clear_has_star() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void Phurt::clear_star() {
+  star_ = 0;
+  clear_has_star();
+}
+inline ::google::protobuf::int32 Phurt::star() const {
+  return star_;
+}
+inline void Phurt::set_star(::google::protobuf::int32 value) {
+  set_has_star();
+  star_ = value;
 }
 
 // -------------------------------------------------------------------
@@ -1919,6 +1664,28 @@ inline ::google::protobuf::int32 PTarget::hptypes() const {
 inline void PTarget::set_hptypes(::google::protobuf::int32 value) {
   set_has_hptypes();
   hptypes_ = value;
+}
+
+// required int32 skillID = 7;
+inline bool PTarget::has_skillid() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void PTarget::set_has_skillid() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void PTarget::clear_has_skillid() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void PTarget::clear_skillid() {
+  skillid_ = 0;
+  clear_has_skillid();
+}
+inline ::google::protobuf::int32 PTarget::skillid() const {
+  return skillid_;
+}
+inline void PTarget::set_skillid(::google::protobuf::int32 value) {
+  set_has_skillid();
+  skillid_ = value;
 }
 
 

@@ -76,6 +76,25 @@
 		BFCCB4561A2879910049CFE8 /* map.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4531A2879910049CFE8 /* map.plist */; };
 		BFCCB4571A2879910049CFE8 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4541A2879910049CFE8 /* map.png */; };
 		BFCCB4581A2879910049CFE8 /* MapScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4551A2879910049CFE8 /* MapScene.csb */; };
+		BFCCB45D1A2C04320049CFE8 /* GateInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCCB45B1A2C04320049CFE8 /* GateInfo.cpp */; };
+		BFCCB4681A2C054F0049CFE8 /* common.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB45E1A2C054F0049CFE8 /* common.plist */; };
+		BFCCB4691A2C054F0049CFE8 /* common.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB45F1A2C054F0049CFE8 /* common.png */; };
+		BFCCB46A1A2C054F0049CFE8 /* GateInfo.csb in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4601A2C054F0049CFE8 /* GateInfo.csb */; };
+		BFCCB46B1A2C054F0049CFE8 /* gateInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4611A2C054F0049CFE8 /* gateInfo.plist */; };
+		BFCCB46C1A2C054F0049CFE8 /* gateInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4621A2C054F0049CFE8 /* gateInfo.png */; };
+		BFCCB46D1A2C054F0049CFE8 /* smallIcon.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4631A2C054F0049CFE8 /* smallIcon.plist */; };
+		BFCCB46E1A2C054F0049CFE8 /* smallIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4641A2C054F0049CFE8 /* smallIcon.png */; };
+		BFCCB46F1A2C054F0049CFE8 /* Team.csb in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4651A2C054F0049CFE8 /* Team.csb */; };
+		BFCCB4701A2C054F0049CFE8 /* team.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4661A2C054F0049CFE8 /* team.plist */; };
+		BFCCB4711A2C054F0049CFE8 /* team.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4671A2C054F0049CFE8 /* team.png */; };
+		BFCCB4751A2C06A70049CFE8 /* Team.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCCB4731A2C06A70049CFE8 /* Team.cpp */; };
+		BFCCB4781A2C0A900049CFE8 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCCB4761A2C0A900049CFE8 /* Card.cpp */; };
+		BFCCB47F1A2C61760049CFE8 /* buffIcon.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB47B1A2C61760049CFE8 /* buffIcon.plist */; };
+		BFCCB4801A2C61760049CFE8 /* buffIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB47C1A2C61760049CFE8 /* buffIcon.png */; };
+		BFCCB4811A2C61760049CFE8 /* selected.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB47D1A2C61760049CFE8 /* selected.plist */; };
+		BFCCB4821A2C61760049CFE8 /* selected.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB47E1A2C61760049CFE8 /* selected.png */; };
+		BFCCB4851A2C728C0049CFE8 /* AoyiItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCCB4831A2C728C0049CFE8 /* AoyiItem.cpp */; };
+		BFCCB4891A2C745F0049CFE8 /* AoyiItem.csb in Resources */ = {isa = PBXBuildFile; fileRef = BFCCB4881A2C745F0049CFE8 /* AoyiItem.csb */; };
 		BFD09E4A1A24749D00992CDA /* tree_block_top.tmx in Resources */ = {isa = PBXBuildFile; fileRef = BFD09E491A24749D00992CDA /* tree_block_top.tmx */; };
 		BFD09E4E1A24971600992CDA /* maze_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD09E4B1A24971600992CDA /* maze_bg.png */; };
 		BFD09E4F1A24971600992CDA /* maze.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFD09E4C1A24971600992CDA /* maze.plist */; };
@@ -88,7 +107,7 @@
 		BFD09E5F1A257F7500992CDA /* aoYiPartner_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD09E5B1A257F7500992CDA /* aoYiPartner_10.png */; };
 		BFDAB3151A1A0E2100E450EC /* BattleMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB23F1A1A0E2100E450EC /* BattleMgr.cpp */; };
 		BFDAB3161A1A0E2100E450EC /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2411A1A0E2100E450EC /* BattleScene.cpp */; };
-		BFDAB3171A1A0E2100E450EC /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2431A1A0E2100E450EC /* Card.cpp */; };
+		BFDAB3171A1A0E2100E450EC /* BattleCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2431A1A0E2100E450EC /* BattleCard.cpp */; };
 		BFDAB3181A1A0E2100E450EC /* Hero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2461A1A0E2100E450EC /* Hero.cpp */; };
 		BFDAB3191A1A0E2100E450EC /* BaseUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2491A1A0E2100E450EC /* BaseUI.cpp */; };
 		BFDAB31A1A1A0E2100E450EC /* BezierMove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB24B1A1A0E2100E450EC /* BezierMove.cpp */; };
@@ -343,6 +362,29 @@
 		BFCCB4531A2879910049CFE8 /* map.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = map.plist; path = ../../../../ui/TalesRomac/res/map.plist; sourceTree = "<group>"; };
 		BFCCB4541A2879910049CFE8 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = ../../../../ui/TalesRomac/res/map.png; sourceTree = "<group>"; };
 		BFCCB4551A2879910049CFE8 /* MapScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = MapScene.csb; path = ../../../../ui/TalesRomac/res/MapScene.csb; sourceTree = "<group>"; };
+		BFCCB45B1A2C04320049CFE8 /* GateInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GateInfo.cpp; sourceTree = "<group>"; };
+		BFCCB45C1A2C04320049CFE8 /* GateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateInfo.h; sourceTree = "<group>"; };
+		BFCCB45E1A2C054F0049CFE8 /* common.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = common.plist; path = ../../../../ui/TalesRomac/res/common.plist; sourceTree = "<group>"; };
+		BFCCB45F1A2C054F0049CFE8 /* common.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = common.png; path = ../../../../ui/TalesRomac/res/common.png; sourceTree = "<group>"; };
+		BFCCB4601A2C054F0049CFE8 /* GateInfo.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = GateInfo.csb; path = ../../../../ui/TalesRomac/res/GateInfo.csb; sourceTree = "<group>"; };
+		BFCCB4611A2C054F0049CFE8 /* gateInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = gateInfo.plist; path = ../../../../ui/TalesRomac/res/gateInfo.plist; sourceTree = "<group>"; };
+		BFCCB4621A2C054F0049CFE8 /* gateInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gateInfo.png; path = ../../../../ui/TalesRomac/res/gateInfo.png; sourceTree = "<group>"; };
+		BFCCB4631A2C054F0049CFE8 /* smallIcon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = smallIcon.plist; path = ../../../../ui/TalesRomac/res/smallIcon.plist; sourceTree = "<group>"; };
+		BFCCB4641A2C054F0049CFE8 /* smallIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smallIcon.png; path = ../../../../ui/TalesRomac/res/smallIcon.png; sourceTree = "<group>"; };
+		BFCCB4651A2C054F0049CFE8 /* Team.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = Team.csb; path = ../../../../ui/TalesRomac/res/Team.csb; sourceTree = "<group>"; };
+		BFCCB4661A2C054F0049CFE8 /* team.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = team.plist; path = ../../../../ui/TalesRomac/res/team.plist; sourceTree = "<group>"; };
+		BFCCB4671A2C054F0049CFE8 /* team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = team.png; path = ../../../../ui/TalesRomac/res/team.png; sourceTree = "<group>"; };
+		BFCCB4731A2C06A70049CFE8 /* Team.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Team.cpp; sourceTree = "<group>"; };
+		BFCCB4741A2C06A70049CFE8 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		BFCCB4761A2C0A900049CFE8 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
+		BFCCB4771A2C0A900049CFE8 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		BFCCB47B1A2C61760049CFE8 /* buffIcon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = buffIcon.plist; sourceTree = "<group>"; };
+		BFCCB47C1A2C61760049CFE8 /* buffIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buffIcon.png; sourceTree = "<group>"; };
+		BFCCB47D1A2C61760049CFE8 /* selected.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = selected.plist; sourceTree = "<group>"; };
+		BFCCB47E1A2C61760049CFE8 /* selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected.png; sourceTree = "<group>"; };
+		BFCCB4831A2C728C0049CFE8 /* AoyiItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AoyiItem.cpp; sourceTree = "<group>"; };
+		BFCCB4841A2C728C0049CFE8 /* AoyiItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AoyiItem.h; sourceTree = "<group>"; };
+		BFCCB4881A2C745F0049CFE8 /* AoyiItem.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = AoyiItem.csb; path = ../../../../ui/TalesRomac/res/AoyiItem.csb; sourceTree = "<group>"; };
 		BFD09E491A24749D00992CDA /* tree_block_top.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tree_block_top.tmx; path = ../../../../ui/TalesRomac/res/tree_block_top.tmx; sourceTree = "<group>"; };
 		BFD09E4B1A24971600992CDA /* maze_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maze_bg.png; path = ../../../../ui/TalesRomac/res/maze_bg.png; sourceTree = "<group>"; };
 		BFD09E4C1A24971600992CDA /* maze.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = maze.plist; path = ../../../../ui/TalesRomac/res/maze.plist; sourceTree = "<group>"; };
@@ -359,8 +401,8 @@
 		BFDAB2401A1A0E2100E450EC /* BattleMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleMgr.h; sourceTree = "<group>"; };
 		BFDAB2411A1A0E2100E450EC /* BattleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleScene.cpp; sourceTree = "<group>"; };
 		BFDAB2421A1A0E2100E450EC /* BattleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
-		BFDAB2431A1A0E2100E450EC /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
-		BFDAB2441A1A0E2100E450EC /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		BFDAB2431A1A0E2100E450EC /* BattleCard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCard.cpp; sourceTree = "<group>"; };
+		BFDAB2441A1A0E2100E450EC /* BattleCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleCard.h; sourceTree = "<group>"; };
 		BFDAB2451A1A0E2100E450EC /* fconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fconfig.h; sourceTree = "<group>"; };
 		BFDAB2461A1A0E2100E450EC /* Hero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hero.cpp; sourceTree = "<group>"; };
 		BFDAB2471A1A0E2100E450EC /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
@@ -738,6 +780,17 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BFCCB4881A2C745F0049CFE8 /* AoyiItem.csb */,
+				BFCCB45E1A2C054F0049CFE8 /* common.plist */,
+				BFCCB45F1A2C054F0049CFE8 /* common.png */,
+				BFCCB4601A2C054F0049CFE8 /* GateInfo.csb */,
+				BFCCB4611A2C054F0049CFE8 /* gateInfo.plist */,
+				BFCCB4621A2C054F0049CFE8 /* gateInfo.png */,
+				BFCCB4631A2C054F0049CFE8 /* smallIcon.plist */,
+				BFCCB4641A2C054F0049CFE8 /* smallIcon.png */,
+				BFCCB4651A2C054F0049CFE8 /* Team.csb */,
+				BFCCB4661A2C054F0049CFE8 /* team.plist */,
+				BFCCB4671A2C054F0049CFE8 /* team.png */,
 				BFCCB4531A2879910049CFE8 /* map.plist */,
 				BFCCB4541A2879910049CFE8 /* map.png */,
 				BFCCB4551A2879910049CFE8 /* MapScene.csb */,
@@ -778,6 +831,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BFCCB4721A2C068A0049CFE8 /* team */,
 				BFDAB36F1A1A0E3E00E450EC /* AppDelegate.cpp */,
 				BFDAB3701A1A0E3E00E450EC /* AppDelegate.h */,
 				BFDAB23E1A1A0E2100E450EC /* battle */,
@@ -868,9 +922,26 @@
 			path = fight;
 			sourceTree = "<group>";
 		};
+		BFCCB4721A2C068A0049CFE8 /* team */ = {
+			isa = PBXGroup;
+			children = (
+				BFCCB4731A2C06A70049CFE8 /* Team.cpp */,
+				BFCCB4741A2C06A70049CFE8 /* Team.h */,
+				BFCCB4761A2C0A900049CFE8 /* Card.cpp */,
+				BFCCB4771A2C0A900049CFE8 /* Card.h */,
+				BFCCB4831A2C728C0049CFE8 /* AoyiItem.cpp */,
+				BFCCB4841A2C728C0049CFE8 /* AoyiItem.h */,
+			);
+			path = team;
+			sourceTree = "<group>";
+		};
 		BFD09E571A257F7500992CDA /* effect */ = {
 			isa = PBXGroup;
 			children = (
+				BFCCB47B1A2C61760049CFE8 /* buffIcon.plist */,
+				BFCCB47C1A2C61760049CFE8 /* buffIcon.png */,
+				BFCCB47D1A2C61760049CFE8 /* selected.plist */,
+				BFCCB47E1A2C61760049CFE8 /* selected.png */,
 				BFD09E581A257F7500992CDA /* aoyi.plist */,
 				BFD09E591A257F7500992CDA /* aoyi.png */,
 				BFD09E5A1A257F7500992CDA /* aoYiMaskBg.png */,
@@ -887,8 +958,8 @@
 				BFDAB2401A1A0E2100E450EC /* BattleMgr.h */,
 				BFDAB2411A1A0E2100E450EC /* BattleScene.cpp */,
 				BFDAB2421A1A0E2100E450EC /* BattleScene.h */,
-				BFDAB2431A1A0E2100E450EC /* Card.cpp */,
-				BFDAB2441A1A0E2100E450EC /* Card.h */,
+				BFDAB2431A1A0E2100E450EC /* BattleCard.cpp */,
+				BFDAB2441A1A0E2100E450EC /* BattleCard.h */,
 				BFDAB2451A1A0E2100E450EC /* fconfig.h */,
 				BFDAB2461A1A0E2100E450EC /* Hero.cpp */,
 				BFDAB2471A1A0E2100E450EC /* Hero.h */,
@@ -1103,6 +1174,8 @@
 				BFDAB2CD1A1A0E2100E450EC /* Map.h */,
 				BFDAB2CE1A1A0E2100E450EC /* Maze.cpp */,
 				BFDAB2CF1A1A0E2100E450EC /* Maze.h */,
+				BFCCB45B1A2C04320049CFE8 /* GateInfo.cpp */,
+				BFCCB45C1A2C04320049CFE8 /* GateInfo.h */,
 			);
 			path = map;
 			sourceTree = "<group>";
@@ -1426,11 +1499,16 @@
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				BF0BAA1D1A1DDCDB00B64D82 /* kpps.plist in Resources */,
+				BFCCB46C1A2C054F0049CFE8 /* gateInfo.png in Resources */,
 				BFB770F31A1F33CD0079450E /* longNv.json in Resources */,
 				BFDAB3DB1A1B116600E450EC /* huLi.json in Resources */,
+				BFCCB46B1A2C054F0049CFE8 /* gateInfo.plist in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
+				BFCCB46E1A2C054F0049CFE8 /* smallIcon.png in Resources */,
+				BFCCB46F1A2C054F0049CFE8 /* Team.csb in Resources */,
 				BFDAB3D51A1B116600E450EC /* neZha3.png in Resources */,
 				BFDAB4171A1B2ADC00E450EC /* BattleScene.csb in Resources */,
+				BFCCB4891A2C745F0049CFE8 /* AoyiItem.csb in Resources */,
 				BFDAB3C81A1B116600E450EC /* longNv3.png in Resources */,
 				BFDAB3E11A1B116600E450EC /* zhu0.plist in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
@@ -1443,17 +1521,21 @@
 				BFDAB4221A1B2ADC00E450EC /* MainScene.csb in Resources */,
 				BFDAB4211A1B2ADC00E450EC /* LoginScene.csb in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
+				BFCCB4711A2C054F0049CFE8 /* team.png in Resources */,
 				BFDAB41D1A1B2ADC00E450EC /* home.plist in Resources */,
 				BFDAB3791A1A106200E450EC /* background.png in Resources */,
 				BFDAB3D31A1B116600E450EC /* neZha.png in Resources */,
 				BFD09E4F1A24971600992CDA /* maze.plist in Resources */,
 				BFDAB3C91A1B116600E450EC /* longNv4.png in Resources */,
+				BFCCB4821A2C61760049CFE8 /* selected.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				BFDAB3991A1B0B0000E450EC /* bg_island2.png in Resources */,
+				BFCCB4701A2C054F0049CFE8 /* team.plist in Resources */,
 				BFDAB3941A1B0B0000E450EC /* bg_dreamland2.png in Resources */,
 				BFDAB4181A1B2ADC00E450EC /* Card.csb in Resources */,
 				BFDAB3D71A1B116600E450EC /* neZha5.png in Resources */,
 				BFDAB4071A1B277900E450EC /* common in Resources */,
+				BFCCB4801A2C61760049CFE8 /* buffIcon.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				BF0BAA211A1DE33300B64D82 /* posui.plist in Resources */,
 				BFDAB3CF1A1B116600E450EC /* man20.plist in Resources */,
@@ -1471,6 +1553,7 @@
 				BFDAB3D81A1B116600E450EC /* neZha6.png in Resources */,
 				BFDAB3E01A1B116600E450EC /* zhu.ExportJson in Resources */,
 				BFB770FF1A1F3CF00079450E /* miss.png in Resources */,
+				BFCCB47F1A2C61760049CFE8 /* buffIcon.plist in Resources */,
 				BFD09E5F1A257F7500992CDA /* aoYiPartner_10.png in Resources */,
 				BFDAB41E1A1B2ADC00E450EC /* home.png in Resources */,
 				BFB771001A1F3CF00079450E /* num_heal.png in Resources */,
@@ -1490,6 +1573,7 @@
 				BFCCB44C1A2712BD0049CFE8 /* test.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				BFDAB3C41A1B116600E450EC /* longNv.atlas in Resources */,
+				BFCCB4811A2C61760049CFE8 /* selected.plist in Resources */,
 				BFDAB3CB1A1B116600E450EC /* man animation.ExportJson in Resources */,
 				BFDAB3DA1A1B116600E450EC /* huLi.atlas in Resources */,
 				BFB770FE1A1F3CF00079450E /* immunity.png in Resources */,
@@ -1497,16 +1581,20 @@
 				BFDAB3DC1A1B116600E450EC /* huLi.png in Resources */,
 				BFCCB4581A2879910049CFE8 /* MapScene.csb in Resources */,
 				BFDAB4251A1B2ADC00E450EC /* tree_block.png in Resources */,
+				BFCCB46A1A2C054F0049CFE8 /* GateInfo.csb in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				BFDAB3CE1A1B116600E450EC /* man2.ExportJson in Resources */,
 				BFDAB41F1A1B2ADC00E450EC /* login.plist in Resources */,
 				BFDAB3D91A1B116600E450EC /* neZha7.png in Resources */,
 				BFDAB3DD1A1B116600E450EC /* huLi2.png in Resources */,
 				BFDAB3D11A1B116600E450EC /* neZha.atlas in Resources */,
+				BFCCB4681A2C054F0049CFE8 /* common.plist in Resources */,
 				BFDAB32A1A1A0E2100E450EC /* descriptor.proto in Resources */,
 				BFCCB4561A2879910049CFE8 /* map.plist in Resources */,
 				BFDAB3931A1B0B0000E450EC /* bg_dreamland1.png in Resources */,
+				BFCCB4691A2C054F0049CFE8 /* common.png in Resources */,
 				BFDAB3DF1A1B116600E450EC /* huLi4.png in Resources */,
+				BFCCB46D1A2C054F0049CFE8 /* smallIcon.plist in Resources */,
 				BFD09E5D1A257F7500992CDA /* aoyi.png in Resources */,
 				BFDAB3D01A1B116600E450EC /* man20.png in Resources */,
 				BFDAB37A1A1A106200E450EC /* round.png in Resources */,
@@ -1559,8 +1647,11 @@
 				BFDAB3161A1A0E2100E450EC /* BattleScene.cpp in Sources */,
 				BFDAB3371A1A0E2100E450EC /* zero_copy_stream_impl_lite.cc in Sources */,
 				BFDAB3281A1A0E2100E450EC /* descriptor.cc in Sources */,
+				BFCCB4751A2C06A70049CFE8 /* Team.cpp in Sources */,
 				BFDAB3421A1A0E2100E450EC /* structurally_valid.cc in Sources */,
 				BFDAB3561A1A0E2100E450EC /* commonResp.pb.cc in Sources */,
+				BFCCB4781A2C0A900049CFE8 /* Card.cpp in Sources */,
+				BFCCB4851A2C728C0049CFE8 /* AoyiItem.cpp in Sources */,
 				BFDAB3351A1A0E2100E450EC /* zero_copy_stream.cc in Sources */,
 				BFDAB3431A1A0E2100E450EC /* strutil.cc in Sources */,
 				BFDAB31B1A1A0E2100E450EC /* CircleMove.cpp in Sources */,
@@ -1588,6 +1679,7 @@
 				BFDAB3441A1A0E2100E450EC /* substitute.cc in Sources */,
 				BFDAB3231A1A0E2100E450EC /* KeychainItemWrapper.m in Sources */,
 				BFDAB34D1A1A0E2100E450EC /* Map.cpp in Sources */,
+				BFCCB45D1A2C04320049CFE8 /* GateInfo.cpp in Sources */,
 				BFDAB3631A1A0E2100E450EC /* XDrop.cpp in Sources */,
 				BFDAB34A1A1A0E2100E450EC /* wire_format_lite.cc in Sources */,
 				BFDAB3401A1A0E2100E450EC /* once.cc in Sources */,
@@ -1612,7 +1704,7 @@
 				BFE241C41A22DA140030771C /* StandDraw.cpp in Sources */,
 				BFDAB32B1A1A0E2100E450EC /* descriptor_database.cc in Sources */,
 				BFDAB31E1A1A0E2100E450EC /* RotateList.cpp in Sources */,
-				BFDAB3171A1A0E2100E450EC /* Card.cpp in Sources */,
+				BFDAB3171A1A0E2100E450EC /* BattleCard.cpp in Sources */,
 				BFDAB3591A1A0E2100E450EC /* gate.pb.cc in Sources */,
 				BFDAB3451A1A0E2100E450EC /* file.cc in Sources */,
 				BFDAB3601A1A0E2100E450EC /* XBuff.cpp in Sources */,
