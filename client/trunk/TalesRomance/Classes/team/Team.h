@@ -13,16 +13,18 @@
 #include "BaseUI.h"
 #include "Card.h"
 #include "AoyiItem.h"
-
+#include "TabBar.h"
 
 class Team : public BaseUI {
     ui::ScrollView* aoyiList;
     ui::ScrollView* cardList;
-    
+    TabBar* tabBar;
+    Card* card;
 public:
     static Team* create();
     bool init();
     void resetUI();
+    void onExit();
 private:
     void onButtonClick(Ref* pSender);
     void selectCard(Widget* card);

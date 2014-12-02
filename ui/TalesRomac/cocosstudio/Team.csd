@@ -22,7 +22,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="teamEditBg.png" Plist="team.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_tab0" ActionTag="-2111311031" FrameEvent="" Tag="32" ObjectIndex="1" TouchEnable="True" FontSize="36" ButtonText="1" Scale9Width="46" Scale9Height="60" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_tab0" ActionTag="-2111311031" FrameEvent="" Tag="1000" ObjectIndex="1" TouchEnable="True" FontSize="36" ButtonText="1" Scale9Width="46" Scale9Height="60" ctype="ButtonObjectData">
             <Position X="221.4756" Y="577.9332" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -35,7 +35,7 @@
             <PressedFileData Type="PlistSubImage" Path="teamEditBtnzu_2.png" Plist="team.plist" />
             <NormalFileData Type="PlistSubImage" Path="teamEditBtnzu_1.png" Plist="team.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_tab1" ActionTag="957860069" FrameEvent="" Tag="35" ObjectIndex="4" TouchEnable="True" FontSize="36" ButtonText="2" Scale9Width="46" Scale9Height="60" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_tab1" ActionTag="957860069" FrameEvent="" Tag="1001" ObjectIndex="4" TouchEnable="True" FontSize="36" ButtonText="2" Scale9Width="46" Scale9Height="60" ctype="ButtonObjectData">
             <Position X="288.3215" Y="577.9332" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -48,7 +48,7 @@
             <PressedFileData Type="PlistSubImage" Path="teamEditBtnzu_2.png" Plist="team.plist" />
             <NormalFileData Type="PlistSubImage" Path="teamEditBtnzu_1.png" Plist="team.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_tab2" ActionTag="490323965" FrameEvent="" Tag="36" ObjectIndex="5" TouchEnable="True" FontSize="36" ButtonText="3" Scale9Width="46" Scale9Height="60" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_tab2" ActionTag="490323965" FrameEvent="" Tag="1002" ObjectIndex="5" TouchEnable="True" FontSize="36" ButtonText="3" Scale9Width="46" Scale9Height="60" ctype="ButtonObjectData">
             <Position X="355.1674" Y="577.9332" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -61,7 +61,7 @@
             <PressedFileData Type="PlistSubImage" Path="teamEditBtnzu_2.png" Plist="team.plist" />
             <NormalFileData Type="PlistSubImage" Path="teamEditBtnzu_1.png" Plist="team.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_save" ActionTag="-1801371516" FrameEvent="" Tag="1000" ObjectIndex="6" TouchEnable="True" FontSize="36" ButtonText="保存" Scale9Width="195" Scale9Height="51" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_save" ActionTag="-1801371516" FrameEvent="" Tag="1003" ObjectIndex="6" TouchEnable="True" FontSize="36" ButtonText="保存" Scale9Width="195" Scale9Height="51" ctype="ButtonObjectData">
             <Position X="339.6270" Y="73.0046" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -74,7 +74,7 @@
             <PressedFileData Type="PlistSubImage" Path="teamEditBtnSave_2.png" Plist="team.plist" />
             <NormalFileData Type="PlistSubImage" Path="teamEditBtnSave_1.png" Plist="team.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_sort" ActionTag="1817727778" FrameEvent="" Tag="1001" ObjectIndex="7" TouchEnable="True" FontSize="36" ButtonText="排序" Scale9Width="133" Scale9Height="52" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_sort" ActionTag="1817727778" FrameEvent="" Tag="1004" ObjectIndex="7" TouchEnable="True" FontSize="36" ButtonText="排序" Scale9Width="133" Scale9Height="52" ctype="ButtonObjectData">
             <Position X="591.9608" Y="113.1269" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -87,7 +87,7 @@
             <PressedFileData Type="PlistSubImage" Path="teamEditBtnSort_2.png" Plist="team.plist" />
             <NormalFileData Type="PlistSubImage" Path="teamEditBtnSort_1.png" Plist="team.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_back" ActionTag="1556233458" FrameEvent="" Tag="1003" ObjectIndex="8" TouchEnable="True" FontSize="36" ButtonText="返回" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_back" ActionTag="1556233458" FrameEvent="" Tag="1005" ObjectIndex="8" TouchEnable="True" FontSize="36" ButtonText="返回" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
             <Position X="892.1092" Y="86.2662" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -128,12 +128,12 @@
             <ColorVector ScaleY="1.0000" />
             <InnerNodeSize Width="420" Height="400" />
           </NodeObjectData>
-          <NodeObjectData Name="attackLabel" ActionTag="663089296" FrameEvent="" Tag="43" ObjectIndex="1" FontSize="20" LabelText="攻击:1000 " ctype="TextObjectData">
+          <NodeObjectData Name="attackLabel" ActionTag="663089296" FrameEvent="" Tag="43" ObjectIndex="1" FontSize="20" LabelText="atk:1000 " ctype="TextObjectData">
             <Position X="270.2901" Y="519.8574" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="45" G="20" B="0" />
-            <Size X="95.0000" Y="23.0000" />
+            <Size X="82.0000" Y="23.0000" />
             <PrePosition X="0.2379" Y="0.8123" />
             <PreSize X="0.0000" Y="0.0000" />
           </NodeObjectData>

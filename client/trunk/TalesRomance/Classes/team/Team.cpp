@@ -25,6 +25,18 @@ bool Team::init()
     }
     this->cardList=(ScrollView*)this->ui->getChildByName("cardList");
     this->aoyiList=(ScrollView*)this->ui->getChildByName("aoyiList");
+    std::vector<Button*> buttons;
+    for(int i=1000;i<1006;i++){
+        Button* btn=(Button*)this->ui->getChildByTag(i);
+        btn->addClickEventListener(CC_CALLBACK_1(Team::onButtonClick, this));
+        if(i<1003){
+            buttons.push_back(btn);
+        }
+    }
+    this->tabBar=TabBar::create(buttons);
+    this->tabBar->setIndex(0);
+    this->tabBar->retain();
+    
     
     this->resetUI();
     return true;
@@ -36,18 +48,17 @@ void Team::resetUI()
     Card* card=Card::create();
 
     Size size=this->cardList->getInnerContainerSize();
-    this->cardList->setInnerContainerSize(Size(size.width,ceil(25/4.f)*card->getSize().height));
-    
+    this->cardList->setInnerContainerSize(Size(size.width,(1+ceil(25/4.f))*card->getSize().height));
+    size=this->cardList->getInnerContainerSize();
     for(int i=0;i<25;i++){
         Card* card=Card::create();
         card->click=CC_CALLBACK_1(Team::selectCard, this);
         this->cardList->addChild(card);
-        
-        //card->setPosition(Vec2(cardSize.width*0.5+i*(cardSize.width+gap),size.height*0.5));
-        //this->cardList->setInnerContainerSize(Size(cardSize.width,(cardSize.height+gap)*10));
-        
+        Size cardSize=card->getSize();
+        card->setPosition(Vec2(cardSize.width*0.5+(cardSize.width+gap)*(i%4),size.height-cardSize.height*0.5-(cardSize.height+gap)*(i/4)));
         if(i==0){
             card->setSelect(true);
+            this->card=card;
         }
     }
     size=this->aoyiList->getInnerContainerSize();
@@ -62,22 +73,49 @@ void Team::resetUI()
 
 void Team::selectCard(Widget* card)
 {
-    
+    log("select card");
+    this->card->setSelect(false);
+    this->card=(Card*)card;
+    this->card->setSelect(true);
 }
 
 void Team::onButtonClick(cocos2d::Ref *pSender)
 {
     Button* btn=(Button*) pSender;
     switch (btn->getTag()) {
-        case 1000: //保存
-            
+        case 1000: //tab0
+        {
+            this->tabBar->setIndex(0);
             break;
-        case 1001: //排序
-            
+        }
+        case 1001: //tab1
+        {
+            this->tabBar->setIndex(1);
             break;
-            
-        case 1002: //返回
-            
+        }
+        case 1002: //tab2
+        {
+            this->tabBar->setIndex(2);
             break;
+        }
+        case 1003: //保存
+        {
+            break;
+        }
+        case 1004: //排序
+        {
+            break;
+        }
+        case 1005: //返回
+        {
+            this->clear(true);
+            break;
+        }
     }
+}
+
+void Team::onExit()
+{
+    this->tabBar->release();
+    BaseUI::onExit();
 }
