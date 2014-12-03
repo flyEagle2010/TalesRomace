@@ -14,41 +14,17 @@ public:
 	static XMonster* record(Value v);
 	rapidjson::Document doc;
 	int getId();
-	/*陈天华:
-填入剧情动画id
-空表示不播放战前动画*/
-	int getPreID();
-	/*陈天华:
-填入剧情动画id
-空表示不播放战后动画*/
-	int getAfterID();
-	/*陈天华:
-*/
-	bool getIsBoss();
-	/*Administrator:
-前三位是角色id第四位表示等级*/
-	int getMID1();
-	int getMLv1();
-	int getMStar1();
-	/*Administrator:
-前三位是角色id第四位表示等级*/
-	int getMID2();
-	int getMLv2();
-	int getMStar2();
-	/*Administrator:
-前三位是角色id第四位表示等级*/
-	int getMID3();
-	int getMLv3();
-	int getMStar3();
-	/*Administrator:
-前三位是角色id第四位表示等级*/
-	int getMID4();
-	int getMLv4();
-	int getMStar4();
-	/*Administrator:
-前三位是角色id第四位表示等级*/
-	int getMID5();
-	int getMLv5();
-	int getMStar5();
+	std::string getName();
+	int getHp();
+	int getAp();
+	int getMp();
+	int getPd();
+	int getMd();
+	int getTeam1();
+	int getTeam2();
+	int getTeam3();
+	int getTeam4();
+	int getTeam5();
+	int getTeam6();
 };
 #endif // defined(__dx__Data__)

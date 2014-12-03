@@ -17,7 +17,7 @@
 #include "MsgID.h"
 #include "BaseUI.h"
 #include "GConfig.h"
-#include "XExp.h"
+//#include "XExp.h"
 //#include "Formation.h"
 USING_NS_CC;
 using namespace google::protobuf;

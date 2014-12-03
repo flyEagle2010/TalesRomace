@@ -20,6 +20,7 @@
 #include "Maze.h"
 #include "GateInfo.h"
 #include "Team.h"
+#include "MapScene.h"
 
 USING_NS_CC;
 using namespace ui;

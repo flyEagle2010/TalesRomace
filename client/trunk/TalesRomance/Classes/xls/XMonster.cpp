@@ -18,57 +18,39 @@ XMonster* XMonster::record(Value v){
 int XMonster::getId(){
 	return doc[v.asString().c_str()]["id"].GetInt();
 }
-int XMonster::getPreID(){
-	return doc[v.asString().c_str()]["preID"].GetInt();
+std::string XMonster::getName(){
+	return doc[v.asString().c_str()]["name"].GetString();
 }
-int XMonster::getAfterID(){
-	return doc[v.asString().c_str()]["afterID"].GetInt();
+int XMonster::getHp(){
+	return doc[v.asString().c_str()]["hp"].GetInt();
 }
-bool XMonster::getIsBoss(){
-	return doc[v.asString().c_str()]["isBoss"].GetInt();
+int XMonster::getAp(){
+	return doc[v.asString().c_str()]["ap"].GetInt();
 }
-int XMonster::getMID1(){
-	return doc[v.asString().c_str()]["mID1"].GetInt();
+int XMonster::getMp(){
+	return doc[v.asString().c_str()]["mp"].GetInt();
 }
-int XMonster::getMLv1(){
-	return doc[v.asString().c_str()]["mLv1"].GetInt();
+int XMonster::getPd(){
+	return doc[v.asString().c_str()]["pd"].GetInt();
 }
-int XMonster::getMStar1(){
-	return doc[v.asString().c_str()]["mStar1"].GetInt();
+int XMonster::getMd(){
+	return doc[v.asString().c_str()]["md"].GetInt();
 }
-int XMonster::getMID2(){
-	return doc[v.asString().c_str()]["mID2"].GetInt();
+int XMonster::getTeam1(){
+	return doc[v.asString().c_str()]["team1"].GetInt();
 }
-int XMonster::getMLv2(){
-	return doc[v.asString().c_str()]["mLv2"].GetInt();
+int XMonster::getTeam2(){
+	return doc[v.asString().c_str()]["team2"].GetInt();
 }
-int XMonster::getMStar2(){
-	return doc[v.asString().c_str()]["mStar2"].GetInt();
+int XMonster::getTeam3(){
+	return doc[v.asString().c_str()]["team3"].GetInt();
 }
-int XMonster::getMID3(){
-	return doc[v.asString().c_str()]["mID3"].GetInt();
+int XMonster::getTeam4(){
+	return doc[v.asString().c_str()]["team4"].GetInt();
 }
-int XMonster::getMLv3(){
-	return doc[v.asString().c_str()]["mLv3"].GetInt();
+int XMonster::getTeam5(){
+	return doc[v.asString().c_str()]["team5"].GetInt();
 }
-int XMonster::getMStar3(){
-	return doc[v.asString().c_str()]["mStar3"].GetInt();
-}
-int XMonster::getMID4(){
-	return doc[v.asString().c_str()]["mID4"].GetInt();
-}
-int XMonster::getMLv4(){
-	return doc[v.asString().c_str()]["mLv4"].GetInt();
-}
-int XMonster::getMStar4(){
-	return doc[v.asString().c_str()]["mStar4"].GetInt();
-}
-int XMonster::getMID5(){
-	return doc[v.asString().c_str()]["mID5"].GetInt();
-}
-int XMonster::getMLv5(){
-	return doc[v.asString().c_str()]["mLv5"].GetInt();
-}
-int XMonster::getMStar5(){
-	return doc[v.asString().c_str()]["mStar5"].GetInt();
+int XMonster::getTeam6(){
+	return doc[v.asString().c_str()]["team6"].GetInt();
 }

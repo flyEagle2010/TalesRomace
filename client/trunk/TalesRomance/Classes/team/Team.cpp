@@ -46,8 +46,9 @@ void Team::resetUI()
 {
     int gap=10;
     Card* card=Card::create();
-
+    Size wsize=Director::getInstance()->getWinSize();
     Size size=this->cardList->getInnerContainerSize();
+    Vec2 center=Vec2(size.width*0.5,size.height*0.5);
     this->cardList->setInnerContainerSize(Size(size.width,(1+ceil(25/4.f))*card->getSize().height));
     size=this->cardList->getInnerContainerSize();
     for(int i=0;i<25;i++){
@@ -55,7 +56,7 @@ void Team::resetUI()
         card->click=CC_CALLBACK_1(Team::selectCard, this);
         this->cardList->addChild(card);
         Size cardSize=card->getSize();
-        card->setPosition(Vec2(cardSize.width*0.5+(cardSize.width+gap)*(i%4),size.height-cardSize.height*0.5-(cardSize.height+gap)*(i/4)));
+        card->setPosition(Vec2(cardSize.width*0.5+(cardSize.width+gap)*(i%4),size.height-cardSize.height*0.5-(cardSize.height+gap)*(i/4))-center);
         if(i==0){
             card->setSelect(true);
             this->card=card;
@@ -66,7 +67,7 @@ void Team::resetUI()
         AoyiItem* item=AoyiItem::create();
         this->aoyiList->addChild(item);
         Size itemSize=item->getSize();
-        item->setPosition(Vec2(itemSize.width*0.5,(itemSize.height+gap)*i+itemSize.height*0.5));
+        item->setPosition(Vec2(itemSize.width*0.5,(itemSize.height+gap)*i+itemSize.height*0.5)-center);
         this->aoyiList->setInnerContainerSize(Size(size.width,(itemSize.height+gap)*10));
     }
 }

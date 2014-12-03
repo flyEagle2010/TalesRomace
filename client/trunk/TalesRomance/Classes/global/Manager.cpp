@@ -75,7 +75,7 @@ void Manager::updateRole(NetMsg* msg)
             }
             case RoleFields::LEVEL:
             {
-                this->roleData->mutable_role()->set_level(role.finalvalue());
+                //this->roleData->mutable_role()->set_level(role.finalvalue());
                 break;
             }
             case RoleFields::RMB:
@@ -85,7 +85,7 @@ void Manager::updateRole(NetMsg* msg)
             }
             case RoleFields::EXP:
             {
-                this->roleData->mutable_role()->set_exp(role.finalvalue());
+                //this->roleData->mutable_role()->set_exp(role.finalvalue());
                 break;
             }
             case RoleFields::VIP_LEVEL:
@@ -149,7 +149,7 @@ void Manager::updateItems(NetMsg* msg)
         }
         else if(it->npcid()==0)//背包中添加
         {
-            this->updateItem(it, this->roleData->mutable_itemlist());
+            //this->updateItem(it, this->roleData->mutable_itemlist());
         }
     }
 }
@@ -166,10 +166,10 @@ void Manager::addOrRemoveNpc(NetMsg* msg)
     
     if (pnc.addorremove()==true) {
         
-        this->roleData->mutable_npclist()->MergeFrom(pnc.npcs());
+       // this->roleData->mutable_npclist()->MergeFrom(pnc.npcs());
         
     }else if (pnc.addorremove()==false){
-        
+        /*
         for (int i=0; i<this->roleData->npclist_size(); i++) {
             
             int64 npcId=this->roleData->npclist(i).npcid();
@@ -185,6 +185,7 @@ void Manager::addOrRemoveNpc(NetMsg* msg)
             }
             
         }
+         */
         
     }
     
@@ -224,6 +225,7 @@ void Manager::updateItem(RepeatedPtrField< ::PItemChangeLog >::iterator it,Repea
 
 PNpc* Manager::getNpc(int64 npcId)
 {
+    /*
     for (int i=0;i<this->roleData->npclist_size();i++)
     {
         PNpc* pnpc=this->roleData->mutable_npclist(i);
@@ -232,12 +234,14 @@ PNpc* Manager::getNpc(int64 npcId)
             break;
         }
     }
+     */
     return nullptr;
     
 }
 
 PItem*Manager::getPropItem(int itemId)
 {
+    /*
     PItem*item;
     for (int i=0; i<this->roleData->itemlist().size(); i++) {
         item = this->roleData->mutable_itemlist(i);
@@ -245,11 +249,13 @@ PItem*Manager::getPropItem(int itemId)
             return item;
         }
     }
+     */
     return nullptr;
 }
 
 PGateItem* Manager::getGateItem(int gateId)
 {
+    /*
     for (int i=0;i<this->roleData->gate().gates_size();i++)
     {
         PGateItem* pGate=this->roleData->mutable_gate()->mutable_gates(i);
@@ -258,6 +264,7 @@ PGateItem* Manager::getGateItem(int gateId)
             break;
         }
     }
+     */
     return nullptr;
 }
 
@@ -275,6 +282,7 @@ PNodeItem* Manager::getNodeItem(int gateId,int nodeId)
 
 void Manager::updateGates(NetMsg* msg)//更新关卡
 {
+    /*
     PUpdateGates pUpdateGates;
     pUpdateGates.ParseFromArray(msg->bytes, msg->len);
     for (int i=0; i<pUpdateGates.gates_size(); i++) {
@@ -291,6 +299,7 @@ void Manager::updateGates(NetMsg* msg)//更新关卡
             this->roleData->mutable_gate()->mutable_gates()->AddAllocated(pGateItem);
         }
     }
+     */
 }
 //更新关卡节点
 void Manager::updateNodes(NetMsg* msg)//更新节点
@@ -347,10 +356,13 @@ void Manager::updateNpcSkills(int npcid,int skillId)
 
 int Manager::getCurrExp(int exp,int lvl)
 {
+    /*
     for(int i = 1;i<lvl;i++){
         exp -= XExp::record(Value(i))->getExp();
     }
     return exp;
+     */
+    return 1;
 }
 
 void Manager::showMsg(const string msg)

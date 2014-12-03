@@ -83,7 +83,8 @@ void HomeScene::touchButtonEvent(cocos2d::Ref *pSender, TouchEventType type)
         }
         case 101: //日程
         {
-
+            MapScene* mapScene=MapScene::create();
+            mapScene->show(this,1);
             break;
         }
         case 102: //道具
