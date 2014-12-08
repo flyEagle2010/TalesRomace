@@ -8,10 +8,10 @@
 
 #include "GateInfo.h"
 
-GateInfo* GateInfo::create()
+GateInfo* GateInfo::create(int gateID)
 {
     GateInfo* pRet=new GateInfo();
-    if(pRet && pRet->init()){
+    if(pRet && pRet->init(gateID)){
         pRet->autorelease();
         return pRet;
     }
@@ -19,12 +19,12 @@ GateInfo* GateInfo::create()
     return nullptr;
 }
 
-bool GateInfo::init()
+bool GateInfo::init(int gateID)
 {
     if(!BaseUI::init("GateInfo.csb", "GateInfo.plist")){
         return false;
     }
-
+    this->gateID=gateID;
     this->friendList=(ScrollView*)this->ui->getChildByName("friendList");
     this->cdLabel=(Text*)this->ui->getChildByName("cdLabel");
     this->staminaLabel=(Text*)this->ui->getChildByName("staminaLabel");
@@ -65,19 +65,24 @@ bool GateInfo::init()
 
 void GateInfo::resetUI()
 {
-    Size size=this->friendList->getInnerContainerSize();
     int gap=10;
+    Size wsize=Director::getInstance()->getWinSize();
+    Size size=this->friendList->getInnerContainerSize();
+    Vec2 center=Vec2(wsize.width*0.5,wsize.height*0.5);
     for(int i=0;i<10;i++){
         Card* card=Card::create();
         card->click=CC_CALLBACK_1(GateInfo::selectFriend, this);
         this->friendList->addChild(card);
         Size cardSize=card->rim->getContentSize();
-        card->setPosition(Vec2(cardSize.width*0.5+i*(cardSize.width+gap),size.height*0.5));
+        card->setPosition(Vec2(cardSize.width*0.5+i*(cardSize.width+gap),size.height*0.6));
         this->friendList->setInnerContainerSize(Size((gap+cardSize.width)*10,size.height));
         if(i==0){
             card->setSelect(true);
         }
     }
+    XMap* xmap=XMap::record(Value(this->gateID));
+    //this->numLabel->setString(xmap->getName());
+    //this->desLabel->setString(xmap->getDesc());
 }
 
 void GateInfo::selectFriend(cocos2d::ui::Widget *card)

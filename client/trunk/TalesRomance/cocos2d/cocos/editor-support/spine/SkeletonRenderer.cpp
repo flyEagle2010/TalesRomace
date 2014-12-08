@@ -75,6 +75,7 @@ void SkeletonRenderer::initialize () {
 	setOpacityModifyRGB(true);
 
 	setGLProgram(ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR));
+	scheduleUpdate();
 }
 
 void SkeletonRenderer::setSkeletonData (spSkeletonData *skeletonData, bool ownsSkeletonData) {
@@ -367,16 +368,6 @@ void SkeletonRenderer::setDebugBonesEnabled (bool enabled) {
 }
 bool SkeletonRenderer::getDebugBonesEnabled () const {
 	return _debugBones;
-}
-
-void SkeletonRenderer::onEnter () {
-	Node::onEnter();
-	scheduleUpdate();
-}
-
-void SkeletonRenderer::onExit () {
-	Node::onExit();
-	unscheduleUpdate();
 }
 
 // --- CCBlendProtocol

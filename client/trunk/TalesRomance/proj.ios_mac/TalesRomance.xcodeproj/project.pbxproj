@@ -60,6 +60,14 @@
 		5D3BCD4B1A2F04390023B889 /* mapGate1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD481A2F04390023B889 /* mapGate1.png */; };
 		5D3BCD4C1A2F04390023B889 /* mapGateNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD491A2F04390023B889 /* mapGateNew.png */; };
 		5D3BCD4E1A2F18F90023B889 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD4D1A2F18F90023B889 /* test.png */; };
+		5D3BCD511A2FFBC40023B889 /* ImageBtton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BCD4F1A2FFBC40023B889 /* ImageBtton.cpp */; };
+		5D3BCD531A301A050023B889 /* cardTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD521A301A050023B889 /* cardTest.png */; };
+		5D3BCD561A3554300023B889 /* DataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BCD541A3554300023B889 /* DataManager.cpp */; };
+		5D3BCD5A1A3584A70023B889 /* Result.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD571A3584A70023B889 /* Result.csb */; };
+		5D3BCD5B1A3584A70023B889 /* result.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD581A3584A70023B889 /* result.plist */; };
+		5D3BCD5C1A3584A70023B889 /* result.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD591A3584A70023B889 /* result.png */; };
+		5D3BCD5F1A3584CF0023B889 /* BattleResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BCD5D1A3584CF0023B889 /* BattleResult.cpp */; };
+		5D3BCD611A35A5FA0023B889 /* partner1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD601A35A5FA0023B889 /* partner1.png */; };
 		BF0BAA1D1A1DDCDB00B64D82 /* kpps.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF0BAA1B1A1DDCDB00B64D82 /* kpps.plist */; };
 		BF0BAA1E1A1DDCDB00B64D82 /* kpps.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0BAA1C1A1DDCDB00B64D82 /* kpps.png */; };
 		BF0BAA211A1DE33300B64D82 /* posui.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF0BAA1F1A1DE33300B64D82 /* posui.plist */; };
@@ -235,7 +243,6 @@
 		BFDAB3E11A1B116600E450EC /* zhu0.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3C21A1B116600E450EC /* zhu0.plist */; };
 		BFDAB3E21A1B116600E450EC /* zhu0.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3C31A1B116600E450EC /* zhu0.png */; };
 		BFDAB3E41A1B26EF00E450EC /* card_100.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3E31A1B26EF00E450EC /* card_100.png */; };
-		BFDAB4071A1B277900E450EC /* common in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB4061A1B277900E450EC /* common */; };
 		BFDAB4171A1B2ADC00E450EC /* BattleScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB4081A1B2ADC00E450EC /* BattleScene.csb */; };
 		BFDAB4181A1B2ADC00E450EC /* Card.csb in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB4091A1B2ADC00E450EC /* Card.csb */; };
 		BFDAB41A1A1B2ADC00E450EC /* Default in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB40B1A1B2ADC00E450EC /* Default */; };
@@ -339,6 +346,17 @@
 		5D3BCD481A2F04390023B889 /* mapGate1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapGate1.png; sourceTree = "<group>"; };
 		5D3BCD491A2F04390023B889 /* mapGateNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapGateNew.png; sourceTree = "<group>"; };
 		5D3BCD4D1A2F18F90023B889 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
+		5D3BCD4F1A2FFBC40023B889 /* ImageBtton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageBtton.cpp; sourceTree = "<group>"; };
+		5D3BCD501A2FFBC40023B889 /* ImageBtton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageBtton.h; sourceTree = "<group>"; };
+		5D3BCD521A301A050023B889 /* cardTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardTest.png; sourceTree = "<group>"; };
+		5D3BCD541A3554300023B889 /* DataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataManager.cpp; sourceTree = "<group>"; };
+		5D3BCD551A3554300023B889 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		5D3BCD571A3584A70023B889 /* Result.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = Result.csb; path = ../../../../ui/TalesRomac/res/Result.csb; sourceTree = "<group>"; };
+		5D3BCD581A3584A70023B889 /* result.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = result.plist; path = ../../../../ui/TalesRomac/res/result.plist; sourceTree = "<group>"; };
+		5D3BCD591A3584A70023B889 /* result.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = result.png; path = ../../../../ui/TalesRomac/res/result.png; sourceTree = "<group>"; };
+		5D3BCD5D1A3584CF0023B889 /* BattleResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleResult.cpp; sourceTree = "<group>"; };
+		5D3BCD5E1A3584CF0023B889 /* BattleResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleResult.h; sourceTree = "<group>"; };
+		5D3BCD601A35A5FA0023B889 /* partner1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = partner1.png; path = ../../../../ui/TalesRomac/res/partner1.png; sourceTree = "<group>"; };
 		BF0BAA1B1A1DDCDB00B64D82 /* kpps.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = kpps.plist; sourceTree = "<group>"; };
 		BF0BAA1C1A1DDCDB00B64D82 /* kpps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kpps.png; sourceTree = "<group>"; };
 		BF0BAA1F1A1DE33300B64D82 /* posui.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = posui.plist; sourceTree = "<group>"; };
@@ -615,7 +633,6 @@
 		BFDAB3C21A1B116600E450EC /* zhu0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhu0.plist; sourceTree = "<group>"; };
 		BFDAB3C31A1B116600E450EC /* zhu0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhu0.png; sourceTree = "<group>"; };
 		BFDAB3E31A1B26EF00E450EC /* card_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_100.png; sourceTree = "<group>"; };
-		BFDAB4061A1B277900E450EC /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; name = common; path = ../../../../ui/TalesRomac/res/common; sourceTree = "<group>"; };
 		BFDAB4081A1B2ADC00E450EC /* BattleScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = BattleScene.csb; path = ../../../../ui/TalesRomac/res/BattleScene.csb; sourceTree = "<group>"; };
 		BFDAB4091A1B2ADC00E450EC /* Card.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = Card.csb; path = ../../../../ui/TalesRomac/res/Card.csb; sourceTree = "<group>"; };
 		BFDAB40B1A1B2ADC00E450EC /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Default; path = ../../../../ui/TalesRomac/res/Default; sourceTree = "<group>"; };
@@ -750,6 +767,10 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5D3BCD601A35A5FA0023B889 /* partner1.png */,
+				5D3BCD571A3584A70023B889 /* Result.csb */,
+				5D3BCD581A3584A70023B889 /* result.plist */,
+				5D3BCD591A3584A70023B889 /* result.png */,
 				5D3BCD461A2F04390023B889 /* bg */,
 				5D3BCD3E1A2F013F0023B889 /* data */,
 				BFCCB4881A2C745F0049CFE8 /* AoyiItem.csb */,
@@ -787,7 +808,6 @@
 				BFDAB4141A1B2ADC00E450EC /* Maze.csb */,
 				BFDAB4151A1B2ADC00E450EC /* tree_block_bottom.tmx */,
 				BFDAB4161A1B2ADC00E450EC /* tree_block.png */,
-				BFDAB4061A1B277900E450EC /* common */,
 				BFDAB39E1A1B116600E450EC /* bone */,
 				BFDAB3811A1B0B0000E450EC /* fightBg */,
 				BFDAB3761A1A106200E450EC /* common */,
@@ -881,6 +901,7 @@
 		5D3BCD461A2F04390023B889 /* bg */ = {
 			isa = PBXGroup;
 			children = (
+				5D3BCD521A301A050023B889 /* cardTest.png */,
 				5D3BCD4D1A2F18F90023B889 /* test.png */,
 				5D3BCD471A2F04390023B889 /* mapGate.png */,
 				5D3BCD481A2F04390023B889 /* mapGate1.png */,
@@ -958,6 +979,8 @@
 				BFDAB2471A1A0E2100E450EC /* Hero.h */,
 				BFE241C21A22DA140030771C /* StandDraw.cpp */,
 				BFE241C31A22DA140030771C /* StandDraw.h */,
+				5D3BCD5D1A3584CF0023B889 /* BattleResult.cpp */,
+				5D3BCD5E1A3584CF0023B889 /* BattleResult.h */,
 			);
 			path = battle;
 			sourceTree = "<group>";
@@ -986,6 +1009,8 @@
 				BFDAB2631A1A0E2100E450EC /* ShaderNode.h */,
 				BFDAB2641A1A0E2100E450EC /* Utils.cpp */,
 				BFDAB2651A1A0E2100E450EC /* Utils.h */,
+				5D3BCD4F1A2FFBC40023B889 /* ImageBtton.cpp */,
+				5D3BCD501A2FFBC40023B889 /* ImageBtton.h */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -1011,6 +1036,8 @@
 				BFDAB2671A1A0E2100E450EC /* GConfig.h */,
 				BFDAB2681A1A0E2100E450EC /* Manager.cpp */,
 				BFDAB2691A1A0E2100E450EC /* Manager.h */,
+				5D3BCD541A3554300023B889 /* DataManager.cpp */,
+				5D3BCD551A3554300023B889 /* DataManager.h */,
 			);
 			path = global;
 			sourceTree = "<group>";
@@ -1471,6 +1498,7 @@
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				BFCCB46E1A2C054F0049CFE8 /* smallIcon.png in Resources */,
 				BFCCB46F1A2C054F0049CFE8 /* Team.csb in Resources */,
+				5D3BCD5A1A3584A70023B889 /* Result.csb in Resources */,
 				BFDAB3D51A1B116600E450EC /* neZha3.png in Resources */,
 				BFDAB4171A1B2ADC00E450EC /* BattleScene.csb in Resources */,
 				BFCCB4891A2C745F0049CFE8 /* AoyiItem.csb in Resources */,
@@ -1501,7 +1529,7 @@
 				BFDAB3941A1B0B0000E450EC /* bg_dreamland2.png in Resources */,
 				BFDAB4181A1B2ADC00E450EC /* Card.csb in Resources */,
 				BFDAB3D71A1B116600E450EC /* neZha5.png in Resources */,
-				BFDAB4071A1B277900E450EC /* common in Resources */,
+				5D3BCD611A35A5FA0023B889 /* partner1.png in Resources */,
 				BFCCB4801A2C61760049CFE8 /* buffIcon.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				BF0BAA211A1DE33300B64D82 /* posui.plist in Resources */,
@@ -1517,6 +1545,7 @@
 				BFCCB4481A2609CC0049CFE8 /* battle.png in Resources */,
 				BFDAB39B1A1B0B0000E450EC /* bg_magical2.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
+				5D3BCD5C1A3584A70023B889 /* result.png in Resources */,
 				BFDAB3D81A1B116600E450EC /* neZha6.png in Resources */,
 				BFDAB3E01A1B116600E450EC /* zhu.ExportJson in Resources */,
 				BFB770FF1A1F3CF00079450E /* miss.png in Resources */,
@@ -1524,6 +1553,7 @@
 				BFD09E5F1A257F7500992CDA /* aoYiPartner_10.png in Resources */,
 				5D3BCD4A1A2F04390023B889 /* mapGate.png in Resources */,
 				BFDAB41E1A1B2ADC00E450EC /* home.png in Resources */,
+				5D3BCD531A301A050023B889 /* cardTest.png in Resources */,
 				BFB771001A1F3CF00079450E /* num_heal.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				BFDAB41A1A1B2ADC00E450EC /* Default in Resources */,
@@ -1588,6 +1618,7 @@
 				BFDAB3981A1B0B0000E450EC /* bg_island1.png in Resources */,
 				BFDAB3971A1B0B0000E450EC /* bg_grassland1.jpg in Resources */,
 				BFDAB3C61A1B116600E450EC /* longNv.png in Resources */,
+				5D3BCD5B1A3584A70023B889 /* result.plist in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 				BFB771021A1F3CF00079450E /* num_hp.png in Resources */,
 			);
@@ -1614,6 +1645,7 @@
 			files = (
 				BFDAB3151A1A0E2100E450EC /* BattleMgr.cpp in Sources */,
 				BFDAB33C1A1A0E2100E450EC /* service.cc in Sources */,
+				5D3BCD511A2FFBC40023B889 /* ImageBtton.cpp in Sources */,
 				BFDAB33A1A1A0E2100E450EC /* reflection_ops.cc in Sources */,
 				BFDAB3161A1A0E2100E450EC /* BattleScene.cpp in Sources */,
 				BFDAB3371A1A0E2100E450EC /* zero_copy_stream_impl_lite.cc in Sources */,
@@ -1669,6 +1701,7 @@
 				BFD09E531A24A64A00992CDA /* RoleCreate.cpp in Sources */,
 				BFE241C41A22DA140030771C /* StandDraw.cpp in Sources */,
 				BFDAB32B1A1A0E2100E450EC /* descriptor_database.cc in Sources */,
+				5D3BCD5F1A3584CF0023B889 /* BattleResult.cpp in Sources */,
 				BFDAB31E1A1A0E2100E450EC /* RotateList.cpp in Sources */,
 				BFDAB3171A1A0E2100E450EC /* BattleCard.cpp in Sources */,
 				BFDAB3591A1A0E2100E450EC /* gate.pb.cc in Sources */,
@@ -1694,6 +1727,7 @@
 				BFDAB35D1A1A0E2100E450EC /* npc.pb.cc in Sources */,
 				BFDAB3521A1A0E2100E450EC /* WSocket.cpp in Sources */,
 				BFDAB3381A1A0E2100E450EC /* message.cc in Sources */,
+				5D3BCD561A3554300023B889 /* DataManager.cpp in Sources */,
 				BFDAB3571A1A0E2100E450EC /* commonTips.pb.cc in Sources */,
 				BFDAB3711A1A0E3E00E450EC /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,

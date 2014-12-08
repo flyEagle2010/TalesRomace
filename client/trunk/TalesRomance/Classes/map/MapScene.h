@@ -11,18 +11,23 @@
 
 #include <stdio.h>
 #include "BaseUI.h"
+#include "ImageBtton.h"
+#include "GateInfo.h"
 #include "XMap.h"
+#include "HomeScene.h"
+#include "BattleResult.h"
 
 class MapScene : public BaseUI{
     Sprite* bg;
     Vector<Sprite*> gates;
-    ScrollView* scrollView;
+    ui::ScrollView* scrollView;
 public:
+    static Scene* createScene();
     static MapScene* create();
     bool init();
     void resetUI();
 private:
     void onButtonClick(Ref* pSender);
-    void onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unusedEvent);
+    void onTouchEnded(Widget* pSender);
 };
 #endif /* defined(__TalesRomance__MapScene__) */

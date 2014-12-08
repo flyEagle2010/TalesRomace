@@ -18,6 +18,7 @@
 #include "BezierMove.h"
 #include <spine/spine-cocos2dx.h>
 #include "fconfig.h"
+#include "BattleResult.h"
 
 USING_NS_CC;
 using namespace ui;

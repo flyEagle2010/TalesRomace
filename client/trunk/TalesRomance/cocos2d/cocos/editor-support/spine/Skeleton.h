@@ -40,7 +40,8 @@
 extern "C" {
 #endif
 
-typedef struct spSkeleton {
+typedef struct spSkeleton spSkeleton;
+struct spSkeleton {
 	spSkeletonData* const data;
 
 	int bonesCount;
@@ -59,7 +60,7 @@ typedef struct spSkeleton {
 	float time;
 	int/*bool*/flipX, flipY;
 	float x, y;
-} spSkeleton;
+};
 
 spSkeleton* spSkeleton_create (spSkeletonData* data);
 void spSkeleton_dispose (spSkeleton* self);
@@ -82,9 +83,8 @@ spSlot* spSkeleton_findSlot (const spSkeleton* self, const char* slotName);
 /* Returns -1 if the slot was not found. */
 int spSkeleton_findSlotIndex (const spSkeleton* self, const char* slotName);
 
-/* Sets the skin used to look up attachments before looking in the SkeletonData defaultSkin. Attachments from the new skin are
- * attached if the corresponding attachment from the old skin was attached. If there was no old skin, each slot's setup mode
- * attachment is attached from the new skin.
+/* Sets the skin used to look up attachments not found in the SkeletonData defaultSkin. Attachments from the new skin are
+ * attached if the corresponding attachment from the old skin was attached.
  * @param skin May be 0.*/
 void spSkeleton_setSkin (spSkeleton* self, spSkin* skin);
 /* Returns 0 if the skin was not found. See spSkeleton_setSkin.

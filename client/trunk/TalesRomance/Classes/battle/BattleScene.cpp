@@ -50,12 +50,13 @@ bool BattleScene::init(){
     
     for(int i=0;i<3;i++){
         BattleCard* BattleCard=BattleCard::create(i);
-        BattleCard->setScale(0.35);
+        BattleCard->setScale(1);
         BattleCard->setVisible(false);
         BattleCard->setPosition(Vec2(0,60));
         this->heroNode->addChild(BattleCard,1);
         this->BattleCards.pushBack(BattleCard);
     }
+    
     return true;
 }
 
@@ -69,7 +70,7 @@ void BattleScene::onEnter()
 void BattleScene::initInfo(Node* node)
 {
     Label* heroName=(Label*)node->getChildByName("name");
-    heroName->setString(" 很厉害的主角");
+    heroName->setString("很厉害的主角");
     //Sprite* icon=(Sprite*)node->getChildByName("icon");
     //icon->setDisplayFrame(Sprite::createWithSpriteFrameName("")->displayFrame());
     //Sprite* parter=(Sprite*)node->getChildByName("parter");

@@ -24,6 +24,10 @@ bool Card::init()
     if(!BaseUI::init("Card.csb", "common.plist")){
         return false;
     }
+    this->ui->setPosition(Vec2(0,0));
+    this->ui->setAnchorPoint(Vec2(0,0));
+    
+    
     this->icon=(Sprite*)this->ui->getChildByName("icon");
     this->rim=(Sprite*)this->ui->getChildByName("rim");
     this->atkIcon=(Sprite*)this->ui->getChildByName("atkIcon");
@@ -43,7 +47,7 @@ bool Card::init()
     
     auto listener = EventListenerTouchOneByOne::create();
     listener->onTouchBegan = [&](Touch *touch, Event *unused_event)->bool {
-        Size size=this->rim->getContentSize()*0.5;
+        Size size=this->rim->getContentSize();
         Vec2 vec=this->rim->getPosition();
         vec=this->convertToWorldSpace(vec);
         Rect rect=Rect(vec.x-size.width*0.5,vec.y-size.height*0.5,size.width,size.height);
@@ -78,7 +82,7 @@ Size Card::getSize()
 
 void Card::onTouchEnded(Touch *touch, Event *unusedEvent)
 {
-    if(touch->getStartLocation() == touch->getLocation()){
+    if(touch->getStartLocation() - touch->getLocation() < Vec2(10,10)){
         this->click(this);
     }
 }

@@ -18,7 +18,7 @@ LoginScene* LoginScene::create()
 {
     LoginScene* loginScene=new LoginScene();
 
-    if (loginScene && loginScene->init("LoginScene.csb","login.plist")) {
+    if (loginScene && loginScene->init()) {
         loginScene->autorelease();
         return loginScene;
     }
@@ -26,9 +26,9 @@ LoginScene* LoginScene::create()
     return nullptr;
 }
 
-bool LoginScene::init(std::string fileName,std::string resName)
+bool LoginScene::init()
 {
-    if(!BaseUI::init(fileName,resName))
+    if(!BaseUI::init("LoginScene.csb","login.plist"))
     {
         return false;
     }

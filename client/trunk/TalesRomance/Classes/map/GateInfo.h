@@ -13,18 +13,18 @@
 #include "BaseUI.h"
 #include "Card.h"
 #include "Maze.h"
+#include "XMap.h"
 
 class GateInfo : public BaseUI
 {
 public:
-    static GateInfo* create();
-    bool init();
-    virtual void onButtonClick(Ref *pSender);
+    static GateInfo* create(int gateID);
+    bool init(int gateID);
     void resetUI();
+    virtual void onButtonClick(Ref *pSender);
 private:
     void selectFriend(Widget* card);
     virtual void onTouchEnded(Touch *touch, Event *unusedEvent);
-    //virtual void interceptTouchEvent(TouchEventType event, Widget* sender, Touch *touch);
 
 private:
     ui::ScrollView* friendList;
@@ -37,6 +37,9 @@ private:
     Vector<Sprite*> icons;
     Vector<Sprite*> rims;
     Vector<Node*> groups;
+    
+    int gateID;
+
 };
 
 #endif /* defined(__TalesRomance__GateInfo__) */

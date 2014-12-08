@@ -41,7 +41,7 @@
 extern "C" {
 #endif
 
-typedef struct spSkeletonJson {
+typedef struct {
 	float scale;
 	spAttachmentLoader* attachmentLoader;
 	const char* const error;

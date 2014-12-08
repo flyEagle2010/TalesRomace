@@ -48,7 +48,8 @@ void Team::resetUI()
     Card* card=Card::create();
     Size wsize=Director::getInstance()->getWinSize();
     Size size=this->cardList->getInnerContainerSize();
-    Vec2 center=Vec2(size.width*0.5,size.height*0.5);
+    Vec2 center=Vec2(wsize.width*0.5,wsize.height*0.5);
+    center=Vec2(0, 0);
     this->cardList->setInnerContainerSize(Size(size.width,(1+ceil(25/4.f))*card->getSize().height));
     size=this->cardList->getInnerContainerSize();
     for(int i=0;i<25;i++){

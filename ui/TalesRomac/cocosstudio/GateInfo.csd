@@ -3,7 +3,7 @@
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="Layer" CanEdit="False" FrameEvent="" ComboBoxIndex="1" ColorAngle="0.0000" ctype="PanelObjectData">
+      <ObjectData Name="Layer" FrameEvent="" ComboBoxIndex="1" ColorAngle="0.0000" ctype="PanelObjectData">
         <Position X="0.0000" Y="0.0000" />
         <Scale ScaleX="1.0000" ScaleY="1.0000" />
         <AnchorPoint />
@@ -32,6 +32,16 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="renWuKuangBg.png" Plist="gateInfo.plist" />
           </NodeObjectData>
+          <NodeObjectData Name="portait" ActionTag="1393209567" FrameEvent="" Tag="66" ObjectIndex="5" ctype="SpriteObjectData">
+            <Position X="274.0000" Y="383.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <Size X="184.0000" Y="341.0000" />
+            <PrePosition X="0.2412" Y="0.5984" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="partner1.png" />
+          </NodeObjectData>
           <NodeObjectData Name="renWuKuang_1" ActionTag="-943040199" FrameEvent="" Tag="64" ObjectIndex="3" ctype="SpriteObjectData">
             <Position X="274.0000" Y="375.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -41,46 +51,6 @@
             <PrePosition X="0.2412" Y="0.5859" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="renWuKuang_1.png" Plist="gateInfo.plist" />
-          </NodeObjectData>
-          <NodeObjectData Name="renWuKuang_2" ActionTag="-1465859864" FrameEvent="" Tag="65" ObjectIndex="4" ctype="SpriteObjectData">
-            <Position X="274.0000" Y="375.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <Size X="190.0000" Y="370.0000" />
-            <PrePosition X="0.2412" Y="0.5859" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="renWuKuang_2.png" Plist="gateInfo.plist" />
-          </NodeObjectData>
-          <NodeObjectData Name="portait" ActionTag="1393209567" FrameEvent="" Tag="66" ObjectIndex="5" ctype="SpriteObjectData">
-            <Position X="274.0000" Y="375.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <Size X="190.0000" Y="370.0000" />
-            <PrePosition X="0.2412" Y="0.5859" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="renWuKuang_2.png" Plist="gateInfo.plist" />
-          </NodeObjectData>
-          <NodeObjectData Name="renWuKuang_3" ActionTag="-2126466973" FrameEvent="" Tag="67" ObjectIndex="6" ctype="SpriteObjectData">
-            <Position X="374.7427" Y="375.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <Size X="190.0000" Y="370.0000" />
-            <PrePosition X="0.3299" Y="0.5859" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="renWuKuang_3.png" Plist="gateInfo.plist" />
-          </NodeObjectData>
-          <NodeObjectData Name="renWuKuang_4" ActionTag="1086902643" FrameEvent="" Tag="68" ObjectIndex="7" ctype="SpriteObjectData">
-            <Position X="274.0000" Y="375.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <Size X="190.0000" Y="370.0000" />
-            <PrePosition X="0.2412" Y="0.5859" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="renWuKuang_4.png" Plist="gateInfo.plist" />
           </NodeObjectData>
           <NodeObjectData Name="titleLabel" ActionTag="-2067673090" FrameEvent="" Tag="69" ObjectIndex="1" FontSize="36" LabelText="关卡名字" ctype="TextObjectData">
             <Position X="579.7163" Y="590.8457" />

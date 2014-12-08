@@ -41,6 +41,10 @@ bool HomeScene::init(std::string fileName,std::string resName)
     }
     
     this->initUi();
+//    Sprite* sprite=Sprite::create("cardTest.png");
+//    this->addChild(sprite);
+//    sprite->setPosition(Vec2(568,320));
+//    sprite->setScale(0.75);
 
 	return true;
 }
@@ -77,14 +81,15 @@ void HomeScene::touchButtonEvent(cocos2d::Ref *pSender, TouchEventType type)
     {
         case 100: //属性
         {
-            GateInfo* gate=GateInfo::create();
-            gate->show(this,1);
+//            GateInfo* gate=GateInfo::create();
+//            gate->show(this,1);
             break;
         }
         case 101: //日程
         {
-            MapScene* mapScene=MapScene::create();
-            mapScene->show(this,1);
+            //MapScene* mapScene=MapScene::create();
+            //mapScene->show(this,1);
+            Manager::getInstance()->switchScence(MapScene::createScene());
             break;
         }
         case 102: //道具

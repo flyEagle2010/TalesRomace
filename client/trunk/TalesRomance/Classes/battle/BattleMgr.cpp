@@ -80,16 +80,6 @@ void BattleMgr::handleResult()
 {
 
 }
-//超时失败
-void BattleMgr::overTime()
-{
-    this->stopAllFighter();
-    PResultReq pResultReq;
-    pResultReq.set_gateid(this->gateID);
-    pResultReq.set_xid(this->nodeID);
-    pResultReq.set_star(0);
-    Manager::getInstance()->socket->send(C_FIGHTRESULT, &pResultReq);
-}
 
 void BattleMgr::clearDieNpc(int pos)
 {

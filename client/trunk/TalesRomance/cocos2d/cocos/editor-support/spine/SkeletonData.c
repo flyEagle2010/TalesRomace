@@ -62,9 +62,6 @@ void spSkeletonData_dispose (spSkeletonData* self) {
 		spIkConstraintData_dispose(self->ikConstraints[i]);
 	FREE(self->ikConstraints);
 
-	FREE(self->hash);
-	FREE(self->version);
-
 	FREE(self);
 }
 

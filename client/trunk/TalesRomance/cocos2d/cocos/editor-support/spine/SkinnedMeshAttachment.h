@@ -38,7 +38,8 @@
 extern "C" {
 #endif
 
-typedef struct spSkinnedMeshAttachment {
+typedef struct spSkinnedMeshAttachment spSkinnedMeshAttachment;
+struct spSkinnedMeshAttachment {
 	spAttachment super;
 	const char* path;
 
@@ -69,7 +70,7 @@ typedef struct spSkinnedMeshAttachment {
 	int edgesCount;
 	int* edges;
 	float width, height;
-} spSkinnedMeshAttachment;
+};
 
 spSkinnedMeshAttachment* spSkinnedMeshAttachment_create (const char* name);
 void spSkinnedMeshAttachment_updateUVs (spSkinnedMeshAttachment* self);

@@ -36,7 +36,6 @@ public:
     void startBattleAnimEnd();
     void startEndDram();
     void handleResult();
-    void overTime();
     void stopAllFighter();
     void initNpc();
     

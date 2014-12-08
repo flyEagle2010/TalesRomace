@@ -27,6 +27,8 @@ using namespace cocostudio;
 class FData;
 class FighterMgr;
 class BattleCard;
+class Hero;
+
 class BattleScene:public BaseUI{
 public:
 	static Scene* createScene();

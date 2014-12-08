@@ -124,7 +124,7 @@ char* _readFile (const char* path, int* length);
 
 /**/
 
-typedef struct _spAnimationState {
+typedef struct {
 	spAnimationState super;
 	spEvent** events;
 

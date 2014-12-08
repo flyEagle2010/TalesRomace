@@ -8,6 +8,14 @@
 
 #include "MapScene.h"
 
+Scene* MapScene::createScene()
+{
+    auto scene = Scene::create();
+    auto layer = MapScene::create();
+    scene->addChild(layer);
+    return scene;
+}
+
 MapScene* MapScene::create()
 {
     MapScene* pRet=new MapScene();
@@ -29,14 +37,9 @@ bool MapScene::init()
     for(int i=1000;i<1003;i++){
         Button* btn=(Button*)this->ui->getChildByTag(i);
         Size size=btn->getContentSize();
-        btn->setPosition(Vec2(wsize.width-size.width*0.5+141,btn->getPositionY()));
+        btn->setPosition(Vec2(wsize.width-size.width*0.5,btn->getPositionY()));
         btn->addClickEventListener(CC_CALLBACK_1(MapScene::onButtonClick, this));
     }
-    
-    auto listener = EventListenerTouchOneByOne::create();
-    listener->onTouchBegan = [&](Touch *touch, Event *unused_event)->bool {return true;};
-    listener->onTouchEnded = CC_CALLBACK_2(MapScene::onTouchEnded, this);
-    this->_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
     this->resetUI();
     
@@ -45,7 +48,6 @@ bool MapScene::init()
 
 void MapScene::resetUI()
 {
-    
     this->scrollView=(ScrollView*)this->ui->getChildByName("scrollView");
     //this->scrollView->setPosition(Vec2(141,0));
     Sprite* bg=Sprite::create("mapGate1.png");
@@ -56,22 +58,21 @@ void MapScene::resetUI()
     for(int i=0;i<arr.size();i++){
         XMap* xmap=XMap::record(Value(arr[i]));
         Sprite* sprite=Sprite::create("mapGateNew.png");
-        this->scrollView->addChild(sprite);
+        ImageButton* btn=ImageButton::create(sprite);
+        this->scrollView->addChild(btn);
         Vec2 pos=PointFromString(xmap->getPos());
         pos=Vec2(pos.x,640-pos.y);
-        sprite->setPosition(pos);
+        btn->setPosition(pos);
+        btn->setTag(xmap->getId());
+        btn->touchEnd=CC_CALLBACK_1(MapScene::onTouchEnded, this);
     }
 }
 
-void MapScene::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unusedEvent)
+void MapScene::onTouchEnded(Widget* pSender)
 {
-//    for(int i=0;i<this->groups.size();i++){
-//        Node* item=this->groups.at(i);
-//        Vec2 position=item->getPosition();
-//        Size size=item->getContentSize();
-//        Rect rect=Rect(position.x-size.width*0.5,position.y-size.height*0.5,size.width,size.height);
-//        item->setVisible(rect.containsPoint(touch->getLocation()));
-//    }
+    int gateID=pSender->getTag();
+    GateInfo* gateInfo=GateInfo::create(gateID);
+    gateInfo->show(this);
 }
 
 void MapScene::onButtonClick(cocos2d::Ref *pSender)
@@ -84,11 +85,12 @@ void MapScene::onButtonClick(cocos2d::Ref *pSender)
         }
         case 1001: //挑战
         {
+           
             break;
         }
         case 1002: //返回
         {
-            this->clear(true);
+            Manager::getInstance()->switchScence(HomeScene::createScene());
             break;
         }
     }

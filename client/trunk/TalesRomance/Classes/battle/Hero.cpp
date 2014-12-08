@@ -81,6 +81,8 @@ void Hero::attacked(PHit& pHit)
     this->skeletonNode->addAnimation(TrackIndex::ANI_COMMON, ani_idle, true);
     
     this->attackedEffect();
+    
+    this->die(pHit);
 }
 
 void Hero::attackedEffect()
@@ -131,10 +133,8 @@ void Hero::die(PHit& pHit)
 
     this->fallHp(pHit);
     
-    this->stopActionByTag(ACTION_RUN_TAG);
-    this->stopActionByTag(ACTION_SHOOT_TAG);
-    
-    BattleMgr::getInstance()->view->heroNode->reorderChild(this, 0);
+    BattleResult* result=BattleResult::create();
+    result->show((BaseUI*)BattleMgr::getInstance()->view); //show(BattleMgr::getInstance()->view);
 }
 
 void Hero::dieClear()

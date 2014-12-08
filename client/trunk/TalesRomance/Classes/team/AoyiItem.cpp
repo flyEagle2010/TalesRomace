@@ -24,6 +24,8 @@ bool AoyiItem::init()
     if(!BaseUI::init("AoyiItem.csb", "")){
         return false;
     }
+    this->ui->setPosition(Vec2(0,0));
+    this->ui->setAnchorPoint(Vec2(0,0));
     this->bg=(Sprite*)this->ui->getChildByName("bg");
     return true;
 }

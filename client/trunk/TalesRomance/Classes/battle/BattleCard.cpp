@@ -25,7 +25,9 @@ bool BattleCard::init()
     if(!BaseUI::init("Card.csb", "")){
         return false;
     }
-    this->ui->setAnchorPoint(Vec2(0.5,0.5));
+   
+    this->ui->setPosition(Vec2(0,0));
+    this->ui->setAnchorPoint(Vec2(0,0));
     return true;
 }
 
@@ -39,9 +41,9 @@ void BattleCard::reset(int index, int groupNum, cocos2d::Value data)
 void BattleCard::move()
 {
     Size wsize=Director::getInstance()->getWinSize();
-    
+
     MoveBy* move=MoveBy::create(0.3, Vec2(100*(2-index)+100,0));
-    Spawn* spaw=Spawn::create(MoveTo::create(0.3, Vec2(wsize.width*0.5+200*(1-index),wsize.height*0.5)),ScaleTo::create(0.3, 0.8),SkewBy::create(0.3, 0, 30), NULL);
+    Spawn* spaw=Spawn::create(MoveTo::create(0.3, Vec2(wsize.width*0.5+200*(1-index),wsize.height*0.5)),ScaleTo::create(0.3,1.5),SkewBy::create(0.3, 0, 30), NULL);
     SkewTo* skew=SkewTo::create(0.2, 0, 0);
     CallFunc* cf=CallFunc::create(CC_CALLBACK_0(BattleCard::useSkill, this));
     this->runAction(Sequence::create(DelayTime::create(index*0.3),Show::create(),move,DelayTime::create(0.2),spaw, skew,DelayTime::create(0.8*(groupNum-index)),cf,NULL));

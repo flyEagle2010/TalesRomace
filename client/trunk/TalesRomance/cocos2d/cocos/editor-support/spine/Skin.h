@@ -39,7 +39,7 @@ extern "C" {
 
 struct spSkeleton;
 
-typedef struct spSkin {
+typedef struct {
 	const char* const name;
 } spSkin;
 
