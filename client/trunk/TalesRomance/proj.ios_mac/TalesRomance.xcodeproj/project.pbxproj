@@ -68,6 +68,17 @@
 		5D3BCD5C1A3584A70023B889 /* result.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD591A3584A70023B889 /* result.png */; };
 		5D3BCD5F1A3584CF0023B889 /* BattleResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BCD5D1A3584CF0023B889 /* BattleResult.cpp */; };
 		5D3BCD611A35A5FA0023B889 /* partner1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD601A35A5FA0023B889 /* partner1.png */; };
+		5D3BCD691A36D7260023B889 /* ghost.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD631A36D7260023B889 /* ghost.png */; };
+		5D3BCD6A1A36D7260023B889 /* ghostB.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD641A36D7260023B889 /* ghostB.plist */; };
+		5D3BCD6B1A36D7260023B889 /* ghostG.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD651A36D7260023B889 /* ghostG.plist */; };
+		5D3BCD6C1A36D7260023B889 /* ghostR.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD661A36D7260023B889 /* ghostR.plist */; };
+		5D3BCD6D1A36D7260023B889 /* ghostY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD671A36D7260023B889 /* ghostY.plist */; };
+		5D3BCD6E1A36D7260023B889 /* ghostZ.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCD681A36D7260023B889 /* ghostZ.plist */; };
+		5D3BCD931A383E310023B889 /* PomeloMsg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BCD911A383E310023B889 /* PomeloMsg.cpp */; };
+		5D3BCDA01A385B060023B889 /* libjansson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3BCD9D1A385B060023B889 /* libjansson.a */; };
+		5D3BCDA11A385B060023B889 /* libpomelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3BCD9E1A385B060023B889 /* libpomelo.a */; };
+		5D3BCDA21A385B060023B889 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3BCD9F1A385B060023B889 /* libuv.a */; };
+		5D3BCDA91A3942EF0023B889 /* PomeloSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BCDA71A3942EF0023B889 /* PomeloSocket.cpp */; };
 		BF0BAA1D1A1DDCDB00B64D82 /* kpps.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF0BAA1B1A1DDCDB00B64D82 /* kpps.plist */; };
 		BF0BAA1E1A1DDCDB00B64D82 /* kpps.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0BAA1C1A1DDCDB00B64D82 /* kpps.png */; };
 		BF0BAA211A1DE33300B64D82 /* posui.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF0BAA1F1A1DE33300B64D82 /* posui.plist */; };
@@ -357,6 +368,19 @@
 		5D3BCD5D1A3584CF0023B889 /* BattleResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleResult.cpp; sourceTree = "<group>"; };
 		5D3BCD5E1A3584CF0023B889 /* BattleResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleResult.h; sourceTree = "<group>"; };
 		5D3BCD601A35A5FA0023B889 /* partner1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = partner1.png; path = ../../../../ui/TalesRomac/res/partner1.png; sourceTree = "<group>"; };
+		5D3BCD631A36D7260023B889 /* ghost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ghost.png; sourceTree = "<group>"; };
+		5D3BCD641A36D7260023B889 /* ghostB.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ghostB.plist; sourceTree = "<group>"; };
+		5D3BCD651A36D7260023B889 /* ghostG.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ghostG.plist; sourceTree = "<group>"; };
+		5D3BCD661A36D7260023B889 /* ghostR.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ghostR.plist; sourceTree = "<group>"; };
+		5D3BCD671A36D7260023B889 /* ghostY.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ghostY.plist; sourceTree = "<group>"; };
+		5D3BCD681A36D7260023B889 /* ghostZ.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ghostZ.plist; sourceTree = "<group>"; };
+		5D3BCD911A383E310023B889 /* PomeloMsg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PomeloMsg.cpp; sourceTree = "<group>"; };
+		5D3BCD921A383E310023B889 /* PomeloMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomeloMsg.h; sourceTree = "<group>"; };
+		5D3BCD9D1A385B060023B889 /* libjansson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjansson.a; path = ../libpomelo/libjansson.a; sourceTree = "<group>"; };
+		5D3BCD9E1A385B060023B889 /* libpomelo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpomelo.a; path = ../libpomelo/libpomelo.a; sourceTree = "<group>"; };
+		5D3BCD9F1A385B060023B889 /* libuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libuv.a; path = ../libpomelo/libuv.a; sourceTree = "<group>"; };
+		5D3BCDA71A3942EF0023B889 /* PomeloSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PomeloSocket.cpp; sourceTree = "<group>"; };
+		5D3BCDA81A3942EF0023B889 /* PomeloSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomeloSocket.h; sourceTree = "<group>"; };
 		BF0BAA1B1A1DDCDB00B64D82 /* kpps.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = kpps.plist; sourceTree = "<group>"; };
 		BF0BAA1C1A1DDCDB00B64D82 /* kpps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kpps.png; sourceTree = "<group>"; };
 		BF0BAA1F1A1DE33300B64D82 /* posui.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = posui.plist; sourceTree = "<group>"; };
@@ -658,6 +682,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D3BCDA01A385B060023B889 /* libjansson.a in Frameworks */,
+				5D3BCDA11A385B060023B889 /* libpomelo.a in Frameworks */,
+				5D3BCDA21A385B060023B889 /* libuv.a in Frameworks */,
 				BFDAB3751A1A0FD200E450EC /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -744,6 +771,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D3BCD9D1A385B060023B889 /* libjansson.a */,
+				5D3BCD9E1A385B060023B889 /* libpomelo.a */,
+				5D3BCD9F1A385B060023B889 /* libuv.a */,
 				BFDAB3741A1A0FD200E450EC /* Security.framework */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
 				503AE11A17EB9C5A00D1A890 /* IOKit.framework */,
@@ -767,6 +797,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5D3BCD621A36D7260023B889 /* particle */,
 				5D3BCD601A35A5FA0023B889 /* partner1.png */,
 				5D3BCD571A3584A70023B889 /* Result.csb */,
 				5D3BCD581A3584A70023B889 /* result.plist */,
@@ -909,6 +940,20 @@
 			);
 			name = bg;
 			path = ../../../../bg;
+			sourceTree = "<group>";
+		};
+		5D3BCD621A36D7260023B889 /* particle */ = {
+			isa = PBXGroup;
+			children = (
+				5D3BCD631A36D7260023B889 /* ghost.png */,
+				5D3BCD641A36D7260023B889 /* ghostB.plist */,
+				5D3BCD651A36D7260023B889 /* ghostG.plist */,
+				5D3BCD661A36D7260023B889 /* ghostR.plist */,
+				5D3BCD671A36D7260023B889 /* ghostY.plist */,
+				5D3BCD681A36D7260023B889 /* ghostZ.plist */,
+			);
+			name = particle;
+			path = ../../../../particle;
 			sourceTree = "<group>";
 		};
 		BF0BAA1A1A1DDCDB00B64D82 /* effect */ = {
@@ -1212,6 +1257,10 @@
 				BFDAB2D71A1A0E2100E450EC /* WebHttp.h */,
 				BFDAB2D81A1A0E2100E450EC /* WSocket.cpp */,
 				BFDAB2D91A1A0E2100E450EC /* WSocket.h */,
+				5D3BCD911A383E310023B889 /* PomeloMsg.cpp */,
+				5D3BCD921A383E310023B889 /* PomeloMsg.h */,
+				5D3BCDA71A3942EF0023B889 /* PomeloSocket.cpp */,
+				5D3BCDA81A3942EF0023B889 /* PomeloSocket.h */,
 			);
 			path = net;
 			sourceTree = "<group>";
@@ -1487,6 +1536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				5D3BCD691A36D7260023B889 /* ghost.png in Resources */,
 				BF0BAA1E1A1DDCDB00B64D82 /* kpps.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
@@ -1497,6 +1547,7 @@
 				BFCCB46B1A2C054F0049CFE8 /* gateInfo.plist in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				BFCCB46E1A2C054F0049CFE8 /* smallIcon.png in Resources */,
+				5D3BCD6B1A36D7260023B889 /* ghostG.plist in Resources */,
 				BFCCB46F1A2C054F0049CFE8 /* Team.csb in Resources */,
 				5D3BCD5A1A3584A70023B889 /* Result.csb in Resources */,
 				BFDAB3D51A1B116600E450EC /* neZha3.png in Resources */,
@@ -1523,6 +1574,7 @@
 				BFDAB3C91A1B116600E450EC /* longNv4.png in Resources */,
 				BFCCB4821A2C61760049CFE8 /* selected.png in Resources */,
 				5D3BCD4B1A2F04390023B889 /* mapGate1.png in Resources */,
+				5D3BCD6C1A36D7260023B889 /* ghostR.plist in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				BFDAB3991A1B0B0000E450EC /* bg_island2.png in Resources */,
 				BFCCB4701A2C054F0049CFE8 /* team.plist in Resources */,
@@ -1531,6 +1583,7 @@
 				BFDAB3D71A1B116600E450EC /* neZha5.png in Resources */,
 				5D3BCD611A35A5FA0023B889 /* partner1.png in Resources */,
 				BFCCB4801A2C61760049CFE8 /* buffIcon.png in Resources */,
+				5D3BCD6A1A36D7260023B889 /* ghostB.plist in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				BF0BAA211A1DE33300B64D82 /* posui.plist in Resources */,
 				BFDAB3CF1A1B116600E450EC /* man20.plist in Resources */,
@@ -1574,6 +1627,8 @@
 				5D3BCD411A2F013F0023B889 /* XMap.json in Resources */,
 				BFCCB4811A2C61760049CFE8 /* selected.plist in Resources */,
 				BFDAB3CB1A1B116600E450EC /* man animation.ExportJson in Resources */,
+				5D3BCD6D1A36D7260023B889 /* ghostY.plist in Resources */,
+				5D3BCD6E1A36D7260023B889 /* ghostZ.plist in Resources */,
 				BFDAB3DA1A1B116600E450EC /* huLi.atlas in Resources */,
 				BFB770FE1A1F3CF00079450E /* immunity.png in Resources */,
 				BFDAB3CC1A1B116600E450EC /* man animation0.plist in Resources */,
@@ -1710,7 +1765,9 @@
 				BFDAB3261A1A0E2100E450EC /* Utils.cpp in Sources */,
 				BFDAB3541A1A0E2100E450EC /* chat.pb.cc in Sources */,
 				BFDAB3341A1A0E2100E450EC /* tokenizer.cc in Sources */,
+				5D3BCD931A383E310023B889 /* PomeloMsg.cpp in Sources */,
 				BFDAB32E1A1A0E2100E450EC /* extension_set_heavy.cc in Sources */,
+				5D3BCDA91A3942EF0023B889 /* PomeloSocket.cpp in Sources */,
 				BFDAB3581A1A0E2100E450EC /* fight.pb.cc in Sources */,
 				BFDAB3671A1A0E2100E450EC /* XMonster.cpp in Sources */,
 				BFDAB3361A1A0E2100E450EC /* zero_copy_stream_impl.cc in Sources */,
@@ -1780,10 +1837,18 @@
 					"$(inherited)",
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios",
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
+					"$(SRCROOT)/../libpomelo/include",
+					"$(SRCROOT)/../libpomelo/deps/uv/include",
+					"$(SRCROOT)/../libpomelo/deps/jansson/src",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = /Users/qll/Documents/svn/TalesRomace/client/trunk/TalesRomance/libpomelo;
+				OTHER_LDFLAGS = (
+					"-ljansson",
+					"-luv",
+					"-lpomelo",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1810,10 +1875,18 @@
 					"$(inherited)",
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios",
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
+					"$(SRCROOT)/../libpomelo/include",
+					"$(SRCROOT)/../libpomelo/deps/uv/include",
+					"$(SRCROOT)/../libpomelo/deps/jansson/src",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = /Users/qll/Documents/svn/TalesRomace/client/trunk/TalesRomance/libpomelo;
+				OTHER_LDFLAGS = (
+					"-ljansson",
+					"-luv",
+					"-lpomelo",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1901,9 +1974,17 @@
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
 					"$(SRCROOT)/../Classes",
+					"$(SRCROOT)/../libpomelo/include",
+					"$(SRCROOT)/../libpomelo/deps/uv/include",
+					"$(SRCROOT)/../libpomelo/deps/jansson/src",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ljansson",
+					"-luv",
+					"-lpomelo",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -1931,9 +2012,17 @@
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
 					"$(SRCROOT)/../Classes",
+					"$(SRCROOT)/../libpomelo/include",
+					"$(SRCROOT)/../libpomelo/deps/uv/include",
+					"$(SRCROOT)/../libpomelo/deps/jansson/src",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ljansson",
+					"-luv",
+					"-lpomelo",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				VALIDATE_PRODUCT = YES;

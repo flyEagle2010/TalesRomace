@@ -48,7 +48,7 @@ bool MapScene::init()
 
 void MapScene::resetUI()
 {
-    this->scrollView=(ScrollView*)this->ui->getChildByName("scrollView");
+    this->scrollView=(ui::ScrollView*)this->ui->getChildByName("scrollView");
     //this->scrollView->setPosition(Vec2(141,0));
     Sprite* bg=Sprite::create("mapGate1.png");
     bg->setAnchorPoint(Vec2(0, 0));

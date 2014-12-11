@@ -49,6 +49,14 @@ void LoginScene::onEnter()
     
     this->initAccount();
     
+    //Manager::getInstance()->wsocket=new WSocket();
+    Manager::getInstance()->psocket=new PomeloSocket();
+    int connectOk=Manager::getInstance()->psocket->connect("127.0.0.1", 3010);
+    if(!connectOk){
+        const char* route = "connector.entryHandler.test";
+        const char* msg="{\"username\":\"wahaha\",\"rid\":3}";
+        Manager::getInstance()->psocket->sendMsg(route, msg);
+    }
 }
 
 //init 游戏服务器 服务器认证
@@ -64,7 +72,8 @@ void LoginScene::initAccount()
 
 void LoginScene::resetUI()
 {
-    ScrollView* scrollView=dynamic_cast<ScrollView*>(serverPage->getChildByName("serverList"));
+    /*
+    ui::ScrollView* scrollView=dynamic_cast<ui::ScrollView*>(serverPage->getChildByName("serverList"));
     Button* groupBtn=dynamic_cast<Button*>(scrollView->getChildByName("btn_serverGroup"));
     groupBtn->setTitleText("1-5区");
     int serverNum=this->sData["areaList"].Size();
@@ -78,7 +87,7 @@ void LoginScene::resetUI()
     }
     this->tabBar=TabBar::create(buttons);
     this->tabBar->retain();
-    
+  
     
     int pNum=MIN(serverNum,5);
     int i=0;
@@ -97,6 +106,8 @@ void LoginScene::resetUI()
         btn->setPosition(start+Vec2((i%2)*(size.width+10),-(i/2)*(size.height+30)));
         btn->addClickEventListener(CC_CALLBACK_1(LoginScene::onButtonClick, this));
     }
+    
+     */
 }
 
 void LoginScene::initGameCallback(std::vector<char> *data)
@@ -128,8 +139,10 @@ void LoginScene::onButtonClick(Ref *pSender)
     int tag=button->getTag();
     //登陆
     if(tag==101) {
-        Manager::getInstance()->switchScence(HomeScene::createScene());
-//        BattleMgr::getInstance()->init();
+        //Manager::getInstance()->switchScence(HomeScene::createScene());
+        //Manager::getInstance()->wsocket->send(4,"{uid:1,name:\"test\",route\"connector.entryHandler.test\"}");
+        //Manager::getInstance()->wsocket->send(4, "{uid:1,route:2}");
+        
         return;
         std::string str="account="+this->accountTxt->getString()+"&password="+this->passwordTxt->getString();
         WebHttp::getInstance()->send(HTTP_URL, CC_CALLBACK_1(LoginScene::initGameCallback, this),str.c_str());

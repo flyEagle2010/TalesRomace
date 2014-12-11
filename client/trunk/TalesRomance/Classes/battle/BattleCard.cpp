@@ -41,12 +41,11 @@ void BattleCard::reset(int index, int groupNum, cocos2d::Value data)
 void BattleCard::move()
 {
     Size wsize=Director::getInstance()->getWinSize();
-
     MoveBy* move=MoveBy::create(0.3, Vec2(100*(2-index)+100,0));
     Spawn* spaw=Spawn::create(MoveTo::create(0.3, Vec2(wsize.width*0.5+200*(1-index),wsize.height*0.5)),ScaleTo::create(0.3,1.5),SkewBy::create(0.3, 0, 30), NULL);
     SkewTo* skew=SkewTo::create(0.2, 0, 0);
     CallFunc* cf=CallFunc::create(CC_CALLBACK_0(BattleCard::useSkill, this));
-    this->runAction(Sequence::create(DelayTime::create(index*0.3),Show::create(),move,DelayTime::create(0.2),spaw, skew,DelayTime::create(0.8*(groupNum-index)),cf,NULL));
+    this->runAction(Sequence::create(DelayTime::create(index),Show::create(),move,DelayTime::create(0.2),spaw, skew,DelayTime::create(0.8*(groupNum-index)),cf,NULL));
 }
 
 void BattleCard::useSkill()
@@ -56,10 +55,16 @@ void BattleCard::useSkill()
     this->addChild(clip);
     clip->setScale(3);
     float duration=clip->play();
-    
+    /*
+    ParticleSystem* bullet=ParticleSystemQuad::create("ghostB.plist");
+    this->addChild(bullet,2);
+    this->ui->setVisible(false);
+    */
     Vec2 end=BattleMgr::getInstance()->view->hero->getPosition()+Vec2(0,150);
+//    end=Vec2(80,600);
     CallFunc* cf=CallFunc::create(std::bind(&BattleCard::playEnd, this));
     this->runAction(Sequence::create(Spawn::create(ScaleTo::create(duration, 0),MoveTo::create(duration, end),NULL),DelayTime::create(0.5),cf, NULL));
+//    this->runAction(Sequence::create(MoveTo::create(0.2,end),DelayTime::create(0.3),cf,NULL));
 }
 
 void BattleCard::playEnd()

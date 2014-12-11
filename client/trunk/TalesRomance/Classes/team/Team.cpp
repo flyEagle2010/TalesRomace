@@ -23,8 +23,8 @@ bool Team::init()
     if(!BaseUI::init("Team.csb", "Team.plist")){
         return false;
     }
-    this->cardList=(ScrollView*)this->ui->getChildByName("cardList");
-    this->aoyiList=(ScrollView*)this->ui->getChildByName("aoyiList");
+    this->cardList=(ui::ScrollView*)this->ui->getChildByName("cardList");
+    this->aoyiList=(ui::ScrollView*)this->ui->getChildByName("aoyiList");
     std::vector<Button*> buttons;
     for(int i=1000;i<1006;i++){
         Button* btn=(Button*)this->ui->getChildByTag(i);

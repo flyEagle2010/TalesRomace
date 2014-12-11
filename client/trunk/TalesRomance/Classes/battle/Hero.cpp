@@ -82,7 +82,7 @@ void Hero::attacked(PHit& pHit)
     
     this->attackedEffect();
     
-    this->die(pHit);
+    //this->die(pHit);
 }
 
 void Hero::attackedEffect()

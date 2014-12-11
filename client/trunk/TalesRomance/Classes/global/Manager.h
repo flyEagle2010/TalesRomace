@@ -17,6 +17,8 @@
 #include "MsgID.h"
 #include "BaseUI.h"
 #include "GConfig.h"
+#include "WSocket.h"
+#include "PomeloSocket.h"
 //#include "XExp.h"
 //#include "Formation.h"
 USING_NS_CC;
@@ -39,6 +41,8 @@ class Manager{
 public:
     Node* scene;
     Socket* socket;
+    WSocket* wsocket;
+    PomeloSocket* psocket;
 public:
     std::vector<ColorData> Qualitys={
         ColorData{1,""},

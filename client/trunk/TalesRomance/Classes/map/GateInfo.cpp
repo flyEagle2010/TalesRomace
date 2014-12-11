@@ -25,7 +25,7 @@ bool GateInfo::init(int gateID)
         return false;
     }
     this->gateID=gateID;
-    this->friendList=(ScrollView*)this->ui->getChildByName("friendList");
+    this->friendList=(ui::ScrollView*)this->ui->getChildByName("friendList");
     this->cdLabel=(Text*)this->ui->getChildByName("cdLabel");
     this->staminaLabel=(Text*)this->ui->getChildByName("staminaLabel");
     this->numLabel=(Text*)this->ui->getChildByName("numLabel");

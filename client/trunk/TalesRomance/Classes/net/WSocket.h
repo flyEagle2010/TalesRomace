@@ -17,6 +17,7 @@
 #include <google/protobuf/io/zero_copy_stream.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/message.h>
+#include "PomeloMsg.h"
 USING_NS_CC;
 USING_NS_CC_EXT;
 class WSocket:public cocos2d::network::WebSocket::Delegate{
@@ -40,6 +41,7 @@ public:
     WSocket();
     virtual ~WSocket();
     void send(short msgId,google::protobuf::Message* msg);
+    void send(short msgType,std::string str);
 private:
     cocos2d::network::WebSocket* webSocket;
         std::string host;

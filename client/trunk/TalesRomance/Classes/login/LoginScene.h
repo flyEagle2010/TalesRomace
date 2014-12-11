@@ -10,6 +10,9 @@
 #include "Loading.h"
 #include "TabBar.h"
 
+#include "WSocket.h"
+#include "PomeloSocket.h"
+
 USING_NS_CC;
 using namespace ui;
 using namespace cocostudio;
