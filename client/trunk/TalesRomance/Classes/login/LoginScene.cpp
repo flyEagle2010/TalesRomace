@@ -54,7 +54,7 @@ void LoginScene::onEnter()
     int connectOk=Manager::getInstance()->psocket->connect("127.0.0.1", 3010);
     if(!connectOk){
         const char* route = "connector.entryHandler.test";
-        const char* msg="{\"username\":\"wahaha\",\"rid\":4,\"reqId\":5}";
+        const char* msg="{\"username\":\"wahaha\",\"rid\":22,\"reqId\":32}";
         Manager::getInstance()->psocket->sendMsg(route, msg);
     }
 }
