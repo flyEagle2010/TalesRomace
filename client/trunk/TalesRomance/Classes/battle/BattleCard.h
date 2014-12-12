@@ -22,6 +22,8 @@ public:
     void reset(int index,int groupNum,Value data);
     void move();
     void useSkill();
+    void playRim();
+    void playDispear();
     void mergeToHero();
     void playEnd();
 private:

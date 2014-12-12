@@ -24,7 +24,7 @@ bool Maze::init()
     BaseUI::init("Maze.csb", "");
     log("====%f,%f",this->ui->getContentSize().width,this->ui->getContentSize().height);
     
-    this->map = TMXTiledMap::create("res/tree_block_bottom.tmx");
+    this->map = TMXTiledMap::create("tree_block_bottom.tmx");
     this->addChild(map, 0);
     Size wsize=Director::getInstance()->getWinSize();
     Size mapSize=this->map->getContentSize();

@@ -50,21 +50,51 @@ void BattleCard::move()
 
 void BattleCard::useSkill()
 {
-    this->ui->setVisible(false);
-    Clip* clip=Clip::create("kpps.plist", "kpps",12);
+    //skilleffect.plist 技能图标亮
+    //cardSkillEffect.plist 牌发光
+    
+    
+    //this->ui->setVisible(false);
+    Clip* clip=Clip::create("skillEffect.plist", "skillEffect",12);
     this->addChild(clip);
-    clip->setScale(3);
+    //clip->setScale(3);
     float duration=clip->play();
-    /*
-    ParticleSystem* bullet=ParticleSystemQuad::create("ghostB.plist");
-    this->addChild(bullet,2);
+
+    this->runAction(Sequence::create(DelayTime::create(duration),CallFunc::create(std::bind(&BattleCard::playRim, this)), NULL));
+  
+}
+
+void BattleCard::playRim()
+{
     this->ui->setVisible(false);
-    */
+
+    Clip* clip=Clip::create("cardSkillEffect.plist", "cardSkillEffect",12);
+    this->addChild(clip);
+    clip->setScale(0.75);
+    float duration=clip->play();
+    this->runAction(Sequence::create(DelayTime::create(duration),CallFunc::create(std::bind(&BattleCard::playDispear, this)), NULL));
+}
+
+void BattleCard::playDispear()
+{
+    this->ui->setVisible(false);
+    Clip* clip=Clip::create("cardXiaoShi.plist", "cardXiaoShi",12);
+    this->addChild(clip);
+    clip->setScale(0.75);
+    float duration=clip->play();
+    this->runAction(Sequence::create(DelayTime::create(duration),CallFunc::create(std::bind(&BattleCard::playEnd, this)), NULL));
+
+    return;
+    /*
+     ParticleSystem* bullet=ParticleSystemQuad::create("ghostB.plist");
+     this->addChild(bullet,2);
+     this->ui->setVisible(false);
+     */
     Vec2 end=BattleMgr::getInstance()->view->hero->getPosition()+Vec2(0,150);
-//    end=Vec2(80,600);
+    //    end=Vec2(80,600);
     CallFunc* cf=CallFunc::create(std::bind(&BattleCard::playEnd, this));
     this->runAction(Sequence::create(Spawn::create(ScaleTo::create(duration, 0),MoveTo::create(duration, end),NULL),DelayTime::create(0.5),cf, NULL));
-//    this->runAction(Sequence::create(MoveTo::create(0.2,end),DelayTime::create(0.3),cf,NULL));
+    //    this->runAction(Sequence::create(MoveTo::create(0.2,end),DelayTime::create(0.3),cf,NULL));
 }
 
 void BattleCard::playEnd()

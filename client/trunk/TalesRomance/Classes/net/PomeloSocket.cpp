@@ -8,15 +8,16 @@
 
 #include "PomeloSocket.h"
 static std::vector<json_t*> messageQueue;
+static pthread_mutex_t     mMutex;
 
 PomeloSocket::PomeloSocket()
 {
+    Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
+    pthread_mutex_init(&mMutex, NULL);
 }
 
 int PomeloSocket::connect(const char* addr, int port)
 {
-    Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
-
     this->client = pc_client_new();
     
     struct sockaddr_in address;
@@ -58,31 +59,21 @@ int PomeloSocket::sendMsg(const char* route, std::string msg)
     return ret;
 }
 
-int PomeloSocket::notify(const char *route, std::string msg)
-{
-    if(state != CONNECTED_OK){
-        return -1;
-    }
-    pc_notify_t *notify = pc_notify_new();
-    
-    json_error_t err;
-    json_t* json = json_loads(msg.c_str(), JSON_COMPACT, &err);
-    int ret = pc_notify(client, notify, route, json, notifyCallback);
-
-    return ret;
-}
-
 void PomeloSocket::update(float dt)
 {
+    pthread_mutex_lock(&mMutex);
+
     while (messageQueue.size()>0) {
         json_t* msg=messageQueue.front();
         messageQueue.erase(messageQueue.begin());
-        cocos2d::EventCustom evt(NET_MESSAGE);
-        evt.setUserData(msg);
+//        cocos2d::EventCustom evt(NET_MESSAGE);
+//        evt.setUserData(msg);
         
-        Director::getInstance()->getEventDispatcher()->dispatchEvent(&evt);
+//        Director::getInstance()->getEventDispatcher()->dispatchEvent(&evt);
         json_decref(msg);
     }
+    pthread_mutex_unlock(&mMutex);
+
 }
 
 void PomeloSocket::stop()
@@ -106,19 +97,24 @@ void PomeloSocket::onPushDataCallback(pc_client_t *client, const char *event, vo
     json_t* json = (json_t* )data;
     const char* msg = json_dumps(json, 0);
     log("receve data:%s,%s", event, msg);
+    pthread_mutex_lock(&mMutex);
     messageQueue.push_back(json);
+    pthread_mutex_unlock(&mMutex);
+
     return;
 }
 
 void PomeloSocket::requstCallback(pc_request_t *req, int status, json_t *resp)
 {
-    int error = 0;
+    //int error = 0;
     if(status == -1) {
         CCLOG("Fail to send request to server.\n");
     } else if(status == 0) {
         char *json_str = json_dumps(resp, 0);
         CCLOG("server response: %s \n", json_str);
+        pthread_mutex_lock(&mMutex);
         messageQueue.push_back(resp);
+        pthread_mutex_unlock(&mMutex);
     }
     
     // release relative resource with pc_request_t
@@ -126,16 +122,8 @@ void PomeloSocket::requstCallback(pc_request_t *req, int status, json_t *resp)
     pc_client_t *client = req->client;
     json_decref(msg);
     pc_request_destroy(req);
-}
+    pc_client_stop(client);
 
-void PomeloSocket::notifyCallback(pc_notify_t *ntf, int status)
-{
-    if(status == -1){
-        log("Fail to send notify to server.");
-    }
-    else if(status ==0){
-        log("success to send notify to server:route:%s.",ntf->route);
-    }
 }
 
 void PomeloSocket::clearRequest()
@@ -143,6 +131,3 @@ void PomeloSocket::clearRequest()
 
 }
 
-void PomeloSocket::clearNotify()
-{
-}

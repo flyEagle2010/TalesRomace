@@ -54,7 +54,7 @@ void LoginScene::onEnter()
     int connectOk=Manager::getInstance()->psocket->connect("127.0.0.1", 3010);
     if(!connectOk){
         const char* route = "connector.entryHandler.test";
-        const char* msg="{\"username\":\"wahaha\",\"rid\":3}";
+        const char* msg="{\"username\":\"wahaha\",\"rid\":4,\"reqId\":5}";
         Manager::getInstance()->psocket->sendMsg(route, msg);
     }
 }
@@ -139,7 +139,7 @@ void LoginScene::onButtonClick(Ref *pSender)
     int tag=button->getTag();
     //登陆
     if(tag==101) {
-        //Manager::getInstance()->switchScence(HomeScene::createScene());
+        Manager::getInstance()->switchScence(HomeScene::createScene());
         //Manager::getInstance()->wsocket->send(4,"{uid:1,name:\"test\",route\"connector.entryHandler.test\"}");
         //Manager::getInstance()->wsocket->send(4, "{uid:1,route:2}");
         

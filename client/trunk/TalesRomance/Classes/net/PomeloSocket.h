@@ -42,17 +42,14 @@ public:
     PomeloSocket();
     int connect(const char* addr,int port);
     int sendMsg(const char* route,std::string msg);
-    int notify(const char* route,std::string msg);
     void stop();
     
     static void onPushDataCallback(pc_client_t *client, const char *event, void *data);
     static void onDisconnectCallback(pc_client_t *client, const char *event, void *data);
     static void requstCallback(pc_request_t *req, int status, json_t *resp);
-    static void notifyCallback(pc_notify_t *ntf, int status);
 
     
     static void clearRequest();
-    static void clearNotify();
     void heartBeat();
     void update(float dt);
     

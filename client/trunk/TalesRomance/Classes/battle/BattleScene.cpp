@@ -110,6 +110,9 @@ void BattleScene::initHero()
 void BattleScene::playRound()
 {
     this->playBattleCard();
+//    StandDraw* stand=StandDraw::create();
+//    this->addChild(stand);
+//    stand->play();
     
 }
 

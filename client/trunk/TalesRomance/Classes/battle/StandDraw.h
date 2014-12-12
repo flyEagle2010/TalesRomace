@@ -21,8 +21,8 @@ public:
     bool init();
     void play();
 private:
-    Sprite* bg;
-    Clip* clip;
+    Clip* bgClip;
+    Clip* topClip;
     Sprite* icon;
 };
 
