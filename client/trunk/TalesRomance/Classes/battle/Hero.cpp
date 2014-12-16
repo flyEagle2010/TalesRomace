@@ -75,7 +75,7 @@ void Hero::attack(std::string actionName)
     this->skeletonNode->addAnimation(TrackIndex::ANI_COMMON, ani_idle, true);
 }
 
-void Hero::attacked(PHit& pHit)
+void Hero::attacked(int num)
 {
     this->setAnimation(TrackIndex::ANI_ATTACKED ,ani_attacked, false);
     this->skeletonNode->addAnimation(TrackIndex::ANI_COMMON, ani_idle, true);
@@ -94,79 +94,76 @@ void Hero::attackedEffect()
     clip->play();
 }
 
-void Hero::spell(std::string actionName)
+void Hero::buildup()
 {
-    this->setAnimation(TrackIndex::ANI_COMMON, ani_spell, false);
+    this->setAnimation(TrackIndex::ANI_COMMON, ani_buildup, false);
 }
 
-void Hero::defence(PHit& pHit)
-{
-    this->fallHp(pHit);
-    
-    std::string name="";
-    if(this->skeletonNode->getCurrent()){
-        name=this->skeletonNode->getCurrent()->animation->name;
-    }
-    
-    if(name!= ani_attack && name!=ani_skillAttack1 && name!=ani_skillAttack2 && name!=ani_win){
-        this->setAnimation(TrackIndex::ANI_COMMON, ani_defence, 0);
-        this->skeletonNode->addAnimation(0, ani_idle, true);
-    }
-    Clip* clip=Clip::create("dun.plist", "dun",10);
-    this->addChild(clip,2);
-    if(this->pos>4){
-        clip->setScale(0.5,0.5);
-        clip->setPosition(Vec2(-30,100));
-    }else{
-        clip->setScale(-0.5,0.5);
-        clip->setPosition(Vec2(30,100));
-    }
-    clip->play();
+//void Hero::defence(int num)
+//{
+//    this->fallHp(num);
+//    
+//    std::string name="";
+//    if(this->skeletonNode->getCurrent()){
+//        name=this->skeletonNode->getCurrent()->animation->name;
+//    }
+//    
+//    if(name!= ani_attack && name!=ani_skillAttack1 && name!=ani_skillAttack2 && name!=ani_win){
+//        this->setAnimation(TrackIndex::ANI_COMMON, ani_defence, 0);
+//        this->skeletonNode->addAnimation(0, ani_idle, true);
+//    }
+//    Clip* clip=Clip::create("dun.plist", "dun",10);
+//    this->addChild(clip,2);
+//    if(this->pos>4){
+//        clip->setScale(0.5,0.5);
+//        clip->setPosition(Vec2(-30,100));
+//    }else{
+//        clip->setScale(-0.5,0.5);
+//        clip->setPosition(Vec2(30,100));
+//    }
+//    clip->play();
+//
+//}
 
-}
-
-void Hero::die(PHit& pHit)
+void Hero::die(int num)
 {
     this->skeletonNode->clearTracks();
     
     this->setAnimation(TrackIndex::ANI_DIE, ani_die, false);
 
-    this->fallHp(pHit);
+    this->fallHp(num);
     
     BattleResult* result=BattleResult::create();
     result->show((BaseUI*)BattleMgr::getInstance()->view); //show(BattleMgr::getInstance()->view);
 }
 
-void Hero::dieClear()
-{
-    BattleMgr::getInstance()->clearDieNpc(pos);
-}
-
-void Hero::fallHp(PHit& phit)
+void Hero::fallHp(int num)
 {
     spBone* body=this->skeletonNode->findBone("body");
 //    if(phit.isimmune()){
 //        return;
 //    }
     
-    if(phit.ismiss()){
-        Sprite* miss=Sprite::create("miss.png");
-        BattleMgr::getInstance()->view->addChild(miss);
-        miss->setScale(1.2);
-        miss->setPosition(this->convertToWorldSpace(Vec2(body->worldX,body->worldY+120)));
-        Sequence* seq=Sequence::create(ScaleTo::create(0.2, 0.6),MoveBy::create(0.3, Vec2(0,40)),FadeOut::create(0.3),CallFunc::create(CC_CALLBACK_0(Label::removeFromParent, miss)), NULL);
-        miss->runAction(seq);
-        return;
-    }
-    std::string hpFileName=phit.hp()>0?"num_hp.png":"num_heal.png";
+//    if(phit.ismiss()){
+//        Sprite* miss=Sprite::create("miss.png");
+//        BattleMgr::getInstance()->view->addChild(miss);
+//        miss->setScale(1.2);
+//        miss->setPosition(this->convertToWorldSpace(Vec2(body->worldX,body->worldY+120)));
+//        Sequence* seq=Sequence::create(ScaleTo::create(0.2, 0.6),MoveBy::create(0.3, Vec2(0,40)),FadeOut::create(0.3),CallFunc::create(CC_CALLBACK_0(Label::removeFromParent, miss)), NULL);
+//        miss->runAction(seq);
+//        return;
+//    }
+    std::string hpFileName=num>0?"num_hp.png":"num_heal.png";
     Label* label;
-    if(phit.iscrh()){
-        label=Label::createWithCharMap("num_hit.png", 84, 95, '0');
-    }else{
-        label=Label::createWithCharMap(hpFileName, 56, 63, '0');
-    }
+    label=Label::createWithCharMap(hpFileName, 56, 63, '0');
+
+//    if(phit.iscrh()){
+//        label=Label::createWithCharMap("num_hit.png", 84, 95, '0');
+//    }else{
+//        label=Label::createWithCharMap(hpFileName, 56, 63, '0');
+//    }
     
-    std::string str=(phit.hp()>0?";":":")+Value(abs(phit.hp())).asString();
+    std::string str=(num>0?";":":")+Value(abs(num)).asString();
     label->setString(str);
     label->setScale(1);
     BattleMgr::getInstance()->view->addChild(label,2);
@@ -212,9 +209,9 @@ void Hero::onSkeletonEvent(int trackIndex, spEvent* event)
         BattleMgr::getInstance()->view->attacked();
     }
     if(trackIndex==TrackIndex::ANI_ATTACKED){
-        PHit phit;
-        phit.set_hp(200);
-        this->fallHp(phit);
+//        PHit phit;
+//        phit.set_hp(200);
+//        this->fallHp(phit);
     }
 };
 
@@ -229,15 +226,14 @@ void Hero::onAnimationEnd(int trackIndex)
         }
         case TrackIndex::ANI_DIE:
         {
-            Sequence* sq=Sequence::create(DelayTime::create(0.2),FadeOut::create(2.0),CallFunc::create(CC_CALLBACK_0(Hero::dieClear, this)), NULL);
-            this->skeletonNode->runAction(sq);
-            this->stopAllActions();
+//            Sequence* sq=Sequence::create(DelayTime::create(0.2),FadeOut::create(2.0),CallFunc::create(CC_CALLBACK_0(Hero::dieClear, this)), NULL);
+//            this->skeletonNode->runAction(sq);
+//            this->stopAllActions();
             break;
         }
         case TrackIndex::ANI_WIN:
         {
-            BattleMgr::getInstance()->winPos=this->pos;
-            this->runAction(Sequence::create(DelayTime::create(1.2),CallFunc::create(CC_CALLBACK_0(BattleMgr::startEndDram, BattleMgr::getInstance())), NULL));
+            //this->runAction(Sequence::create(DelayTime::create(1.2),CallFunc::create(CC_CALLBACK_0(BattleMgr::startEndDram, BattleMgr::getInstance())), NULL));
             break;
         }
         default:

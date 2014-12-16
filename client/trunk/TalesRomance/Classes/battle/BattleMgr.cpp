@@ -21,11 +21,14 @@ void BattleMgr::init()
 {
     auto scene=BattleScene::createScene();
     Manager::getInstance()->switchScence(scene);
-
     this->view=(BattleScene*)scene->getChildByTag(0);
-    //this->initHero(heros);
-    //this->heroNum=heros.size();
-    //this->groupID=this->groups.at(0);
+    this->initNetEvent();
+    
+    const char* route="";
+    json_t* msg=json_object();
+    json_object_set(msg, "type", json_integer(1));
+    json_object_set(msg, "targetID", json_integer(1001));
+    Manager::getInstance()->psocket->sendMsg(route, msg);
 
 }
 
@@ -34,69 +37,33 @@ void BattleMgr::init(rapidjson::Value& data)
     
 }
 
-void BattleMgr::startBattle()
-{
-    this->isOver=false;
-    this->view->ui->runAction(Sequence::create(FadeOut::create(0.8),FadeIn::create(0.8),CallFunc::create(CC_CALLBACK_0(BattleMgr::startBattleAnimEnd, this)) ,NULL));
-}
-
-void BattleMgr::startBattleAnimEnd()
-{
-    this->view->resume();
-    this->groupID=this->groups.at(0);
-    this->groups.erase(groups.begin());
-    this->initNpc();
-    
-
-}
-
-void BattleMgr::initHero(std::vector<long long> npcs)
-{
-    
-}
-
-void BattleMgr::initNpc()
-{
-
-}
-
-std::vector<int> BattleMgr::getMonsterSkill(int xid)
-{
-    std::vector<int> skills;
-  
-    return skills;
-}
-
-void BattleMgr::stopAllFighter()
-{
-}
-
-void BattleMgr::startEndDram()
-{
-    this->isOver=true;
-}
-
 void BattleMgr::handleResult()
 {
 
 }
 
-void BattleMgr::clearDieNpc(int pos)
-{
+void BattleMgr::initNetEvent(){
+    this->listener = EventListenerCustom::create(NET_MESSAGE, [=](EventCustom* event){
+        json_t* msg=static_cast<json_t*>(event->getUserData());
+        int reqId=json_integer_value(json_object_get(msg, "reqId"));
+        switch (reqId)
+        {
+            case C_BATTLE:
+            {
+                this->view->startAnimation(msg);
+                break;
+            }
 
-}
-
-void BattleMgr::pause()
-{
-
-}
-
-void BattleMgr::resume()
-{
- 
+            default:
+                break;
+        }
+    });
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithFixedPriority(listener, 1);
+    
 }
 
 void BattleMgr::clear()
 {
     SpriteFrameCache::getInstance()->removeSpriteFrames();
+    Director::getInstance()->getEventDispatcher()->removeEventListener(this->listener);
 }

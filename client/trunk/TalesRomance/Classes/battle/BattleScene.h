@@ -37,12 +37,9 @@ public:
     virtual void onEnter();
     virtual void onExit();
     virtual void touchButtonEvent(cocos2d::Ref *pSender, Widget::TouchEventType type);
-    
     void attack();
     void attacked();
-private:
     void initInfo(Node* node);
-    void startAnimation();
     void initHero();
     void playRound();
     
@@ -54,6 +51,8 @@ private:
     
     Vector<BattleCard*> BattleCards;
     Size wsize;
+    json_t* data;
+
 public:
     Node* heroNode;
     Node* heroInfo1;
@@ -63,5 +62,7 @@ public:
     Hero* hero;
     Hero* npc;
     Hero* pet;
+    void startAnimation(json_t* data);
+
 };
 #endif /* defined(__fancyHeart__BattleScene__) */

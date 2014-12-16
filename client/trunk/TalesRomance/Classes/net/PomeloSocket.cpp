@@ -32,7 +32,7 @@ int PomeloSocket::connect(const char* addr, int port)
         pc_client_destroy(client);
         return 0;
     }
-    
+    this->state=CONNECTED_OK;
     log("socket connected to:ip:%s,port:%d",addr,port);
     
     // add pomelo events listener
@@ -44,16 +44,17 @@ int PomeloSocket::connect(const char* addr, int port)
     return ret;
 }
 
-int PomeloSocket::sendMsg(const char* route, std::string msg)
+int PomeloSocket::sendMsg(const char* route, json_t* json)
 {
     if(state != CONNECTED_OK){
+        log("socket has disconnected......");
         return -1;
     }
     pc_request_t *request = pc_request_new();
     void (*request_cb)(pc_request_t *req, int status, json_t *resp )= &PomeloSocket::requstCallback;
     
-    json_error_t err;
-    json_t* json = json_loads(msg.c_str(), JSON_COMPACT, &err);
+    //json_error_t err;
+    //json_t* json = json_loads(msg.c_str(), JSON_COMPACT, &err);
     
     int ret=pc_request(client, request, route, json, request_cb);
     return ret;
@@ -68,12 +69,10 @@ void PomeloSocket::update(float dt)
         log("before deal msg:%s",json_dumps(msg, 0));
 
         messageQueue.erase(messageQueue.begin());
-////        cocos2d::EventCustom evt(NET_MESSAGE);
-////        evt.setUserData(msg);
-////        Director::getInstance()->getEventDispatcher()->dispatchEvent(&evt);
-//        log("deal msg:%s",json_dumps(msg, 0));
-
-        json_decref(msg);
+        cocos2d::EventCustom evt(NET_MESSAGE);
+        evt.setUserData(msg);
+        Director::getInstance()->getEventDispatcher()->dispatchEvent(&evt);
+        //json_decref(msg);
     }
     pthread_mutex_unlock(&mMutex);
 
@@ -115,10 +114,9 @@ void PomeloSocket::requstCallback(pc_request_t *req, int status, json_t *resp)
     } else if(status == 0) {
         pthread_mutex_lock(&mMutex);
         messageQueue.push_back(resp);
-        pthread_mutex_unlock(&mMutex);
         char *json_str = json_dumps(resp, 0);
         CCLOG("server response: %s \n", json_str);
-       
+        pthread_mutex_unlock(&mMutex);
     }
 }
 

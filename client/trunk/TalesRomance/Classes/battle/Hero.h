@@ -26,19 +26,6 @@ using namespace cocostudio;
 using namespace spine;
 
 class MFighter;
-#define ani_idle "idle"
-#define ani_walk "walk"
-#define ani_attacked "attacked"
-#define ani_onAir "onAir"
-#define ani_onAirFall "onAirFall"
-#define ani_onAirAttacked "onAirAttacked"
-#define ani_defence "defence"
-#define ani_die "die"
-#define ani_spell "spell"
-#define ani_attack "attack"
-#define ani_skillAttack1 "skillAttack1"
-#define ani_skillAttack2 "skillAttack2"
-#define ani_win "win"
 
 #define speed 190
 
@@ -55,14 +42,12 @@ public:
     void run();
     void attack(std::string actionName); //1普通 2射击
     void skillAttak();
-    void spell(std::string actionName);
-    void attacked(PHit& pHit);
-    void die(PHit& hit);
-    void defence(PHit& hit);
+    void buildup();
+    void attacked(int num);
+    void die(int num);
   
-    void fallHp(PHit& phit);
+    void fallHp(int num);
     void hitWord();
-    void dieClear();
     void revive();
     void playBuffer();
     void win();

@@ -21,6 +21,7 @@ public:
     bool init();
     void reset(int index,int groupNum,Value data);
     void move();
+    void startToCenter();
     void useSkill();
     void playRim();
     void playDispear();

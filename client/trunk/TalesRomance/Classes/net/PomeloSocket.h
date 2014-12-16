@@ -41,7 +41,7 @@ class PomeloSocket : public Ref{
 public:
     PomeloSocket();
     int connect(const char* addr,int port);
-    int sendMsg(const char* route,std::string msg);
+    int sendMsg(const char* route,json_t* json);
     void stop();
     
     static void onPushDataCallback(pc_client_t *client, const char *event, void *data);

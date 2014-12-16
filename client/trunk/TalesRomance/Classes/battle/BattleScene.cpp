@@ -49,12 +49,11 @@ bool BattleScene::init(){
  
     
     for(int i=0;i<3;i++){
-        BattleCard* BattleCard=BattleCard::create(i);
-        BattleCard->setScale(1);
-        BattleCard->setVisible(false);
-        BattleCard->setPosition(Vec2(0,60));
-        this->heroNode->addChild(BattleCard,1);
-        this->BattleCards.pushBack(BattleCard);
+        BattleCard* card=BattleCard::create(i);
+        this->heroNode->addChild(card,1);
+        this->BattleCards.pushBack(card);
+        card->setPosition(Vec2(0,60));
+        card->setVisible(false);
     }
     
     return true;
@@ -64,7 +63,7 @@ void BattleScene::onEnter()
 {
     BaseUI::onEnter();
     
-    this->startAnimation();
+    this->startAnimation(nullptr);
 }
 
 void BattleScene::initInfo(Node* node)
@@ -79,8 +78,10 @@ void BattleScene::initInfo(Node* node)
     hpBar->setPercent(50);
 }
 
-void BattleScene::startAnimation()
+void BattleScene::startAnimation(json_t* data)
 {
+    this->data=data;
+    
     Size infoSize=this->heroInfo1->getContentSize();
     float mid=wsize.width*0.5;
     this->heroInfo1->setPosition(Vec2(mid,this->wsize.height-infoSize.height));
@@ -101,8 +102,8 @@ void BattleScene::initHero()
     this->hero->setPosition(Vec2(0,0));
     this->npc->setPosition(Vec2(wsize.width,0));
     
-    this->hero->runAction(JumpTo::create(0.6, Vec2(wsize.width/2.-200,140), 150, 1));
-    this->npc->runAction(JumpTo::create(0.6, Vec2(wsize.width/2.+200,140), 150, 1));
+    this->hero->runAction(JumpTo::create(0.6, Vec2(wsize.width/2.0-200,140), 150, 1));
+    this->npc->runAction(JumpTo::create(0.6, Vec2(wsize.width/2.0+200,140), 150, 1));
     
     this->runAction(Sequence::create(DelayTime::create(0.6),CallFunc::create(CC_CALLBACK_0(BattleScene::playRound, this)), NULL));
 }
@@ -113,22 +114,20 @@ void BattleScene::playRound()
 //    StandDraw* stand=StandDraw::create();
 //    this->addChild(stand);
 //    stand->play();
-    
 }
 
 void BattleScene::playBattleCard()
 {
     for(int i=0;i<3;i++){
-        BattleCard* BattleCard=this->BattleCards.at(i);
-        BattleCard->reset(i, 3, Value(3));
-        BattleCard->move();
+        BattleCard* card=this->BattleCards.at(i);
+        card->reset(i, 3, Value(3));
+        card->move();
     }
 }
 
 void BattleScene::attack()
 {
-    this->hero->attack(ani_attack);
-    
+    this->hero->attack(ani_attack1);
 }
 
 void BattleScene::petAttack()
@@ -144,8 +143,7 @@ void BattleScene::petAttack()
 
 void BattleScene::attacked()
 {
-    PHit phit;
-    this->npc->attacked(phit);
+    this->npc->attacked(3);
 }
 
 void BattleScene::showBuff()

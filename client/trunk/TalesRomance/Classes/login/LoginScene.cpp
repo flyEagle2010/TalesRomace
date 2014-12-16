@@ -54,7 +54,11 @@ void LoginScene::onEnter()
     int connectOk=Manager::getInstance()->psocket->connect("127.0.0.1", 3010);
     if(!connectOk){
         const char* route = "connector.entryHandler.test";
-        const char* msg="{\"username\":\"wahaha\",\"rid\":22,\"reqId\":32}";
+        json_t* msg=json_object();
+        json_object_set(msg, "username", json_string("wahaha"));
+        json_object_set(msg, "rid", json_integer(21));
+        json_object_set(msg, "reqId", json_integer(31));
+        
         Manager::getInstance()->psocket->sendMsg(route, msg);
     }
 }

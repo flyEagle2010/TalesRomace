@@ -267,6 +267,11 @@
 		5D3BCF531A3AC5BD0023B889 /* cardSkillEffect.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCF4F1A3AC5BD0023B889 /* cardSkillEffect.png */; };
 		5D3BCF541A3AC5BD0023B889 /* skillEffect.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCF501A3AC5BD0023B889 /* skillEffect.plist */; };
 		5D3BCF551A3AC5BD0023B889 /* skillEffect.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCF511A3AC5BD0023B889 /* skillEffect.png */; };
+		5D3BCF591A3EE7E90023B889 /* BattleCard.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCF561A3EE7E90023B889 /* BattleCard.csb */; };
+		5D3BCF5A1A3EE7E90023B889 /* card.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCF571A3EE7E90023B889 /* card.plist */; };
+		5D3BCF5B1A3EE7E90023B889 /* card.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3BCF581A3EE7E90023B889 /* card.png */; };
+		5D8297AF1A4038CA004915AE /* fapai.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D8297AD1A4038CA004915AE /* fapai.plist */; };
+		5D8297B01A4038CA004915AE /* fapai.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8297AE1A4038CA004915AE /* fapai.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -697,6 +702,11 @@
 		5D3BCF4F1A3AC5BD0023B889 /* cardSkillEffect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardSkillEffect.png; sourceTree = "<group>"; };
 		5D3BCF501A3AC5BD0023B889 /* skillEffect.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = skillEffect.plist; sourceTree = "<group>"; };
 		5D3BCF511A3AC5BD0023B889 /* skillEffect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skillEffect.png; sourceTree = "<group>"; };
+		5D3BCF561A3EE7E90023B889 /* BattleCard.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = BattleCard.csb; path = ../../../../ui/TalesRomac/res/BattleCard.csb; sourceTree = "<group>"; };
+		5D3BCF571A3EE7E90023B889 /* card.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = card.plist; path = ../../../../ui/TalesRomac/res/card.plist; sourceTree = "<group>"; };
+		5D3BCF581A3EE7E90023B889 /* card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card.png; path = ../../../../ui/TalesRomac/res/card.png; sourceTree = "<group>"; };
+		5D8297AD1A4038CA004915AE /* fapai.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fapai.plist; sourceTree = "<group>"; };
+		5D8297AE1A4038CA004915AE /* fapai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fapai.png; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1053,6 +1063,9 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5D3BCF561A3EE7E90023B889 /* BattleCard.csb */,
+				5D3BCF571A3EE7E90023B889 /* card.plist */,
+				5D3BCF581A3EE7E90023B889 /* card.png */,
 				5D3BCF3F1A3A91610023B889 /* tmx */,
 				5D3BCDB41A3A8F520023B889 /* bg */,
 				5D3BCDBA1A3A8F520023B889 /* bone */,
@@ -1520,6 +1533,8 @@
 		5D3BCE761A3A8F520023B889 /* particle */ = {
 			isa = PBXGroup;
 			children = (
+				5D8297AD1A4038CA004915AE /* fapai.plist */,
+				5D8297AE1A4038CA004915AE /* fapai.png */,
 				5D3BCE771A3A8F520023B889 /* ghost.png */,
 				5D3BCE781A3A8F520023B889 /* ghostB.plist */,
 				5D3BCE791A3A8F520023B889 /* ghostG.plist */,
@@ -2034,6 +2049,7 @@
 				5D3BCE8B1A3A8F520023B889 /* 902-8.png in Resources */,
 				5D3BCE9F1A3A8F520023B889 /* 1065-2.png in Resources */,
 				5D3BCED01A3A8F520023B889 /* 1526-3.png in Resources */,
+				5D3BCF5A1A3EE7E90023B889 /* card.plist in Resources */,
 				5D3BCE861A3A8F520023B889 /* 902-3.png in Resources */,
 				5D3BCF451A3A91610023B889 /* tree_block.plist in Resources */,
 				5D3BCED11A3A8F520023B889 /* 1526-4.png in Resources */,
@@ -2118,6 +2134,7 @@
 				5D3BCE851A3A8F520023B889 /* 902-2.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				BFDAB41A1A1B2ADC00E450EC /* Default in Resources */,
+				5D3BCF5B1A3EE7E90023B889 /* card.png in Resources */,
 				5D3BCEC21A3A8F520023B889 /* 7.png in Resources */,
 				BFB771011A1F3CF00079450E /* num_hit.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
@@ -2174,6 +2191,7 @@
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				5D3BCF3C1A3A8FAD0023B889 /* kpps.png in Resources */,
 				5D3BCEEC1A3A8F520023B889 /* 10.png in Resources */,
+				5D3BCF591A3EE7E90023B889 /* BattleCard.csb in Resources */,
 				5D3BCF1D1A3A8F520023B889 /* longNv3.png in Resources */,
 				BFDAB41F1A1B2ADC00E450EC /* login.plist in Resources */,
 				5D3BCF291A3A8F520023B889 /* buffIcon.png in Resources */,
@@ -2210,6 +2228,7 @@
 				5D3BCF051A3A8F520023B889 /* 10014.png in Resources */,
 				5D3BCEBC1A3A8F520023B889 /* 15.png in Resources */,
 				5D3BCEAB1A3A8F520023B889 /* Normal_state_meihuo_004.png in Resources */,
+				5D8297AF1A4038CA004915AE /* fapai.plist in Resources */,
 				5D3BCEB71A3A8F520023B889 /* 10.png in Resources */,
 				BFD09E501A24971600992CDA /* maze.png in Resources */,
 				5D3BCF2B1A3A8F520023B889 /* selected.png in Resources */,
@@ -2251,6 +2270,7 @@
 				5D3BCE9C1A3A8F520023B889 /* 1065-14.png in Resources */,
 				5D3BCD5B1A3584A70023B889 /* result.plist in Resources */,
 				5D3BCEB11A3A8F520023B889 /* Normal_state_meihuo_010.png in Resources */,
+				5D8297B01A4038CA004915AE /* fapai.png in Resources */,
 				5D3BCED71A3A8F520023B889 /* 489-1.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 				BFB771021A1F3CF00079450E /* num_hp.png in Resources */,

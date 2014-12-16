@@ -6,7 +6,8 @@
         <Project Name="MainScene.csd" />
         <Project Name="LoginScene.csd" />
         <Image Name="home.png" />
-        <PlistImageFolder PListFile="home.plist" LastPlistWriteTime="2014-11-16T09:58:51+08:00" LastImageWriteTime="2014-11-16T09:58:51+08:00" Name=".home_PList.Dir">
+        <PlistImageFolder PListFile="home.plist" LastPlistWriteTime="2014-12-09T15:02:07+08:00" LastImageWriteTime="2014-12-09T15:02:07+08:00" Name=".home_PList.Dir">
+          <PlistImageFile Name="0_BJ.png" Key="0_BJ.png" />
           <PlistImageFile Name="VIP.png" Key="VIP.png" />
           <PlistImageFile Name="add.png" Key="add.png" />
           <PlistImageFile Name="bianzu.png" Key="bianzu.png" />
@@ -14,7 +15,6 @@
           <PlistImageFile Name="daoju.png" Key="daoju.png" />
           <PlistImageFile Name="dibian.png" Key="dibian.png" />
           <PlistImageFile Name="gowu.png" Key="gowu.png" />
-          <PlistImageFile Name="mainBg.png" Key="mainBg.png" />
           <PlistImageFile Name="qianbi.png" Key="qianbi.png" />
           <PlistImageFile Name="qiandao.png" Key="qiandao.png" />
           <PlistImageFile Name="richeng.png" Key="richeng.png" />
@@ -176,6 +176,16 @@
         <Image Name="result.png" />
         <Project Name="Result.csd" />
         <Image Name="partner1.png" />
+        <Project Name="BattleCard.csd" />
+        <PlistImageFolder PListFile="card.plist" LastPlistWriteTime="2014-12-15T17:48:59+08:00" LastImageWriteTime="2014-12-15T17:48:59+08:00" Name=".card_PList.Dir">
+          <PlistImageFile Name="attackType_1.png" Key="attackType_1.png" />
+          <PlistImageFile Name="attackType_2.png" Key="attackType_2.png" />
+          <PlistImageFile Name="attackType_3.png" Key="attackType_3.png" />
+          <PlistImageFile Name="cardImage.png" Key="cardImage.png" />
+          <PlistImageFile Name="levelFrame.png" Key="levelFrame.png" />
+          <PlistImageFile Name="skillIcon.png" Key="skillIcon.png" />
+        </PlistImageFolder>
+        <Image Name="card.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

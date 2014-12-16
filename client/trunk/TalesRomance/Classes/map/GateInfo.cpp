@@ -71,16 +71,17 @@ void GateInfo::resetUI()
     Vec2 center=Vec2(wsize.width*0.5,wsize.height*0.5);
     for(int i=0;i<10;i++){
         Card* card=Card::create();
-        card->click=CC_CALLBACK_1(GateInfo::selectFriend, this);
         this->friendList->addChild(card);
         Size cardSize=card->rim->getContentSize();
         card->setPosition(Vec2(cardSize.width*0.5+i*(cardSize.width+gap),size.height*0.6));
         this->friendList->setInnerContainerSize(Size((gap+cardSize.width)*10,size.height));
+        card->click=CC_CALLBACK_1(GateInfo::selectFriend, this);
+
         if(i==0){
             card->setSelect(true);
         }
     }
-    XMap* xmap=XMap::record(Value(this->gateID));
+    //XMap* xmap=XMap::record(Value(this->gateID));
     //this->numLabel->setString(xmap->getName());
     //this->desLabel->setString(xmap->getDesc());
 }

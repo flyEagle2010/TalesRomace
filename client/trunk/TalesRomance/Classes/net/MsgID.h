@@ -37,5 +37,5 @@
 #define C_EVOLVE 19 //进化
 #define C_ASCEND 20 //升阶
 #define C_MUTATION 21 //变异
-
+#define C_BATTLE 22 //战斗
 #endif
