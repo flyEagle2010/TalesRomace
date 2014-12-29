@@ -375,7 +375,7 @@ void Manager::showMsg(const string msg)
     Size size=CCDirector::getInstance()->getWinSize();
     this->scene->addChild(msgLayer, MSG_LAY);
     
-    cocos2d::extension::Scale9Sprite* messagBg = cocos2d::extension::Scale9Sprite::create("loading_bg.png");
+    ui::Scale9Sprite* messagBg = ui::Scale9Sprite::create("loading_bg.png");
     messagBg->setPosition(Vec2(size.width/2, size.height/2));
     messagBg->setCapInsets(Rect(50, 50, messagBg->getContentSize().width-100, messagBg->getContentSize().height-100));
     msgLayer->addChild(messagBg,0,1);

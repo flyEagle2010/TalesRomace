@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>TalesRomance</name>
+	<name>test</name>
 	<comment></comment>
 	<projects>
 		<project>libcocos2dx</project>
@@ -27,7 +27,7 @@
 			<arguments>
 				<dictionary>
 					<key>?children?</key>
-					<value>?children?=?name?=entry\\\\\\\|\\\|\|?name?=outputEntries\||</value>
+					<value>?name?=outputEntries\|?children?=?name?=entry\\\\\\\|\\\|\||</value>
 				</dictionary>
 				<dictionary>
 					<key>?name?</key>

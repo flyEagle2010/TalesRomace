@@ -30,6 +30,13 @@ class BattleCard;
 class Hero;
 
 class BattleScene:public BaseUI{
+    int roundIndex;
+    int cardIndex;
+    json_t* round;
+    json_t* item;
+    bool isDispear;
+    Hero* attacker;
+    Hero* defender;
 public:
 	static Scene* createScene();
     static BattleScene* create();
@@ -38,16 +45,15 @@ public:
     virtual void onExit();
     virtual void touchButtonEvent(cocos2d::Ref *pSender, Widget::TouchEventType type);
     void attack();
+    void buildup();
     void attacked();
-    void initInfo(Node* node);
-    void initHero();
     void playRound();
+    void cardDispear();
     
     void playBattleCard();
     void petAttack();
-    void showBuff();
-    void playEffect(std::string name);
-    
+    void showBuff(int pos);
+    void showResult();
     
     Vector<BattleCard*> BattleCards;
     Size wsize;
@@ -55,13 +61,11 @@ public:
 
 public:
     Node* heroNode;
-    Node* heroInfo1;
-    Node* heroInfo2;
+
+    Vector<Node*> heroInfos;
+    Vector<Hero*> heros;
     Node* bottom;
     Sprite* bg;
-    Hero* hero;
-    Hero* npc;
-    Hero* pet;
     void startAnimation(json_t* data);
 
 };

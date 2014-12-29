@@ -1,0 +1,20 @@
+
+juqi_1.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+juqi_1
+  rotate: false
+  xy: 2, 2
+  size: 297, 336
+  orig: 297, 336
+  offset: 0, 0
+  index: -1
+juqi_2
+  rotate: false
+  xy: 301, 2
+  size: 297, 336
+  orig: 297, 336
+  offset: 0, 0
+  index: -1

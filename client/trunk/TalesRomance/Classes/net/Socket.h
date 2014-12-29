@@ -34,9 +34,11 @@
 #include "MsgID.h"
 
 USING_NS_CC;
-#define NET_MESSAGE "netMessage"
 class SocketThreadHelper;
 class Delegate;
+
+#define CONNECT_ERROR 1
+#define CONNECTED 2
 
 class NetMsg{
 public:

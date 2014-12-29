@@ -1,0 +1,37 @@
+
+request:
+{
+    ip:"123.57.6.164",//外网测试IP
+    port:6150,      //外网测试端口
+    method:"GET",   //http请求方式GET
+    path:"register", //http请求path
+    name:"name",     //http请求参数 账号名   4-20位 数字 中文 英文 下划线
+    password:"pwd"   //http请求参数 账号密码 4-20位 数字 英文
+}
+//example  http://123.57.6.164:6150/register?name=test&password=test
+
+response:
+{
+    code:200,           //结果 200成功  500失败
+    err:1,              //注册失败返回的失败枚举ID 见errEnum
+    op:"register",      //执行的操作 register注册  login登录  unknown未知的操作
+    uid:1,              //成功后 返回玩家注册的user ID
+    name:"name",        //成功后 返回玩家注册的账号名称
+    password:"pwd",     //成功后 返回玩家注册的账号密码
+    token:"123456789asdfghj" //成功后 返回玩家的一个标识（登录connector服务器需要）
+}
+//success example {"code":200,"op":"register","uid":6,"name":"test","password":"test","token":"34675ef6c91d695fb11e49a9ab403f51"}
+//fail example {"code":500,"err":1,"op":"register"}      {"code":500,"err":10,"op":"unknown"}
+
+errEnum:
+{
+    NAME_EXIST: 1,        //账号名称已存在
+    NAME_IS_EMPTY: 4,      //账号名称不能为空
+    PWD_IS_EMPTY: 5,       //账号密码不能为空
+    NAME_FORMAT_WRONG: 6,  //账号名称格式错误
+    PWD_FORMAT_WRONG: 7,   //账号密码格式错误
+    NAME_LEN_WRONG: 8,  //账号名称长度错误
+    PWD_LEN_WRONG: 9,   //账号密码长度错误
+    WRONG_METHOD: 10,      //错误的请求(仅支持GET)
+    WRONG_OP: 11           //错误操作（仅提供register login请求）
+}

@@ -32,6 +32,15 @@ class MFighter;
 
 class Hero:public Node
 {
+    
+    Sprite* hpBg;
+    SkeletonAnimation* buildupAni;
+
+    void setAnimation(int trackIndex, std::string animName,bool loop);
+    void onFrameEvent(Bone *bone, const std::string& frameEventName, int originFrameIndex, int currentFrameIndex);
+    void animationEvent(Armature *armature, MovementEventType movementType, const std::string& movementID);
+    void onAnimationEnd(int trackIndex);
+    void onSkeletonEvent(int trackIndex,spEvent* event);
 public:
 
     static Hero* create(std::string fPath,std::string rPath,int pos);
@@ -40,8 +49,7 @@ public:
     virtual void onExit();
     void stand();
     void run();
-    void attack(std::string actionName); //1普通 2射击
-    void skillAttak();
+    void attack(); //1普通 2射击
     void buildup();
     void attacked(int num);
     void die(int num);
@@ -53,21 +61,16 @@ public:
     void win();
     void move(Vec2 vec);
     
+    void jumpIn();
+    void jumpOut();
     void attackedEffect();
     
+    json_t* data;
+
     int pos;
+    int type;
     SkeletonAnimation* skeletonNode;
 
-
-private:
-    Sprite* hpBg;
-
-    void setAnimation(int trackIndex, std::string animName,bool loop);
-    void tick(float dt);
-    void onFrameEvent(Bone *bone, const std::string& frameEventName, int originFrameIndex, int currentFrameIndex);
-    void animationEvent(Armature *armature, MovementEventType movementType, const std::string& movementID);
-    void onAnimationEnd(int trackIndex);
-    void onSkeletonEvent(int trackIndex,spEvent* event);
    
 };
 #endif /* defined(__fancyHeart__Hero__) */

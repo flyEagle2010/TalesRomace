@@ -49,6 +49,7 @@ bool MapScene::init()
 void MapScene::resetUI()
 {
     this->scrollView=(ui::ScrollView*)this->ui->getChildByName("scrollView");
+
     //this->scrollView->setPosition(Vec2(141,0));
     Sprite* bg=Sprite::create("mapGate1.png");
     bg->setAnchorPoint(Vec2(0, 0));
@@ -73,6 +74,8 @@ void MapScene::onTouchEnded(Widget* pSender)
     int gateID=pSender->getTag();
     GateInfo* gateInfo=GateInfo::create(gateID);
     gateInfo->show(this);
+    this->scrollView->setTouchEnabled(false);
+
 }
 
 void MapScene::onButtonClick(cocos2d::Ref *pSender)
@@ -81,6 +84,7 @@ void MapScene::onButtonClick(cocos2d::Ref *pSender)
     switch (btn->getTag()) {
         case 1000: //退出
         {
+            Manager::getInstance()->switchScence(HomeScene::createScene());
             break;
         }
         case 1001: //挑战

@@ -186,6 +186,7 @@
           <PlistImageFile Name="skillIcon.png" Key="skillIcon.png" />
         </PlistImageFolder>
         <Image Name="card.png" />
+        <Project Name="RoleCreate.csd" />
       </RootFolder>
     </Group>
   </SolutionFolder>

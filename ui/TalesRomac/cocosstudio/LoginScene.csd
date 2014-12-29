@@ -107,7 +107,7 @@
             <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="0.0000" Y="0.0000" />
             <Children>
-              <NodeObjectData Name="btn_login" ActionTag="44" FrameEvent="" Tag="101" ObjectIndex="1" TouchEnable="True" FontSize="14" ButtonText="" Scale9Width="174" Scale9Height="70" ctype="ButtonObjectData">
+              <NodeObjectData Name="btn_login" ActionTag="44" FrameEvent="" Tag="100" ObjectIndex="1" TouchEnable="True" FontSize="48" ButtonText="" Scale9Width="174" Scale9Height="70" ctype="ButtonObjectData">
                 <Position X="568.0000" Y="135.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -115,7 +115,7 @@
                 <Size X="174.0000" Y="70.0000" />
                 <PrePosition X="0.5000" Y="0.2109" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <TextColor A="255" R="65" G="65" B="70" />
+                <TextColor A="255" R="0" G="0" B="0" />
                 <DisabledFileData Type="PlistSubImage" Path="login_in_1.png" Plist="login.plist" />
                 <PressedFileData Type="PlistSubImage" Path="login_in_2.png" Plist="login.plist" />
                 <NormalFileData Type="PlistSubImage" Path="login_in_1.png" Plist="login.plist" />
@@ -137,6 +137,53 @@
                 <Size X="350.0000" Y="60.0000" />
                 <PrePosition X="0.5480" Y="0.3641" />
                 <PreSize X="0.3081" Y="0.0938" />
+              </NodeObjectData>
+            </Children>
+            <FileData Type="PlistSubImage" Path="login_account login_3.png" Plist="login.plist" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </NodeObjectData>
+          <NodeObjectData Name="regPage" ActionTag="-2126285907" FrameEvent="" Tag="18" ObjectIndex="4" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="565" Scale9Height="472" ctype="PanelObjectData">
+            <Position X="568.0000" Y="320.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <Size X="1136.0000" Y="640.0000" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <Children>
+              <NodeObjectData Name="btn_reg" ActionTag="-1647587769" FrameEvent="" Tag="101" ObjectIndex="5" TouchEnable="True" FontSize="36" ButtonText="注册" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
+                <Position X="568.0000" Y="135.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <Size X="93.0000" Y="93.0000" />
+                <PrePosition X="0.0000" Y="0.0000" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <TextColor A="255" R="255" G="255" B="255" />
+                <DisabledFileData Type="PlistSubImage" Path="BtnReturn_0.png" Plist="common.plist" />
+                <PressedFileData Type="PlistSubImage" Path="BtnReturn_2.png" Plist="common.plist" />
+                <NormalFileData Type="PlistSubImage" Path="BtnReturn_1.png" Plist="common.plist" />
+              </NodeObjectData>
+              <NodeObjectData Name="accountTxt" ActionTag="629893593" FrameEvent="" Tag="20" ObjectIndex="3" TouchEnable="True" FontSize="36" IsCustomSize="True" LabelText="" PlaceHolderText="输入账号" MaxLengthText="10" ctype="TextFieldObjectData">
+                <Position X="622.5000" Y="338.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <AnchorPoint ScaleX="0.4980" ScaleY="0.5000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <Size X="350.0000" Y="60.0000" />
+                <PrePosition X="0.0000" Y="0.0000" />
+                <PreSize X="0.0000" Y="0.0000" />
+              </NodeObjectData>
+              <NodeObjectData Name="passTxt" ActionTag="-1545460336" FrameEvent="" Tag="21" ObjectIndex="4" TouchEnable="True" FontSize="36" IsCustomSize="True" LabelText="" PlaceHolderText="输入密码" MaxLengthText="10" PasswordEnable="True" ctype="TextFieldObjectData">
+                <Position X="622.5000" Y="233.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <AnchorPoint ScaleX="0.4980" ScaleY="0.5000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <Size X="350.0000" Y="60.0000" />
+                <PrePosition X="0.0000" Y="0.0000" />
+                <PreSize X="0.0000" Y="0.0000" />
               </NodeObjectData>
             </Children>
             <FileData Type="PlistSubImage" Path="login_account login_3.png" Plist="login.plist" />

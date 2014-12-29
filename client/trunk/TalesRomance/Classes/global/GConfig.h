@@ -25,4 +25,6 @@ enum RoleFields
 	STAR,
 };
 
+
+
 #endif

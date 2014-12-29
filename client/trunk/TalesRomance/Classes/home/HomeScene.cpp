@@ -127,18 +127,18 @@ void HomeScene::initNetEvent()
     {
         NetMsg* msg = static_cast<NetMsg*>(event->getUserData());
         log("Custom event 1 received:%d,%d",msg->msgId,msg->len);
-        switch (msg->msgId)
-        {
-            case C_UPROLE:
-            {
-                this->initUi();
-//                LoginResp pm;
-//                pm.ParseFromArray(msg->bytes, msg->len);
-            }
-                break;
-            default:
-                break;
-        }
+//        switch (msg->msgId)
+//        {
+//            case C_UPROLE:
+//            {
+//                this->initUi();
+////                LoginResp pm;
+////                pm.ParseFromArray(msg->bytes, msg->len);
+//            }
+//                break;
+//            default:
+//                break;
+//        }
     });
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
 }

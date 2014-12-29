@@ -40,27 +40,21 @@ void LoginScene::onEnter()
     BaseUI::onEnter();
     this->accountPage=this->ui->getChildByName("accountPage");
     this->serverPage=this->ui->getChildByName("serverPage");
+    this->regPage=this->ui->getChildByName("regPage");
     this->serverPage->setVisible(false);
+    this->regPage->setVisible(false);
     
     this->accountTxt=dynamic_cast<TextField*>(this->accountPage->getChildByName("accountTxt"));
     this->passwordTxt=dynamic_cast<TextField*>(this->accountPage->getChildByName("passTxt"));
     this->btn_login=dynamic_cast<Button*>(this->accountPage->getChildByName("btn_login"));
+    this->btn_reg=dynamic_cast<Button*>(this->regPage->getChildByName ("btn_reg"));
     this->btn_login->addClickEventListener(CC_CALLBACK_1(LoginScene::onButtonClick, this));
-    
+    this->btn_reg->addClickEventListener(CC_CALLBACK_1(LoginScene::onButtonClick, this));
+    //return;
     this->initAccount();
     
-    //Manager::getInstance()->wsocket=new WSocket();
-    Manager::getInstance()->psocket=new PomeloSocket();
-    int connectOk=Manager::getInstance()->psocket->connect("127.0.0.1", 3010);
-    if(!connectOk){
-        const char* route = "connector.entryHandler.test";
-        json_t* msg=json_object();
-        json_object_set(msg, "username", json_string("wahaha"));
-        json_object_set(msg, "rid", json_integer(21));
-        json_object_set(msg, "reqId", json_integer(31));
-        
-        Manager::getInstance()->psocket->sendMsg(route, msg);
-    }
+
+   
 }
 
 //init 游戏服务器 服务器认证
@@ -71,8 +65,16 @@ void LoginScene::initAccount()
 
     this->accountTxt->setString(accountStr);
     this->passwordTxt->setString(passwordStr);
+    if(accountStr=="" || passwordStr==""){
+        this->regPage->setVisible(true);
+        this->accountPage->setVisible(false);
+        this->accountTxt=dynamic_cast<TextField*>(this->regPage->getChildByName("accountTxt"));
+        this->passwordTxt=dynamic_cast<TextField*>(this->regPage->getChildByName("passTxt"));
+    }
+    
+    //std::string param="name="+accountStr+"&password="+passwordStr;
+    //WebHttp::getInstance()->send(LOGIN_URL ,CC_CALLBACK_1(LoginScene::initGameCallback, this),param.c_str());
 }
-
 
 void LoginScene::resetUI()
 {
@@ -119,40 +121,68 @@ void LoginScene::initGameCallback(std::vector<char> *data)
     std::string str(data->begin(),data->end());
     sData.Parse<0>(str.c_str());
     log("loginData:%s",str.c_str());
-    if (sData["loginState"].GetInt()!=0) {//先用以后修改
-        log("登录认证失败！");
-    }else if(sData["areaList"].Size()<1){
-        log("服务列表数据长度不够");
-    }else{
-        this->resetUI();
-    }
-    this->btn_login->setTouchEnabled(true);
-    this->accountPage->setVisible(false);
-    this->serverPage->setVisible(true);
     
-    //添加一个字符串数据到指定key
-    UserDefault::getInstance()->setStringForKey("account",accountTxt->getString());
-    UserDefault::getInstance()->setStringForKey("password",passwordTxt->getString());
-    //提交,生成xml文件
-    UserDefault::getInstance()->flush();
+    json_error_t error;
+    this->json=json_loads(str.c_str(), data->size(), &error);
+    int code=json_integer_value(json_object_get(json, "code"));
+    const char* op=json_string_value(json_object_get(json, "op"));
+    //int err=json_integer_value(json_object_get(json, "err"));
+
+
+    if(std::string(op)=="register"){
+        if(code==200){
+            //添加一个字符串数据到指定key
+            UserDefault::getInstance()->setStringForKey("account",accountTxt->getString());
+            UserDefault::getInstance()->setStringForKey("password",passwordTxt->getString());
+            //提交,生成xml文件
+            UserDefault::getInstance()->flush();
+        }
+        this->btn_reg->setTouchEnabled(true);
+    }
+    if(std::string(op)=="login"){
+        this->btn_login->setTouchEnabled(true);
+    }
+    
+    if(code==200){
+        Manager::getInstance()->psocket=new PomeloSocket();
+        int connectOk=Manager::getInstance()->psocket->connect(NET_GATE_IP, NET_GATE_PORT);
+        json_t* token=json_object_get(json, "token");
+        json_t* uid=json_object_get(json, "uid");
+        log("token:%s",json_string_value(token));
+        if(!connectOk){
+            json_t* msg=json_object();
+            json_object_set(msg, "uid", uid);
+            Manager::getInstance()->psocket->sendMsg("gate.gateHandler.entry", msg);
+            
+            Manager::getInstance()->psocket->token=token;
+        }
+    }
 }
 
 void LoginScene::onButtonClick(Ref *pSender)
 {
     auto button=static_cast<Button*>(pSender);
     int tag=button->getTag();
-    //登陆
-    if(tag==101) {
-        Manager::getInstance()->switchScence(HomeScene::createScene());
-        //Manager::getInstance()->wsocket->send(4,"{uid:1,name:\"test\",route\"connector.entryHandler.test\"}");
-        //Manager::getInstance()->wsocket->send(4, "{uid:1,route:2}");
-        
-        return;
-        std::string str="account="+this->accountTxt->getString()+"&password="+this->passwordTxt->getString();
-        WebHttp::getInstance()->send(HTTP_URL, CC_CALLBACK_1(LoginScene::initGameCallback, this),str.c_str());
-        button->setTouchEnabled(false);
-        return;
+    switch (tag) {
+        case 100:   //登陆
+        {
+            std::string str="name="+this->accountTxt->getString()+"&password="+this->passwordTxt->getString();
+            WebHttp::getInstance()->send(LOGIN_URL, CC_CALLBACK_1(LoginScene::initGameCallback, this),str.c_str());
+            button->setTouchEnabled(false);
+            break;
+        }
+        case 101:  //注册账号
+        {
+            std::string str="name="+this->accountTxt->getString()+"&password="+this->passwordTxt->getString();
+            WebHttp::getInstance()->send(REG_URL, CC_CALLBACK_1(LoginScene::initGameCallback, this),str.c_str());
+            button->setTouchEnabled(false);
+            break;
+        }
+        default:
+            break;
     }
+   
+    /*
     // 选组
     if(tag>300){
         this->tabBar->setIndex(tag-301);
@@ -165,43 +195,82 @@ void LoginScene::onButtonClick(Ref *pSender)
         int port=this->sData["areaList"][tag-1]["port"].GetInt();
         Manager::getInstance()->socket->init(ip, port);
     }
+     */
         
 }
 
 void LoginScene::initNetEvent(){
     auto listener = EventListenerCustom::create(NET_MESSAGE, [=](EventCustom* event){
-        NetMsg* msg = static_cast<NetMsg*>(event->getUserData());
-        switch (msg->msgId)
+        json_t* msg=(json_t*)event->getUserData();
+        const char* route=json_string_value(json_object_get(msg, "route"));
+        log("route:%s,%s",route,json_dumps(msg, 0));
+        int msgID=msges[route];
+        switch (msgID)
         {
-            case CONNECT_ERROR:
+            case GATE_GATEHANDLER_ENTRY:
             {
+                Manager::getInstance()->psocket->host=json_object_get(msg, "host");
+                Manager::getInstance()->psocket->port=json_object_get(msg, "port");
                 
-#if COCOS2D_DEBUG
-                auto scene=HomeScene::createScene();
-                Manager::getInstance()->switchScence(scene);
-                Manager::getInstance()->showMsg("进入单机模式，本地数据启动");
-#endif
+                const char* host=json_string_value(json_object_get(msg, "host"));
+                int port=json_integer_value(json_object_get(msg, "port"));
+                Manager::getInstance()->psocket->stop();
+                if(!Manager::getInstance()->psocket->connect(host, port)){
+                    json_t* msg=json_object();
+                    json_object_set(msg, "token", Manager::getInstance()->psocket->token);
+                    Manager::getInstance()->psocket->sendMsg("connector.entryHandler.entry", msg);
+                }
                 break;
             }
-            case CONNECTED:
+            case CONNECTOR_ENTRYHANDLER_ENTRY:
             {
-                Loading::getInstance()->hide();
-
-                LoginReq pbLogin;
-                pbLogin.set_account(sData["userBean"]["name"].GetString());
-                pbLogin.set_key(sData["key"].GetString());
-                pbLogin.set_areaid(sData["areaList"][2]["id"].GetInt());
-                Manager::getInstance()->socket->send(C_LOGIN, &pbLogin);
-                break;
-            }
-            case C_LOGIN:
-            {
-                 Manager::getInstance()->switchScence(HomeScene::createScene());
+                int isNew=json_integer_value(json_object_get(msg, "isNew"));
+                isNew=2;
+                //新的
+                if(isNew==1){
+                    RoleCreate* create=RoleCreate::create();
+                    create->show(this);
+                }
+                if(isNew==2){
+                    Scene* home=HomeScene::createScene();
+                    Manager::getInstance()->switchScence(home);
+                }
                 break;
             }
             default:
                 break;
         }
+ 
+        
+        
+        return;
+        //int reqId=json_integer_value(json_object_get(msg, "reqId"));
+//        switch (reqId)
+//        {
+//            case CONNECTED:
+//            {
+//                Manager::getInstance()->psocket->host=json_object_get(msg, "host");
+//                Manager::getInstance()->psocket->port=json_object_get(msg, "port");
+//                
+//                const char* host=json_string_value(json_object_get(msg, "host"));
+//                int port=json_integer_value(json_object_get(msg, "port"));
+//                Manager::getInstance()->psocket->stop();
+//                if(!Manager::getInstance()->psocket->connect(host, port)){
+//                    json_t* msg=json_object();
+//                    json_object_set(msg, "token", Manager::getInstance()->psocket->token);
+//                    //json_object_set(msg, "reqId", json_integer(31));
+//                    Manager::getInstance()->psocket->sendMsg(NET_GATE_ROTE, msg);
+//                }
+//                break;
+//            }
+//            case C_LOGIN:
+//            {
+//                 Manager::getInstance()->switchScence(HomeScene::createScene());
+//                break;
+//            }
+//            default:
+//                break;
+//        }
     });
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
     

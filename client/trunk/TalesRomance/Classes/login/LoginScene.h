@@ -12,6 +12,8 @@
 
 #include "WSocket.h"
 #include "PomeloSocket.h"
+#include "RoleCreate.h"
+
 
 USING_NS_CC;
 using namespace ui;
@@ -35,11 +37,15 @@ private:
     
     Node* accountPage;
     Node* serverPage;
+    Node* regPage;
     
     TextField* accountTxt;//账号输入框
     TextField* passwordTxt;//密码输入框
     Button* btn_login;
+    Button* btn_reg;
     TabBar* tabBar;
+    
+    json_t* json;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

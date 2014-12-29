@@ -1,0 +1,30 @@
+//连接connector服务器 并验证客户端数据
+request:
+{
+    ip:"123.57.6.164",//外网测试IP  gate.gateHandler.entry 返回的host
+    port:6010,        //外网测试端口 gate.gateHandler.entry 返回的port
+    route:"connector.entryHandler.entry",  //消息route
+    msg:{
+        token:"943a2e9701956271ec36ab132573f2ec"         //玩家的token
+    }
+}
+/*example
+ pomelo.request('connector.entryHandler.entry', {token:"943a2e9701956271ec36ab132573f2ec"}, function(data) {});
+ */
+
+response:
+{
+    code:200,           //结果 200成功  500失败
+    err:1,              //返回的失败枚举ID 见errEnum
+    isNew:1             //玩家是否是新玩家 1是 2否 如果是新玩家需要初始化角色
+}
+//success example {"code":200,"isNew":1}
+//fail example {"code":500,"err":1}
+
+errEnum:
+{
+    WRONG_ARGS:1,        //错误的参数
+    TOKEN_INVALID:2,     //无效token
+    TOKEN_EXPIRE:3,       //token超时  （目前不会超时）
+    USER_NOT_EXIST:4      //用户账号不存在
+}

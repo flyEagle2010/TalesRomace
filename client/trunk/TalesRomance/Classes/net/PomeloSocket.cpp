@@ -39,7 +39,8 @@ int PomeloSocket::connect(const char* addr, int port)
     void (*on_disconnect)(pc_client_t *client, const char *event, void *data) = &PomeloSocket::onDisconnectCallback;
     void (*on_pushData)(pc_client_t *client, const char *event, void *data) = &PomeloSocket::onPushDataCallback;
     pc_add_listener(client, PC_EVENT_DISCONNECT, on_disconnect);
-    pc_add_listener(client, "onPushData", on_pushData);
+    pc_add_listener(client, PC_EVENT_KICK, on_disconnect);
+    pc_add_listener(client, "onTest", on_pushData);
     
     return ret;
 }
@@ -50,13 +51,18 @@ int PomeloSocket::sendMsg(const char* route, json_t* json)
         log("socket has disconnected......");
         return -1;
     }
+    Loading::getInstance()->show();
+    
     pc_request_t *request = pc_request_new();
     void (*request_cb)(pc_request_t *req, int status, json_t *resp )= &PomeloSocket::requstCallback;
     
     //json_error_t err;
     //json_t* json = json_loads(msg.c_str(), JSON_COMPACT, &err);
     
+    //json_object_set(json, "reqId", json_integer(reqId++));
+
     int ret=pc_request(client, request, route, json, request_cb);
+    log("发送数据:route:%s,msg:%s",route,json_dumps(json,0));
     return ret;
 }
 
@@ -66,8 +72,6 @@ void PomeloSocket::update(float dt)
 
     while (messageQueue.size()>0) {
         json_t* msg=messageQueue.at(0);
-        log("before deal msg:%s",json_dumps(msg, 0));
-
         messageQueue.erase(messageQueue.begin());
         cocos2d::EventCustom evt(NET_MESSAGE);
         evt.setUserData(msg);
@@ -81,10 +85,10 @@ void PomeloSocket::update(float dt)
 void PomeloSocket::stop()
 {
     // main thread has nothing to do and wait until child thread return.
-    pc_client_join(client);
+    //pc_client_join(client);
     // release the client
     pc_client_destroy(client);
-    Director::getInstance()->getScheduler()->unscheduleAllForTarget(this);
+    //Director::getInstance()->getScheduler()->unscheduleAllForTarget(this);
     
 }
 
@@ -97,6 +101,9 @@ void PomeloSocket::onDisconnectCallback(pc_client_t *client, const char *event, 
 void PomeloSocket::onPushDataCallback(pc_client_t *client, const char *event, void *data)
 {
     json_t* json = (json_t* )data;
+    json_object_set(json,"route",json_string("onTest"));
+
+    json_incref(json);
     const char* msg = json_dumps(json, 0);
     log("receve data:%s,%s", event, msg);
     pthread_mutex_lock(&mMutex);
@@ -112,12 +119,19 @@ void PomeloSocket::requstCallback(pc_request_t *req, int status, json_t *resp)
     if(status == -1) {
         CCLOG("Fail to send request to server.\n");
     } else if(status == 0) {
-        pthread_mutex_lock(&mMutex);
-        messageQueue.push_back(resp);
+        json_incref(resp);
+        json_object_set(resp,"route",json_string(req->route));
+        
         char *json_str = json_dumps(resp, 0);
-        CCLOG("server response: %s \n", json_str);
+        log("server response: %s", json_str);
+        
+        pthread_mutex_lock(&mMutex);
+
+        messageQueue.push_back(resp);
+       
         pthread_mutex_unlock(&mMutex);
     }
+    Loading::getInstance()->hide();
 }
 
 void PomeloSocket::clearRequest()

@@ -21,10 +21,13 @@ void WebHttp::send(string url,const webHttpCallback &callback ,const char* param
 {
     HttpSingle _HttpSingle;
     HttpRequest* request = new HttpRequest();
+    url+="?";
+    url+=params;
     request->setUrl(url.c_str());
-    request->setRequestType(HttpRequest::Type::POST);
+    request->setRequestType(HttpRequest::Type::GET);
+    log("url:%s",url.c_str());
     if(params!=nullptr){
-        request->setRequestData(params, strlen(params));
+//        request->setRequestData(params, strlen(params));
     }
     request->setResponseCallback(CC_CALLBACK_2(WebHttp::onHttpRequestCompleted, this));
     _HttpSingle.currentRequest=request;

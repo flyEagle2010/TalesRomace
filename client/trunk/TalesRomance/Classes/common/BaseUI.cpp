@@ -19,7 +19,7 @@ bool BaseUI::init(std::string fileName,std::string resName)
     this->ui->setPosition(Vec2(size.width*0.5,size.height*0.5));
 
     return true;
-};
+}
 
 void BaseUI::onDlgClose(rapidjson::Value &data)
 {
@@ -35,6 +35,7 @@ void BaseUI::onEnter()
 
 void BaseUI::show(BaseUI* preUI,int effectType)
 {
+    //preUI->setTouchEnabled(false);
     Size wsize=Director::getInstance()->getWinSize();
     preUI->addChild(this);
     preUI->setOpacity(150);
@@ -83,6 +84,7 @@ void BaseUI::clear(bool isDel)
     {
         this->setVisible(false);
     }
+    //this->preUI->setTouchEnabled(true);
 }
 
 void BaseUI::onExit()

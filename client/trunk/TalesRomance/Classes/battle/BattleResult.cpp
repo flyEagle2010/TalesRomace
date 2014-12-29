@@ -48,6 +48,8 @@ void BattleResult::onButtonClick(Ref *pSender)
         case 1001: //返回
         {
             this->clear(true);
+
+            Manager::getInstance()->switchScence(HomeScene::createScene());
             break;
         }
         case 1002: //退出

@@ -19,18 +19,18 @@ class BattleCard : public BaseUI
 public:
     static BattleCard* create(int index);
     bool init();
-    void reset(int index,int groupNum,Value data);
+    void reset(int index,int groupNum,json_t* data);
     void move();
     void startToCenter();
     void useSkill();
     void playRim();
-    void playDispear();
+    float playDispear();
     void mergeToHero();
     void playEnd();
 private:
     int index;
     int groupNum;
-    Value data;
+    json_t* data;
 };
 
 #endif /* defined(__TalesRomance__BattleCard__) */

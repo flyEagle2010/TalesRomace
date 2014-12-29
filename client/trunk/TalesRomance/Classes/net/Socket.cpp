@@ -382,6 +382,7 @@ void Socket::onUIThreadReceiveMessage(NetMsg* msg){
             }
             cocos2d::EventCustom evt(NET_MESSAGE);
             evt.setUserData(msg);
+            /*
             switch (msg->msgId) {
                 case C_LOGIN:
                     Manager::getInstance()->setRoleData(msg);
@@ -407,6 +408,7 @@ void Socket::onUIThreadReceiveMessage(NetMsg* msg){
             if(msg->msgId!=C_UPROLE&&msg->msgId!=C_UPITEM&&msg->msgId!=C_UPDATEGATE&&msg->msgId!=C_UPDATENODE){
                 Loading::getInstance()->hide();//服务器推送消息不隐藏loading
             }
+             */
             Director::getInstance()->getEventDispatcher()->dispatchEvent(&evt);
             CC_SAFE_DELETE(msg);
             

@@ -49,27 +49,24 @@ bool AppDelegate::applicationDidFinishLaunching() {
 //    glview->setDesignResolutionSize(1136.0, 640.0, ResolutionPolicy::FIXED_WIDTH);
     std::vector<std::string>searchPath=FileUtils::getInstance()->getSearchPaths();
     searchPath.push_back("/");
+    searchPath.push_back("bg");
     searchPath.push_back("bone");
+    searchPath.push_back("bone/juqi_1");
+    searchPath.push_back("bone/juqi_2");
+    searchPath.push_back("bone/juqi_3");
+    searchPath.push_back("common");
     searchPath.push_back("data");
+
+    searchPath.push_back("Default");
     searchPath.push_back("effect");
     searchPath.push_back("fight");
     searchPath.push_back("fonts");
-    searchPath.push_back("loading");
-    searchPath.push_back("map");
-    searchPath.push_back("projectile");
-    searchPath.push_back("publish");
-    searchPath.push_back("publish/chat");
-    searchPath.push_back("publish/fight");
-    searchPath.push_back("publish/gate");
-    searchPath.push_back("publish/gateMap");
-    searchPath.push_back("publish/gateResult");
-    searchPath.push_back("publish/gateSelect");
-    searchPath.push_back("publish/home");
-    searchPath.push_back("publish/srcImg");
-    searchPath.push_back("bone/man");
-    searchPath.push_back("shader");
-    searchPath.push_back("Shaders");
-    searchPath.push_back("test");
+
+    searchPath.push_back("icon");
+    searchPath.push_back("icon/portrait");
+    searchPath.push_back("particle");
+    searchPath.push_back("tmx");
+
     
     
     

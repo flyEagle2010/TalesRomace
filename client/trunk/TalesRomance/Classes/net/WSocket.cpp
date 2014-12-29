@@ -97,9 +97,9 @@ void WSocket::send(short msgId,google::protobuf::Message* msg)
     
     
     //    google::protobuf::io::ArrayOutputStream* out;
-    google::protobuf::io::ZeroCopyOutputStream* rawOut=new google::protobuf::io::ArrayOutputStream(buffer+6,msg->ByteSize());
-    google::protobuf::io::CodedOutputStream* codeOut=new google::protobuf::io::CodedOutputStream(rawOut);
-    msg->SerializeToCodedStream(codeOut);
+//    google::protobuf::io::ZeroCopyOutputStream* rawOut=new google::protobuf::io::ArrayOutputStream(buffer+6,msg->ByteSize());
+//    google::protobuf::io::CodedOutputStream* codeOut=new google::protobuf::io::CodedOutputStream(rawOut);
+//    msg->SerializeToCodedStream(codeOut);
     
 //    this->webSocket->send(buffer, sizeof(buffer));
     this->webSocket->send((const unsigned char*)buffer, sizeof(buffer));

@@ -1,0 +1,29 @@
+//给客户端分配connector服务器
+request:
+{
+    ip:"123.57.6.164",//外网测试IP
+    port:6250,        //外网测试端口
+    route:"gate.gateHandler.entry",  //消息route
+    msg:{
+        uid:1         //玩家的user ID
+    }
+}
+/*example
+pomelo.request('gate.gateHandler.entry', {uid:6}, function(data) {});
+*/
+
+response:
+{
+    code:200,           //结果 200成功  500失败
+    err:1,              //返回的失败枚举ID 见errEnum
+    host:"123.57.6.164",//分配的connector服务器ip
+    port:6010           //分配的connector服务器port
+}
+//success example {"code":200,"host":"127.0.0.1","port":6010}
+//fail example {"code":500,"err":1}
+
+errEnum:
+{
+    WRONG_ARGS:1,        //错误的参数
+    NO_SERVER_AVAILABLE:2//没有有效的connector服务器
+}

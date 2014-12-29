@@ -2,7 +2,7 @@
 //  RoleCreate.h
 //  TalesRomance
 //
-//  Created by 秦亮亮 on 14/11/25.
+//  Created by qll on 14/12/18.
 //
 //
 
@@ -10,14 +10,14 @@
 #define __TalesRomance__RoleCreate__
 
 #include <stdio.h>
+#include "cocos2d.h"
 #include "BaseUI.h"
-
-class RoleCreate : public BaseUI
-{
+class RoleCreate : public BaseUI {
+    
+    
 public:
     static RoleCreate* create();
     bool init();
-private:
-    
 };
+
 #endif /* defined(__TalesRomance__RoleCreate__) */

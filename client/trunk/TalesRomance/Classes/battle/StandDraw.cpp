@@ -50,7 +50,7 @@ bool StandDraw::init()
     return true;
 }
 
-void StandDraw::play()
+float StandDraw::play()
 {
     Label* label=Label::createWithTTF("合体技能大招", "fonts/Marker Felt.ttf", 48);
     this->addChild(label,5);
@@ -70,4 +70,6 @@ void StandDraw::play()
     Sequence* sq=Sequence::create(DelayTime::create(1.8),cf, NULL);
     
     this->runAction(sq);
+    
+    return 1.8;
 }

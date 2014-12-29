@@ -19,7 +19,7 @@ class StandDraw : public LayerColor
 public:
     static StandDraw* create();
     bool init();
-    void play();
+    float play();
 private:
     Clip* bgClip;
     Clip* topClip;

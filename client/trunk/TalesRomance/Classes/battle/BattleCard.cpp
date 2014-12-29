@@ -26,17 +26,19 @@ bool BattleCard::init()
         return false;
     }
    
-    this->ui->setPosition(Vec2(0,0));
     this->ui->setAnchorPoint(Vec2(0,0));
-    this->ui->setScale(0.3);
     return true;
 }
 
-void BattleCard::reset(int index, int groupNum, cocos2d::Value data)
+void BattleCard::reset(int index, int groupNum, json_t* data)
 {
     this->index=index;
     this->groupNum=groupNum;
     this->data=data;
+    this->ui->setVisible(true);
+    this->ui->setPosition(Vec2(0,0));
+    this->ui->setScale(0.3);
+
 }
 
 void BattleCard::move()
@@ -59,6 +61,7 @@ void BattleCard::startToCenter()
     Spawn* spaw=Spawn::create(MoveTo::create(0.2, Vec2(wsize.width*0.5+size.width*(1-index),wsize.height*0.5)),ScaleTo::create(0.2,0.75),SkewBy::create(0.2, 0, 30), NULL);
     SkewTo* skew=SkewTo::create(0.2, 0, 0);
     CallFunc* cf=CallFunc::create(CC_CALLBACK_0(BattleCard::useSkill, this));
+    
     this->ui->runAction(Sequence::create(DelayTime::create(0.3),spaw, skew,DelayTime::create(0.8*(groupNum-index)),cf,NULL));
 }
 
@@ -66,6 +69,11 @@ void BattleCard::useSkill()
 {
     //skilleffect.plist 技能图标亮
     //cardSkillEffect.plist 牌发光
+    
+    int skill=json_integer_value(json_object_get(data, "skill"));
+    if(skill <= 0){
+        return;
+    }
     
     Clip* clip=Clip::create("skillEffect.plist", "skillEffect",12);
     this->addChild(clip);
@@ -82,38 +90,27 @@ void BattleCard::playRim()
     this->addChild(clip);
     clip->setPosition(this->ui->getPosition());
     float duration=clip->play();
-    this->runAction(Sequence::create(DelayTime::create(duration+0.3),CallFunc::create(std::bind(&BattleCard::playDispear, this)), NULL));
+    this->runAction(Sequence::create(DelayTime::create(duration),CallFunc::create(std::bind(&BattleScene::cardDispear, BattleMgr::getInstance()->view)), NULL));
 }
 
-void BattleCard::playDispear()
+float BattleCard::playDispear()
 {
     this->ui->setVisible(false);
     Clip* clip=Clip::create("cardXiaoShi.plist", "cardXiaoShi",12);
     this->addChild(clip);
     clip->setPosition(this->ui->getPosition());
     float duration=clip->play();
-    this->runAction(Sequence::create(DelayTime::create(duration),CallFunc::create(std::bind(&BattleCard::playEnd, this)), NULL));
+    //this->runAction(Sequence::create(DelayTime::create(duration),CallFunc::create(std::bind(&BattleCard::playEnd, this)), NULL));
 
-    return;
-    
-    
-    /*
-     ParticleSystem* bullet=ParticleSystemQuad::create("ghostB.plist");
-     this->addChild(bullet,2);
-     this->ui->setVisible(false);
-     */
-    Vec2 end=BattleMgr::getInstance()->view->hero->getPosition()+Vec2(0,150);
-    CallFunc* cf=CallFunc::create(std::bind(&BattleCard::playEnd, this));
-    this->runAction(Sequence::create(Spawn::create(ScaleTo::create(duration, 0),MoveTo::create(duration, end),NULL),DelayTime::create(0.5),cf, NULL));
+    return duration;
 }
 
 void BattleCard::playEnd()
 {
     if(this->index==groupNum-1){
-        BattleMgr::getInstance()->view->attack();
+        //BattleMgr::getInstance()->view->buildup();
     }
-    
-    this->removeFromParent();
+    this->setVisible(false);
 }
 
 void BattleCard::mergeToHero()

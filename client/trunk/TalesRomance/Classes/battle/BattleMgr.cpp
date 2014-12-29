@@ -28,7 +28,8 @@ void BattleMgr::init()
     json_t* msg=json_object();
     json_object_set(msg, "type", json_integer(1));
     json_object_set(msg, "targetID", json_integer(1001));
-    Manager::getInstance()->psocket->sendMsg(route, msg);
+    
+   //Manager::getInstance()->psocket->sendMsg(route, msg);
 
 }
 

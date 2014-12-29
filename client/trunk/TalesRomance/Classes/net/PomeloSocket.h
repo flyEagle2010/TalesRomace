@@ -12,9 +12,9 @@
 #include <stdio.h>
 #include "cocos2d.h"
 #include "pomelo.h"
+#include "MsgID.h"
+#include "Loading.h"
 using namespace cocos2d;
-
-#define NET_MESSAGE "net_message"
 
 enum SOCKET_STATE
 {
@@ -38,6 +38,7 @@ enum SOCKET_STATE
 class PomeloSocket : public Ref{
     pc_client_t *client;
     SOCKET_STATE state;
+    int reqId;
 public:
     PomeloSocket();
     int connect(const char* addr,int port);
@@ -53,6 +54,9 @@ public:
     void heartBeat();
     void update(float dt);
     
+    json_t* token;
+    json_t* host;
+    json_t* port;
 
 };
 

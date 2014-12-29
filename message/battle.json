@@ -7,24 +7,28 @@ request:
 response:
 {
 	type:1, //1pve 2pvp 3...
-	heros:{
-		id:1, //id
-		name:"wahaha",
-		xid:2, //数据表静态id
-		hp:1000, //初始血量
-		friendID:3, //好友ID
-		friendName:"好友1",
-		friendXid:33
-	},
+	heros:［
+		{
+			id:1, //id
+			name:"wahaha",
+			xid:2, //数据表静态id
+			hp:1000, //初始血量
+			friendID:3, //好友ID
+			friendName:"好友1",
+			friendXid:33
+		}
+	］,
 	rounds:[
 		{
 			cards:[
 				{
 					type:1, //攻击类型 1物理 2法术 3回血
+					skill:1,
 					atkHp:100, //己方掉血（吸血，回血类攻击，反弹类引起）
 					atkBuff:[1,2], //己方施加的buff
 					otherHp:0, //对方掉血
 					otherBuff:[1,2] //给对方施加的buff
+				}
 			],
 			aoyi:{
 				hp:100, //受击目标掉血

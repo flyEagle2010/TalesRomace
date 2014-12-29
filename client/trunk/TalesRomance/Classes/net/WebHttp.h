@@ -18,6 +18,8 @@
 using namespace cocos2d;
 using namespace cocos2d::network;
 using namespace std;
+
+
 typedef std::function<void(std::vector<char> *)> webHttpCallback;
 typedef struct _HttpSingle {
 	HttpRequest* currentRequest;
