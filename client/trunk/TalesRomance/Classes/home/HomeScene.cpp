@@ -99,7 +99,7 @@ void HomeScene::touchButtonEvent(cocos2d::Ref *pSender, TouchEventType type)
         case 103: //组队
         {
             Team* team=Team::create();
-            team->show(this,1);
+            team->show(this);
             break;
         }
         case 104: //卡牌

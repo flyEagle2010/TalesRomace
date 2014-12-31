@@ -43,6 +43,8 @@ void BattleResult::onButtonClick(Ref *pSender)
     switch (btn->getTag()) {
         case 1000: //重玩
         {
+            BattleMgr::getInstance()->view->startAnimation(nullptr);
+            this->clear(true);
             break;
         }
         case 1001: //返回

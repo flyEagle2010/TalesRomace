@@ -12,7 +12,6 @@ static pthread_mutex_t     mMutex;
 
 PomeloSocket::PomeloSocket()
 {
-    Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
     pthread_mutex_init(&mMutex, NULL);
 }
 
@@ -25,6 +24,7 @@ int PomeloSocket::connect(const char* addr, int port)
     address.sin_family = AF_INET;
     address.sin_port = htons(port);
     address.sin_addr.s_addr = inet_addr(addr);
+    
     
     int ret = pc_client_connect(client, &address);
     if(ret) {
@@ -42,6 +42,8 @@ int PomeloSocket::connect(const char* addr, int port)
     pc_add_listener(client, PC_EVENT_KICK, on_disconnect);
     pc_add_listener(client, "onTest", on_pushData);
     
+    Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
+
     return ret;
 }
 
@@ -88,8 +90,7 @@ void PomeloSocket::stop()
     //pc_client_join(client);
     // release the client
     pc_client_destroy(client);
-    //Director::getInstance()->getScheduler()->unscheduleAllForTarget(this);
-    
+    Director::getInstance()->getScheduler()->unscheduleAllForTarget(this);
 }
 
 void PomeloSocket::onDisconnectCallback(pc_client_t *client, const char *event, void *data)

@@ -14,7 +14,6 @@
 #include "ui/CocosGUI.h"
 #include "cocostudio/CocoStudio.h"
 #include "Manager.h"
-#include "Mask.h"
 #include "Clip.h"
 using namespace cocostudio;
 
@@ -25,9 +24,7 @@ public:
     virtual void initNetEvent(){};
     virtual void onDlgClose(rapidjson::Value &data);
     virtual bool init(std::string fileName,std::string resName);
-    //effectType 0是当前层有黑色背景，但是没有背景图片 1当前层有背景图片
-    virtual void show(BaseUI* preUI,int effectType=0);
-    virtual void show(int effectType=0);//当前层没有背景
+    virtual void show(BaseUI* preUI);
     virtual void clear(bool isDel);
     virtual void onButtonClick(Ref *pSender){};
     virtual void resetUI(){};

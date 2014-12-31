@@ -34,6 +34,9 @@ class Hero:public Node
 {
     
     Sprite* hpBg;
+    
+    
+    SkeletonAnimation* skeletonNode;
     SkeletonAnimation* buildupAni;
 
     void setAnimation(int trackIndex, std::string animName,bool loop);
@@ -64,13 +67,12 @@ public:
     void jumpIn();
     void jumpOut();
     void attackedEffect();
-    
+  
+public:
     json_t* data;
-
+    int hp;
     int pos;
     int type;
-    SkeletonAnimation* skeletonNode;
-
    
 };
 #endif /* defined(__fancyHeart__Hero__) */

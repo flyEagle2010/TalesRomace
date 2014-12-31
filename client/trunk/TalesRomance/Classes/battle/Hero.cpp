@@ -26,22 +26,21 @@ Hero* Hero::create(std::string fPath,std::string rPath,int pos)
 
 bool Hero::init(std::string fPath,std::string rPath,int pos)
 {
+    fPath="skeleton_zhujue.json";
+    rPath="zhujue.atlas";
     this->pos=pos;
 	//init ui
-    float scale=0.8;
-    log("skeleton begin..........");
+    float scale=1;
     this->skeletonNode = SkeletonAnimation::createWithFile(fPath, rPath, scale);
-    log("skeleton end..........");
     if(this->pos<1){
         this->skeletonNode->setScale(-1,1);
     }else{
         this->skeletonNode->setScale(1,1);
     }
     this->addChild(skeletonNode);
-//    this->skeletonNode->setEndListener(CC_CALLBACK_1(Hero::onAnimationEnd, this));
     this->skeletonNode->setCompleteListener(CC_CALLBACK_1(Hero::onAnimationEnd, this));
     this->skeletonNode->setEventListener(CC_CALLBACK_2(Hero::onSkeletonEvent, this));
-
+    //this->skeletonNode->setTimeScale(2);
 	return true;
 }
 
@@ -73,7 +72,8 @@ void Hero::move(Vec2 vec)
 
 void Hero::attack()
 {
-    this->setAnimation(TrackIndex::ANI_ATTACK, "attack", false);
+    std::string name=type==1?ani_attack1:ani_attack2;
+    this->setAnimation(TrackIndex::ANI_ATTACK, name, false);
 }
 
 void Hero::attacked(int num)
@@ -82,7 +82,7 @@ void Hero::attacked(int num)
     this->skeletonNode->addAnimation(TrackIndex::ANI_COMMON, ani_idle, true);
     
     this->attackedEffect();
-    
+    this->hp-=num;
     this->fallHp(num);
     //this->die(pHit);
 }
@@ -92,15 +92,15 @@ void Hero::attackedEffect()
     Clip* clip=Clip::create("hurt_fire2.plist", "hurt_fire2",20);
     this->addChild(clip,2);
     clip->setScale(1.5);
-    spBone* bone=this->skeletonNode->findBone("body");
-    clip->setPosition(Vec2(bone->worldX,bone->worldY+bone->data->length*0.8));
+    //spBone* bone=this->skeletonNode->findBone("body");
+    //clip->setPosition(Vec2(bone->worldX,bone->worldY+bone->data->length*0.8));
+    clip->setPosition(Vec2(0,120));
     clip->play();
 }
 
 void Hero::buildup()
 {
-    //this->setAnimation(TrackIndex::ANI_COMMON, ani_buildup, false);
-    this->setAnimation(TrackIndex::ANI_BUILDUP, "win", false);
+    this->setAnimation(TrackIndex::ANI_BUILDUP, ani_buildup, false);
     this->buildupAni=SkeletonAnimation::createWithFile("skeleton_juqi_2.json", "juqi_2.atlas");
     this->addChild(buildupAni,-1);
     buildupAni->setAnimation(0, "animation", true);
@@ -108,27 +108,26 @@ void Hero::buildup()
 
 void Hero::jumpIn()
 {
-    
+    this->setAnimation(TrackIndex::ANI_JUMPIN, ani_jumpIn, false);
 }
 
 void Hero::jumpOut()
 {
-    CallFunc* cf=CallFunc::create(std::bind(&Hero::removeFromParent, this));
-    CallFunc* next=CallFunc::create(std::bind(&BattleScene::playRound, BattleMgr::getInstance()->view));
     Spawn* sp=Spawn::create(MoveTo::create(0.2, Vec2(320,640)),SkewBy::create(0.2, 0.2, 0.2), NULL);
-    this->runAction(Sequence::create(sp,next,cf, NULL));
+    CallFunc* next=CallFunc::create(std::bind(&BattleScene::playRound, BattleMgr::getInstance()->view));
+    CallFunc* removeFun=CallFunc::create(std::bind(&Hero::removeFromParent, this));
+    this->runAction(Sequence::create(sp,next,removeFun, NULL));
 }
 
 void Hero::die(int num)
 {
     this->skeletonNode->clearTracks();
-    
-    this->setAnimation(TrackIndex::ANI_DIE, ani_die, false);
+    this->skeletonNode->setAnimation(TrackIndex::ANI_DIE, ani_die, false);
+    //this->setAnimation(TrackIndex::ANI_DIE, ani_die, false);
 
     this->fallHp(num);
     
-    BattleResult* result=BattleResult::create();
-    result->show((BaseUI*)BattleMgr::getInstance()->view); //show(BattleMgr::getInstance()->view);
+    BattleMgr::getInstance()->view->playEnd();
 }
 
 void Hero::fallHp(int num)
@@ -162,7 +161,8 @@ void Hero::fallHp(int num)
     label->setScale(1);
     BattleMgr::getInstance()->view->addChild(label,2);
     
-    label->setPosition(this->convertToWorldSpace(Vec2(body->worldX,body->worldY+180)));
+    //label->setPosition(this->convertToWorldSpace(Vec2(body->worldX,body->worldY+180)));
+    label->setPosition(this->convertToWorldSpace(Vec2(0,240)));
     ScaleTo* scale1=ScaleTo::create(0.15, 0.5);
     
     MoveBy* move=MoveBy::create(0.4, Vec2(0, 80));
@@ -194,7 +194,7 @@ void Hero::setAnimation(int trackIndex, std::string animName ,bool loop)
 void Hero::onSkeletonEvent(int trackIndex, spEvent* event)
 {
     log("%d event: %s, %d, %f, %s", trackIndex, event->data->name, event->intValue, event->floatValue, event->stringValue);
-    if(trackIndex==TrackIndex::ANI_ATTACK){
+    if(!strcmp(event->data->name,"attack") && this->type!=1){
         BattleMgr::getInstance()->view->attacked();
     }
     if(trackIndex==TrackIndex::ANI_ATTACKED){
@@ -208,12 +208,17 @@ void Hero::onAnimationEnd(int trackIndex)
         case TrackIndex::ANI_BUILDUP:
         {
             BattleMgr::getInstance()->view->attack();
+            BattleMgr::getInstance()->view->black->setVisible(false);
             this->buildupAni->removeFromParent();
             break;
         }
         case TrackIndex::ANI_ATTACK:
         {
-            if(this->type){
+            if(BattleMgr::getInstance()->view->isOver){
+                if(this->type==1)this->setVisible(false);
+                break;
+            }
+            if(this->type==1){
                 this->jumpOut();
                 break;
             }
@@ -228,6 +233,7 @@ void Hero::onAnimationEnd(int trackIndex)
         }
         case TrackIndex::ANI_WIN:
         {
+            BattleMgr::getInstance()->view->showResult();
             break;
         }
         default:

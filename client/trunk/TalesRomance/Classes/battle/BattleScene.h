@@ -21,9 +21,10 @@
 #include "BattleCard.h"
 #include "StandDraw.h"
 
-USING_NS_CC;
 using namespace ui;
+using namespace cocos2d;
 using namespace cocostudio;
+
 class FData;
 class FighterMgr;
 class BattleCard;
@@ -44,6 +45,8 @@ public:
     virtual void onEnter();
     virtual void onExit();
     virtual void touchButtonEvent(cocos2d::Ref *pSender, Widget::TouchEventType type);
+    void startAnimation(json_t* data);
+
     void attack();
     void buildup();
     void attacked();
@@ -53,20 +56,26 @@ public:
     void playBattleCard();
     void petAttack();
     void showBuff(int pos);
+    void playEnd();
     void showResult();
     
-    Vector<BattleCard*> BattleCards;
-    Size wsize;
-    json_t* data;
 
 public:
-    Node* heroNode;
 
-    Vector<Node*> heroInfos;
-    Vector<Hero*> heros;
-    Node* bottom;
+    bool isOver;
     Sprite* bg;
-    void startAnimation(json_t* data);
+    Size wsize;
+    json_t* data;
+    
+    Node* bottom;
+    Node* heroNode;
+    Layout* black;
+
+    Vector<Hero*> heros;
+    Vector<Node*> heroInfos;
+
+    Vector<BattleCard*> cards;
+
 
 };
 #endif /* defined(__fancyHeart__BattleScene__) */

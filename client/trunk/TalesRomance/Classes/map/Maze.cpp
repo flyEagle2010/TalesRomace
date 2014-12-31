@@ -25,6 +25,7 @@ bool Maze::init()
     
     this->map = TMXTiledMap::create("tree_block_bottom.tmx");
     this->addChild(map, 0);
+    log("size:%f,%f",map->getContentSize().width,map->getContentSize().height);
     Size wsize=Director::getInstance()->getWinSize();
     Size mapSize=this->map->getContentSize();
     this->map->setPosition(Vec2(152,36));

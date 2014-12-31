@@ -52,15 +52,6 @@
 		5D3BCD931A383E310023B889 /* PomeloMsg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BCD911A383E310023B889 /* PomeloMsg.cpp */; };
 		5D3BCDA91A3942EF0023B889 /* PomeloSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BCDA71A3942EF0023B889 /* PomeloSocket.cpp */; };
 		5D8297B31A428829004915AE /* RoleCreate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D8297B11A428829004915AE /* RoleCreate.cpp */; };
-		5DB70B711A4BFAF90018A813 /* juqi_1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B511A4BFAF90018A813 /* juqi_1.atlas */; };
-		5DB70B721A4BFAF90018A813 /* juqi_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B521A4BFAF90018A813 /* juqi_1.png */; };
-		5DB70B731A4BFAF90018A813 /* skeleton_juqi_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B531A4BFAF90018A813 /* skeleton_juqi_1.json */; };
-		5DB70B741A4BFAF90018A813 /* juqi_2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B551A4BFAF90018A813 /* juqi_2.atlas */; };
-		5DB70B751A4BFAF90018A813 /* juqi_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B561A4BFAF90018A813 /* juqi_2.png */; };
-		5DB70B761A4BFAF90018A813 /* skeleton_juqi_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B571A4BFAF90018A813 /* skeleton_juqi_2.json */; };
-		5DB70B771A4BFAF90018A813 /* juqi_3.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B591A4BFAF90018A813 /* juqi_3.atlas */; };
-		5DB70B781A4BFAF90018A813 /* juqi_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B5A1A4BFAF90018A813 /* juqi_3.png */; };
-		5DB70B791A4BFAF90018A813 /* skeleton_juqi_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B5B1A4BFAF90018A813 /* skeleton_juqi_3.json */; };
 		5DB70B7A1A4BFAF90018A813 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B5C1A4BFAF90018A813 /* CloseNormal.png */; };
 		5DB70B7B1A4BFAF90018A813 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B5D1A4BFAF90018A813 /* CloseSelected.png */; };
 		5DB70B7C1A4BFAF90018A813 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70B5F1A4BFAF90018A813 /* background.png */; };
@@ -170,6 +161,19 @@
 		5DB724B41A4C27120018A813 /* libjansson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB714091A4C1FC80018A813 /* libjansson.a */; };
 		5DB724B51A4C27120018A813 /* libpomelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB7140A1A4C1FC80018A813 /* libpomelo.a */; };
 		5DB724B61A4C27120018A813 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB7140B1A4C1FC80018A813 /* libuv.a */; };
+		5DEB260C1A513B8A006F4B6F /* juqi_1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB25FD1A513B8A006F4B6F /* juqi_1.atlas */; };
+		5DEB260D1A513B8A006F4B6F /* juqi_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB25FE1A513B8A006F4B6F /* juqi_1.png */; };
+		5DEB260E1A513B8A006F4B6F /* skeleton_juqi_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB25FF1A513B8A006F4B6F /* skeleton_juqi_1.json */; };
+		5DEB260F1A513B8A006F4B6F /* juqi_2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26011A513B8A006F4B6F /* juqi_2.atlas */; };
+		5DEB26101A513B8A006F4B6F /* juqi_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26021A513B8A006F4B6F /* juqi_2.png */; };
+		5DEB26111A513B8A006F4B6F /* skeleton_juqi_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26031A513B8A006F4B6F /* skeleton_juqi_2.json */; };
+		5DEB26131A513B8A006F4B6F /* juqi_3.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26061A513B8A006F4B6F /* juqi_3.atlas */; };
+		5DEB26141A513B8A006F4B6F /* juqi_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26071A513B8A006F4B6F /* juqi_3.png */; };
+		5DEB26151A513B8A006F4B6F /* skeleton_juqi_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26081A513B8A006F4B6F /* skeleton_juqi_3.json */; };
+		5DEB26171A513B8A006F4B6F /* zhujue.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB260A1A513B8A006F4B6F /* zhujue.atlas */; };
+		5DEB26181A513B8A006F4B6F /* zhujue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB260B1A513B8A006F4B6F /* zhujue.png */; };
+		5DEB261A1A5143AB006F4B6F /* skeleton_zhujue.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26191A5143AB006F4B6F /* skeleton_zhujue.json */; };
+		5DEB261C1A51508B006F4B6F /* battleBg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB261B1A51508B006F4B6F /* battleBg.jpg */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -193,7 +197,7 @@
 		BFDAB3211A1A0E2100E450EC /* Effect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB25A1A1A0E2100E450EC /* Effect.cpp */; };
 		BFDAB3221A1A0E2100E450EC /* JValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB25C1A1A0E2100E450EC /* JValue.cpp */; };
 		BFDAB3231A1A0E2100E450EC /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB25F1A1A0E2100E450EC /* KeychainItemWrapper.m */; };
-		BFDAB3241A1A0E2100E450EC /* Mask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2601A1A0E2100E450EC /* Mask.cpp */; };
+		BFDAB3241A1A0E2100E450EC /* BlackBg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2601A1A0E2100E450EC /* BlackBg.cpp */; };
 		BFDAB3251A1A0E2100E450EC /* ShaderNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2621A1A0E2100E450EC /* ShaderNode.cpp */; };
 		BFDAB3261A1A0E2100E450EC /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2641A1A0E2100E450EC /* Utils.cpp */; };
 		BFDAB3271A1A0E2100E450EC /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB2681A1A0E2100E450EC /* Manager.cpp */; };
@@ -351,15 +355,6 @@
 		5D3BCDA81A3942EF0023B889 /* PomeloSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomeloSocket.h; sourceTree = "<group>"; };
 		5D8297B11A428829004915AE /* RoleCreate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoleCreate.cpp; sourceTree = "<group>"; };
 		5D8297B21A428829004915AE /* RoleCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleCreate.h; sourceTree = "<group>"; };
-		5DB70B511A4BFAF90018A813 /* juqi_1.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = juqi_1.atlas; sourceTree = "<group>"; };
-		5DB70B521A4BFAF90018A813 /* juqi_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juqi_1.png; sourceTree = "<group>"; };
-		5DB70B531A4BFAF90018A813 /* skeleton_juqi_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton_juqi_1.json; sourceTree = "<group>"; };
-		5DB70B551A4BFAF90018A813 /* juqi_2.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = juqi_2.atlas; sourceTree = "<group>"; };
-		5DB70B561A4BFAF90018A813 /* juqi_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juqi_2.png; sourceTree = "<group>"; };
-		5DB70B571A4BFAF90018A813 /* skeleton_juqi_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton_juqi_2.json; sourceTree = "<group>"; };
-		5DB70B591A4BFAF90018A813 /* juqi_3.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = juqi_3.atlas; sourceTree = "<group>"; };
-		5DB70B5A1A4BFAF90018A813 /* juqi_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juqi_3.png; sourceTree = "<group>"; };
-		5DB70B5B1A4BFAF90018A813 /* skeleton_juqi_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton_juqi_3.json; sourceTree = "<group>"; };
 		5DB70B5C1A4BFAF90018A813 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		5DB70B5D1A4BFAF90018A813 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		5DB70B5F1A4BFAF90018A813 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -469,6 +464,19 @@
 		5DB714091A4C1FC80018A813 /* libjansson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjansson.a; path = ../cocos2d/external/libpomelo/libjansson.a; sourceTree = "<group>"; };
 		5DB7140A1A4C1FC80018A813 /* libpomelo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpomelo.a; path = ../cocos2d/external/libpomelo/libpomelo.a; sourceTree = "<group>"; };
 		5DB7140B1A4C1FC80018A813 /* libuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libuv.a; path = ../cocos2d/external/libpomelo/libuv.a; sourceTree = "<group>"; };
+		5DEB25FD1A513B8A006F4B6F /* juqi_1.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = juqi_1.atlas; sourceTree = "<group>"; };
+		5DEB25FE1A513B8A006F4B6F /* juqi_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juqi_1.png; sourceTree = "<group>"; };
+		5DEB25FF1A513B8A006F4B6F /* skeleton_juqi_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton_juqi_1.json; sourceTree = "<group>"; };
+		5DEB26011A513B8A006F4B6F /* juqi_2.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = juqi_2.atlas; sourceTree = "<group>"; };
+		5DEB26021A513B8A006F4B6F /* juqi_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juqi_2.png; sourceTree = "<group>"; };
+		5DEB26031A513B8A006F4B6F /* skeleton_juqi_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton_juqi_2.json; sourceTree = "<group>"; };
+		5DEB26061A513B8A006F4B6F /* juqi_3.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = juqi_3.atlas; sourceTree = "<group>"; };
+		5DEB26071A513B8A006F4B6F /* juqi_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juqi_3.png; sourceTree = "<group>"; };
+		5DEB26081A513B8A006F4B6F /* skeleton_juqi_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton_juqi_3.json; sourceTree = "<group>"; };
+		5DEB260A1A513B8A006F4B6F /* zhujue.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zhujue.atlas; sourceTree = "<group>"; };
+		5DEB260B1A513B8A006F4B6F /* zhujue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhujue.png; sourceTree = "<group>"; };
+		5DEB26191A5143AB006F4B6F /* skeleton_zhujue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton_zhujue.json; sourceTree = "<group>"; };
+		5DEB261B1A51508B006F4B6F /* battleBg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = battleBg.jpg; path = ../../../../../art/bg/battleBg.jpg; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -513,8 +521,8 @@
 		BFDAB25D1A1A0E2100E450EC /* JValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JValue.h; sourceTree = "<group>"; };
 		BFDAB25E1A1A0E2100E450EC /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		BFDAB25F1A1A0E2100E450EC /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
-		BFDAB2601A1A0E2100E450EC /* Mask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mask.cpp; sourceTree = "<group>"; };
-		BFDAB2611A1A0E2100E450EC /* Mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mask.h; sourceTree = "<group>"; };
+		BFDAB2601A1A0E2100E450EC /* BlackBg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlackBg.cpp; sourceTree = "<group>"; };
+		BFDAB2611A1A0E2100E450EC /* BlackBg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackBg.h; sourceTree = "<group>"; };
 		BFDAB2621A1A0E2100E450EC /* ShaderNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderNode.cpp; sourceTree = "<group>"; };
 		BFDAB2631A1A0E2100E450EC /* ShaderNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderNode.h; sourceTree = "<group>"; };
 		BFDAB2641A1A0E2100E450EC /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
@@ -915,41 +923,14 @@
 		5DB70B4F1A4BFAF90018A813 /* bone */ = {
 			isa = PBXGroup;
 			children = (
-				5DB70B501A4BFAF90018A813 /* juqi_1 */,
-				5DB70B541A4BFAF90018A813 /* juqi_2 */,
-				5DB70B581A4BFAF90018A813 /* juqi_3 */,
+				5DEB26191A5143AB006F4B6F /* skeleton_zhujue.json */,
+				5DEB25FC1A513B8A006F4B6F /* juqi_1 */,
+				5DEB26001A513B8A006F4B6F /* juqi_2 */,
+				5DEB26051A513B8A006F4B6F /* juqi_3 */,
+				5DEB260A1A513B8A006F4B6F /* zhujue.atlas */,
+				5DEB260B1A513B8A006F4B6F /* zhujue.png */,
 			);
 			path = bone;
-			sourceTree = "<group>";
-		};
-		5DB70B501A4BFAF90018A813 /* juqi_1 */ = {
-			isa = PBXGroup;
-			children = (
-				5DB70B511A4BFAF90018A813 /* juqi_1.atlas */,
-				5DB70B521A4BFAF90018A813 /* juqi_1.png */,
-				5DB70B531A4BFAF90018A813 /* skeleton_juqi_1.json */,
-			);
-			path = juqi_1;
-			sourceTree = "<group>";
-		};
-		5DB70B541A4BFAF90018A813 /* juqi_2 */ = {
-			isa = PBXGroup;
-			children = (
-				5DB70B551A4BFAF90018A813 /* juqi_2.atlas */,
-				5DB70B561A4BFAF90018A813 /* juqi_2.png */,
-				5DB70B571A4BFAF90018A813 /* skeleton_juqi_2.json */,
-			);
-			path = juqi_2;
-			sourceTree = "<group>";
-		};
-		5DB70B581A4BFAF90018A813 /* juqi_3 */ = {
-			isa = PBXGroup;
-			children = (
-				5DB70B591A4BFAF90018A813 /* juqi_3.atlas */,
-				5DB70B5A1A4BFAF90018A813 /* juqi_3.png */,
-				5DB70B5B1A4BFAF90018A813 /* skeleton_juqi_3.json */,
-			);
-			path = juqi_3;
 			sourceTree = "<group>";
 		};
 		5DB70B5E1A4BFAF90018A813 /* common */ = {
@@ -997,6 +978,7 @@
 		5DB70B8B1A4BFB140018A813 /* bg */ = {
 			isa = PBXGroup;
 			children = (
+				5DEB261B1A51508B006F4B6F /* battleBg.jpg */,
 				5DB70B8C1A4BFB140018A813 /* cardTest.png */,
 				5DB70B8D1A4BFB140018A813 /* mapGate.png */,
 				5DB70B8E1A4BFB140018A813 /* mapGate1.png */,
@@ -1094,6 +1076,36 @@
 			path = Default;
 			sourceTree = "<group>";
 		};
+		5DEB25FC1A513B8A006F4B6F /* juqi_1 */ = {
+			isa = PBXGroup;
+			children = (
+				5DEB25FD1A513B8A006F4B6F /* juqi_1.atlas */,
+				5DEB25FE1A513B8A006F4B6F /* juqi_1.png */,
+				5DEB25FF1A513B8A006F4B6F /* skeleton_juqi_1.json */,
+			);
+			path = juqi_1;
+			sourceTree = "<group>";
+		};
+		5DEB26001A513B8A006F4B6F /* juqi_2 */ = {
+			isa = PBXGroup;
+			children = (
+				5DEB26011A513B8A006F4B6F /* juqi_2.atlas */,
+				5DEB26021A513B8A006F4B6F /* juqi_2.png */,
+				5DEB26031A513B8A006F4B6F /* skeleton_juqi_2.json */,
+			);
+			path = juqi_2;
+			sourceTree = "<group>";
+		};
+		5DEB26051A513B8A006F4B6F /* juqi_3 */ = {
+			isa = PBXGroup;
+			children = (
+				5DEB26061A513B8A006F4B6F /* juqi_3.atlas */,
+				5DEB26071A513B8A006F4B6F /* juqi_3.png */,
+				5DEB26081A513B8A006F4B6F /* skeleton_juqi_3.json */,
+			);
+			path = juqi_3;
+			sourceTree = "<group>";
+		};
 		BFCCB4721A2C068A0049CFE8 /* team */ = {
 			isa = PBXGroup;
 			children = (
@@ -1145,8 +1157,8 @@
 				BFDAB25D1A1A0E2100E450EC /* JValue.h */,
 				BFDAB25E1A1A0E2100E450EC /* KeychainItemWrapper.h */,
 				BFDAB25F1A1A0E2100E450EC /* KeychainItemWrapper.m */,
-				BFDAB2601A1A0E2100E450EC /* Mask.cpp */,
-				BFDAB2611A1A0E2100E450EC /* Mask.h */,
+				BFDAB2601A1A0E2100E450EC /* BlackBg.cpp */,
+				BFDAB2611A1A0E2100E450EC /* BlackBg.h */,
 				BFDAB2621A1A0E2100E450EC /* ShaderNode.cpp */,
 				BFDAB2631A1A0E2100E450EC /* ShaderNode.h */,
 				BFDAB2641A1A0E2100E450EC /* Utils.cpp */,
@@ -1513,28 +1525,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DB70B771A4BFAF90018A813 /* juqi_3.atlas in Resources */,
 				5DB70C2E1A4BFB270018A813 /* LoginScene.csb in Resources */,
 				5DB70C2A1A4BFB270018A813 /* home.plist in Resources */,
 				5DB70C271A4BFB270018A813 /* GateInfo.csb in Resources */,
-				5DB70B761A4BFAF90018A813 /* skeleton_juqi_2.json in Resources */,
+				5DEB26171A513B8A006F4B6F /* zhujue.atlas in Resources */,
 				5DB70C201A4BFB270018A813 /* card.plist in Resources */,
 				5DB70BCA1A4BFB140018A813 /* aoYiBgOrange.png in Resources */,
 				5DB70BC31A4BFB140018A813 /* mapGateNew.png in Resources */,
 				5DB70C301A4BFB270018A813 /* map.plist in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				5DEB260E1A513B8A006F4B6F /* skeleton_juqi_1.json in Resources */,
 				5DB70BD91A4BFB140018A813 /* kpps.plist in Resources */,
+				5DEB26131A513B8A006F4B6F /* juqi_3.atlas in Resources */,
 				5DB70B841A4BFAF90018A813 /* immunity.png in Resources */,
 				5DB70BE71A4BFB140018A813 /* ghostR.plist in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				5DEB26141A513B8A006F4B6F /* juqi_3.png in Resources */,
 				5DB70BCB1A4BFB140018A813 /* aoYiMaskBg.png in Resources */,
 				5DB70C311A4BFB270018A813 /* map.png in Resources */,
 				5DB70BDC1A4BFB140018A813 /* posui.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5DB70C3A1A4BFB270018A813 /* result.png in Resources */,
 				5DB70C3E1A4BFB270018A813 /* Team.csb in Resources */,
-				5DB70B711A4BFAF90018A813 /* juqi_1.atlas in Resources */,
 				5DB70B811A4BFAF90018A813 /* XMap.json in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
@@ -1542,6 +1555,7 @@
 				5DB70C371A4BFB270018A813 /* partner1.png in Resources */,
 				5DB70C1F1A4BFB270018A813 /* Card.csb in Resources */,
 				5DB70BC91A4BFB140018A813 /* aoYiBgOrange.plist in Resources */,
+				5DEB261C1A51508B006F4B6F /* battleBg.jpg in Resources */,
 				5DB70C211A4BFB270018A813 /* card.png in Resources */,
 				5DB70BD01A4BFB140018A813 /* cardSkillEffect.png in Resources */,
 				5DB70C2C1A4BFB270018A813 /* login.plist in Resources */,
@@ -1551,7 +1565,9 @@
 				5DB70C3D1A4BFB270018A813 /* smallIcon.png in Resources */,
 				5DB70BEB1A4BFB140018A813 /* tree_block.png in Resources */,
 				5DB70B7D1A4BFAF90018A813 /* card_100.png in Resources */,
+				5DEB260D1A513B8A006F4B6F /* juqi_1.png in Resources */,
 				5DB70BC71A4BFB140018A813 /* aoYiBgGreen.plist in Resources */,
+				5DEB26151A513B8A006F4B6F /* skeleton_juqi_3.json in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				5DB70BEE1A4BFB140018A813 /* tree_block_top.tmx in Resources */,
 				5DB70BC81A4BFB140018A813 /* aoYiBgGreen.png in Resources */,
@@ -1570,6 +1586,7 @@
 				5DB70BE61A4BFB140018A813 /* ghostG.plist in Resources */,
 				5DB70C1C1A4BFB270018A813 /* battle.png in Resources */,
 				5DB70C2B1A4BFB270018A813 /* home.png in Resources */,
+				5DEB26101A513B8A006F4B6F /* juqi_2.png in Resources */,
 				5DB70BD71A4BFB140018A813 /* juqi2.plist in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				5DB70BDF1A4BFB140018A813 /* skillEffect.plist in Resources */,
@@ -1580,6 +1597,7 @@
 				5DB70BD11A4BFB140018A813 /* cardXiaoShi.plist in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
+				5DEB26111A513B8A006F4B6F /* skeleton_juqi_2.json in Resources */,
 				5DB70BC41A4BFB140018A813 /* test.png in Resources */,
 				5DB70BE51A4BFB140018A813 /* ghostB.plist in Resources */,
 				5DB70B7C1A4BFAF90018A813 /* background.png in Resources */,
@@ -1587,18 +1605,20 @@
 				5DB70BE21A4BFB140018A813 /* fapai.plist in Resources */,
 				BFDAB32A1A1A0E2100E450EC /* descriptor.proto in Resources */,
 				5DB70BD61A4BFB140018A813 /* juqi1.png in Resources */,
+				5DEB260C1A513B8A006F4B6F /* juqi_1.atlas in Resources */,
 				5DB70B7B1A4BFAF90018A813 /* CloseSelected.png in Resources */,
 				5DB70BC11A4BFB140018A813 /* mapGate.png in Resources */,
-				5DB70B751A4BFAF90018A813 /* juqi_2.png in Resources */,
 				5DB70BD41A4BFB140018A813 /* hurt_fire2.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5DB70C2F1A4BFB270018A813 /* MainScene.csb in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5DB70C3B1A4BFB270018A813 /* RoleCreate.csb in Resources */,
 				5DB70BCE1A4BFB140018A813 /* buffIcon.png in Resources */,
+				5DEB26181A513B8A006F4B6F /* zhujue.png in Resources */,
 				5DB70C2D1A4BFB270018A813 /* login.png in Resources */,
 				5DB70BE31A4BFB140018A813 /* fapai.png in Resources */,
 				5DB70B881A4BFAF90018A813 /* num_hp.png in Resources */,
+				5DEB260F1A513B8A006F4B6F /* juqi_2.atlas in Resources */,
 				5DB70BE01A4BFB140018A813 /* skillEffect.png in Resources */,
 				5DB70B861A4BFAF90018A813 /* num_heal.png in Resources */,
 				5DB70BCC1A4BFB140018A813 /* aoYiPartner_10.png in Resources */,
@@ -1612,13 +1632,11 @@
 				5DB70BDD1A4BFB140018A813 /* selected.plist in Resources */,
 				5DB70C431A4BFB270018A813 /* tree_block.png in Resources */,
 				5DB70BCF1A4BFB140018A813 /* cardSkillEffect.plist in Resources */,
-				5DB70B721A4BFAF90018A813 /* juqi_1.png in Resources */,
 				5DB70B891A4BFAF90018A813 /* Marker Felt.ttf in Resources */,
 				5DB70C3F1A4BFB270018A813 /* team.plist in Resources */,
 				5DB70C1A1A4BFB270018A813 /* AoyiItem.csb in Resources */,
 				5DB70BC51A4BFB140018A813 /* aoyi.plist in Resources */,
 				5DB70C1D1A4BFB270018A813 /* BattleCard.csb in Resources */,
-				5DB70B781A4BFAF90018A813 /* juqi_3.png in Resources */,
 				5DB70B871A4BFAF90018A813 /* num_hit.png in Resources */,
 				5DB70BC61A4BFB140018A813 /* aoyi.png in Resources */,
 				5DB70C221A4BFB270018A813 /* common.plist in Resources */,
@@ -1629,7 +1647,6 @@
 				5DB70C361A4BFB270018A813 /* maze.png in Resources */,
 				5DB70C421A4BFB270018A813 /* tree_block_top.tmx in Resources */,
 				5DB70BCD1A4BFB140018A813 /* buffIcon.plist in Resources */,
-				5DB70B741A4BFAF90018A813 /* juqi_2.atlas in Resources */,
 				5DB70C351A4BFB270018A813 /* maze.plist in Resources */,
 				5DB70C1B1A4BFB270018A813 /* battle.plist in Resources */,
 				5DB70B831A4BFAF90018A813 /* XSheet1.json in Resources */,
@@ -1644,9 +1661,8 @@
 				5DB70C1E1A4BFB270018A813 /* BattleScene.csb in Resources */,
 				5DB70B7F1A4BFAF90018A813 /* test.png in Resources */,
 				5DB70BD51A4BFB140018A813 /* juqi1.plist in Resources */,
-				5DB70B731A4BFAF90018A813 /* skeleton_juqi_1.json in Resources */,
 				5DB70C231A4BFB270018A813 /* common.png in Resources */,
-				5DB70B791A4BFAF90018A813 /* skeleton_juqi_3.json in Resources */,
+				5DEB261A1A5143AB006F4B6F /* skeleton_zhujue.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1716,7 +1732,7 @@
 				BFDAB32F1A1A0E2100E450EC /* generated_message_reflection.cc in Sources */,
 				BFDAB3501A1A0E2100E450EC /* Socket.cpp in Sources */,
 				BFDAB3481A1A0E2100E450EC /* unknown_field_set.cc in Sources */,
-				BFDAB3241A1A0E2100E450EC /* Mask.cpp in Sources */,
+				BFDAB3241A1A0E2100E450EC /* BlackBg.cpp in Sources */,
 				BFDAB3221A1A0E2100E450EC /* JValue.cpp in Sources */,
 				BFDAB35A1A1A0E2100E450EC /* hero.pb.cc in Sources */,
 				BFDAB3411A1A0E2100E450EC /* stringprintf.cc in Sources */,

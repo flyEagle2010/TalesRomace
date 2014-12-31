@@ -37,7 +37,7 @@
 				{
 					"type":0,
 					"skill":0,
-					"atkHp":36,
+					"atkHp":360,
 					"atkBuff":[1,2],
 					"otherHp":0,
 					"otherBuff":[1,2]
@@ -81,7 +81,7 @@
 				{
 					"type":1,
 					"skill":1,
-					"atkHp":223,
+					"atkHp":523,
 					"atkBuff":[1,2],
 					"otherHp":0,
 					"otherBuff":[1,2]

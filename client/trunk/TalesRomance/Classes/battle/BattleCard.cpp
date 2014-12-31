@@ -50,12 +50,13 @@ void BattleCard::move()
 
 void BattleCard::startToCenter()
 {
+    Size size=Size(290,441)*0.8;
+
     ParticleSystem* fapai=ParticleSystemQuad::create("fapai.plist");
     this->addChild(fapai,2);
     fapai->setPosition(this->ui->getPosition());
     fapai->setScale(0.5);
     
-    Size size=Size(290,441)*0.8;
     Size wsize=Director::getInstance()->getWinSize();
 
     Spawn* spaw=Spawn::create(MoveTo::create(0.2, Vec2(wsize.width*0.5+size.width*(1-index),wsize.height*0.5)),ScaleTo::create(0.2,0.75),SkewBy::create(0.2, 0, 30), NULL);
@@ -63,6 +64,17 @@ void BattleCard::startToCenter()
     CallFunc* cf=CallFunc::create(CC_CALLBACK_0(BattleCard::useSkill, this));
     
     this->ui->runAction(Sequence::create(DelayTime::create(0.3),spaw, skew,DelayTime::create(0.8*(groupNum-index)),cf,NULL));
+    
+    
+    /*
+    MoveTo* move=MoveTo::create(0.2, Vec2(wsize.width*0.5+size.width*(1-index),wsize.height*0.5));
+    SkewBy* skewBy=SkewBy::create(0.3, 0, 30);
+    RotateBy* rb=RotateBy::create(0.2, 720);
+    Spawn* sp=Spawn::create(move,rb, NULL);
+    CallFunc* cf=CallFunc::create(CC_CALLBACK_0(BattleCard::useSkill, this));
+    this->ui->runAction(Sequence::create(move,ScaleTo::create(0.3, 0.75,0.75),DelayTime::create(0.8*(groupNum-index)),cf, NULL));
+    */
+    
 }
 
 void BattleCard::useSkill()

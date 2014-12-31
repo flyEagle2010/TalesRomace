@@ -74,8 +74,6 @@ void MapScene::onTouchEnded(Widget* pSender)
     int gateID=pSender->getTag();
     GateInfo* gateInfo=GateInfo::create(gateID);
     gateInfo->show(this);
-    this->scrollView->setTouchEnabled(false);
-
 }
 
 void MapScene::onButtonClick(cocos2d::Ref *pSender)
@@ -89,7 +87,6 @@ void MapScene::onButtonClick(cocos2d::Ref *pSender)
         }
         case 1001: //挑战
         {
-           
             break;
         }
         case 1002: //返回

@@ -73,7 +73,8 @@
 enum TrackIndex{
     ANI_COMMON,
     ANI_BUILDUP,
-    
+    ANI_JUMPIN,
+    ANI_JUMPOUT,
     ANI_ATTACK,
     ANI_ATTACKED,
     ANI_DIE,

@@ -43,7 +43,7 @@ bool StandDraw::init()
     this->topClip->setScale(4);
     
     std::string txt="合体技能大招";
-    Label* label=Label::createWithTTF(txt, "fonts/Marker Felt.ttf", 48);
+    Label* label=Label::createWithTTF(txt, "Marker Felt.ttf", 48);
     this->addChild(label,5);
     label->setPosition(Vec2(568,320));
     //label->setTextColor(Color4B(255,100,255,255));
@@ -52,7 +52,7 @@ bool StandDraw::init()
 
 float StandDraw::play()
 {
-    Label* label=Label::createWithTTF("合体技能大招", "fonts/Marker Felt.ttf", 48);
+    Label* label=Label::createWithTTF("合体技能大招", "Marker Felt.ttf", 48);
     this->addChild(label,5);
     label->setPosition(Vec2(200,320));
     label->setTextColor(Color4B(255,255,100,255));

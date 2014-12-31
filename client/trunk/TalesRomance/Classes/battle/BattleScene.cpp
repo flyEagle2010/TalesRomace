@@ -28,16 +28,14 @@ BattleScene* BattleScene::create()
 }
 
 bool BattleScene::init(){
-    log("init.......");
     if(!BaseUI::init("BattleScene.csb","fight.plist")){
         return false;
     }
-    log("init ok ......");
     this->wsize=Director::getInstance()->getWinSize();
     
-//    this->bg=Sprite::create("battleBg.png");
-//    bg->setPosition(Vec2(wsize.width*0.5,wsize.height*0.5));
-//    this->addChild(bg,-1);
+    this->bg=Sprite::create("battleBg.jpg");
+    bg->setPosition(Vec2(wsize.width*0.5,wsize.height*0.5));
+    this->addChild(bg,-1);
     
     this->heroNode=Node::create();
     this->addChild(heroNode);
@@ -45,47 +43,59 @@ bool BattleScene::init(){
     this->heroInfos.pushBack(ui->getChildByName("heroInfo1"));
     this->heroInfos.pushBack(ui->getChildByName("heroInfo2"));
     
-    log("init card.....");
-    for(int i=0;i<3;i++){
-        BattleCard* card=BattleCard::create(i);
-        this->heroNode->addChild(card,1);
-        this->BattleCards.pushBack(card);
-        card->setPosition(Vec2(0,60));
-        card->setVisible(false);
-    }
-    log("init card end....");
-    
     
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("smallIcon.plist");
-    log("init smallIcon");
     return true;
 }
 
 void BattleScene::onEnter()
 {
-	log("start onEnter");
     BaseUI::onEnter();
-    log("end onEnter");
     this->startAnimation(nullptr);
-    log("end animation");
 }
 
 void BattleScene::startAnimation(json_t* data)
 {
+    this->heroNode->removeAllChildren();
+    this->cards.clear();
+    this->heros.clear();
+    this->roundIndex=0;
+    this->cardIndex=0;
+    this->isDispear=false;
+    
+    //测试代码
+    json_decref(this->data); //========
+    
+    for(int i=0;i<3;i++){
+        BattleCard* card=BattleCard::create(i);
+        this->heroNode->addChild(card,10);
+        this->cards.pushBack(card);
+        card->setPosition(Vec2(0,60));
+        card->setVisible(false);
+    }
+    
+    this->black=Layout::create();
+    this->heroNode->addChild(black,-1);
+    this->black->setContentSize(wsize);
+    this->black->setBackGroundColorType(cocos2d::ui::Layout::BackGroundColorType::SOLID);
+    this->black->setBackGroundColor(Color3B::BLACK);
+    this->black->setBackGroundColorOpacity(200);
+    this->black->setVisible(false);
+    
     this->data=data;
-
+    this->isOver=false;
     std::string fullPath=FileUtils::getInstance()->fullPathForFilename("battle.json");
     std::string str=FileUtils::getInstance()->getStringFromFile(fullPath);
-    log("str:%s",str.c_str());
     json_error_t error;
-    this->data=json_load_file(fullPath.c_str(), JSON_INDENT(4), &error);
+    this->data=json_loads(str.c_str(), JSON_ENCODE_ANY, &error);
+
     json_t* heros=json_object_get(this->data, "heros");
-   
     for(int i=0;i<2;i++){
         json_t* json=json_array_get(heros, i);
         Node* node=this->heroInfos.at(i);
-        Label* heroName=(Label*)node->getChildByName("name");
-        heroName->setString(json_string_value(json_object_get(json, "name")));
+        Text* heroName=(Text*)node->getChildByName("name");
+        const char* name=json_string_value(json_object_get(json, "name"));
+        heroName->setString(name);
         //Sprite* icon=(Sprite*)node->getChildByName("icon");
         //icon->setDisplayFrame(Sprite::createWithSpriteFrameName("")->displayFrame());
         //Sprite* parter=(Sprite*)node->getChildByName("parter");
@@ -95,21 +105,22 @@ void BattleScene::startAnimation(json_t* data)
         
         //init hero
         const char* icon=json_string_value(json_object_get(json,"icon"));
-        log("init hero");
         Hero* hero=Hero::create(std::string(icon)+".json", std::string(icon)+".atlas", i);
-        log("init hero end...........");
         this->heros.pushBack(hero);
-        this->heroNode->addChild(hero);
+        this->heroNode->addChild(hero,i);
         hero->setPosition(Vec2(this->wsize.width*i, 0));
         hero->setVisible(false);
-        
+        hero->hp=json_integer_value(json_object_get(json,"hp"));
         
         Size infoSize=node->getContentSize();
         float mid=wsize.width*0.5;
         node->setPosition(Vec2(mid,this->wsize.height-infoSize.height));
         node->runAction(EaseIn::create(MoveBy::create(0.25, Vec2(mid*(i?1:-1),0)), 2));
-        
-        hero->runAction(Sequence::create(DelayTime::create(0.6),Show::create(),JumpTo::create(0.6, Vec2(mid+200*(i?1:-1),140), 150, 1), NULL));
+    
+        hero->setPosition(Vec2(mid+200*(i?1:-1),140));
+        CallFunc* jumpIn=CallFunc::create(CC_CALLBACK_0(Hero::jumpIn, hero));
+        hero->runAction(Sequence::create(DelayTime::create(0.6),Show::create(),jumpIn, NULL));
+        //hero->runAction(Sequence::create(DelayTime::create(0.6),Show::create(),JumpTo::create(0.6, Vec2(mid+200*(i?1:-1),140), 150, 1), NULL));
     }
                         
     this->runAction(Sequence::create(DelayTime::create(1.2),CallFunc::create(CC_CALLBACK_0(BattleScene::playRound, this)), NULL));
@@ -123,7 +134,7 @@ void BattleScene::playRound()
     this->round=json_array_get(rounds, roundIndex);
     
     if(json_array_size(rounds) <= roundIndex){
-        this->runAction(Sequence::create(DelayTime::create(1),CallFunc::create(CC_CALLBACK_0(BattleScene::showResult, this)), NULL));
+        this->playEnd();
         return;
     }
     int index=json_integer_value(json_object_get(this->round, "attacker"));
@@ -135,8 +146,6 @@ void BattleScene::playRound()
         this->attack();
     }
     this->roundIndex++;
-
-
 }
 
 void BattleScene::playBattleCard()
@@ -145,7 +154,7 @@ void BattleScene::playBattleCard()
     for(int i=0;i<json_array_size(cards);i++){
         json_t* data=json_array_get(cards, i);
         
-        BattleCard* card=this->BattleCards.at(i);
+        BattleCard* card=this->cards.at(i);
         card->reset(i, 3, data);
         card->move();
     }
@@ -160,7 +169,7 @@ void BattleScene::cardDispear()
     float duration;
     json_t* cards=json_object_get(this->round, "cards");
     for(int i=0;i<json_array_size(cards);i++){
-        BattleCard* card=this->BattleCards.at(i);
+        BattleCard* card=this->cards.at(i);
         duration=card->playDispear();
     }
     this->runAction(Sequence::create(DelayTime::create(duration),CallFunc::create(std::bind(&BattleScene::buildup, this)), NULL));
@@ -168,8 +177,10 @@ void BattleScene::cardDispear()
 
 void BattleScene::buildup()
 {
-    
     this->attacker->buildup();
+    this->black->setVisible(true);
+    this->black->setZOrder(this->attacker->getZOrder()-1);
+    this->defender->setZOrder(this->attacker->getZOrder()-2);
 }
 
 void BattleScene::attack()
@@ -204,13 +215,16 @@ void BattleScene::petAttack()
     pet->data=json_object_get(round, "aoyi");
     json_object_set(pet->data, "isAoYi", json_integer(1));
     
+    //JumpTo* jump=JumpTo::create(0.6, Vec2(wsize.width/2.0,wsize.height/4.0), 200, 1);
+    pet->setPosition(wsize.width*0.5,wsize.height*0.25);
+    CallFunc* jump=CallFunc::create(CC_CALLBACK_0(Hero::jumpIn, pet));
+    
     CallFunc* cf=CallFunc::create(std::bind(&Hero::attack, pet));
-    JumpTo* jump=JumpTo::create(0.6, Vec2(wsize.width/2.0,wsize.height/4.0), 200, 1);
-    Sequence* sq=Sequence::create(jump,cf, NULL);
+    Sequence* sq=Sequence::create(jump,DelayTime::create(0.8),cf, NULL);
     pet->runAction(sq);
     this->attacker->data=pet->data;
     CallFunc* heroAttack=CallFunc::create(std::bind(&Hero::attack, this->attacker));
-    this->attacker->runAction(Sequence::create(DelayTime::create(0.6),heroAttack, NULL));
+    this->attacker->runAction(Sequence::create(DelayTime::create(0.8),heroAttack, NULL));
     
     this->showBuff(this->attacker->pos);
     this->cardIndex=0;
@@ -219,7 +233,12 @@ void BattleScene::petAttack()
 void BattleScene::attacked()
 {
     int hp=json_integer_value(json_object_get(attacker->data, "atkHp"));
-    this->defender->attacked(hp);
+    if(this->defender->hp<=hp){
+        this->isOver=true;
+        this->defender->die(hp);
+    }else{
+        this->defender->attacked(hp);
+    }
     this->showBuff(this->defender->pos);
 }
 
@@ -232,6 +251,11 @@ void BattleScene::showBuff(int pos)
         this->heroInfos.at(pos)->addChild(icon);
         icon->setPosition(Vec2(startX+50*i, 100));
     }
+}
+
+void BattleScene::playEnd()
+{
+    this->attacker->win();
 }
 
 void BattleScene::showResult()
