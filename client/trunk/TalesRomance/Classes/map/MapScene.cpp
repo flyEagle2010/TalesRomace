@@ -32,6 +32,9 @@ bool MapScene::init()
     if(!BaseUI::init("MapScene.csb", "map.plist")){
         return false;
     }
+    this->ui->setAnchorPoint(Vec2(0,0));
+    this->ui->setPosition(Vec2(0,0));
+    
     
     Size wsize=Director::getInstance()->getWinSize();
     for(int i=1000;i<1003;i++){
@@ -50,11 +53,13 @@ void MapScene::resetUI()
 {
     this->scrollView=(ui::ScrollView*)this->ui->getChildByName("scrollView");
 
-    //this->scrollView->setPosition(Vec2(141,0));
+    Size wsize=Director::getInstance()->getWinSize();
+
     Sprite* bg=Sprite::create("mapGate1.png");
     bg->setAnchorPoint(Vec2(0, 0));
     this->scrollView->addChild(bg);
     this->scrollView->setInnerContainerSize(Size(bg->getContentSize().width,640));
+    this->scrollView->setContentSize(wsize);
     std::vector<int> arr={10,11,12,13,14,15,16,17,18,19};
     for(int i=0;i<arr.size();i++){
         XMap* xmap=XMap::record(Value(arr[i]));

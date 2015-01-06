@@ -103,9 +103,13 @@ void BattleScene::startAnimation(json_t* data)
         LoadingBar* hpBar=(LoadingBar*)node->getChildByName("hp");
         hpBar->setPercent(50);
         
+        
+        //fPath="skeleton_zhujue.json";
+        //rPath="zhujue.atlas";
         //init hero
-        const char* icon=json_string_value(json_object_get(json,"icon"));
-        Hero* hero=Hero::create(std::string(icon)+".json", std::string(icon)+".atlas", i);
+        //const char* icon=json_string_value(json_object_get(json,"icon"));
+        //Hero* hero=Hero::create(std::string(icon)+".json", std::string(icon)+".atlas", i);
+        Hero* hero=Hero::create("skeleton_zhujue.json", "zhujue.atlas", i);
         this->heros.pushBack(hero);
         this->heroNode->addChild(hero,i);
         hero->setPosition(Vec2(this->wsize.width*i, 0));
@@ -113,9 +117,9 @@ void BattleScene::startAnimation(json_t* data)
         hero->hp=json_integer_value(json_object_get(json,"hp"));
         
         Size infoSize=node->getContentSize();
-        float mid=wsize.width*0.5;
+        float mid=(wsize.width-infoSize.width)*0.5;
         node->setPosition(Vec2(mid,this->wsize.height-infoSize.height));
-        node->runAction(EaseIn::create(MoveBy::create(0.25, Vec2(mid*(i?1:-1),0)), 2));
+        //node->runAction(EaseIn::create(MoveBy::create(0.25, Vec2(mid*(i?1:-1),0)), 2));
     
         hero->setPosition(Vec2(mid+200*(i?1:-1),140));
         CallFunc* jumpIn=CallFunc::create(CC_CALLBACK_0(Hero::jumpIn, hero));
@@ -143,7 +147,7 @@ void BattleScene::playRound()
     if(this->attacker->pos==0){
         this->playBattleCard();
     }else{
-        this->attack();
+        this->commonAttack();
     }
     this->roundIndex++;
 }
@@ -183,22 +187,12 @@ void BattleScene::buildup()
     this->defender->setZOrder(this->attacker->getZOrder()-2);
 }
 
-void BattleScene::attack()
+void BattleScene::commonAttack()
 {
     json_t* cards=json_object_get(this->round, "cards");
     if(this->cardIndex >= json_array_size(cards)){
-        json_t* aoyi=json_object_get(round, "aoyi");
-        if(aoyi){
-            float duration=0;
-            if(this->attacker->pos==0){
-                StandDraw* stand=StandDraw::create();
-                this->addChild(stand);
-                duration=stand->play();
-            }
-            CallFunc* petAttack=CallFunc::create(std::bind(&BattleScene::petAttack, this));
-            this->runAction(Sequence::create(DelayTime::create(duration),petAttack, NULL));
-            return;
-        }
+        this->aoyiAttack();
+        return;
     }
     this->attacker->data=json_array_get(cards, this->cardIndex);
     this->attacker->attack();
@@ -206,9 +200,23 @@ void BattleScene::attack()
     this->cardIndex++;
 }
 
+void BattleScene::aoyiAttack()
+{
+    json_t* aoyi=json_object_get(round, "aoyi");
+    if(aoyi){
+        StandDraw* stand=StandDraw::create();
+        this->addChild(stand);
+        float duration=stand->play();
+        CallFunc* petAttack=CallFunc::create(std::bind(&BattleScene::petAttack, this));
+        this->runAction(Sequence::create(DelayTime::create(duration),petAttack, NULL));
+    }else{
+        this->playRound();
+    }
+}
+
 void BattleScene::petAttack()
 {
-    Hero* pet=Hero::create("neZha.json", "neZha.atlas", this->attacker->pos);
+    Hero* pet=Hero::create("zhujueB.json", "zhujueB.atlas", this->attacker->pos);
     this->heroNode->addChild(pet);
     pet->setPosition(Vec2(wsize.width*this->attacker->pos,this->attacker->getPositionY()));
     pet->type=1;
@@ -222,7 +230,7 @@ void BattleScene::petAttack()
     CallFunc* cf=CallFunc::create(std::bind(&Hero::attack, pet));
     Sequence* sq=Sequence::create(jump,DelayTime::create(0.8),cf, NULL);
     pet->runAction(sq);
-    this->attacker->data=pet->data;
+    this->attacker->data=json_object_get(round, "aoyi");
     CallFunc* heroAttack=CallFunc::create(std::bind(&Hero::attack, this->attacker));
     this->attacker->runAction(Sequence::create(DelayTime::create(0.8),heroAttack, NULL));
     

@@ -23,6 +23,7 @@ TabBar* TabBar::create(std::vector<Button*> buttons)
 bool TabBar::init(std::vector<Button*> buttons)
 {
     this->buttons=buttons;
+    log("buttons.size:%lu",this->buttons.size());
     this->setIndex(0);
     return  true;
 }

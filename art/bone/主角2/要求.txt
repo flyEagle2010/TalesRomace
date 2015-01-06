@@ -1,0 +1,50 @@
+跳入，jumpIn
+走动，walk
+站立，idle
+
+物理攻击，attack1
+法术攻击，attack2
+治疗，attack3
+
+集气，buildup
+受击，attacked
+胜利，win
+死亡, die
+向后跳出，jumpOut
+
+1.body 躯干
+2.top 最上面的骨骼
+
+机 idle
+移动 walk
+跳入画面 jumpIn
+跳出画面 jumpOut
+蓄力 buildup
+攻击1 attack1
+攻击2 attack2
+攻击3 attack3
+受击  attacked
+死亡 die
+胜利 win
+瑜伽课上课动画 yuJia
+武术课上课动画 wuShu
+礼仪课上课动画 liYi
+炼金课上课动画 lianJin
+魔法课上课动画 moFa
+神学课上课动画 shenXue
+机械课上课动画 jiXie
+化妆课上课动画 huaZhuang
+体能课上课动画 tiNeng
+奴兽课上课动画 nuShou
+采石场打工动画 caiShi
+校园巡逻打工动画 xiaoYuanxunLuo
+助教打工动画 zhuJiaoDaGong
+校舍建造打工动画 xiaoShejianZao
+荷官打工动画 heGuanDaGong
+看板娘打工动画 kanBanNiang
+烘焙师打工动画 hongPeiDaGong
+打铁打工动画 daTie
+魔偶保养打工动画 moOuBaoYang
+神庙守护打工动画 shenMiaoShouHu
+打工和课程的通用完结动画 commonOver
+打工和课程等级提升的通用动画 commonLevelUp

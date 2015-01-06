@@ -45,7 +45,7 @@ class Hero:public Node
     void onAnimationEnd(int trackIndex);
     void onSkeletonEvent(int trackIndex,spEvent* event);
 public:
-
+    ~Hero(){};
     static Hero* create(std::string fPath,std::string rPath,int pos);
     bool init(std::string fPath,std::string rPath,int pos);
     virtual void onEnter();

@@ -47,7 +47,8 @@ public:
     virtual void touchButtonEvent(cocos2d::Ref *pSender, Widget::TouchEventType type);
     void startAnimation(json_t* data);
 
-    void attack();
+    void commonAttack();
+    void aoyiAttack();
     void buildup();
     void attacked();
     void playRound();

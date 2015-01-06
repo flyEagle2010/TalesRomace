@@ -3,7 +3,7 @@
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="Layer" CanEdit="False" FrameEvent="" ComboBoxIndex="1" ColorAngle="0.0000" ctype="PanelObjectData">
+      <ObjectData Name="Layer" FrameEvent="" ComboBoxIndex="1" ColorAngle="0.0000" ctype="PanelObjectData">
         <Position X="0.0000" Y="0.0000" />
         <Scale ScaleX="1.0000" ScaleY="1.0000" />
         <AnchorPoint />
@@ -87,7 +87,7 @@
             <PressedFileData Type="PlistSubImage" Path="teamEditBtnSort_2.png" Plist="team.plist" />
             <NormalFileData Type="PlistSubImage" Path="teamEditBtnSort_1.png" Plist="team.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_back" ActionTag="1556233458" FrameEvent="" Tag="1005" ObjectIndex="8" TouchEnable="True" FontSize="36" ButtonText="返回" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_back" ActionTag="1556233458" FrameEvent="" Tag="1005" ObjectIndex="8" TouchEnable="True" FontSize="36" ButtonText="" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
             <Position X="892.1092" Y="86.2662" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

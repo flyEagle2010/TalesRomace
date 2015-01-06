@@ -26,8 +26,8 @@ Hero* Hero::create(std::string fPath,std::string rPath,int pos)
 
 bool Hero::init(std::string fPath,std::string rPath,int pos)
 {
-    fPath="skeleton_zhujue.json";
-    rPath="zhujue.atlas";
+    //fPath="skeleton_zhujue.json";
+    //rPath="zhujue.atlas";
     this->pos=pos;
 	//init ui
     float scale=1;
@@ -59,7 +59,6 @@ void Hero::run()
 {
     Vec2 vec(pos>4?-1100:1100,0);
     MoveBy* move=MoveBy::create(5, vec);
-    move->setTag(ACTION_RUN_TAG);
     this->runAction(move);
     this->setAnimation(TrackIndex::ANI_COMMON, ani_walk, true);
 }
@@ -101,7 +100,7 @@ void Hero::attackedEffect()
 void Hero::buildup()
 {
     this->setAnimation(TrackIndex::ANI_BUILDUP, ani_buildup, false);
-    this->buildupAni=SkeletonAnimation::createWithFile("skeleton_juqi_2.json", "juqi_2.atlas");
+    this->buildupAni=SkeletonAnimation::createWithFile("skeleton_juqi_3.json", "juqi_3.atlas");
     this->addChild(buildupAni,-1);
     buildupAni->setAnimation(0, "animation", true);
 }
@@ -113,17 +112,17 @@ void Hero::jumpIn()
 
 void Hero::jumpOut()
 {
-    Spawn* sp=Spawn::create(MoveTo::create(0.2, Vec2(320,640)),SkewBy::create(0.2, 0.2, 0.2), NULL);
-    CallFunc* next=CallFunc::create(std::bind(&BattleScene::playRound, BattleMgr::getInstance()->view));
-    CallFunc* removeFun=CallFunc::create(std::bind(&Hero::removeFromParent, this));
-    this->runAction(Sequence::create(sp,next,removeFun, NULL));
+    //Spawn* sp=Spawn::create(MoveTo::create(0.2, Vec2(320,640)),SkewBy::create(0.2, 0.2, 0.2), NULL);
+    //CallFunc* removeFun=CallFunc::create(std::bind(&Hero::removeFromParent, this));
+    //this->runAction(Sequence::create(sp,removeFun, NULL));
+    this->setAnimation(TrackIndex::ANI_JUMPOUT, ani_jumpOut, false);
+    this->runAction(Sequence::create(DelayTime::create(2),CallFunc::create(CC_CALLBACK_0(Hero::removeFromParent, this)), NULL));
 }
 
 void Hero::die(int num)
 {
     this->skeletonNode->clearTracks();
     this->skeletonNode->setAnimation(TrackIndex::ANI_DIE, ani_die, false);
-    //this->setAnimation(TrackIndex::ANI_DIE, ani_die, false);
 
     this->fallHp(num);
     
@@ -132,7 +131,7 @@ void Hero::die(int num)
 
 void Hero::fallHp(int num)
 {
-    spBone* body=this->skeletonNode->findBone("body");
+    //spBone* body=this->skeletonNode->findBone("body");
 //    if(phit.isimmune()){
 //        return;
 //    }
@@ -207,24 +206,28 @@ void Hero::onAnimationEnd(int trackIndex)
     switch (trackIndex) {
         case TrackIndex::ANI_BUILDUP:
         {
-            BattleMgr::getInstance()->view->attack();
             BattleMgr::getInstance()->view->black->setVisible(false);
             this->buildupAni->removeFromParent();
+            BattleMgr::getInstance()->view->commonAttack();
             break;
         }
         case TrackIndex::ANI_ATTACK:
         {
-            if(BattleMgr::getInstance()->view->isOver){
-                if(this->type==1)this->setVisible(false);
-                break;
-            }
             if(this->type==1){
                 this->jumpOut();
                 break;
             }
-            if(!json_object_get(data, "isAoYi")){
-                BattleMgr::getInstance()->view->attack();
+            if(BattleMgr::getInstance()->view->isOver){
+                break;
             }
+            BattleMgr::getInstance()->view->commonAttack();
+            break;
+        }
+        case TrackIndex::ANI_JUMPOUT:
+        {
+            this->setVisible(false);
+            this->skeletonNode->unscheduleUpdate();
+            //this->removeFromParent();
             break;
         }
         case TrackIndex::ANI_DIE:

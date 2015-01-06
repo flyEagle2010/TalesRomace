@@ -35,16 +35,21 @@ bool HomeScene::init(std::string fileName,std::string resName)
     this->top=dynamic_cast<Widget*>(this->ui->getChildByName("top"));
     this->bottom=dynamic_cast<Widget*>(this->ui->getChildByName("bottom"));
     
-    for(int i=0;i<7;i++){
+    for(int i=0;i<10;i++){
         Widget* widget=dynamic_cast<Widget*>(this->bottom->getChildByTag(100+i));
+        if(i==7) widget=dynamic_cast<Widget*>(this->top->getChildByTag(100+i));
+        if(i==9) widget=dynamic_cast<Widget*>(this->ui->getChildByTag(100+i));
+        if(i==8) {
+            widget=dynamic_cast<Widget*>(this->ui->getChildByTag(100+i));
+            Size size=widget->getContentSize();
+            Size wsize=Director::getInstance()->getWinSize();
+            widget->setPosition(Vec2(wsize.width-size.width*0.5,widget->getPositionY()));
+        }
         widget->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchButtonEvent,this));
     }
+
     
     this->initUi();
-//    Sprite* sprite=Sprite::create("cardTest.png");
-//    this->addChild(sprite);
-//    sprite->setPosition(Vec2(568,320));
-//    sprite->setScale(0.75);
 
 	return true;
 }
@@ -56,7 +61,9 @@ void HomeScene::onEnter()
 
 void HomeScene::initUi()
 {
-
+    LuoLi* luoLi=LuoLi::create();
+    this->ui->getChildByName("zhujue")->addChild(luoLi);
+    luoLi->setPosition(Vec2(200,0));
 }
 
 void HomeScene::intAnimation()
@@ -66,7 +73,7 @@ void HomeScene::intAnimation()
 
 void HomeScene::touchButtonEvent(cocos2d::Ref *pSender, TouchEventType type)
 {
-    auto sprite=static_cast<Sprite*>(pSender);
+    auto sprite=static_cast<Widget*>(pSender);
   
     if(type==TouchEventType::BEGAN){
         sprite->stopAllActions();
@@ -104,10 +111,14 @@ void HomeScene::touchButtonEvent(cocos2d::Ref *pSender, TouchEventType type)
         }
         case 104: //卡牌
         {
+            TeamCard* tc=TeamCard::create();
+            tc->show(this);
             break;
         }
         case 105: //邮件
         {
+            Team2* team=Team2::create();
+            team->show(this);
             break;
         }
         case 106: //购物

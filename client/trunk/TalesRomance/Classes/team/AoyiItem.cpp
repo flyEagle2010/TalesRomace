@@ -27,6 +27,9 @@ bool AoyiItem::init()
     this->ui->setPosition(Vec2(0,0));
     this->ui->setAnchorPoint(Vec2(0,0));
     this->bg=(Sprite*)this->ui->getChildByName("bg");
+    
+    Size size=this->bg->getContentSize()*0.5;
+    this->setPosition(Vec2(size.width,size.height));
     return true;
 }
 

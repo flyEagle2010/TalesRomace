@@ -25,6 +25,12 @@
 	"rounds":[
 		{
 			"attacker":0,
+			"durationBuff":[
+				{
+					"id":1,
+					"hp":200
+				}
+			],
 			"cards":[
 				{
 					"type":1,
@@ -61,6 +67,12 @@
 		},
 		{
 			"attacker":1,
+			"durationBuff":[
+				{
+					"id":1,
+					"hp":200
+				}
+			],
 			"cards":[
 				{
 					"type":1,

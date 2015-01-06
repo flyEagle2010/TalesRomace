@@ -83,7 +83,7 @@
             <PrePosition X="0.0000" Y="0.0000" />
             <PreSize X="0.0000" Y="0.0000" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_back" ActionTag="870299070" FrameEvent="" Tag="1001" ObjectIndex="2" TouchEnable="True" FontSize="36" ButtonText="返回" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_back" ActionTag="870299070" FrameEvent="" Tag="1001" ObjectIndex="2" TouchEnable="True" FontSize="36" ButtonText="" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
             <Position X="325.9598" Y="-231.7067" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -96,18 +96,18 @@
             <PressedFileData Type="PlistSubImage" Path="BtnReturn_2.png" Plist="common.plist" />
             <NormalFileData Type="PlistSubImage" Path="BtnReturn_1.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_exit" ActionTag="-1339335306" FrameEvent="" Tag="1002" ObjectIndex="3" TouchEnable="True" FontSize="36" ButtonText="" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_exit" ActionTag="-1339335306" FrameEvent="" Tag="1002" ObjectIndex="3" TouchEnable="True" FontSize="36" ButtonText="" Scale9Width="63" Scale9Height="62" ctype="ButtonObjectData">
             <Position X="387.0480" Y="288.7462" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="93.0000" Y="93.0000" />
+            <Size X="63.0000" Y="62.0000" />
             <PrePosition X="0.0000" Y="0.0000" />
             <PreSize X="0.0000" Y="0.0000" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="PlistSubImage" Path="BtnReturn_0.png" Plist="common.plist" />
-            <PressedFileData Type="PlistSubImage" Path="BtnReturn_2.png" Plist="common.plist" />
-            <NormalFileData Type="PlistSubImage" Path="BtnReturn_1.png" Plist="common.plist" />
+            <DisabledFileData Type="PlistSubImage" Path="goHome_0.png" Plist="common.plist" />
+            <PressedFileData Type="PlistSubImage" Path="goHome_2.png" Plist="common.plist" />
+            <NormalFileData Type="PlistSubImage" Path="goHome_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="potrait" ActionTag="2043704444" FrameEvent="" Tag="12" ObjectIndex="5" ctype="SpriteObjectData">
             <Position X="-280.6781" Y="7.9647" />

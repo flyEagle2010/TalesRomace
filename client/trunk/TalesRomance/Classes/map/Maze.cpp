@@ -24,11 +24,10 @@ bool Maze::init()
     BaseUI::init("Maze.csb", "");
     
     this->map = TMXTiledMap::create("tree_block_bottom.tmx");
-    this->addChild(map, 0);
-    log("size:%f,%f",map->getContentSize().width,map->getContentSize().height);
-    Size wsize=Director::getInstance()->getWinSize();
-    Size mapSize=this->map->getContentSize();
-    this->map->setPosition(Vec2(152,36));
+    this->ui->addChild(map);
+    TMXTiledMap* node=dynamic_cast<TMXTiledMap*>(ui->getChildByName("map"));
+    //this->map->setPosition(node->getPosition());
+    this->map->setPosition(Vec2(153, 36));
     
     this->topLayer=this->map->getLayer("top");
     

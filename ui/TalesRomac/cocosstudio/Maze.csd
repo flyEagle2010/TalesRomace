@@ -3,7 +3,7 @@
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="Layer" CanEdit="False" FrameEvent="" ComboBoxIndex="1" ColorAngle="0.0000" ctype="PanelObjectData">
+      <ObjectData Name="Layer" FrameEvent="" ComboBoxIndex="1" ColorAngle="0.0000" ctype="PanelObjectData">
         <Position X="0.0000" Y="0.0000" />
         <Scale ScaleX="1.0000" ScaleY="1.0000" />
         <AnchorPoint />
@@ -94,6 +94,16 @@
             <Size X="26.0000" Y="28.0000" />
             <PrePosition X="0.7836" Y="0.4393" />
             <PreSize X="0.0000" Y="0.0000" />
+          </NodeObjectData>
+          <NodeObjectData Name="map" ActionTag="523294853" FrameEvent="" Tag="89" ObjectIndex="1" ctype="GameMapObjectData">
+            <Position X="153.5355" Y="35.4286" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint />
+            <CColor A="255" R="255" G="255" B="255" />
+            <Size X="690.0000" Y="575.0000" />
+            <PrePosition X="0.1352" Y="0.0554" />
+            <PreSize X="0.6074" Y="0.8984" />
+            <FileData Type="Normal" Path="tree_block_bottom.tmx" />
           </NodeObjectData>
         </Children>
         <SingleColor A="255" R="0" G="0" B="0" />

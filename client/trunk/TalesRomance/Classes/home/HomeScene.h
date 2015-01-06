@@ -21,6 +21,9 @@
 #include "GateInfo.h"
 #include "Team.h"
 #include "MapScene.h"
+#include "LuoLi.h"
+#include "TeamCard.h"
+#include "Team2.h"
 
 USING_NS_CC;
 using namespace ui;

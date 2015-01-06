@@ -3,7 +3,7 @@
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="Scene" CanEdit="False" FrameEvent="" ctype="SingleNodeObjectData">
+      <ObjectData Name="Scene" FrameEvent="" ctype="SingleNodeObjectData">
         <Position X="0.0000" Y="0.0000" />
         <Scale ScaleX="1.0000" ScaleY="1.0000" />
         <AnchorPoint />
@@ -39,20 +39,20 @@
             <PressedFileData Type="PlistSubImage" Path="mapGateBtnTiaoZhan1.png" Plist="map.plist" />
             <NormalFileData Type="PlistSubImage" Path="mapGateBtnTiaoZhan2.png" Plist="map.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btnExit" ActionTag="1577274831" FrameEvent="" Tag="1000" ObjectIndex="2" TouchEnable="True" FontSize="36" ButtonText="退出" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
+          <NodeObjectData Name="btnExit" ActionTag="1577274831" FrameEvent="" Tag="1000" ObjectIndex="2" TouchEnable="True" FontSize="36" ButtonText="" Scale9Width="63" Scale9Height="62" ctype="ButtonObjectData">
             <Position X="1094.4900" Y="592.8251" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="93.0000" Y="93.0000" />
+            <Size X="63.0000" Y="62.0000" />
             <PrePosition X="0.9635" Y="0.9263" />
             <PreSize X="0.0000" Y="0.0000" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="PlistSubImage" Path="BtnReturn_0.png" Plist="common.plist" />
-            <PressedFileData Type="PlistSubImage" Path="BtnReturn_2.png" Plist="common.plist" />
-            <NormalFileData Type="PlistSubImage" Path="BtnReturn_1.png" Plist="common.plist" />
+            <DisabledFileData Type="PlistSubImage" Path="goHome_0.png" Plist="common.plist" />
+            <PressedFileData Type="PlistSubImage" Path="goHome_2.png" Plist="common.plist" />
+            <NormalFileData Type="PlistSubImage" Path="goHome_1.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_back" ActionTag="1841843919" FrameEvent="" Tag="1002" ObjectIndex="3" TouchEnable="True" FontSize="36" ButtonText="返回" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_back" ActionTag="1841843919" FrameEvent="" Tag="1002" ObjectIndex="3" TouchEnable="True" FontSize="36" ButtonText="" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
             <Position X="1084.5209" Y="45.3900" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

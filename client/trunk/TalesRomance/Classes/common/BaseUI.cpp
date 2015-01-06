@@ -10,10 +10,10 @@
 bool BaseUI::init(std::string fileName,std::string resName)
 {
     if(resName != ""){
-        SpriteFrameCache::getInstance()->addSpriteFramesWithFile(resName);
+        SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/"+resName);
     }
     Size size=Director::getInstance()->getWinSize();
-    this->ui=CSLoader::createNode(fileName);
+    this->ui=CSLoader::createNode("res/"+fileName);
     this->ui->setAnchorPoint(Vec2(0.5,0.5));
     this->addChild(ui,0);
     this->ui->setPosition(Vec2(size.width*0.5,size.height*0.5));

@@ -178,13 +178,13 @@
                 <key>frame</key>
                 <string>{{426,2},{75,10}}</string>
                 <key>offset</key>
-                <string>{6,1}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{16,3},{75,10}}</string>
+                <string>{{0,0},{75,10}}</string>
                 <key>sourceSize</key>
-                <string>{95,18}</string>
+                <string>{75,10}</string>
             </dict>
             <key>kaPai_1.png</key>
             <dict>
@@ -313,7 +313,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:967157e907b5f5074ed9e2dff7bf334d:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:0dd60aa65652a80eb5dba99d366698dc:1/1$</string>
             <key>textureFileName</key>
             <string>common.png</string>
         </dict>

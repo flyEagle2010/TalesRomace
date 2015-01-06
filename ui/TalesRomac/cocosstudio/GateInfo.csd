@@ -120,7 +120,7 @@
             <ColorVector ScaleY="1.0000" />
             <InnerNodeSize Width="600" Height="200" />
           </NodeObjectData>
-          <NodeObjectData Name="btn_back" ActionTag="1752867308" FrameEvent="" Tag="1002" ObjectIndex="1" TouchEnable="True" FontSize="36" ButtonText="返回" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
+          <NodeObjectData Name="btn_back" ActionTag="1752867308" FrameEvent="" Tag="1002" ObjectIndex="1" TouchEnable="True" FontSize="36" ButtonText="" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
             <Position X="900.3650" Y="90.7049" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

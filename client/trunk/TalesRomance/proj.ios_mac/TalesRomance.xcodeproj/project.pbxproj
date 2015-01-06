@@ -116,51 +116,21 @@
 		5DB70BEC1A4BFB140018A813 /* tree_block_bottom.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BBD1A4BFB140018A813 /* tree_block_bottom.tmx */; };
 		5DB70BED1A4BFB140018A813 /* tree_block_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BBE1A4BFB140018A813 /* tree_block_test.json */; };
 		5DB70BEE1A4BFB140018A813 /* tree_block_top.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BBF1A4BFB140018A813 /* tree_block_top.tmx */; };
-		5DB70C1A1A4BFB270018A813 /* AoyiItem.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BEF1A4BFB270018A813 /* AoyiItem.csb */; };
-		5DB70C1B1A4BFB270018A813 /* battle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BF01A4BFB270018A813 /* battle.plist */; };
-		5DB70C1C1A4BFB270018A813 /* battle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BF11A4BFB270018A813 /* battle.png */; };
-		5DB70C1D1A4BFB270018A813 /* BattleCard.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BF21A4BFB270018A813 /* BattleCard.csb */; };
-		5DB70C1E1A4BFB270018A813 /* BattleScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BF31A4BFB270018A813 /* BattleScene.csb */; };
-		5DB70C1F1A4BFB270018A813 /* Card.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BF41A4BFB270018A813 /* Card.csb */; };
-		5DB70C201A4BFB270018A813 /* card.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BF51A4BFB270018A813 /* card.plist */; };
-		5DB70C211A4BFB270018A813 /* card.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BF61A4BFB270018A813 /* card.png */; };
-		5DB70C221A4BFB270018A813 /* common.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BF71A4BFB270018A813 /* common.plist */; };
-		5DB70C231A4BFB270018A813 /* common.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BF81A4BFB270018A813 /* common.png */; };
 		5DB70C241A4BFB270018A813 /* Button_Disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BFA1A4BFB270018A813 /* Button_Disable.png */; };
 		5DB70C251A4BFB270018A813 /* Button_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BFB1A4BFB270018A813 /* Button_Normal.png */; };
 		5DB70C261A4BFB270018A813 /* Button_Press.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BFC1A4BFB270018A813 /* Button_Press.png */; };
-		5DB70C271A4BFB270018A813 /* GateInfo.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BFD1A4BFB270018A813 /* GateInfo.csb */; };
-		5DB70C281A4BFB270018A813 /* gateInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BFE1A4BFB270018A813 /* gateInfo.plist */; };
-		5DB70C291A4BFB270018A813 /* gateInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70BFF1A4BFB270018A813 /* gateInfo.png */; };
-		5DB70C2A1A4BFB270018A813 /* home.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C001A4BFB270018A813 /* home.plist */; };
-		5DB70C2B1A4BFB270018A813 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C011A4BFB270018A813 /* home.png */; };
-		5DB70C2C1A4BFB270018A813 /* login.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C021A4BFB270018A813 /* login.plist */; };
-		5DB70C2D1A4BFB270018A813 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C031A4BFB270018A813 /* login.png */; };
-		5DB70C2E1A4BFB270018A813 /* LoginScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C041A4BFB270018A813 /* LoginScene.csb */; };
-		5DB70C2F1A4BFB270018A813 /* MainScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C051A4BFB270018A813 /* MainScene.csb */; };
-		5DB70C301A4BFB270018A813 /* map.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C061A4BFB270018A813 /* map.plist */; };
-		5DB70C311A4BFB270018A813 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C071A4BFB270018A813 /* map.png */; };
-		5DB70C321A4BFB270018A813 /* MapScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C081A4BFB270018A813 /* MapScene.csb */; };
-		5DB70C331A4BFB270018A813 /* maze_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C091A4BFB270018A813 /* maze_bg.png */; };
-		5DB70C341A4BFB270018A813 /* Maze.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C0A1A4BFB270018A813 /* Maze.csb */; };
-		5DB70C351A4BFB270018A813 /* maze.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C0B1A4BFB270018A813 /* maze.plist */; };
-		5DB70C361A4BFB270018A813 /* maze.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C0C1A4BFB270018A813 /* maze.png */; };
-		5DB70C371A4BFB270018A813 /* partner1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C0D1A4BFB270018A813 /* partner1.png */; };
-		5DB70C381A4BFB270018A813 /* Result.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C0E1A4BFB270018A813 /* Result.csb */; };
-		5DB70C391A4BFB270018A813 /* result.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C0F1A4BFB270018A813 /* result.plist */; };
-		5DB70C3A1A4BFB270018A813 /* result.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C101A4BFB270018A813 /* result.png */; };
-		5DB70C3B1A4BFB270018A813 /* RoleCreate.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C111A4BFB270018A813 /* RoleCreate.csb */; };
-		5DB70C3C1A4BFB270018A813 /* smallIcon.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C121A4BFB270018A813 /* smallIcon.plist */; };
-		5DB70C3D1A4BFB270018A813 /* smallIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C131A4BFB270018A813 /* smallIcon.png */; };
-		5DB70C3E1A4BFB270018A813 /* Team.csb in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C141A4BFB270018A813 /* Team.csb */; };
-		5DB70C3F1A4BFB270018A813 /* team.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C151A4BFB270018A813 /* team.plist */; };
-		5DB70C401A4BFB270018A813 /* team.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C161A4BFB270018A813 /* team.png */; };
-		5DB70C411A4BFB270018A813 /* tree_block_bottom.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C171A4BFB270018A813 /* tree_block_bottom.tmx */; };
-		5DB70C421A4BFB270018A813 /* tree_block_top.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C181A4BFB270018A813 /* tree_block_top.tmx */; };
-		5DB70C431A4BFB270018A813 /* tree_block.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB70C191A4BFB270018A813 /* tree_block.png */; };
 		5DB724B41A4C27120018A813 /* libjansson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB714091A4C1FC80018A813 /* libjansson.a */; };
 		5DB724B51A4C27120018A813 /* libpomelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB7140A1A4C1FC80018A813 /* libpomelo.a */; };
 		5DB724B61A4C27120018A813 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB7140B1A4C1FC80018A813 /* libuv.a */; };
+		5DBDAA771A5A804F00FFDCE9 /* zhujueB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5DBDAA741A5A804F00FFDCE9 /* zhujueB.atlas */; };
+		5DBDAA781A5A804F00FFDCE9 /* zhujueB.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DBDAA751A5A804F00FFDCE9 /* zhujueB.json */; };
+		5DBDAA791A5A804F00FFDCE9 /* zhujueB.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBDAA761A5A804F00FFDCE9 /* zhujueB.png */; };
+		5DBDAA7C1A5A9EB700FFDCE9 /* Team2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDAA7A1A5A9EB700FFDCE9 /* Team2.cpp */; };
+		5DC0C0761A5B91E90006CEB4 /* TeamCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C0741A5B91E90006CEB4 /* TeamCard.cpp */; };
+		5DC0C0781A5B95A80006CEB4 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 5DC0C0771A5B95A80006CEB4 /* res */; };
+		5DC0C07A1A5BD96B0006CEB4 /* XGroup.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC0C0791A5BD96B0006CEB4 /* XGroup.json */; };
+		5DC0C07D1A5BD9750006CEB4 /* XGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C07B1A5BD9750006CEB4 /* XGroup.cpp */; };
+		5DC0C0801A5BEB6D0006CEB4 /* XCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C07E1A5BEB6D0006CEB4 /* XCard.cpp */; };
 		5DEB260C1A513B8A006F4B6F /* juqi_1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB25FD1A513B8A006F4B6F /* juqi_1.atlas */; };
 		5DEB260D1A513B8A006F4B6F /* juqi_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB25FE1A513B8A006F4B6F /* juqi_1.png */; };
 		5DEB260E1A513B8A006F4B6F /* skeleton_juqi_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB25FF1A513B8A006F4B6F /* skeleton_juqi_1.json */; };
@@ -174,6 +144,13 @@
 		5DEB26181A513B8A006F4B6F /* zhujue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB260B1A513B8A006F4B6F /* zhujue.png */; };
 		5DEB261A1A5143AB006F4B6F /* skeleton_zhujue.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26191A5143AB006F4B6F /* skeleton_zhujue.json */; };
 		5DEB261C1A51508B006F4B6F /* battleBg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB261B1A51508B006F4B6F /* battleBg.jpg */; };
+		5DEB26261A595010006F4B6F /* zhujue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26251A595010006F4B6F /* zhujue.png */; };
+		5DEB26341A5A3BB1006F4B6F /* LuoLi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DEB26321A5A3BB1006F4B6F /* LuoLi.cpp */; };
+		5DEB263B1A5A40BF006F4B6F /* backHair_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26361A5A40BF006F4B6F /* backHair_1.png */; };
+		5DEB263C1A5A40BF006F4B6F /* biaoqing_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26371A5A40BF006F4B6F /* biaoqing_1.png */; };
+		5DEB263D1A5A40BF006F4B6F /* body.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26381A5A40BF006F4B6F /* body.png */; };
+		5DEB263E1A5A40BF006F4B6F /* dress_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB26391A5A40BF006F4B6F /* dress_1.png */; };
+		5DEB263F1A5A40BF006F4B6F /* topHair_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB263A1A5A40BF006F4B6F /* topHair_1.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -419,51 +396,25 @@
 		5DB70BBD1A4BFB140018A813 /* tree_block_bottom.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tree_block_bottom.tmx; sourceTree = "<group>"; };
 		5DB70BBE1A4BFB140018A813 /* tree_block_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tree_block_test.json; sourceTree = "<group>"; };
 		5DB70BBF1A4BFB140018A813 /* tree_block_top.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tree_block_top.tmx; sourceTree = "<group>"; };
-		5DB70BEF1A4BFB270018A813 /* AoyiItem.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = AoyiItem.csb; sourceTree = "<group>"; };
-		5DB70BF01A4BFB270018A813 /* battle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = battle.plist; sourceTree = "<group>"; };
-		5DB70BF11A4BFB270018A813 /* battle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battle.png; sourceTree = "<group>"; };
-		5DB70BF21A4BFB270018A813 /* BattleCard.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = BattleCard.csb; sourceTree = "<group>"; };
-		5DB70BF31A4BFB270018A813 /* BattleScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = BattleScene.csb; sourceTree = "<group>"; };
-		5DB70BF41A4BFB270018A813 /* Card.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Card.csb; sourceTree = "<group>"; };
-		5DB70BF51A4BFB270018A813 /* card.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = card.plist; sourceTree = "<group>"; };
-		5DB70BF61A4BFB270018A813 /* card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card.png; sourceTree = "<group>"; };
-		5DB70BF71A4BFB270018A813 /* common.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = common.plist; sourceTree = "<group>"; };
-		5DB70BF81A4BFB270018A813 /* common.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = common.png; sourceTree = "<group>"; };
 		5DB70BFA1A4BFB270018A813 /* Button_Disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button_Disable.png; sourceTree = "<group>"; };
 		5DB70BFB1A4BFB270018A813 /* Button_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button_Normal.png; sourceTree = "<group>"; };
 		5DB70BFC1A4BFB270018A813 /* Button_Press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button_Press.png; sourceTree = "<group>"; };
-		5DB70BFD1A4BFB270018A813 /* GateInfo.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = GateInfo.csb; sourceTree = "<group>"; };
-		5DB70BFE1A4BFB270018A813 /* gateInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gateInfo.plist; sourceTree = "<group>"; };
-		5DB70BFF1A4BFB270018A813 /* gateInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gateInfo.png; sourceTree = "<group>"; };
-		5DB70C001A4BFB270018A813 /* home.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = home.plist; sourceTree = "<group>"; };
-		5DB70C011A4BFB270018A813 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
-		5DB70C021A4BFB270018A813 /* login.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = login.plist; sourceTree = "<group>"; };
-		5DB70C031A4BFB270018A813 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
-		5DB70C041A4BFB270018A813 /* LoginScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoginScene.csb; sourceTree = "<group>"; };
-		5DB70C051A4BFB270018A813 /* MainScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.csb; sourceTree = "<group>"; };
-		5DB70C061A4BFB270018A813 /* map.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map.plist; sourceTree = "<group>"; };
-		5DB70C071A4BFB270018A813 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
-		5DB70C081A4BFB270018A813 /* MapScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = MapScene.csb; sourceTree = "<group>"; };
-		5DB70C091A4BFB270018A813 /* maze_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maze_bg.png; sourceTree = "<group>"; };
-		5DB70C0A1A4BFB270018A813 /* Maze.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Maze.csb; sourceTree = "<group>"; };
-		5DB70C0B1A4BFB270018A813 /* maze.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = maze.plist; sourceTree = "<group>"; };
-		5DB70C0C1A4BFB270018A813 /* maze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maze.png; sourceTree = "<group>"; };
-		5DB70C0D1A4BFB270018A813 /* partner1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partner1.png; sourceTree = "<group>"; };
-		5DB70C0E1A4BFB270018A813 /* Result.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Result.csb; sourceTree = "<group>"; };
-		5DB70C0F1A4BFB270018A813 /* result.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = result.plist; sourceTree = "<group>"; };
-		5DB70C101A4BFB270018A813 /* result.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = result.png; sourceTree = "<group>"; };
-		5DB70C111A4BFB270018A813 /* RoleCreate.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = RoleCreate.csb; sourceTree = "<group>"; };
-		5DB70C121A4BFB270018A813 /* smallIcon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = smallIcon.plist; sourceTree = "<group>"; };
-		5DB70C131A4BFB270018A813 /* smallIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallIcon.png; sourceTree = "<group>"; };
-		5DB70C141A4BFB270018A813 /* Team.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Team.csb; sourceTree = "<group>"; };
-		5DB70C151A4BFB270018A813 /* team.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = team.plist; sourceTree = "<group>"; };
-		5DB70C161A4BFB270018A813 /* team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = team.png; sourceTree = "<group>"; };
-		5DB70C171A4BFB270018A813 /* tree_block_bottom.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tree_block_bottom.tmx; sourceTree = "<group>"; };
-		5DB70C181A4BFB270018A813 /* tree_block_top.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tree_block_top.tmx; sourceTree = "<group>"; };
-		5DB70C191A4BFB270018A813 /* tree_block.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree_block.png; sourceTree = "<group>"; };
 		5DB714091A4C1FC80018A813 /* libjansson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjansson.a; path = ../cocos2d/external/libpomelo/libjansson.a; sourceTree = "<group>"; };
 		5DB7140A1A4C1FC80018A813 /* libpomelo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpomelo.a; path = ../cocos2d/external/libpomelo/libpomelo.a; sourceTree = "<group>"; };
 		5DB7140B1A4C1FC80018A813 /* libuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libuv.a; path = ../cocos2d/external/libpomelo/libuv.a; sourceTree = "<group>"; };
+		5DBDAA741A5A804F00FFDCE9 /* zhujueB.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zhujueB.atlas; sourceTree = "<group>"; };
+		5DBDAA751A5A804F00FFDCE9 /* zhujueB.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zhujueB.json; sourceTree = "<group>"; };
+		5DBDAA761A5A804F00FFDCE9 /* zhujueB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhujueB.png; sourceTree = "<group>"; };
+		5DBDAA7A1A5A9EB700FFDCE9 /* Team2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Team2.cpp; sourceTree = "<group>"; };
+		5DBDAA7B1A5A9EB700FFDCE9 /* Team2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team2.h; sourceTree = "<group>"; };
+		5DC0C0741A5B91E90006CEB4 /* TeamCard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TeamCard.cpp; sourceTree = "<group>"; };
+		5DC0C0751A5B91E90006CEB4 /* TeamCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamCard.h; sourceTree = "<group>"; };
+		5DC0C0771A5B95A80006CEB4 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../../../../ui/TalesRomac/res; sourceTree = "<group>"; };
+		5DC0C0791A5BD96B0006CEB4 /* XGroup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XGroup.json; sourceTree = "<group>"; };
+		5DC0C07B1A5BD9750006CEB4 /* XGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XGroup.cpp; sourceTree = "<group>"; };
+		5DC0C07C1A5BD9750006CEB4 /* XGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGroup.h; sourceTree = "<group>"; };
+		5DC0C07E1A5BEB6D0006CEB4 /* XCard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XCard.cpp; sourceTree = "<group>"; };
+		5DC0C07F1A5BEB6D0006CEB4 /* XCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCard.h; sourceTree = "<group>"; };
 		5DEB25FD1A513B8A006F4B6F /* juqi_1.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = juqi_1.atlas; sourceTree = "<group>"; };
 		5DEB25FE1A513B8A006F4B6F /* juqi_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juqi_1.png; sourceTree = "<group>"; };
 		5DEB25FF1A513B8A006F4B6F /* skeleton_juqi_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton_juqi_1.json; sourceTree = "<group>"; };
@@ -477,6 +428,14 @@
 		5DEB260B1A513B8A006F4B6F /* zhujue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhujue.png; sourceTree = "<group>"; };
 		5DEB26191A5143AB006F4B6F /* skeleton_zhujue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton_zhujue.json; sourceTree = "<group>"; };
 		5DEB261B1A51508B006F4B6F /* battleBg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = battleBg.jpg; path = ../../../../../art/bg/battleBg.jpg; sourceTree = "<group>"; };
+		5DEB26251A595010006F4B6F /* zhujue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zhujue.png; path = ../../../../ui/TalesRomac/cocosstudio/zhujue.png; sourceTree = "<group>"; };
+		5DEB26321A5A3BB1006F4B6F /* LuoLi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuoLi.cpp; sourceTree = "<group>"; };
+		5DEB26331A5A3BB1006F4B6F /* LuoLi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuoLi.h; sourceTree = "<group>"; };
+		5DEB26361A5A40BF006F4B6F /* backHair_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backHair_1.png; sourceTree = "<group>"; };
+		5DEB26371A5A40BF006F4B6F /* biaoqing_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = biaoqing_1.png; sourceTree = "<group>"; };
+		5DEB26381A5A40BF006F4B6F /* body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = body.png; sourceTree = "<group>"; };
+		5DEB26391A5A40BF006F4B6F /* dress_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dress_1.png; sourceTree = "<group>"; };
+		5DEB263A1A5A40BF006F4B6F /* topHair_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topHair_1.png; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -793,46 +752,10 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5DB70BEF1A4BFB270018A813 /* AoyiItem.csb */,
-				5DB70BF01A4BFB270018A813 /* battle.plist */,
-				5DB70BF11A4BFB270018A813 /* battle.png */,
-				5DB70BF21A4BFB270018A813 /* BattleCard.csb */,
-				5DB70BF31A4BFB270018A813 /* BattleScene.csb */,
-				5DB70BF41A4BFB270018A813 /* Card.csb */,
-				5DB70BF51A4BFB270018A813 /* card.plist */,
-				5DB70BF61A4BFB270018A813 /* card.png */,
-				5DB70BF71A4BFB270018A813 /* common.plist */,
-				5DB70BF81A4BFB270018A813 /* common.png */,
+				5DC0C0771A5B95A80006CEB4 /* res */,
+				5DEB26351A5A40BF006F4B6F /* luoLi */,
+				5DEB26251A595010006F4B6F /* zhujue.png */,
 				5DB70BF91A4BFB270018A813 /* Default */,
-				5DB70BFD1A4BFB270018A813 /* GateInfo.csb */,
-				5DB70BFE1A4BFB270018A813 /* gateInfo.plist */,
-				5DB70BFF1A4BFB270018A813 /* gateInfo.png */,
-				5DB70C001A4BFB270018A813 /* home.plist */,
-				5DB70C011A4BFB270018A813 /* home.png */,
-				5DB70C021A4BFB270018A813 /* login.plist */,
-				5DB70C031A4BFB270018A813 /* login.png */,
-				5DB70C041A4BFB270018A813 /* LoginScene.csb */,
-				5DB70C051A4BFB270018A813 /* MainScene.csb */,
-				5DB70C061A4BFB270018A813 /* map.plist */,
-				5DB70C071A4BFB270018A813 /* map.png */,
-				5DB70C081A4BFB270018A813 /* MapScene.csb */,
-				5DB70C091A4BFB270018A813 /* maze_bg.png */,
-				5DB70C0A1A4BFB270018A813 /* Maze.csb */,
-				5DB70C0B1A4BFB270018A813 /* maze.plist */,
-				5DB70C0C1A4BFB270018A813 /* maze.png */,
-				5DB70C0D1A4BFB270018A813 /* partner1.png */,
-				5DB70C0E1A4BFB270018A813 /* Result.csb */,
-				5DB70C0F1A4BFB270018A813 /* result.plist */,
-				5DB70C101A4BFB270018A813 /* result.png */,
-				5DB70C111A4BFB270018A813 /* RoleCreate.csb */,
-				5DB70C121A4BFB270018A813 /* smallIcon.plist */,
-				5DB70C131A4BFB270018A813 /* smallIcon.png */,
-				5DB70C141A4BFB270018A813 /* Team.csb */,
-				5DB70C151A4BFB270018A813 /* team.plist */,
-				5DB70C161A4BFB270018A813 /* team.png */,
-				5DB70C171A4BFB270018A813 /* tree_block_bottom.tmx */,
-				5DB70C181A4BFB270018A813 /* tree_block_top.tmx */,
-				5DB70C191A4BFB270018A813 /* tree_block.png */,
 				5DB70B8B1A4BFB140018A813 /* bg */,
 				5DB70B911A4BFB140018A813 /* effect */,
 				5DB70BAE1A4BFB140018A813 /* icon */,
@@ -923,6 +846,9 @@
 		5DB70B4F1A4BFAF90018A813 /* bone */ = {
 			isa = PBXGroup;
 			children = (
+				5DBDAA741A5A804F00FFDCE9 /* zhujueB.atlas */,
+				5DBDAA751A5A804F00FFDCE9 /* zhujueB.json */,
+				5DBDAA761A5A804F00FFDCE9 /* zhujueB.png */,
 				5DEB26191A5143AB006F4B6F /* skeleton_zhujue.json */,
 				5DEB25FC1A513B8A006F4B6F /* juqi_1 */,
 				5DEB26001A513B8A006F4B6F /* juqi_2 */,
@@ -947,6 +873,7 @@
 		5DB70B631A4BFAF90018A813 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				5DC0C0791A5BD96B0006CEB4 /* XGroup.json */,
 				5DB70B641A4BFAF90018A813 /* battle.json */,
 				5DB70B651A4BFAF90018A813 /* XMap.json */,
 				5DB70B661A4BFAF90018A813 /* XMonster.json */,
@@ -1106,6 +1033,18 @@
 			path = juqi_3;
 			sourceTree = "<group>";
 		};
+		5DEB26351A5A40BF006F4B6F /* luoLi */ = {
+			isa = PBXGroup;
+			children = (
+				5DEB26361A5A40BF006F4B6F /* backHair_1.png */,
+				5DEB26371A5A40BF006F4B6F /* biaoqing_1.png */,
+				5DEB26381A5A40BF006F4B6F /* body.png */,
+				5DEB26391A5A40BF006F4B6F /* dress_1.png */,
+				5DEB263A1A5A40BF006F4B6F /* topHair_1.png */,
+			);
+			path = luoLi;
+			sourceTree = "<group>";
+		};
 		BFCCB4721A2C068A0049CFE8 /* team */ = {
 			isa = PBXGroup;
 			children = (
@@ -1115,6 +1054,10 @@
 				BFCCB4771A2C0A900049CFE8 /* Card.h */,
 				BFCCB4831A2C728C0049CFE8 /* AoyiItem.cpp */,
 				BFCCB4841A2C728C0049CFE8 /* AoyiItem.h */,
+				5DBDAA7A1A5A9EB700FFDCE9 /* Team2.cpp */,
+				5DBDAA7B1A5A9EB700FFDCE9 /* Team2.h */,
+				5DC0C0741A5B91E90006CEB4 /* TeamCard.cpp */,
+				5DC0C0751A5B91E90006CEB4 /* TeamCard.h */,
 			);
 			path = team;
 			sourceTree = "<group>";
@@ -1326,6 +1269,8 @@
 			children = (
 				BFDAB2C61A1A0E2100E450EC /* HomeScene.cpp */,
 				BFDAB2C71A1A0E2100E450EC /* HomeScene.h */,
+				5DEB26321A5A3BB1006F4B6F /* LuoLi.cpp */,
+				5DEB26331A5A3BB1006F4B6F /* LuoLi.h */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -1417,6 +1362,10 @@
 		BFDAB2F41A1A0E2100E450EC /* xls */ = {
 			isa = PBXGroup;
 			children = (
+				5DC0C07E1A5BEB6D0006CEB4 /* XCard.cpp */,
+				5DC0C07F1A5BEB6D0006CEB4 /* XCard.h */,
+				5DC0C07B1A5BD9750006CEB4 /* XGroup.cpp */,
+				5DC0C07C1A5BD9750006CEB4 /* XGroup.h */,
 				5D3BCD431A2F01480023B889 /* XMap.cpp */,
 				5D3BCD441A2F01480023B889 /* XMap.h */,
 				BFDAB3051A1A0E2100E450EC /* XMonster.cpp */,
@@ -1525,14 +1474,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DB70C2E1A4BFB270018A813 /* LoginScene.csb in Resources */,
-				5DB70C2A1A4BFB270018A813 /* home.plist in Resources */,
-				5DB70C271A4BFB270018A813 /* GateInfo.csb in Resources */,
 				5DEB26171A513B8A006F4B6F /* zhujue.atlas in Resources */,
-				5DB70C201A4BFB270018A813 /* card.plist in Resources */,
 				5DB70BCA1A4BFB140018A813 /* aoYiBgOrange.png in Resources */,
 				5DB70BC31A4BFB140018A813 /* mapGateNew.png in Resources */,
-				5DB70C301A4BFB270018A813 /* map.plist in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5DEB260E1A513B8A006F4B6F /* skeleton_juqi_1.json in Resources */,
 				5DB70BD91A4BFB140018A813 /* kpps.plist in Resources */,
@@ -1543,29 +1487,23 @@
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				5DEB26141A513B8A006F4B6F /* juqi_3.png in Resources */,
 				5DB70BCB1A4BFB140018A813 /* aoYiMaskBg.png in Resources */,
-				5DB70C311A4BFB270018A813 /* map.png in Resources */,
 				5DB70BDC1A4BFB140018A813 /* posui.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
-				5DB70C3A1A4BFB270018A813 /* result.png in Resources */,
-				5DB70C3E1A4BFB270018A813 /* Team.csb in Resources */,
 				5DB70B811A4BFAF90018A813 /* XMap.json in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
+				5DC0C07A1A5BD96B0006CEB4 /* XGroup.json in Resources */,
 				5DB70B821A4BFAF90018A813 /* XMonster.json in Resources */,
-				5DB70C371A4BFB270018A813 /* partner1.png in Resources */,
-				5DB70C1F1A4BFB270018A813 /* Card.csb in Resources */,
 				5DB70BC91A4BFB140018A813 /* aoYiBgOrange.plist in Resources */,
 				5DEB261C1A51508B006F4B6F /* battleBg.jpg in Resources */,
-				5DB70C211A4BFB270018A813 /* card.png in Resources */,
+				5DEB263D1A5A40BF006F4B6F /* body.png in Resources */,
 				5DB70BD01A4BFB140018A813 /* cardSkillEffect.png in Resources */,
-				5DB70C2C1A4BFB270018A813 /* login.plist in Resources */,
 				5DB70BD21A4BFB140018A813 /* cardXiaoShi.png in Resources */,
-				5DB70C341A4BFB270018A813 /* Maze.csb in Resources */,
 				5DB70C261A4BFB270018A813 /* Button_Press.png in Resources */,
-				5DB70C3D1A4BFB270018A813 /* smallIcon.png in Resources */,
 				5DB70BEB1A4BFB140018A813 /* tree_block.png in Resources */,
 				5DB70B7D1A4BFAF90018A813 /* card_100.png in Resources */,
 				5DEB260D1A513B8A006F4B6F /* juqi_1.png in Resources */,
+				5DEB263E1A5A40BF006F4B6F /* dress_1.png in Resources */,
 				5DB70BC71A4BFB140018A813 /* aoYiBgGreen.plist in Resources */,
 				5DEB26151A513B8A006F4B6F /* skeleton_juqi_3.json in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
@@ -1577,28 +1515,26 @@
 				5DB70BED1A4BFB140018A813 /* tree_block_test.json in Resources */,
 				5DB70BE41A4BFB140018A813 /* ghost.png in Resources */,
 				5DB70BEA1A4BFB140018A813 /* tree_block.plist in Resources */,
+				5DC0C0781A5B95A80006CEB4 /* res in Resources */,
 				5DB70BD81A4BFB140018A813 /* juqi2.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
-				5DB70C411A4BFB270018A813 /* tree_block_bottom.tmx in Resources */,
 				5DB70BEC1A4BFB140018A813 /* tree_block_bottom.tmx in Resources */,
+				5DBDAA771A5A804F00FFDCE9 /* zhujueB.atlas in Resources */,
 				5DB70B8A1A4BFAF90018A813 /* HelloWorld.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5DB70BE61A4BFB140018A813 /* ghostG.plist in Resources */,
-				5DB70C1C1A4BFB270018A813 /* battle.png in Resources */,
-				5DB70C2B1A4BFB270018A813 /* home.png in Resources */,
 				5DEB26101A513B8A006F4B6F /* juqi_2.png in Resources */,
 				5DB70BD71A4BFB140018A813 /* juqi2.plist in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				5DB70BDF1A4BFB140018A813 /* skillEffect.plist in Resources */,
-				5DB70C291A4BFB270018A813 /* gateInfo.png in Resources */,
-				5DB70C391A4BFB270018A813 /* result.plist in Resources */,
-				5DB70C331A4BFB270018A813 /* maze_bg.png in Resources */,
-				5DB70C321A4BFB270018A813 /* MapScene.csb in Resources */,
+				5DEB26261A595010006F4B6F /* zhujue.png in Resources */,
+				5DBDAA781A5A804F00FFDCE9 /* zhujueB.json in Resources */,
 				5DB70BD11A4BFB140018A813 /* cardXiaoShi.plist in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5DEB26111A513B8A006F4B6F /* skeleton_juqi_2.json in Resources */,
 				5DB70BC41A4BFB140018A813 /* test.png in Resources */,
+				5DEB263C1A5A40BF006F4B6F /* biaoqing_1.png in Resources */,
 				5DB70BE51A4BFB140018A813 /* ghostB.plist in Resources */,
 				5DB70B7C1A4BFAF90018A813 /* background.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
@@ -1610,12 +1546,9 @@
 				5DB70BC11A4BFB140018A813 /* mapGate.png in Resources */,
 				5DB70BD41A4BFB140018A813 /* hurt_fire2.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
-				5DB70C2F1A4BFB270018A813 /* MainScene.csb in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
-				5DB70C3B1A4BFB270018A813 /* RoleCreate.csb in Resources */,
 				5DB70BCE1A4BFB140018A813 /* buffIcon.png in Resources */,
 				5DEB26181A513B8A006F4B6F /* zhujue.png in Resources */,
-				5DB70C2D1A4BFB270018A813 /* login.png in Resources */,
 				5DB70BE31A4BFB140018A813 /* fapai.png in Resources */,
 				5DB70B881A4BFAF90018A813 /* num_hp.png in Resources */,
 				5DEB260F1A513B8A006F4B6F /* juqi_2.atlas in Resources */,
@@ -1623,45 +1556,33 @@
 				5DB70B861A4BFAF90018A813 /* num_heal.png in Resources */,
 				5DB70BCC1A4BFB140018A813 /* aoYiPartner_10.png in Resources */,
 				5DB70B801A4BFAF90018A813 /* battle.json in Resources */,
-				5DB70C3C1A4BFB270018A813 /* smallIcon.plist in Resources */,
-				5DB70C281A4BFB270018A813 /* gateInfo.plist in Resources */,
 				5DB70BC21A4BFB140018A813 /* mapGate1.png in Resources */,
 				5DB70C241A4BFB270018A813 /* Button_Disable.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				5DB70BDD1A4BFB140018A813 /* selected.plist in Resources */,
-				5DB70C431A4BFB270018A813 /* tree_block.png in Resources */,
 				5DB70BCF1A4BFB140018A813 /* cardSkillEffect.plist in Resources */,
 				5DB70B891A4BFAF90018A813 /* Marker Felt.ttf in Resources */,
-				5DB70C3F1A4BFB270018A813 /* team.plist in Resources */,
-				5DB70C1A1A4BFB270018A813 /* AoyiItem.csb in Resources */,
 				5DB70BC51A4BFB140018A813 /* aoyi.plist in Resources */,
-				5DB70C1D1A4BFB270018A813 /* BattleCard.csb in Resources */,
 				5DB70B871A4BFAF90018A813 /* num_hit.png in Resources */,
 				5DB70BC61A4BFB140018A813 /* aoyi.png in Resources */,
-				5DB70C221A4BFB270018A813 /* common.plist in Resources */,
 				5DB70B851A4BFAF90018A813 /* miss.png in Resources */,
 				5DB70BC01A4BFB140018A813 /* cardTest.png in Resources */,
 				5DB70BDB1A4BFB140018A813 /* posui.plist in Resources */,
 				5DB70B7E1A4BFAF90018A813 /* round.png in Resources */,
-				5DB70C361A4BFB270018A813 /* maze.png in Resources */,
-				5DB70C421A4BFB270018A813 /* tree_block_top.tmx in Resources */,
 				5DB70BCD1A4BFB140018A813 /* buffIcon.plist in Resources */,
-				5DB70C351A4BFB270018A813 /* maze.plist in Resources */,
-				5DB70C1B1A4BFB270018A813 /* battle.plist in Resources */,
 				5DB70B831A4BFAF90018A813 /* XSheet1.json in Resources */,
 				5DB70BDE1A4BFB140018A813 /* selected.png in Resources */,
-				5DB70C401A4BFB270018A813 /* team.png in Resources */,
 				5DB70BDA1A4BFB140018A813 /* kpps.png in Resources */,
-				5DB70C381A4BFB270018A813 /* Result.csb in Resources */,
+				5DEB263F1A5A40BF006F4B6F /* topHair_1.png in Resources */,
 				5DB70BE11A4BFB140018A813 /* portrait.png in Resources */,
+				5DEB263B1A5A40BF006F4B6F /* backHair_1.png in Resources */,
+				5DBDAA791A5A804F00FFDCE9 /* zhujueB.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 				5DB70BE91A4BFB140018A813 /* ghostZ.plist in Resources */,
 				5DB70B7A1A4BFAF90018A813 /* CloseNormal.png in Resources */,
-				5DB70C1E1A4BFB270018A813 /* BattleScene.csb in Resources */,
 				5DB70B7F1A4BFAF90018A813 /* test.png in Resources */,
 				5DB70BD51A4BFB140018A813 /* juqi1.plist in Resources */,
-				5DB70C231A4BFB270018A813 /* common.png in Resources */,
 				5DEB261A1A5143AB006F4B6F /* skeleton_zhujue.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1720,9 +1641,12 @@
 				BFDAB3441A1A0E2100E450EC /* substitute.cc in Sources */,
 				BFDAB3231A1A0E2100E450EC /* KeychainItemWrapper.m in Sources */,
 				BFDAB34D1A1A0E2100E450EC /* MapScene.cpp in Sources */,
+				5DBDAA7C1A5A9EB700FFDCE9 /* Team2.cpp in Sources */,
 				BFCCB45D1A2C04320049CFE8 /* GateInfo.cpp in Sources */,
 				BFDAB34A1A1A0E2100E450EC /* wire_format_lite.cc in Sources */,
+				5DC0C0761A5B91E90006CEB4 /* TeamCard.cpp in Sources */,
 				BFDAB3401A1A0E2100E450EC /* once.cc in Sources */,
+				5DC0C0801A5BEB6D0006CEB4 /* XCard.cpp in Sources */,
 				BFDAB35E1A1A0E2100E450EC /* Update.cpp in Sources */,
 				BFDAB32D1A1A0E2100E450EC /* extension_set.cc in Sources */,
 				BFDAB3211A1A0E2100E450EC /* Effect.cpp in Sources */,
@@ -1746,6 +1670,7 @@
 				BFDAB3451A1A0E2100E450EC /* file.cc in Sources */,
 				BFDAB34C1A1A0E2100E450EC /* LoginScene.cpp in Sources */,
 				BFDAB3261A1A0E2100E450EC /* Utils.cpp in Sources */,
+				5DC0C07D1A5BD9750006CEB4 /* XGroup.cpp in Sources */,
 				BFDAB3541A1A0E2100E450EC /* chat.pb.cc in Sources */,
 				BFDAB3341A1A0E2100E450EC /* tokenizer.cc in Sources */,
 				5D3BCD931A383E310023B889 /* PomeloMsg.cpp in Sources */,
@@ -1764,6 +1689,7 @@
 				BFDAB35C1A1A0E2100E450EC /* message.pb.cc in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				BFDAB31D1A1A0E2100E450EC /* NewPageView.cpp in Sources */,
+				5DEB26341A5A3BB1006F4B6F /* LuoLi.cpp in Sources */,
 				BFDAB35D1A1A0E2100E450EC /* npc.pb.cc in Sources */,
 				BFDAB3521A1A0E2100E450EC /* WSocket.cpp in Sources */,
 				BFDAB3381A1A0E2100E450EC /* message.cc in Sources */,
