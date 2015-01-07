@@ -15,19 +15,27 @@
 #include "HomeScene.h"
 #include "XGroup.h"
 #include "XCard.h"
+#include "AoyiItem.h"
 
 class TeamCard : public BaseUI {
     TabBar* tabBar;
     Node* aoYiPanel;
     Node* cardPanel;
-    ListView* cardList;
+    ui::ScrollView* cardList;
     ListView* aoYiList;
+    Card* card;
+    json_t* data;
+    json_t* cards;
 public:
     static TeamCard* create();
     bool init();
     void resetUI();
 private:
     void onButtonClick(cocos2d::Ref *pSender);
+    void selectCard(Widget* card);
+    std::vector<int> getAoYiData(int type1,int type2);
+    void filterCard(int type);
+    void initCards(json_t* jsonArr);
 };
 
 #endif /* defined(__TalesRomance__TeamCard__) */

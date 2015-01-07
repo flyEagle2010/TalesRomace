@@ -40,7 +40,7 @@
             <Size X="36.0000" Y="36.0000" />
             <PrePosition X="0.0000" Y="0.0000" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="atkType0.png" Plist="smallIcon.plist" />
+            <FileData Type="PlistSubImage" Path="atkType1.png" Plist="smallIcon.plist" />
           </NodeObjectData>
           <NodeObjectData Name="skillIcon" ActionTag="-865230583" FrameEvent="" Tag="46" ObjectIndex="3" ctype="SpriteObjectData">
             <Position X="27.0533" Y="-44.1379" />
@@ -61,7 +61,7 @@
             <PrePosition X="0.0000" Y="0.0000" />
             <PreSize X="0.0000" Y="0.0000" />
           </NodeObjectData>
-          <NodeObjectData Name="xiaoXing_2" ActionTag="-1878064711" FrameEvent="" Tag="49" ObjectIndex="5" ctype="SpriteObjectData">
+          <NodeObjectData Name="xiaoXing" ActionTag="-1878064711" FrameEvent="" Tag="49" ObjectIndex="5" ctype="SpriteObjectData">
             <Position X="-31.7758" Y="-21.4611" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -71,7 +71,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="xiaoXing_2.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="xiaoXing_2_Copy" ActionTag="-628635958" FrameEvent="" Tag="50" ObjectIndex="6" ctype="SpriteObjectData">
+          <NodeObjectData Name="xiaoXing" ActionTag="-628635958" FrameEvent="" Tag="50" ObjectIndex="6" ctype="SpriteObjectData">
             <Position X="-18.7758" Y="-21.4610" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -81,7 +81,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="xiaoXing_2.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="xiaoXing_2_Copy_0" ActionTag="-501451237" FrameEvent="" Tag="51" ObjectIndex="7" ctype="SpriteObjectData">
+          <NodeObjectData Name="xiaoXing" ActionTag="-501451237" FrameEvent="" Tag="51" ObjectIndex="7" ctype="SpriteObjectData">
             <Position X="-5.7758" Y="-21.4610" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -91,7 +91,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="xiaoXing_2.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="xiaoXing_2_Copy_1" ActionTag="125769232" FrameEvent="" Tag="52" ObjectIndex="8" ctype="SpriteObjectData">
+          <NodeObjectData Name="xiaoXing" ActionTag="125769232" FrameEvent="" Tag="52" ObjectIndex="8" ctype="SpriteObjectData">
             <Position X="7.2242" Y="-21.4610" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -101,7 +101,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="xiaoXing_2.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="xiaoXing_2_Copy_2" ActionTag="-1893311840" FrameEvent="" Tag="53" ObjectIndex="9" ctype="SpriteObjectData">
+          <NodeObjectData Name="xiaoXing" ActionTag="-1893311840" FrameEvent="" Tag="53" ObjectIndex="9" ctype="SpriteObjectData">
             <Position X="20.2242" Y="-21.4610" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -111,7 +111,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="xiaoXing_2.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="xiaoXing_2_Copy_3" ActionTag="-1084907195" FrameEvent="" Tag="54" ObjectIndex="10" ctype="SpriteObjectData">
+          <NodeObjectData Name="xiaoXing" ActionTag="-1084907195" FrameEvent="" Tag="54" ObjectIndex="10" ctype="SpriteObjectData">
             <Position X="33.2241" Y="-21.4607" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

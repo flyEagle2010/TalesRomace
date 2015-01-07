@@ -44,3 +44,35 @@ response:
 		gold:200 //获得金币
 	}
 }
+
+
+
+／／new
+｛
+			"durationBuff":[
+				{
+					"id":1,
+					"hp":200
+				}
+			],
+			"attacker":0,
+			"cards":[
+				{
+					"type":1,
+					"skill":1,
+					"atkHp":100,
+					"atkBuff":[1,2], //攻击者身上所有的buff
+					"defHp":0,
+					"defBuff":[1,2] //受击者身上所有的buff
+				},
+			],
+			"aoyi":{
+				"skill":10001,
+				"atkHp":0,
+				"atkBuff":[1,2],
+				"defBuff":[1,2],
+				"defHp":1000
+			},
+			"atkDelBuff":[1,2], //没有的话就空数组[]
+			"defDelBuff":[1,2]
+		}

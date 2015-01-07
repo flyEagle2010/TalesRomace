@@ -93,6 +93,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 //    director->runWithScene(scene);
 //
 //    Manager::getInstance()->scene=scene;
+    Manager::getInstance()->initCommonRes();
     Manager::getInstance()->switchScence(scene);
    
 

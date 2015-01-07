@@ -37,7 +37,14 @@ void Utils::setStar(Vector<cocos2d::Sprite *> vec, int num)
     }
 }
 
-
+std::vector<int> Utils::getNum(int num)
+{
+    std::vector<int> arr; //424
+    arr.insert(arr.begin(),num/100);
+    arr.insert(arr.begin(),(num/10)%10);
+    arr.insert(arr.begin(),num%10);
+    return arr;
+}
 
 std::vector<int> Utils::randSeveral(int num,bool isRepeat)
 {

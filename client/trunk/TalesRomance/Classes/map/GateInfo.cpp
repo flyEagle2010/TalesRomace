@@ -21,7 +21,7 @@ GateInfo* GateInfo::create(int gateID)
 
 bool GateInfo::init(int gateID)
 {
-    if(!BaseUI::init("GateInfo.csb", "GateInfo.plist")){
+    if(!BaseUI::init("GateInfo.csb", "gateInfo.plist")){
         return false;
     }
     this->gateID=gateID;

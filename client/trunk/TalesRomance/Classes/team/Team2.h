@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "BaseUI.h"
 #include "HomeScene.h"
+#include "DataManager.h"
 
 class Team2 : public BaseUI {
     
@@ -21,9 +22,10 @@ public:
     static Team2* create();
     bool init();
     void resetUI();
+    void request();
 private:
     void onButtonClick(Ref* pSender);
     void onTouchEnded(Touch *touch, Event *unusedEvent);
-
+    void initNetEvent();
 };
 #endif /* defined(__TalesRomance__Team2__) */

@@ -15,6 +15,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "Manager.h"
 #include "Clip.h"
+#include "Utils.h"
 using namespace cocostudio;
 
 using namespace cocos2d;

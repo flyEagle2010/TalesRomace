@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>27A5208A9F134712A4D7B6CEB435AF37083A1327</key>
-		<string>../../../../../..client/trunk/TalesRomance/cocos2d/external/libpomelo/</string>
+		<string>../../../../../..client/trunk/TalesRomance/cocos2d/external/libpomelo</string>
 		<key>6866A8115BE2B58BEDDFC8E6395DBA8162D47727</key>
 		<string>../../../../../..</string>
 	</dict>

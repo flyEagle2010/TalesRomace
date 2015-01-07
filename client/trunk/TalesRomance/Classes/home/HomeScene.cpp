@@ -105,20 +105,17 @@ void HomeScene::touchButtonEvent(cocos2d::Ref *pSender, TouchEventType type)
         }
         case 103: //组队
         {
-            Team* team=Team::create();
+            Team2* team=Team2::create();
             team->show(this);
             break;
         }
         case 104: //卡牌
         {
-            TeamCard* tc=TeamCard::create();
-            tc->show(this);
             break;
         }
         case 105: //邮件
         {
-            Team2* team=Team2::create();
-            team->show(this);
+           
             break;
         }
         case 106: //购物
@@ -158,5 +155,5 @@ void HomeScene::onExit()
 {
     BaseUI::onExit();
     this->removeAllChildrenWithCleanup(true);
-    Director::getInstance()->getTextureCache()->removeAllTextures();
+    //Director::getInstance()->getTextureCache()->removeAllTextures();
 }

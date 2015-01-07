@@ -28,6 +28,8 @@ LoginScene* LoginScene::create()
 
 bool LoginScene::init()
 {
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/common.plist");
+
     if(!BaseUI::init("LoginScene.csb","login.plist"))
     {
         return false;

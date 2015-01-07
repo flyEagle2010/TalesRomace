@@ -20,7 +20,7 @@ class Card : public BaseUI {
     Clip* selectRim;
     Vector<Sprite*> stars;
     typedef std::function<void(Widget*)> clickCallBack;
-
+    json_t* data;
 public:
     Sprite* rim;
     clickCallBack click;

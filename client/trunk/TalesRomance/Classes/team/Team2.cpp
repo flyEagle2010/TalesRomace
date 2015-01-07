@@ -38,12 +38,22 @@ bool Team2::init()
     this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this->ui->getChildByName("Button_1"));
     
     this->resetUI();
+    this->request();
     
     return true;
 }
 
+void Team2::request()
+{
+    //json_t* msg=json_object();
+    //json_object_set(msg, "token", Manager::getInstance()->psocket->token);
+    //Manager::getInstance()->psocket->sendMsg("connector.entryHandler.entry", msg);
+}
+
 void Team2::resetUI()
 {
+    //DataManager::getInstance()->teamData;
+    
     for(int i=0;i<this->items.size();i++){
         Node* item=this->items.at(i);
         item->getChildByName("itemBg")->setVisible(false);
@@ -60,7 +70,6 @@ void Team2::onTouchEnded(Touch *touch, Event *unusedEvent)
         Vec2 itemVec=this->ui->convertToWorldSpace(item->getPosition());
         Rect rect=Rect(itemVec.x,itemVec.y,size.width,size.height);
         if(rect.containsPoint(touch->getLocation())){
-            log("---------------%d",i);
             TeamCard* card=TeamCard::create();
             card->show(this);
         }
@@ -82,4 +91,28 @@ void Team2::onButtonClick(cocos2d::Ref *pSender)
             break;
         }
     }
+}
+
+void Team2::initNetEvent(){
+    auto listener = EventListenerCustom::create(NET_MESSAGE, [=](EventCustom* event){
+        json_t* msg=(json_t*)event->getUserData();
+        const char* route=json_string_value(json_object_get(msg, "route"));
+        int msgID=msges[route];
+        switch (msgID)
+        {
+            case GATE_GATEHANDLER_ENTRY:
+            {
+                break;
+            }
+            case CONNECTOR_ENTRYHANDLER_ENTRY:
+            {
+                break;
+            }
+            default:
+                break;
+        }
+
+    });
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+    
 }

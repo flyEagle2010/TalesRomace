@@ -21,7 +21,7 @@ Card* Card::create()
 
 bool Card::init()
 {
-    if(!BaseUI::init("Card.csb", "common.plist")){
+    if(!BaseUI::init("Card.csb", "card.plist")){
         return false;
     }
     this->ui->setPosition(Vec2(0,0));
@@ -82,7 +82,7 @@ Size Card::getSize()
 
 void Card::onTouchEnded(Touch *touch, Event *unusedEvent)
 {
-    if(touch->getStartLocation() - touch->getLocation() < Vec2(10,10)){
+    if(touch->getStartLocation() == touch->getLocation() ){//< Vec2(10,10)){
         this->click(this);
     }
 }

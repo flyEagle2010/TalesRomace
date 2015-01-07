@@ -19,7 +19,6 @@
 
 #include "Maze.h"
 #include "GateInfo.h"
-#include "Team.h"
 #include "MapScene.h"
 #include "LuoLi.h"
 #include "TeamCard.h"

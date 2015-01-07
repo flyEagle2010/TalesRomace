@@ -12,7 +12,7 @@
         <PrePosition X="0.0000" Y="0.0000" />
         <PreSize X="0.0000" Y="0.0000" />
         <Children>
-          <NodeObjectData Name="teamEditBg" ActionTag="1598837897" FrameEvent="" Tag="26" ObjectIndex="1" ctype="SpriteObjectData">
+          <NodeObjectData Name="bg" ActionTag="2030153080" FrameEvent="" Tag="162" ObjectIndex="2" Scale9Width="826" Scale9Height="623" ctype="ImageViewObjectData">
             <Position X="568.0000" Y="320.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -48,7 +48,7 @@
             <PressedFileData Type="PlistSubImage" Path="BtnReturn_2.png" Plist="common.plist" />
             <NormalFileData Type="PlistSubImage" Path="BtnReturn_1.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="aoYiPanel" ActionTag="1802499692" FrameEvent="" Tag="29" ObjectIndex="1" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <NodeObjectData Name="aoYiPanel" ActionTag="1802499692" Visible="False" FrameEvent="" Tag="29" ObjectIndex="1" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Position X="194.0000" Y="54.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint />
@@ -145,7 +145,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="PlistSubImage" Path="cardType_1.png" Plist="common.plist" />
               </NodeObjectData>
-              <NodeObjectData Name="aoyiList" ActionTag="1595256308" FrameEvent="" Tag="36" ObjectIndex="1" TouchEnable="True" ClipAble="True" ComboBoxIndex="1" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" ItemMargin="52" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" VerticalType="0" ctype="ListViewObjectData">
+              <NodeObjectData Name="aoyiList" ActionTag="1595256308" FrameEvent="" Tag="36" ObjectIndex="1" TouchEnable="True" ClipAble="True" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" ItemMargin="50" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" VerticalType="0" ctype="ListViewObjectData">
                 <Position X="-0.3720" Y="3.5080" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <AnchorPoint />
@@ -164,7 +164,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </NodeObjectData>
-          <NodeObjectData Name="cardPanel" ActionTag="34101747" Visible="False" FrameEvent="" Tag="30" ObjectIndex="2" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <NodeObjectData Name="cardPanel" ActionTag="34101747" FrameEvent="" Tag="30" ObjectIndex="2" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Position X="194.0000" Y="54.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint />
@@ -196,7 +196,7 @@
                 <PressedFileData Type="PlistSubImage" Path="joinTeamBtn_2.png" Plist="teamcard.plist" />
                 <NormalFileData Type="PlistSubImage" Path="joinTeamBtn_1.png" Plist="teamcard.plist" />
               </NodeObjectData>
-              <NodeObjectData Name="btn_leave" ActionTag="90933899" Visible="False" FrameEvent="" Tag="1009" ObjectIndex="15" TouchEnable="True" FontSize="14" ButtonText="" Scale9Width="223" Scale9Height="63" ctype="ButtonObjectData">
+              <NodeObjectData Name="btn_leave" ActionTag="90933899" FrameEvent="" Tag="1009" ObjectIndex="15" TouchEnable="True" FontSize="14" ButtonText="" Scale9Width="223" Scale9Height="63" ctype="ButtonObjectData">
                 <Position X="146.9274" Y="41.7767" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -215,18 +215,19 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </NodeObjectData>
-          <NodeObjectData Name="cardList" ActionTag="164969148" FrameEvent="" Tag="37" ObjectIndex="2" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="2" ColorAngle="90.0000" ScrollDirectionType="0" DirectionType="Vertical" VerticalType="0" ctype="ListViewObjectData">
-            <Position X="506.6336" Y="57.1534" />
+          <NodeObjectData Name="cardList" ActionTag="-728076428" FrameEvent="" Tag="73" ObjectIndex="1" TouchEnable="True" ClipAble="True" BackColorAlpha="252" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+            <Position X="506.9998" Y="57.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="330.0000" Y="490.0000" />
-            <PrePosition X="0.4460" Y="0.0893" />
-            <PreSize X="0.2905" Y="0.7656" />
-            <SingleColor A="255" R="150" G="150" B="255" />
-            <FirstColor A="255" R="150" G="150" B="255" />
+            <Size X="330.0000" Y="500.0000" />
+            <PrePosition X="0.4463" Y="0.0891" />
+            <PreSize X="0.2905" Y="0.7813" />
+            <SingleColor A="255" R="255" G="150" B="100" />
+            <FirstColor A="255" R="255" G="150" B="100" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
+            <InnerNodeSize Width="330" Height="500" />
           </NodeObjectData>
           <NodeObjectData Name="btn_green" ActionTag="-1137977606" FrameEvent="" Tag="1007" ObjectIndex="8" TouchEnable="True" FontSize="14" ButtonText="" Scale9Width="61" Scale9Height="61" ctype="ButtonObjectData">
             <Position X="878.7806" Y="191.2798" />
@@ -305,6 +306,15 @@
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" />
             <PressedFileData Type="PlistSubImage" Path="AllCardBtn_2.png" Plist="teamcard.plist" />
             <NormalFileData Type="PlistSubImage" Path="AllCardBtn_1.png" Plist="teamcard.plist" />
+          </NodeObjectData>
+          <NodeObjectData Name="numTxt" ActionTag="1338973374" FrameEvent="" Tag="215" ObjectIndex="4" FontSize="24" LabelText="25/25" ctype="TextObjectData">
+            <Position X="557.1190" Y="570.8139" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <Size X="60.0000" Y="28.0000" />
+            <PrePosition X="0.4904" Y="0.8919" />
+            <PreSize X="0.0000" Y="0.0000" />
           </NodeObjectData>
         </Children>
       </ObjectData>

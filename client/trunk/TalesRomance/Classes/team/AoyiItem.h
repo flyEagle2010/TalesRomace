@@ -11,16 +11,18 @@
 
 #include <stdio.h>
 #include "BaseUI.h"
+#include "XGroup.h"
+#include "XSkill.h"
 
 class AoyiItem : public BaseUI {
     Sprite* bg;
-    Sprite* typeIcon;
-    Sprite* cardIcon0;
+    ImageView* typeIcon;
     Text* nameLabel;
-    
+    Vector<ImageView*> cards;
+    int xid;
 public:
-    static AoyiItem* create();
-    bool init();
+    static AoyiItem* create(int xid);
+    bool init(int xid);
     void resetUI();
     Size getSize();
 };

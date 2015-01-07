@@ -21,7 +21,7 @@ Maze* Maze::create()
 
 bool Maze::init()
 {
-    BaseUI::init("Maze.csb", "");
+    BaseUI::init("Maze.csb", "maze.plist");
     
     this->map = TMXTiledMap::create("tree_block_bottom.tmx");
     this->ui->addChild(map);

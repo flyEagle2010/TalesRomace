@@ -41,7 +41,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="PlistSubImage" Path="login_account login_plank_1.png" Plist="login.plist" />
               </NodeObjectData>
-              <NodeObjectData Name="serverList" ActionTag="48" FrameEvent="" Tag="33" ObjectIndex="1" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+              <NodeObjectData Name="serverList" ActionTag="48" FrameEvent="" Tag="33" ObjectIndex="1" TouchEnable="True" ComboBoxIndex="2" ColorAngle="360.0000" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
                 <Position X="182.5000" Y="86.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <AnchorPoint />
@@ -67,7 +67,7 @@
                 <SingleColor A="255" R="255" G="150" B="100" />
                 <FirstColor A="255" R="255" G="150" B="100" />
                 <EndColor A="255" R="255" G="255" B="255" />
-                <ColorVector ScaleY="1.0000" />
+                <ColorVector ScaleX="1.0000" ScaleY="0.0000" />
                 <InnerNodeSize Width="230" Height="450" />
               </NodeObjectData>
               <NodeObjectData Name="btn_server" ActionTag="57" FrameEvent="" Tag="42" ObjectIndex="3" TouchEnable="True" FontSize="24" ButtonText="内网" Scale9Width="227" Scale9Height="58" ctype="ButtonObjectData">
@@ -98,7 +98,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </NodeObjectData>
-          <NodeObjectData Name="accountPage" ActionTag="42" FrameEvent="" Tag="27" ObjectIndex="2" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="565" Scale9Height="472" ctype="PanelObjectData">
+          <NodeObjectData Name="accountPage" ActionTag="42" Visible="False" FrameEvent="" Tag="27" ObjectIndex="2" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="565" Scale9Height="472" ctype="PanelObjectData">
             <Position X="568.0000" Y="320.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

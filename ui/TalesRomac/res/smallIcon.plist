@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>atkType0.png</key>
+            <key>atkType1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,78},{36,36}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{36,36}</string>
             </dict>
-            <key>atkType1.png</key>
+            <key>atkType2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,40},{36,36}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{36,36}</string>
             </dict>
-            <key>atkType2.png</key>
+            <key>atkType3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,2},{36,36}}</string>
@@ -118,7 +118,7 @@
             <key>size</key>
             <string>{128,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:564a8c91e358cc07681fe15f56ccd96e:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:9f6317d86c9402a045fede080566b4b6:1/1$</string>
             <key>textureFileName</key>
             <string>smallIcon.png</string>
         </dict>

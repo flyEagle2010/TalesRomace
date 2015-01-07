@@ -122,6 +122,9 @@
 		5DB724B41A4C27120018A813 /* libjansson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB714091A4C1FC80018A813 /* libjansson.a */; };
 		5DB724B51A4C27120018A813 /* libpomelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB7140A1A4C1FC80018A813 /* libpomelo.a */; };
 		5DB724B61A4C27120018A813 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB7140B1A4C1FC80018A813 /* libuv.a */; };
+		5DBC68141A5D007F0091873B /* XSkill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC68121A5D007F0091873B /* XSkill.cpp */; };
+		5DBC681A1A5D00980091873B /* XCard.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DBC68181A5D00980091873B /* XCard.json */; };
+		5DBC681B1A5D00980091873B /* XSkill.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DBC68191A5D00980091873B /* XSkill.json */; };
 		5DBDAA771A5A804F00FFDCE9 /* zhujueB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5DBDAA741A5A804F00FFDCE9 /* zhujueB.atlas */; };
 		5DBDAA781A5A804F00FFDCE9 /* zhujueB.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DBDAA751A5A804F00FFDCE9 /* zhujueB.json */; };
 		5DBDAA791A5A804F00FFDCE9 /* zhujueB.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBDAA761A5A804F00FFDCE9 /* zhujueB.png */; };
@@ -155,7 +158,6 @@
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
 		BFCCB45D1A2C04320049CFE8 /* GateInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCCB45B1A2C04320049CFE8 /* GateInfo.cpp */; };
-		BFCCB4751A2C06A70049CFE8 /* Team.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCCB4731A2C06A70049CFE8 /* Team.cpp */; };
 		BFCCB4781A2C0A900049CFE8 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCCB4761A2C0A900049CFE8 /* Card.cpp */; };
 		BFCCB4851A2C728C0049CFE8 /* AoyiItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCCB4831A2C728C0049CFE8 /* AoyiItem.cpp */; };
 		BFD09E561A257D4900992CDA /* battle.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = BFD09E541A257D4900992CDA /* battle.pb.cc */; };
@@ -402,6 +404,10 @@
 		5DB714091A4C1FC80018A813 /* libjansson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjansson.a; path = ../cocos2d/external/libpomelo/libjansson.a; sourceTree = "<group>"; };
 		5DB7140A1A4C1FC80018A813 /* libpomelo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpomelo.a; path = ../cocos2d/external/libpomelo/libpomelo.a; sourceTree = "<group>"; };
 		5DB7140B1A4C1FC80018A813 /* libuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libuv.a; path = ../cocos2d/external/libpomelo/libuv.a; sourceTree = "<group>"; };
+		5DBC68121A5D007F0091873B /* XSkill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XSkill.cpp; sourceTree = "<group>"; };
+		5DBC68131A5D007F0091873B /* XSkill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSkill.h; sourceTree = "<group>"; };
+		5DBC68181A5D00980091873B /* XCard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XCard.json; sourceTree = "<group>"; };
+		5DBC68191A5D00980091873B /* XSkill.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSkill.json; sourceTree = "<group>"; };
 		5DBDAA741A5A804F00FFDCE9 /* zhujueB.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zhujueB.atlas; sourceTree = "<group>"; };
 		5DBDAA751A5A804F00FFDCE9 /* zhujueB.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zhujueB.json; sourceTree = "<group>"; };
 		5DBDAA761A5A804F00FFDCE9 /* zhujueB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhujueB.png; sourceTree = "<group>"; };
@@ -441,8 +447,6 @@
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BFCCB45B1A2C04320049CFE8 /* GateInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GateInfo.cpp; sourceTree = "<group>"; };
 		BFCCB45C1A2C04320049CFE8 /* GateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateInfo.h; sourceTree = "<group>"; };
-		BFCCB4731A2C06A70049CFE8 /* Team.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Team.cpp; sourceTree = "<group>"; };
-		BFCCB4741A2C06A70049CFE8 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
 		BFCCB4761A2C0A900049CFE8 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
 		BFCCB4771A2C0A900049CFE8 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		BFCCB4831A2C728C0049CFE8 /* AoyiItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AoyiItem.cpp; sourceTree = "<group>"; };
@@ -873,6 +877,8 @@
 		5DB70B631A4BFAF90018A813 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				5DBC68181A5D00980091873B /* XCard.json */,
+				5DBC68191A5D00980091873B /* XSkill.json */,
 				5DC0C0791A5BD96B0006CEB4 /* XGroup.json */,
 				5DB70B641A4BFAF90018A813 /* battle.json */,
 				5DB70B651A4BFAF90018A813 /* XMap.json */,
@@ -1048,8 +1054,6 @@
 		BFCCB4721A2C068A0049CFE8 /* team */ = {
 			isa = PBXGroup;
 			children = (
-				BFCCB4731A2C06A70049CFE8 /* Team.cpp */,
-				BFCCB4741A2C06A70049CFE8 /* Team.h */,
 				BFCCB4761A2C0A900049CFE8 /* Card.cpp */,
 				BFCCB4771A2C0A900049CFE8 /* Card.h */,
 				BFCCB4831A2C728C0049CFE8 /* AoyiItem.cpp */,
@@ -1362,6 +1366,8 @@
 		BFDAB2F41A1A0E2100E450EC /* xls */ = {
 			isa = PBXGroup;
 			children = (
+				5DBC68121A5D007F0091873B /* XSkill.cpp */,
+				5DBC68131A5D007F0091873B /* XSkill.h */,
 				5DC0C07E1A5BEB6D0006CEB4 /* XCard.cpp */,
 				5DC0C07F1A5BEB6D0006CEB4 /* XCard.h */,
 				5DC0C07B1A5BD9750006CEB4 /* XGroup.cpp */,
@@ -1485,6 +1491,7 @@
 				5DB70BE71A4BFB140018A813 /* ghostR.plist in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				5DBC681A1A5D00980091873B /* XCard.json in Resources */,
 				5DEB26141A513B8A006F4B6F /* juqi_3.png in Resources */,
 				5DB70BCB1A4BFB140018A813 /* aoYiMaskBg.png in Resources */,
 				5DB70BDC1A4BFB140018A813 /* posui.png in Resources */,
@@ -1531,6 +1538,7 @@
 				5DBDAA781A5A804F00FFDCE9 /* zhujueB.json in Resources */,
 				5DB70BD11A4BFB140018A813 /* cardXiaoShi.plist in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
+				5DBC681B1A5D00980091873B /* XSkill.json in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5DEB26111A513B8A006F4B6F /* skeleton_juqi_2.json in Resources */,
 				5DB70BC41A4BFB140018A813 /* test.png in Resources */,
@@ -1609,7 +1617,6 @@
 				BFDAB3161A1A0E2100E450EC /* BattleScene.cpp in Sources */,
 				BFDAB3371A1A0E2100E450EC /* zero_copy_stream_impl_lite.cc in Sources */,
 				BFDAB3281A1A0E2100E450EC /* descriptor.cc in Sources */,
-				BFCCB4751A2C06A70049CFE8 /* Team.cpp in Sources */,
 				BFDAB3421A1A0E2100E450EC /* structurally_valid.cc in Sources */,
 				BFDAB3561A1A0E2100E450EC /* commonResp.pb.cc in Sources */,
 				BFCCB4781A2C0A900049CFE8 /* Card.cpp in Sources */,
@@ -1690,6 +1697,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				BFDAB31D1A1A0E2100E450EC /* NewPageView.cpp in Sources */,
 				5DEB26341A5A3BB1006F4B6F /* LuoLi.cpp in Sources */,
+				5DBC68141A5D007F0091873B /* XSkill.cpp in Sources */,
 				BFDAB35D1A1A0E2100E450EC /* npc.pb.cc in Sources */,
 				BFDAB3521A1A0E2100E450EC /* WSocket.cpp in Sources */,
 				BFDAB3381A1A0E2100E450EC /* message.cc in Sources */,

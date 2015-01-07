@@ -48,7 +48,7 @@ public:
     void showDlg(Widget* dlg);
     void showMsg(const string msg);//浮出提示
     int getCurrExp(int exp,int lvl);
-    
+    void initCommonRes();
 private:
     
 };

@@ -31,5 +31,6 @@ public:
     static std::string getLang(std::string str);
     static std::vector<std::string> split(std::string str, std::string match);
     static Sprite* maskedSpriteWithSprite(Sprite* textureSprite, Sprite* maskSprite);
+    static std::vector<int> getNum(int num);
 };
 #endif /* defined(__fancyHeart__Utils__) */

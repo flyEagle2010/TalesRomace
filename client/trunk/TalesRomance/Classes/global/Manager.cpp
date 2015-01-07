@@ -36,6 +36,13 @@ void Manager::switchScence(Scene* scene)
     this->scene->addChild(Loading::getInstance(),LOADING_LAY,-100);
 }
 
+void Manager::initCommonRes()
+{
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/smallIcon.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/card.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/common.plist");
+}
+
 void Manager::showDlg(cocos2d::ui::Widget *dlg)
 {
     this->scene->addChild(dlg);
