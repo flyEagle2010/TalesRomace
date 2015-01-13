@@ -501,9 +501,9 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/common/compoment/RotateLi
  jni/../../cocos2d/cocos/editor-support/spine/../cocostudio/ActionTimeline/CCActionTimeline.h \
  jni/../../cocos2d/cocos/editor-support/spine/../cocostudio/ActionTimeline/CCTimeLine.h \
  jni/../../cocos2d/cocos/editor-support/spine/../cocostudio/ActionTimeline/CSLoader.h \
- jni/../../Classes/common/Mask.h \
  jni/../../Classes/common/compoment/Clip.h \
- jni/../../Classes/global/GConfig.h jni/../../Classes/net/WSocket.h \
+ jni/../../Classes/common/Utils.h jni/../../Classes/global/GConfig.h \
+ jni/../../Classes/net/WSocket.h \
  jni/../../cocos2d/cocos/3d/../network/WebSocket.h \
  jni/../../Classes/net/PomeloMsg.h jni/../../Classes/net/PomeloSocket.h \
  jni/../../cocos2d/external/libpomelo/include/pomelo.h \
@@ -530,7 +530,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/common/compoment/RotateLi
  jni/../../cocos2d/external/libpomelo/deps/jansson/src/jansson.h \
  jni/../../cocos2d/external/libpomelo/deps/jansson/src/jansson_config.h \
  jni/../../cocos2d/external/libpomelo/include/pomelo-private/map.h \
- jni/../../cocos2d/external/libpomelo/include/pomelo-private/ngx-queue.h
+ jni/../../cocos2d/external/libpomelo/include/pomelo-private/ngx-queue.h \
+ jni/../../Classes/common/BlackBg.h
 
 jni/../../Classes/common/compoment/RotateList.h:
 
@@ -1544,9 +1545,9 @@ jni/../../cocos2d/cocos/editor-support/spine/../cocostudio/ActionTimeline/CCTime
 
 jni/../../cocos2d/cocos/editor-support/spine/../cocostudio/ActionTimeline/CSLoader.h:
 
-jni/../../Classes/common/Mask.h:
-
 jni/../../Classes/common/compoment/Clip.h:
+
+jni/../../Classes/common/Utils.h:
 
 jni/../../Classes/global/GConfig.h:
 
@@ -1607,3 +1608,5 @@ jni/../../cocos2d/external/libpomelo/deps/jansson/src/jansson_config.h:
 jni/../../cocos2d/external/libpomelo/include/pomelo-private/map.h:
 
 jni/../../cocos2d/external/libpomelo/include/pomelo-private/ngx-queue.h:
+
+jni/../../Classes/common/BlackBg.h:

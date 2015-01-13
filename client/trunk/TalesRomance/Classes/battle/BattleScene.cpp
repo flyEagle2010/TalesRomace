@@ -28,9 +28,10 @@ BattleScene* BattleScene::create()
 }
 
 bool BattleScene::init(){
-    if(!BaseUI::init("BattleScene.csb","fight.plist")){
+    if(!BaseUI::init("BattleScene.csb","battle.plist")){
         return false;
     }
+
     this->wsize=Director::getInstance()->getWinSize();
     
     this->bg=Sprite::create("battleBg.jpg");
@@ -88,8 +89,9 @@ void BattleScene::startAnimation(json_t* data)
     std::string str=FileUtils::getInstance()->getStringFromFile(fullPath);
     json_error_t error;
     this->data=json_loads(str.c_str(), JSON_ENCODE_ANY, &error);
-
+//    log("data===:%s",json_dumps(data, 0));
     json_t* heros=json_object_get(this->data, "heros");
+    Size dsize=Size(1136,640);
     for(int i=0;i<2;i++){
         json_t* json=json_array_get(heros, i);
         Node* node=this->heroInfos.at(i);
@@ -103,25 +105,20 @@ void BattleScene::startAnimation(json_t* data)
         LoadingBar* hpBar=(LoadingBar*)node->getChildByName("hp");
         hpBar->setPercent(50);
         
-        
-        //fPath="skeleton_zhujue.json";
-        //rPath="zhujue.atlas";
         //init hero
         //const char* icon=json_string_value(json_object_get(json,"icon"));
         //Hero* hero=Hero::create(std::string(icon)+".json", std::string(icon)+".atlas", i);
         Hero* hero=Hero::create("skeleton_zhujue.json", "zhujue.atlas", i);
         this->heros.pushBack(hero);
         this->heroNode->addChild(hero,i);
-        hero->setPosition(Vec2(this->wsize.width*i, 0));
+        hero->setPosition(Vec2(wsize.width*0.5+200*(i?1:-1),140));
         hero->setVisible(false);
         hero->hp=json_integer_value(json_object_get(json,"hp"));
         
         Size infoSize=node->getContentSize();
-        float mid=(wsize.width-infoSize.width)*0.5;
-        node->setPosition(Vec2(mid,this->wsize.height-infoSize.height));
-        //node->runAction(EaseIn::create(MoveBy::create(0.25, Vec2(mid*(i?1:-1),0)), 2));
+        node->setPosition(Vec2(dsize.width*0.5,this->wsize.height-infoSize.height));
+        node->runAction(EaseIn::create(MoveBy::create(0.25, Vec2(wsize.width*(i?0.5:-0.5),0)), 2));
     
-        hero->setPosition(Vec2(mid+200*(i?1:-1),140));
         CallFunc* jumpIn=CallFunc::create(CC_CALLBACK_0(Hero::jumpIn, hero));
         hero->runAction(Sequence::create(DelayTime::create(0.6),Show::create(),jumpIn, NULL));
         //hero->runAction(Sequence::create(DelayTime::create(0.6),Show::create(),JumpTo::create(0.6, Vec2(mid+200*(i?1:-1),140), 150, 1), NULL));
@@ -133,6 +130,8 @@ void BattleScene::startAnimation(json_t* data)
 
 void BattleScene::playRound()
 {
+    this->isDispear=false;
+    this->cardIndex=0;
     json_t* rounds=json_object_get(data, "rounds");
     
     this->round=json_array_get(rounds, roundIndex);
@@ -144,7 +143,7 @@ void BattleScene::playRound()
     int index=json_integer_value(json_object_get(this->round, "attacker"));
     this->attacker=heros.at(index);
     this->defender=index?heros.at(0):heros.at(1);
-    if(this->attacker->pos==0){
+    if(index == 0){
         this->playBattleCard();
     }else{
         this->commonAttack();
@@ -190,7 +189,12 @@ void BattleScene::buildup()
 void BattleScene::commonAttack()
 {
     json_t* cards=json_object_get(this->round, "cards");
+    if(this->cardIndex==-1){
+        this->playRound();
+        return;
+    }
     if(this->cardIndex >= json_array_size(cards)){
+        this->cardIndex=-1;
         this->aoyiAttack();
         return;
     }
@@ -203,7 +207,8 @@ void BattleScene::commonAttack()
 void BattleScene::aoyiAttack()
 {
     json_t* aoyi=json_object_get(round, "aoyi");
-    if(aoyi){
+    json_t* left=json_object_get(round, "attacker");
+    if(aoyi && json_integer_value(left)==0){
         StandDraw* stand=StandDraw::create();
         this->addChild(stand);
         float duration=stand->play();
@@ -235,7 +240,6 @@ void BattleScene::petAttack()
     this->attacker->runAction(Sequence::create(DelayTime::create(0.8),heroAttack, NULL));
     
     this->showBuff(this->attacker->pos);
-    this->cardIndex=0;
 }
 
 void BattleScene::attacked()
@@ -280,7 +284,7 @@ void BattleScene::touchButtonEvent(cocos2d::Ref *pSender, Widget::TouchEventType
 
 void BattleScene::onExit()
 {
-    Node::onExit();
     BattleMgr::getInstance()->clear();
-    SpriteFrameCache::getInstance()->removeSpriteFrames();
+
+    Node::onExit();
 }

@@ -34,7 +34,7 @@ bool HomeScene::init(std::string fileName,std::string resName)
 	}
     this->top=dynamic_cast<Widget*>(this->ui->getChildByName("top"));
     this->bottom=dynamic_cast<Widget*>(this->ui->getChildByName("bottom"));
-    
+    log("==============1=============");
     for(int i=0;i<10;i++){
         Widget* widget=dynamic_cast<Widget*>(this->bottom->getChildByTag(100+i));
         if(i==7) widget=dynamic_cast<Widget*>(this->top->getChildByTag(100+i));
@@ -47,16 +47,23 @@ bool HomeScene::init(std::string fileName,std::string resName)
         }
         widget->addTouchEventListener(CC_CALLBACK_2(HomeScene::touchButtonEvent,this));
     }
+    log("==============2=============");
 
     
     this->initUi();
+
+    log("==============3=============");
 
 	return true;
 }
 
 void HomeScene::onEnter()
 {
+    log("==============4=============");
+
     BaseUI::onEnter();
+    log("==============5=============");
+
 }
 
 void HomeScene::initUi()

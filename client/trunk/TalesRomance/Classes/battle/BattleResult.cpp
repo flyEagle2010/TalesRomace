@@ -49,15 +49,26 @@ void BattleResult::onButtonClick(Ref *pSender)
         }
         case 1001: //返回
         {
-            this->clear(true);
+//            this->clear(true);
+            log("=====-1==");
+            Scene* home=HomeScene::createScene();
+            log("=====-2==");
 
-            Manager::getInstance()->switchScence(HomeScene::createScene());
+            Manager::getInstance()->switchScence(home);
+            log("=====-3==");
+
             break;
         }
         case 1002: //退出
         {
-            Manager::getInstance()->switchScence(HomeScene::createScene());
+            Scene* home=HomeScene::createScene();
+            Manager::getInstance()->switchScence(home);
             break;
         }
     }
+}
+
+void BattleResult::onExit()
+{
+    BaseUI::onExit();
 }

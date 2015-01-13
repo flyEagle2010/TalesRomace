@@ -36,6 +36,7 @@ bool AoyiItem::init(int xid)
         this->cards.pushBack(img);
     }
     this->resetUI();
+    
     return true;
 }
 
@@ -45,12 +46,16 @@ void AoyiItem::resetUI()
     XSkill* xskill=XSkill::record(Value(xgroup->getSkillId()));
     this->nameLabel->setString(xskill->getName());
     this->typeIcon->loadTexture("atkType"+Value(xskill->getAtkType()).asString()+".png",TextureResType::PLIST);
-    std::vector<int> arr=Utils::getNum(xgroup->getGroup());
-    
-    for(int i=0;i<arr.size();i++){
-        if(arr.at(i)==0)this->cards.at(i)->setVisible(false);
-        else this->cards.at(i)->setVisible(true);
-        this->cards.at(i)->loadTexture("teamEditCardType_"+Value(arr[i]).asString()+".png",TextureResType::PLIST);
+    std::vector<int> groups=Utils::getNum(xgroup->getGroup());
+    int len=groups.size();
+    for(int i=0;i<3;i++){
+        if(i >= len){
+            this->cards.at(i)->setVisible(false);
+        }else{
+            this->cards.at(i)->setVisible(true);
+            std::string name=Value(groups[i]).asString()+".png";
+            this->cards.at(i)->loadTexture("cardType_"+name,TextureResType::PLIST);
+        }
     }
 }
 

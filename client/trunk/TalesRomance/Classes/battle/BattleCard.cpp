@@ -43,6 +43,8 @@ void BattleCard::reset(int index, int groupNum, json_t* data)
 
 void BattleCard::move()
 {
+    this->setVisible(false);
+
     MoveBy* move=MoveBy::create(0.3, Vec2(100*(2-index)+100,0));
     this->runAction(Sequence::create(DelayTime::create(index),Show::create(), NULL));
     this->ui->runAction(Sequence::create(DelayTime::create(index),move,CallFunc::create(CC_CALLBACK_0(BattleCard::startToCenter, this)), NULL));
@@ -51,7 +53,7 @@ void BattleCard::move()
 void BattleCard::startToCenter()
 {
     Size size=Size(290,441)*0.8;
-
+    
     ParticleSystem* fapai=ParticleSystemQuad::create("fapai.plist");
     this->addChild(fapai,2);
     fapai->setPosition(this->ui->getPosition());

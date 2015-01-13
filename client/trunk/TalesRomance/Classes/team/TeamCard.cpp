@@ -7,10 +7,10 @@
 //
 
 #include "TeamCard.h"
-TeamCard* TeamCard::create()
+TeamCard* TeamCard::create(json_t* data,int index)
 {
     TeamCard* pRet=new TeamCard();
-    if(pRet && pRet->init()){
+    if(pRet && pRet->init(data,index)){
         pRet->autorelease();
         return pRet;
     }
@@ -18,10 +18,17 @@ TeamCard* TeamCard::create()
     return nullptr;
 }
 
-bool TeamCard::init()
+bool TeamCard::init(json_t* data,int index)
 {
     if(!BaseUI::init("TeamCard.csb", "teamcard.plist")){
         return false;
+    }
+    this->data=data;
+    this->index=index;
+    this->cards=json_object_get(data, "cards");
+    if(this->cards ==NULL){
+        this->cards=json_array();
+        json_array_append(cards, json_object());
     }
     
     this->aoYiPanel=this->ui->getChildByName("aoYiPanel");
@@ -53,31 +60,117 @@ bool TeamCard::init()
     this->cardPanel->setVisible(false);
     
     this->resetUI();
+    
     return true;
 }
 
 void TeamCard::resetUI()
 {
-    this->initCards(nullptr);
-    
-    std::vector<int> items=this->getAoYiData(2, 3);
-    for(int i=0;i<items.size();i++){
-        AoyiItem* aoyi=AoyiItem::create(items.at(i));
-        this->aoYiList->addChild(aoyi);
+    this->initCard();
+    this->initAoYi();
+    this->initBag(nullptr);
+}
+
+void TeamCard::initCard()
+{
+    int cardSize=json_array_size(cards);
+    for(int i=1;i<4;i++){
+        ImageView* rim=dynamic_cast<ImageView*>(this->aoYiPanel->getChildByName("rim"+Value(i-1).asString()));
+        Sprite* card=dynamic_cast<Sprite*>(this->aoYiPanel->getChildByName("card"+Value(i-1).asString()));
+        if(i >= cardSize){
+            rim->setVisible(false);
+            card->setVisible(false);
+        }else{
+            rim->setVisible(true);
+            card->setVisible(true);
+            
+            json_t* json=json_array_get(cards, i);
+            int xid=json_integer_value(json_object_get(json, "xid"));
+            XCard* xcard=XCard::record(Value(xid));
+            card->setDisplayFrame(Sprite::createWithSpriteFrameName("tuoErTouXiang_1.png")->displayFrame());
+            rim->loadTexture("cardTypeRim_"+Value(xcard->getCardType()).asString()+".png",TextureResType::PLIST);
+            rim->addClickEventListener(CC_CALLBACK_1(TeamCard::onIconClick, this));
+        }
     }
 }
 
-void TeamCard::initCards(json_t *jsonArr)
+void TeamCard::initAoYi()
 {
+    int num=0;
+    for(int i=1;i<json_array_size(this->cards);i++){
+        json_t* card=json_array_get(cards, i);
+        json_t* jxid=json_object_get(card, "xid");
+        if(jxid!=NULL){
+            int xid=json_integer_value(jxid);
+            int type=XCard::record(Value(xid))->getCardType();
+            
+            log("xid:%d,%d",xid,type);
+            num += pow(10, i-1)*type;
+        }
+    }
+    
+    std::vector<int> items=this->getAoYiData(num);
+    this->aoYiList->removeAllItems();
+    for(int i=0;i<items.size();i++){
+        AoyiItem* aoyi=AoyiItem::create(items.at(i));
+        this->aoYiList->pushBackCustomItem(aoyi);
+    }
+    if(items.size()==1 || ((items.size()==2 && json_array_size(cards)==3))){
+        json_t* aoyi=json_object();
+        int aoyiID=items.at(0);
+        //XGroup* xgroup=XGroup::record(Value(aoyiID));
+        //XSkill* xskill=XSkill::record(Value(xgroup->getSkillId()));
+        json_object_set(aoyi, "xid", json_integer(aoyiID));
+        json_object_set(aoyi, "atk", json_integer(30));
+        json_array_set(cards, 0, aoyi);
+    }
+}
+
+void TeamCard::initBag(json_t *jsonArr)
+{
+    this->card=nullptr;
+    
     int gap=10;
     Size size=this->cardList->getInnerContainerSize();
-    for(int i=0;i<25;i++){
-        Card* card=Card::create();
+    XCard* xcard=XCard::record(Value(0));
+    int i=0;
+    this->cardList->removeAllChildren();
+    
+    for (rapidjson::GenericValue<rapidjson::UTF8<> >::MemberIterator it=xcard->doc.MemberonBegin(); it != xcard->doc.MemberonEnd(); it++ ){
+        rapidjson::Value& item=it->value;
+        int xid=item["id"].GetInt();
+        json_t* cardData=json_object();
+        json_object_set(cardData, "isUse", json_boolean(false));
+        json_object_set(cardData, "xid", json_integer(xid));
+        
+        json_t* teams = DataManager::getInstance()->getTeamData();
+
+        for(int j=0;j<json_array_size(teams);j++){
+            json_t* cards=json_object_get(json_array_get(teams, j),"cards");
+            
+            for(int i=0;i<json_array_size(cards);i++){
+                int cid=json_integer_value(json_object_get(json_array_get(cards, i), "xid"));
+                if(cid==xid){
+                    json_object_set(cardData, "isUse", json_boolean(true));
+                    break;
+                }
+            }
+        }
+        Card* card=Card::create(cardData);
+
         card->click=CC_CALLBACK_1(TeamCard::selectCard, this);
         this->cardList->getInnerContainer()->addChild(card);
         Size cardSize=card->getSize();
         card->setPosition(Vec2(cardSize.width*0.5+gap+(cardSize.width+gap)*(i%3),(size.height-cardSize.height*0.5)-(cardSize.height+gap)*(i/3)));
+        i++;
     }
+//    for(int i=0;i<25;i++){
+//        Card* card=Card::create();
+//        card->click=CC_CALLBACK_1(TeamCard::selectCard, this);
+//        this->cardList->getInnerContainer()->addChild(card);
+//        Size cardSize=card->getSize();
+//        card->setPosition(Vec2(cardSize.width*0.5+gap+(cardSize.width+gap)*(i%3),(size.height-cardSize.height*0.5)-(cardSize.height+gap)*(i/3)));
+//    }
 }
 
 void TeamCard::filterCard(int type)
@@ -85,7 +178,7 @@ void TeamCard::filterCard(int type)
     return;
     
     if(type==0){
-        this->initCards(cards);
+        this->initBag(nullptr);
         return;
     }
     json_t* jarr=json_array();
@@ -98,7 +191,7 @@ void TeamCard::filterCard(int type)
     }
     json_array_append(jarr, json_integer(3));
     
-    this->initCards(jarr);
+    this->initBag(jarr);
 }
 
 void TeamCard::selectCard(Widget* card)
@@ -112,27 +205,52 @@ void TeamCard::selectCard(Widget* card)
     
     this->cardPanel->setVisible(true);
     this->aoYiPanel->setVisible(false);
+    
+    this->cardPanel->getChildByName("btn_leave")->setVisible(this->card->isUse);
+    this->cardPanel->getChildByName("btn_join")->setVisible(!this->card->isUse);
+    
 }
 
-std::vector<int> TeamCard::getAoYiData(int type1,int type2)
+std::vector<int> TeamCard::getAoYiData(int num)
 {
     XGroup* xgroup=XGroup::record(Value(0));
     std::vector<int> items;
     
-    for (rapidjson::GenericValue<rapidjson::UTF8<> >::MemberIterator it=xgroup->doc.MemberonBegin(); it != xgroup->doc.MemberonEnd(); it++ )
-    {
+    for (rapidjson::GenericValue<rapidjson::UTF8<> >::MemberIterator it=xgroup->doc.MemberonBegin(); it != xgroup->doc.MemberonEnd(); it++ ){
         rapidjson::Value& item=it->value; //567
         int group=item["group"].GetInt();
-        std::vector<int> arr=Utils::getNum(group);
-        for(int i=0;i<arr.size();i++){
-            int num=arr.at(i);
-            if(num==0) continue;
-            if(num==type1 || num==type2){
-                items.push_back(item["id"].GetInt());
+        if(num==0){
+            items.push_back(item["id"].GetInt());
+            continue;
+        }
+        
+        std::vector<int> groups=Utils::getNum(group);
+        std::vector<int> types=Utils::getNum(num);
+        int index=0;
+        for(int i=0;i<types.size();i++){
+            if(find(groups.begin(), groups.end(), types[i]) != groups.end()){
+                index++;
             }
+        }
+        if(index==types.size()){
+            items.push_back(item["id"].GetInt());
         }
     }
     return items;
+}
+
+void TeamCard::onIconClick(cocos2d::Ref *pSender)
+{
+    ImageView* rim=(ImageView*) pSender;
+    int tag=rim->getTag();
+    //下阵
+    rim->setVisible(false);
+    this->aoYiPanel->getChildByName("card"+Value(tag-1).asString())->setVisible(false);
+    json_array_remove(this->cards, tag);
+    this->initBag(nullptr);
+    
+    this->initAoYi();
+
 }
 
 void TeamCard::onButtonClick(cocos2d::Ref *pSender)
@@ -148,6 +266,11 @@ void TeamCard::onButtonClick(cocos2d::Ref *pSender)
         }
         case 1001: //返回
         {
+            Team2* team=dynamic_cast<Team2*>(this->preUI);
+            json_object_set(data, "cards", this->cards);
+            json_array_set(team->teamData, this->index, this->data);
+            team->resetUI();
+
             this->clear(true);
             break;
         }
@@ -162,18 +285,39 @@ void TeamCard::onButtonClick(cocos2d::Ref *pSender)
             this->filterCard(tag-1002);
             break;
         }
-        
         case 1008: //上场
         {
             this->aoYiPanel->setVisible(true);
             this->cardPanel->setVisible(false);
+            json_object_set(this->card->data, "isUsed", json_boolean(true));
+            json_array_append(this->cards, this->card->data);
+            
+            this->card->setUse(true);
+            this->initAoYi();
+
+            this->initCard();
             break;
         }
         case 1009: //下场
         {
             this->aoYiPanel->setVisible(true);
             this->cardPanel->setVisible(false);
+            for (int i=0; i<json_array_size(cards); i++) {
+                json_t* json=json_array_get(cards, i);
+                int xid=json_integer_value(json_object_get(json, "xid"));
+                int cid=json_integer_value(json_object_get(this->card->data, "xid"));
+                if(xid==cid){
+                    json_array_remove(cards, i);
+                    break;
+                }
+            }
+            json_array_set(cards, 0, json_object());
+
+            this->card->setUse(false);
+            this->initCard();
+            this->initAoYi();
             break;
         }
 
-    }}
+    }
+}

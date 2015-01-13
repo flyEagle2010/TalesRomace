@@ -3,7 +3,7 @@
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="Scene" CanEdit="False" FrameEvent="" ctype="SingleNodeObjectData">
+      <ObjectData Name="Scene" FrameEvent="" ctype="SingleNodeObjectData">
         <Position X="0.0000" Y="0.0000" />
         <Scale ScaleX="1.0000" ScaleY="1.0000" />
         <AnchorPoint />
@@ -31,7 +31,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="PlistSubImage" Path="battleFaceFrame.png" Plist="battle.plist" />
               </NodeObjectData>
-              <NodeObjectData Name="hp" ActionTag="1791547168" FrameEvent="" Tag="18" ObjectIndex="7" ProgressInfo="80" ctype="LoadingBarObjectData">
+              <NodeObjectData Name="hp" ActionTag="1791547168" FrameEvent="" Tag="18" ObjectIndex="7" ctype="LoadingBarObjectData">
                 <Position X="253.5115" Y="179.0082" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -86,7 +86,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </NodeObjectData>
-          <NodeObjectData Name="heroInfo2" CanEdit="False" ActionTag="1375717682" RotationSkewY="180.0000" FrameEvent="" Tag="23" ObjectIndex="8" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <NodeObjectData Name="heroInfo2" ActionTag="1375717682" RotationSkewY="180.0000" FrameEvent="" Tag="23" ObjectIndex="8" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Position X="1136.0000" Y="408.0945" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint />
@@ -105,7 +105,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="PlistSubImage" Path="battleFaceFrame.png" Plist="battle.plist" />
               </NodeObjectData>
-              <NodeObjectData Name="hp" ActionTag="1190534817" FrameEvent="" Tag="25" ObjectIndex="9" ProgressInfo="80" ctype="LoadingBarObjectData">
+              <NodeObjectData Name="hp" ActionTag="1190534817" FrameEvent="" Tag="25" ObjectIndex="9" ctype="LoadingBarObjectData">
                 <Position X="253.5115" Y="179.0082" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

@@ -40,9 +40,9 @@ void Utils::setStar(Vector<cocos2d::Sprite *> vec, int num)
 std::vector<int> Utils::getNum(int num)
 {
     std::vector<int> arr; //424
-    arr.insert(arr.begin(),num/100);
-    arr.insert(arr.begin(),(num/10)%10);
-    arr.insert(arr.begin(),num%10);
+    if(num/100>0)arr.insert(arr.begin(),num/100);
+    if((num/10)%10>0)arr.insert(arr.begin(),(num/10)%10);
+    if(num%10>0)arr.insert(arr.begin(),num%10);
     return arr;
 }
 
@@ -123,4 +123,67 @@ Sprite* Utils::maskedSpriteWithSprite(Sprite* textureSprite, Sprite* maskSprite)
     Sprite *retval = Sprite::createWithTexture(rt->getSprite()->getTexture());
     retval->setFlippedY(true);
     return retval;
+}
+
+void Utils::addGray(Sprite* sp)
+{
+    //return;
+    GLProgram * p = new GLProgram();
+    //GLProgram* p = GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
+    p->initWithFilenames("gray.vsh", "gray.fsh");
+    p->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
+    p->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
+    p->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORDS);
+    p->link();
+    p->updateUniforms();
+    sp->setGLProgram(p);
+}
+
+void Utils::removeGray(Sprite *sp)
+{
+    return;
+    do
+    {
+        GLProgram* p = GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
+
+        //GLProgram * p = new GLProgram();
+        //GLProgram* p = GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
+        //p->initWithFilenames("gray.vsh", "gray.fsh");
+        p->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
+        p->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
+        p->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORDS);
+        p->link();
+        p->updateUniforms();
+        sp->setGLProgram(p);
+    } while (0);
+}
+
+void Utils::setGray(Node *node)
+{
+    return;
+    USING_NS_CC;
+    do
+    {
+        const GLchar* pszFragSource =
+        "#ifdef GL_ES \n \
+        precision mediump float; \n \
+        #endif \n \
+        uniform sampler2D u_texture; \n \
+        varying vec2 v_texCoord; \n \
+        varying vec4 v_fragmentColor; \n \
+        void main(void) \n \
+        { \n \
+        // Convert to greyscale using NTSC weightings \n \
+        vec4 col = texture2D(u_texture, v_texCoord); \n \
+        float grey = dot(col.rgb, vec3(0.299, 0.587, 0.114)); \n \
+        gl_FragColor = vec4(grey, grey, grey, col.a); \n \
+        }";
+        
+        GLProgram* pProgram = new GLProgram();
+        pProgram->initWithByteArrays(ccPositionTextureColor_noMVP_vert, pszFragSource);
+        node->setGLProgram(pProgram);
+        node->getGLProgram()->link();
+        node->getGLProgram()->updateUniforms();
+        CHECK_GL_ERROR_DEBUG();
+    }while(0);
 }

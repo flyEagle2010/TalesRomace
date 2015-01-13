@@ -44,6 +44,8 @@ class Hero:public Node
     void animationEvent(Armature *armature, MovementEventType movementType, const std::string& movementID);
     void onAnimationEnd(int trackIndex);
     void onSkeletonEvent(int trackIndex,spEvent* event);
+    
+    void jumpOutOver(TrackIndex index);
 public:
     ~Hero(){};
     static Hero* create(std::string fPath,std::string rPath,int pos);

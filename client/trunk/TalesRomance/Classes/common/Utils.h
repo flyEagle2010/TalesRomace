@@ -11,8 +11,11 @@
 #include "cocos2d.h"
 #include <iostream>
 #include <sys/time.h>
+#include "ui/CocosGUI.h"
+#include "cocostudio/CocoStudio.h"
 using namespace cocos2d;
 using namespace std;
+using namespace ui;
 class Utils {
     
     
@@ -32,5 +35,10 @@ public:
     static std::vector<std::string> split(std::string str, std::string match);
     static Sprite* maskedSpriteWithSprite(Sprite* textureSprite, Sprite* maskSprite);
     static std::vector<int> getNum(int num);
+    
+    static void addGray(Sprite* sp);
+    static void removeGray(Sprite* sp);
+    
+    static void setGray(Node* node);
 };
 #endif /* defined(__fancyHeart__Utils__) */

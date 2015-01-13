@@ -62,15 +62,14 @@ void Manager::showMsg(const string msg)
     ui::Scale9Sprite* messagBg = ui::Scale9Sprite::create("loading_bg.png");
     messagBg->setPosition(Vec2(size.width/2, size.height/2));
     messagBg->setCapInsets(Rect(50, 50, messagBg->getContentSize().width-100, messagBg->getContentSize().height-100));
-    msgLayer->addChild(messagBg,0,1);
+    msgLayer->addChild(messagBg);
     
     Label* label=Label::createWithTTF(msg, "Marker Felt.ttf", 24,Size(355,80),TextHAlignment::CENTER,TextVAlignment::CENTER);
-    label->setTag(100);
-    msgLayer->addChild(label,0,1);
+    msgLayer->addChild(label,1);
     label->setPosition(Vec2(size.width/2,size.height/2));
     messagBg->setContentSize(Size(label->getContentSize().width+50, label->getContentSize().height+20));
     messagBg->setOpacity(0);
-    Sequence* seqBg=Sequence::create(FadeIn::create(0.2),DelayTime::create(1),CCFadeOut::create(0.2),CallFunc::create(CC_CALLBACK_0(Sprite::removeFromParent, msgLayer)),NULL);
+    Sequence* seqBg=Sequence::create(FadeIn::create(0.2),DelayTime::create(1),CCFadeOut::create(0.2),CallFunc::create(CC_CALLBACK_0(Node::removeFromParent, msgLayer)),NULL);
     messagBg->runAction(seqBg);
     
 }

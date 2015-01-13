@@ -52,7 +52,9 @@ void LoginScene::onEnter()
     this->btn_reg=dynamic_cast<Button*>(this->regPage->getChildByName ("btn_reg"));
     this->btn_login->addClickEventListener(CC_CALLBACK_1(LoginScene::onButtonClick, this));
     this->btn_reg->addClickEventListener(CC_CALLBACK_1(LoginScene::onButtonClick, this));
-    //return;
+    
+    
+    return;
     this->initAccount();
     
 
@@ -168,6 +170,10 @@ void LoginScene::onButtonClick(Ref *pSender)
     switch (tag) {
         case 100:   //登陆
         {
+            Scene* home=HomeScene::createScene();
+            Manager::getInstance()->switchScence(home);
+            break;
+            
             std::string str="name="+this->accountTxt->getString()+"&password="+this->passwordTxt->getString();
             WebHttp::getInstance()->send(LOGIN_URL, CC_CALLBACK_1(LoginScene::initGameCallback, this),str.c_str());
             button->setTouchEnabled(false);
@@ -242,37 +248,6 @@ void LoginScene::initNetEvent(){
             default:
                 break;
         }
- 
-        
-        
-        return;
-        //int reqId=json_integer_value(json_object_get(msg, "reqId"));
-//        switch (reqId)
-//        {
-//            case CONNECTED:
-//            {
-//                Manager::getInstance()->psocket->host=json_object_get(msg, "host");
-//                Manager::getInstance()->psocket->port=json_object_get(msg, "port");
-//                
-//                const char* host=json_string_value(json_object_get(msg, "host"));
-//                int port=json_integer_value(json_object_get(msg, "port"));
-//                Manager::getInstance()->psocket->stop();
-//                if(!Manager::getInstance()->psocket->connect(host, port)){
-//                    json_t* msg=json_object();
-//                    json_object_set(msg, "token", Manager::getInstance()->psocket->token);
-//                    //json_object_set(msg, "reqId", json_integer(31));
-//                    Manager::getInstance()->psocket->sendMsg(NET_GATE_ROTE, msg);
-//                }
-//                break;
-//            }
-//            case C_LOGIN:
-//            {
-//                 Manager::getInstance()->switchScence(HomeScene::createScene());
-//                break;
-//            }
-//            default:
-//                break;
-//        }
     });
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
     

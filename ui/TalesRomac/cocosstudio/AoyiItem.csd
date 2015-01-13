@@ -31,42 +31,42 @@
             <PrePosition X="0.0000" Y="0.0000" />
             <PreSize X="0.0000" Y="0.0000" />
           </NodeObjectData>
-          <NodeObjectData Name="cardIcon0" ActionTag="-1822134448" FrameEvent="" Tag="99" ObjectIndex="3" Scale9Width="28" Scale9Height="32" ctype="ImageViewObjectData">
+          <NodeObjectData Name="cardIcon0" ActionTag="-1822134448" FrameEvent="" Tag="99" ObjectIndex="3" Scale9Width="20" Scale9Height="32" ctype="ImageViewObjectData">
             <Position X="37.0120" Y="-24.0951" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="28.0000" Y="32.0000" />
+            <Size X="20.0000" Y="32.0000" />
             <PrePosition X="0.0000" Y="0.0000" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="teamEditCardType_2.png" Plist="teamcard.plist" />
+            <FileData Type="PlistSubImage" Path="cardType_1.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="cardIcon1" ActionTag="-1533497681" FrameEvent="" Tag="100" ObjectIndex="4" Scale9Width="28" Scale9Height="32" ctype="ImageViewObjectData">
+          <NodeObjectData Name="cardIcon1" ActionTag="-1533497681" FrameEvent="" Tag="100" ObjectIndex="4" Scale9Width="20" Scale9Height="32" ctype="ImageViewObjectData">
             <Position X="79.0116" Y="-24.0951" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="28.0000" Y="32.0000" />
+            <Size X="20.0000" Y="32.0000" />
             <PrePosition X="0.0000" Y="0.0000" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="teamEditCardType_2.png" Plist="teamcard.plist" />
+            <FileData Type="PlistSubImage" Path="cardType_2.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="cardIcon2" ActionTag="-762409788" FrameEvent="" Tag="101" ObjectIndex="5" Scale9Width="28" Scale9Height="32" ctype="ImageViewObjectData">
+          <NodeObjectData Name="cardIcon2" ActionTag="-762409788" FrameEvent="" Tag="101" ObjectIndex="5" Scale9Width="20" Scale9Height="32" ctype="ImageViewObjectData">
             <Position X="121.0111" Y="-24.0951" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="28.0000" Y="32.0000" />
+            <Size X="20.0000" Y="32.0000" />
             <PrePosition X="0.0000" Y="0.0000" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="teamEditCardType_1.png" Plist="teamcard.plist" />
+            <FileData Type="PlistSubImage" Path="cardType_3.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="typeIcon" ActionTag="1735345572" FrameEvent="" Tag="102" ObjectIndex="6" Scale9Width="65" Scale9Height="65" ctype="ImageViewObjectData">
+          <NodeObjectData Name="typeIcon" ActionTag="1735345572" FrameEvent="" Tag="102" ObjectIndex="6" Scale9Width="20" Scale9Height="32" ctype="ImageViewObjectData">
             <Position X="-117.9437" Y="-22.8173" />
             <Scale ScaleX="0.6000" ScaleY="0.6000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="20.0000" Y="32.0000" />
             <PrePosition X="0.0000" Y="0.0000" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="cardType_2.png" Plist="common.plist" />

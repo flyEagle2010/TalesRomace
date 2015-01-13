@@ -70,7 +70,9 @@ void GateInfo::resetUI()
     Size size=this->friendList->getInnerContainerSize();
     Vec2 center=Vec2(wsize.width*0.5,wsize.height*0.5);
     for(int i=0;i<10;i++){
-        Card* card=Card::create();
+        json_t* data=json_object();
+        json_object_set(data, "xid", json_integer(1001));
+        Card* card=Card::create(data);
         this->friendList->addChild(card);
         Size cardSize=card->rim->getContentSize();
         card->setPosition(Vec2(cardSize.width*0.5+i*(cardSize.width+gap),size.height*0.6));

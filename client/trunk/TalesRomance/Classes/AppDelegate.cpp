@@ -60,13 +60,19 @@ bool AppDelegate::applicationDidFinishLaunching() {
     searchPath.push_back("Default");
     searchPath.push_back("effect");
     searchPath.push_back("fight");
-    //searchPath.push_back("fonts");
+    searchPath.push_back("fonts");
 
     searchPath.push_back("icon");
     searchPath.push_back("icon/portrait");
+    searchPath.push_back("luoLi");
     searchPath.push_back("particle");
+    
+    
     searchPath.push_back("tmx");
-
+    
+    
+    searchPath.push_back("res");
+    searchPath.push_back("res/Default");
     
     
     

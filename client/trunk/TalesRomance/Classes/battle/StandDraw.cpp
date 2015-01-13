@@ -42,27 +42,24 @@ bool StandDraw::init()
     this->addChild(topClip);
     this->topClip->setScale(4);
     
-    std::string txt="合体技能大招";
-    Label* label=Label::createWithTTF(txt, "Marker Felt.ttf", 48);
-    this->addChild(label,5);
-    label->setPosition(Vec2(568,320));
-    //label->setTextColor(Color4B(255,100,255,255));
+ 
     return true;
 }
 
 float StandDraw::play()
 {
-    Label* label=Label::createWithTTF("合体技能大招", "Marker Felt.ttf", 48);
+    Size size=Director::getInstance()->getWinSize();
+
+    Label* label=Label::createWithTTF("奥义组合技能", "Marker Felt.ttf", 48);
     this->addChild(label,5);
-    label->setPosition(Vec2(200,320));
+    label->setPosition(Vec2(size.width*0.5,size.height*0.9));
     label->setTextColor(Color4B(255,255,100,255));
-    label->runAction(MoveTo::create(0.5, Vec2(1136,320)));
+    //label->runAction(MoveTo::create(0.5, Vec2(1136,320)));
     
     this->bgClip->play(true);
 
     this->topClip->play();
     
-    Size size=Director::getInstance()->getWinSize();
     this->icon->runAction(MoveBy::create(1, Vec2(size.width*0.5,0)));
 
     

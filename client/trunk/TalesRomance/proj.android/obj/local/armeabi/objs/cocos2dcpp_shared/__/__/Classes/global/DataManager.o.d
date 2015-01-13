@@ -346,7 +346,60 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/global/DataManager.o: \
  jni/../../cocos2d/cocos/3d/../deprecated/CCBool.h \
  jni/../../cocos2d/cocos/3d/../deprecated/CCString.h \
  jni/../../cocos2d/cocos/3d/../deprecated/CCNotificationCenter.h \
- jni/../../cocos2d/cocos/3d/../deprecated/CCDeprecated.h
+ jni/../../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
+ jni/../../cocos2d/external/libpomelo/include/pomelo.h \
+ jni/../../cocos2d/external/libpomelo/deps/uv/include/uv.h \
+ jni/../../cocos2d/external/libpomelo/deps/uv/include/uv-private/uv-unix.h \
+ jni/../../cocos2d/external/libpomelo/deps/uv/include/uv-private/ngx-queue.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/stat.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/stat.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/endian.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/endian.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/machine/endian.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/fcntl.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/fcntl.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/fcntl.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm-generic/fcntl.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/unistd.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/sysconf.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/capability.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/pathconf.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/socket.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/socket.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/socket.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/sockios.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/sockios.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/uio.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/netinet/in.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/in.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/byteorder.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/byteorder/little_endian.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/byteorder/swab.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/byteorder/generic.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/in6.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/ipv6.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/netinet/in6.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/netinet/tcp.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/tcp.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/arpa/inet.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/netdb.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/termios.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/ioctl.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/ioctl.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/ioctl.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm-generic/ioctl.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/ioctls.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/termbits.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/ioctl_compat.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/termios.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/termios.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/pwd.h \
+ /Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/semaphore.h \
+ jni/../../cocos2d/external/libpomelo/deps/uv/include/uv-private/uv-linux.h \
+ jni/../../cocos2d/external/libpomelo/deps/jansson/src/jansson.h \
+ jni/../../cocos2d/external/libpomelo/deps/jansson/src/jansson_config.h \
+ jni/../../cocos2d/external/libpomelo/include/pomelo-private/map.h \
+ jni/../../cocos2d/external/libpomelo/include/pomelo-private/ngx-queue.h
 
 jni/../../Classes/global/DataManager.h:
 
@@ -1041,3 +1094,109 @@ jni/../../cocos2d/cocos/3d/../deprecated/CCString.h:
 jni/../../cocos2d/cocos/3d/../deprecated/CCNotificationCenter.h:
 
 jni/../../cocos2d/cocos/3d/../deprecated/CCDeprecated.h:
+
+jni/../../cocos2d/external/libpomelo/include/pomelo.h:
+
+jni/../../cocos2d/external/libpomelo/deps/uv/include/uv.h:
+
+jni/../../cocos2d/external/libpomelo/deps/uv/include/uv-private/uv-unix.h:
+
+jni/../../cocos2d/external/libpomelo/deps/uv/include/uv-private/ngx-queue.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/stat.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/stat.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/endian.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/endian.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/machine/endian.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/fcntl.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/fcntl.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/fcntl.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm-generic/fcntl.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/unistd.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/sysconf.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/capability.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/pathconf.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/socket.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/socket.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/socket.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/sockios.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/sockios.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/uio.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/netinet/in.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/in.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/byteorder.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/byteorder/little_endian.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/byteorder/swab.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/byteorder/generic.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/in6.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/ipv6.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/netinet/in6.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/netinet/tcp.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/tcp.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/arpa/inet.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/netdb.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/termios.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/ioctl.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/ioctl.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/ioctl.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm-generic/ioctl.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/ioctls.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/termbits.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/ioctl_compat.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/termios.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/termios.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/pwd.h:
+
+/Users/qll/documents/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/semaphore.h:
+
+jni/../../cocos2d/external/libpomelo/deps/uv/include/uv-private/uv-linux.h:
+
+jni/../../cocos2d/external/libpomelo/deps/jansson/src/jansson.h:
+
+jni/../../cocos2d/external/libpomelo/deps/jansson/src/jansson_config.h:
+
+jni/../../cocos2d/external/libpomelo/include/pomelo-private/map.h:
+
+jni/../../cocos2d/external/libpomelo/include/pomelo-private/ngx-queue.h:

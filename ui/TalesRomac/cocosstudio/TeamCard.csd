@@ -48,7 +48,7 @@
             <PressedFileData Type="PlistSubImage" Path="BtnReturn_2.png" Plist="common.plist" />
             <NormalFileData Type="PlistSubImage" Path="BtnReturn_1.png" Plist="common.plist" />
           </NodeObjectData>
-          <NodeObjectData Name="aoYiPanel" ActionTag="1802499692" Visible="False" FrameEvent="" Tag="29" ObjectIndex="1" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <NodeObjectData Name="aoYiPanel" ActionTag="1802499692" FrameEvent="" Tag="29" ObjectIndex="1" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Position X="194.0000" Y="54.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint />
@@ -115,37 +115,17 @@
                 <PrePosition X="0.2615" Y="0.9474" />
                 <PreSize X="0.0000" Y="0.0000" />
               </NodeObjectData>
-              <NodeObjectData Name="rim0" ActionTag="-844217687" FrameEvent="" Tag="75" ObjectIndex="13" ctype="SpriteObjectData">
-                <Position X="67.5950" Y="447.4599" />
+              <NodeObjectData Name="rim0" ActionTag="-1125205171" FrameEvent="" Tag="1" ObjectIndex="3" TouchEnable="True" Scale9Width="68" Scale9Height="68" ctype="ImageViewObjectData">
+                <Position X="68.5950" Y="446.7389" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <Size X="65.0000" Y="65.0000" />
-                <PrePosition X="0.2331" Y="0.8443" />
+                <Size X="68.0000" Y="68.0000" />
+                <PrePosition X="0.2365" Y="0.8429" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="cardType_1.png" Plist="common.plist" />
+                <FileData Type="PlistSubImage" Path="cardTypeRim_1.png" Plist="common.plist" />
               </NodeObjectData>
-              <NodeObjectData Name="rim1" ActionTag="1024365997" FrameEvent="" Tag="76" ObjectIndex="14" ctype="SpriteObjectData">
-                <Position X="142.5293" Y="447.4599" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <Size X="65.0000" Y="65.0000" />
-                <PrePosition X="0.4915" Y="0.8443" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="cardType_1.png" Plist="common.plist" />
-              </NodeObjectData>
-              <NodeObjectData Name="rim2" ActionTag="-1029515954" FrameEvent="" Tag="77" ObjectIndex="15" ctype="SpriteObjectData">
-                <Position X="216.1740" Y="447.4599" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <AnchorPoint ScaleX="0.4955" ScaleY="0.5000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <Size X="65.0000" Y="65.0000" />
-                <PrePosition X="0.7454" Y="0.8443" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="cardType_1.png" Plist="common.plist" />
-              </NodeObjectData>
-              <NodeObjectData Name="aoyiList" ActionTag="1595256308" FrameEvent="" Tag="36" ObjectIndex="1" TouchEnable="True" ClipAble="True" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" ItemMargin="50" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" VerticalType="0" ctype="ListViewObjectData">
+              <NodeObjectData Name="aoyiList" CanEdit="False" ActionTag="1595256308" FrameEvent="" Tag="36" ObjectIndex="1" TouchEnable="True" ClipAble="True" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" ItemMargin="50" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" VerticalType="0" ctype="ListViewObjectData">
                 <Position X="-0.3720" Y="3.5080" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <AnchorPoint />
@@ -158,13 +138,33 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </NodeObjectData>
+              <NodeObjectData Name="rim1" ActionTag="1809039812" FrameEvent="" Tag="2" ObjectIndex="4" TouchEnable="True" Scale9Width="68" Scale9Height="68" ctype="ImageViewObjectData">
+                <Position X="143.0306" Y="447.7389" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <Size X="68.0000" Y="68.0000" />
+                <PrePosition X="0.4932" Y="0.8448" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="PlistSubImage" Path="cardTypeRim_2.png" Plist="common.plist" />
+              </NodeObjectData>
+              <NodeObjectData Name="rim2" ActionTag="-1005041569" FrameEvent="" Tag="3" ObjectIndex="5" TouchEnable="True" Scale9Width="68" Scale9Height="68" ctype="ImageViewObjectData">
+                <Position X="218.4662" Y="446.7389" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <Size X="68.0000" Y="68.0000" />
+                <PrePosition X="0.7533" Y="0.8429" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="PlistSubImage" Path="cardTypeRim_3.png" Plist="common.plist" />
+              </NodeObjectData>
             </Children>
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </NodeObjectData>
-          <NodeObjectData Name="cardPanel" ActionTag="34101747" FrameEvent="" Tag="30" ObjectIndex="2" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <NodeObjectData Name="cardPanel" ActionTag="34101747" Visible="False" FrameEvent="" Tag="30" ObjectIndex="2" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Position X="194.0000" Y="54.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint />
@@ -227,7 +227,7 @@
             <FirstColor A="255" R="255" G="150" B="100" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
-            <InnerNodeSize Width="330" Height="500" />
+            <InnerNodeSize Width="330" Height="1000" />
           </NodeObjectData>
           <NodeObjectData Name="btn_green" ActionTag="-1137977606" FrameEvent="" Tag="1007" ObjectIndex="8" TouchEnable="True" FontSize="14" ButtonText="" Scale9Width="61" Scale9Height="61" ctype="ButtonObjectData">
             <Position X="878.7806" Y="191.2798" />

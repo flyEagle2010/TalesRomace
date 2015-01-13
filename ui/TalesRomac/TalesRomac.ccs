@@ -88,7 +88,7 @@
           <PlistImageFile Name="preview.png" Key="preview.png" />
         </PlistImageFolder>
         <Image Name="map.png" />
-        <PlistImageFolder PListFile="common.plist" LastPlistWriteTime="2015-01-05T18:42:30+08:00" LastImageWriteTime="2015-01-05T18:42:30+08:00" Name=".common_PList.Dir">
+        <PlistImageFolder PListFile="common.plist" LastPlistWriteTime="2015-01-12T11:36:11+08:00" LastImageWriteTime="2015-01-12T11:36:11+08:00" Name=".common_PList.Dir">
           <PlistImageFile Name="BtnReturn_0.png" Key="BtnReturn_0.png" />
           <PlistImageFile Name="BtnReturn_1.png" Key="BtnReturn_1.png" />
           <PlistImageFile Name="BtnReturn_2.png" Key="BtnReturn_2.png" />
@@ -103,15 +103,25 @@
           <PlistImageFile Name="goHome_2.png" Key="goHome_2.png" />
           <PlistImageFile Name="haoGanDu_1.png" Key="haoGanDu_1.png" />
           <PlistImageFile Name="haoGanDu_2.png" Key="haoGanDu_2.png" />
-          <PlistImageFile Name="kaPai_1.png" Key="kaPai_1.png" />
-          <PlistImageFile Name="kaPai_2.png" Key="kaPai_2.png" />
-          <PlistImageFile Name="kaPai_3.png" Key="kaPai_3.png" />
-          <PlistImageFile Name="kaPai_4.png" Key="kaPai_4.png" />
-          <PlistImageFile Name="kaPai_5.png" Key="kaPai_5.png" />
-          <PlistImageFile Name="kaPai_6.png" Key="kaPai_6.png" />
           <PlistImageFile Name="tuoErTouXiang_1.png" Key="tuoErTouXiang_1.png" />
           <PlistImageFile Name="xiaoXing_1.png" Key="xiaoXing_1.png" />
           <PlistImageFile Name="xiaoXing_2.png" Key="xiaoXing_2.png" />
+          <PlistImageFile Name="cardTypeRim_1.png" Key="cardTypeRim_1.png" />
+          <PlistImageFile Name="cardTypeRim_2.png" Key="cardTypeRim_2.png" />
+          <PlistImageFile Name="cardTypeRim_3.png" Key="cardTypeRim_3.png" />
+          <PlistImageFile Name="cardTypeRim_4.png" Key="cardTypeRim_4.png" />
+          <PlistImageFile Name="cardTypeRim_5.png" Key="cardTypeRim_5.png" />
+          <PlistImageFile Name="cardTypeRim_6.png" Key="cardTypeRim_6.png" />
+          <PlistImageFile Name="cardType_6.png" Key="cardType_6.png" />
+          <PlistImageFile Name="kapai_1.png" Key="kapai_1.png" />
+          <PlistImageFile Name="kapai_2.png" Key="kapai_2.png" />
+          <PlistImageFile Name="kapai_3.png" Key="kapai_3.png" />
+          <PlistImageFile Name="kapai_4.png" Key="kapai_4.png" />
+          <PlistImageFile Name="kapai_5.png" Key="kapai_5.png" />
+          <PlistImageFile Name="kapai_6.png" Key="kapai_6.png" />
+          <PlistImageFile Name="zhuCaiDan_0.png" Key="zhuCaiDan_0.png" />
+          <PlistImageFile Name="zhuCaiDan_1.png" Key="zhuCaiDan_1.png" />
+          <PlistImageFile Name="zhuCaiDan_2.png" Key="zhuCaiDan_2.png" />
         </PlistImageFolder>
         <PlistImageFolder PListFile="gateInfo.plist" LastPlistWriteTime="2014-12-03T10:56:56+08:00" LastImageWriteTime="2014-12-03T10:56:56+08:00" Name=".gateInfo_PList.Dir">
           <PlistImageFile Name="BntKaiShi_0.png" Key="BntKaiShi_0.png" />
@@ -132,10 +142,10 @@
         <Image Name="common.png" />
         <Image Name="gateInfo.png" />
         <Project Name="Card.csd" />
-        <PlistImageFolder PListFile="smallIcon.plist" LastPlistWriteTime="2014-11-29T22:31:51+08:00" LastImageWriteTime="2014-11-29T22:31:51+08:00" Name=".smallIcon_PList.Dir">
-          <PlistImageFile Name="atkType0.png" Key="atkType0.png" />
+        <PlistImageFolder PListFile="smallIcon.plist" LastPlistWriteTime="2015-01-07T18:28:32+08:00" LastImageWriteTime="2015-01-07T18:28:32+08:00" Name=".smallIcon_PList.Dir">
           <PlistImageFile Name="atkType1.png" Key="atkType1.png" />
           <PlistImageFile Name="atkType2.png" Key="atkType2.png" />
+          <PlistImageFile Name="atkType3.png" Key="atkType3.png" />
           <PlistImageFile Name="skillIcon1.png" Key="skillIcon1.png" />
           <PlistImageFile Name="skillIcon2.png" Key="skillIcon2.png" />
           <PlistImageFile Name="skillIcon3.png" Key="skillIcon3.png" />
@@ -172,7 +182,7 @@
         <Project Name="RoleCreate.csd" />
         <Image Name="zhujue.png" />
         <Project Name="Team2.csd" />
-        <PlistImageFolder PListFile="teamcard.plist" LastPlistWriteTime="2015-01-06T10:03:47+08:00" LastImageWriteTime="2015-01-06T10:03:47+08:00" Name=".teamcard_PList.Dir">
+        <PlistImageFolder PListFile="teamcard.plist" LastPlistWriteTime="2015-01-12T12:15:46+08:00" LastImageWriteTime="2015-01-12T12:15:46+08:00" Name=".teamcard_PList.Dir">
           <PlistImageFile Name="AllCardBtn_1.png" Key="AllCardBtn_1.png" />
           <PlistImageFile Name="AllCardBtn_2.png" Key="AllCardBtn_2.png" />
           <PlistImageFile Name="blackBtn_1.png" Key="blackBtn_1.png" />
@@ -191,12 +201,6 @@
           <PlistImageFile Name="redBtn_2.png" Key="redBtn_2.png" />
           <PlistImageFile Name="teamEditAoYiListBg.png" Key="teamEditAoYiListBg.png" />
           <PlistImageFile Name="teamEditBg.png" Key="teamEditBg.png" />
-          <PlistImageFile Name="teamEditCardType_0.png" Key="teamEditCardType_0.png" />
-          <PlistImageFile Name="teamEditCardType_1.png" Key="teamEditCardType_1.png" />
-          <PlistImageFile Name="teamEditCardType_2.png" Key="teamEditCardType_2.png" />
-          <PlistImageFile Name="teamEditCardType_3.png" Key="teamEditCardType_3.png" />
-          <PlistImageFile Name="teamEditCardType_4.png" Key="teamEditCardType_4.png" />
-          <PlistImageFile Name="teamEditCardType_5.png" Key="teamEditCardType_5.png" />
           <PlistImageFile Name="teamLeaveBtn_1.png" Key="teamLeaveBtn_1.png" />
           <PlistImageFile Name="teamLeaveBtn_2.png" Key="teamLeaveBtn_2.png" />
           <PlistImageFile Name="teamSlotBg.png" Key="teamSlotBg.png" />

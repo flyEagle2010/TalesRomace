@@ -22,7 +22,7 @@ class BattleResult : public BaseUI {
     Sprite* win;
 private:
     virtual void onButtonClick(Ref *pSender);
-
+    virtual void onExit();
 public:
     static BattleResult* create();
     bool init();

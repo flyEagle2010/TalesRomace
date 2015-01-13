@@ -545,13 +545,15 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/map/MapScene.o: \
  jni/../../cocos2d/external/libpomelo/deps/jansson/src/jansson_config.h \
  jni/../../cocos2d/external/libpomelo/include/pomelo-private/map.h \
  jni/../../cocos2d/external/libpomelo/include/pomelo-private/ngx-queue.h \
- jni/../../Classes/common/Mask.h \
+ jni/../../Classes/common/BlackBg.h \
  jni/../../Classes/common/compoment/Clip.h \
- jni/../../Classes/common/ImageBtton.h jni/../../Classes/map/GateInfo.h \
- jni/../../Classes/team/Card.h jni/../../Classes/map/Maze.h \
+ jni/../../Classes/common/Utils.h jni/../../Classes/common/ImageBtton.h \
+ jni/../../Classes/map/GateInfo.h jni/../../Classes/team/Card.h \
+ jni/../../Classes/xls/XCard.h \
+ jni/../../cocos2d/cocos/./../external/json/document.h \
+ jni/../../Classes/xls/XSkill.h jni/../../Classes/map/Maze.h \
  jni/../../Classes/battle/BattleMgr.h \
  jni/../../cocos2d/cocos/./../external/json/rapidjson.h \
- jni/../../cocos2d/cocos/./../external/json/document.h \
  jni/../../Classes/battle/BattleScene.h \
  jni/../../Classes/battle/BattleMgr.h jni/../../Classes/battle/Hero.h \
  jni/../../Classes/proto/fight.pb.h jni/../../Classes/common/BezierMove.h \
@@ -587,10 +589,12 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/map/MapScene.o: \
  jni/../../Classes/battle/BattleResult.h \
  jni/../../Classes/home/HomeScene.h jni/../../Classes/common/CircleMove.h \
  jni/../../Classes/map/Maze.h jni/../../Classes/map/GateInfo.h \
- jni/../../Classes/team/Team.h jni/../../Classes/team/Card.h \
- jni/../../Classes/team/AoyiItem.h \
+ jni/../../Classes/map/MapScene.h jni/../../Classes/home/LuoLi.h \
+ jni/../../Classes/team/TeamCard.h \
  jni/../../Classes/common/compoment/TabBar.h \
- jni/../../Classes/map/MapScene.h jni/../../Classes/battle/BattleCard.h \
+ jni/../../Classes/xls/XGroup.h jni/../../Classes/team/AoyiItem.h \
+ jni/../../Classes/team/Team2.h jni/../../Classes/global/DataManager.h \
+ jni/../../Classes/battle/BattleCard.h \
  jni/../../Classes/battle/StandDraw.h jni/../../Classes/xls/XMap.h \
  jni/../../Classes/battle/BattleResult.h
 
@@ -1700,9 +1704,11 @@ jni/../../cocos2d/external/libpomelo/include/pomelo-private/map.h:
 
 jni/../../cocos2d/external/libpomelo/include/pomelo-private/ngx-queue.h:
 
-jni/../../Classes/common/Mask.h:
+jni/../../Classes/common/BlackBg.h:
 
 jni/../../Classes/common/compoment/Clip.h:
+
+jni/../../Classes/common/Utils.h:
 
 jni/../../Classes/common/ImageBtton.h:
 
@@ -1710,13 +1716,17 @@ jni/../../Classes/map/GateInfo.h:
 
 jni/../../Classes/team/Card.h:
 
+jni/../../Classes/xls/XCard.h:
+
+jni/../../cocos2d/cocos/./../external/json/document.h:
+
+jni/../../Classes/xls/XSkill.h:
+
 jni/../../Classes/map/Maze.h:
 
 jni/../../Classes/battle/BattleMgr.h:
 
 jni/../../cocos2d/cocos/./../external/json/rapidjson.h:
-
-jni/../../cocos2d/cocos/./../external/json/document.h:
 
 jni/../../Classes/battle/BattleScene.h:
 
@@ -1796,15 +1806,21 @@ jni/../../Classes/map/Maze.h:
 
 jni/../../Classes/map/GateInfo.h:
 
-jni/../../Classes/team/Team.h:
+jni/../../Classes/map/MapScene.h:
 
-jni/../../Classes/team/Card.h:
+jni/../../Classes/home/LuoLi.h:
 
-jni/../../Classes/team/AoyiItem.h:
+jni/../../Classes/team/TeamCard.h:
 
 jni/../../Classes/common/compoment/TabBar.h:
 
-jni/../../Classes/map/MapScene.h:
+jni/../../Classes/xls/XGroup.h:
+
+jni/../../Classes/team/AoyiItem.h:
+
+jni/../../Classes/team/Team2.h:
+
+jni/../../Classes/global/DataManager.h:
 
 jni/../../Classes/battle/BattleCard.h:
 

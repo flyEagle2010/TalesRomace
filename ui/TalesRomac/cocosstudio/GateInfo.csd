@@ -135,123 +135,123 @@
           </NodeObjectData>
           <NodeObjectData Name="icon0" ActionTag="989456508" FrameEvent="" Tag="77" ObjectIndex="8" ctype="SpriteObjectData">
             <Position X="442.3148" Y="354.4596" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="0.5000" ScaleY="0.5000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="128.0000" Y="128.0000" />
             <PrePosition X="0.3894" Y="0.5538" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_1.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="tuoErTouXiang_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="icon2" ActionTag="510897028" FrameEvent="" Tag="78" ObjectIndex="9" ctype="SpriteObjectData">
             <Position X="613.1904" Y="354.4598" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="0.5000" ScaleY="0.5000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="128.0000" Y="128.0000" />
             <PrePosition X="0.5398" Y="0.5538" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_1.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="tuoErTouXiang_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="icon1" ActionTag="-903724641" FrameEvent="" Tag="80" ObjectIndex="11" ctype="SpriteObjectData">
             <Position X="527.7526" Y="354.4596" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="0.5000" ScaleY="0.5000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="128.0000" Y="128.0000" />
             <PrePosition X="0.4646" Y="0.5538" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_1.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="tuoErTouXiang_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="icon4" ActionTag="1657070939" FrameEvent="" Tag="81" ObjectIndex="12" ctype="SpriteObjectData">
             <Position X="526.6389" Y="276.1581" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="0.5000" ScaleY="0.5000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="128.0000" Y="128.0000" />
             <PrePosition X="0.4636" Y="0.4315" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_1.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="tuoErTouXiang_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="icon5" ActionTag="841920814" FrameEvent="" Tag="82" ObjectIndex="13" ctype="SpriteObjectData">
             <Position X="610.9630" Y="276.1581" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="0.5000" ScaleY="0.5000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="128.0000" Y="128.0000" />
             <PrePosition X="0.5378" Y="0.4315" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_1.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="tuoErTouXiang_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="icon3" ActionTag="1080569683" FrameEvent="" Tag="83" ObjectIndex="14" ctype="SpriteObjectData">
             <Position X="442.3148" Y="276.1581" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="0.5000" ScaleY="0.5000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="128.0000" Y="128.0000" />
             <PrePosition X="0.3894" Y="0.4315" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_1.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="tuoErTouXiang_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="iconRim0" ActionTag="-491297686" FrameEvent="" Tag="84" ObjectIndex="15" ctype="SpriteObjectData">
             <Position X="442.9462" Y="355.6935" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="68.0000" Y="68.0000" />
             <PrePosition X="0.3899" Y="0.5558" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_4.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="cardTypeRim_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="iconRim3" ActionTag="1107418966" FrameEvent="" Tag="85" ObjectIndex="16" ctype="SpriteObjectData">
             <Position X="443.2849" Y="277.5949" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="68.0000" Y="68.0000" />
             <PrePosition X="0.3902" Y="0.4337" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_4.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="cardTypeRim_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="iconRim1" ActionTag="-1984073990" FrameEvent="" Tag="86" ObjectIndex="17" ctype="SpriteObjectData">
             <Position X="528.0378" Y="355.6935" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="68.0000" Y="68.0000" />
             <PrePosition X="0.4648" Y="0.5558" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_4.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="cardTypeRim_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="iconRim4" ActionTag="523346102" FrameEvent="" Tag="87" ObjectIndex="18" ctype="SpriteObjectData">
             <Position X="527.0829" Y="276.0833" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="68.0000" Y="68.0000" />
             <PrePosition X="0.4640" Y="0.4314" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_4.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="cardTypeRim_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="iconRim5" ActionTag="-625003762" FrameEvent="" Tag="88" ObjectIndex="19" ctype="SpriteObjectData">
             <Position X="609.6249" Y="277.5949" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="68.0000" Y="68.0000" />
             <PrePosition X="0.5366" Y="0.4337" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_4.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="cardTypeRim_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="iconRim2" ActionTag="-1039809281" FrameEvent="" Tag="89" ObjectIndex="20" ctype="SpriteObjectData">
             <Position X="613.1293" Y="355.6934" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="65.0000" Y="65.0000" />
+            <Size X="68.0000" Y="68.0000" />
             <PrePosition X="0.5397" Y="0.5558" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="cardType_4.png" Plist="common.plist" />
+            <FileData Type="PlistSubImage" Path="cardTypeRim_1.png" Plist="common.plist" />
           </NodeObjectData>
           <NodeObjectData Name="btn_clear" ActionTag="895554537" FrameEvent="" Tag="1000" ObjectIndex="2" TouchEnable="True" FontSize="24" ButtonText="扫荡" Scale9Width="133" Scale9Height="52" ctype="ButtonObjectData">
             <Position X="758.4310" Y="245.2103" />

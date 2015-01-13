@@ -1,116 +1,697 @@
 {
-	"type":1,
-    "heros":[
-		{
-			"id":1,
-			"name":"很厉害的英雄",
-			"xid":21,
-			"hp":1000,
-			"friendID":3,
-			"friendName":"好友1",
-			"friendXid":33,
-            "icon":"neZha"
-        },
-        {
-			"id":2,
-			"name":"很厉害的NPC",
-			"xid":22,
-			"hp":1000,
-			"friendID":3,
-			"friendName":"好友2",
-			"friendXid":333,
-            "icon":"longNv"
-        }
-	],
-	"rounds":[
-		{
-			"attacker":0,
-			"durationBuff":[
-				{
-					"id":1,
-					"hp":200
-				}
-			],
-			"cards":[
-				{
-					"type":1,
-					"skill":1,
-					"atkHp":100,
-					"atkBuff":[1,2],
-					"otherHp":0,
-					"otherBuff":[1,2]
-				},
-				{
-					"type":0,
-					"skill":0,
-					"atkHp":360,
-					"atkBuff":[1,2],
-					"otherHp":0,
-					"otherBuff":[1,2]
-				},
-				{
-					"type":1,
-					"skill":1,
-					"atkHp":245,
-					"atkBuff":[1,2],
-					"otherHp":0,
-					"otherBuff":[1,2]
-				}
-			],
-			"aoyi":{
-				"atkHp":2289,
-				"skill":10001,
-				"buff":[1,2],
-				"atkBuff":[1,2]
-			},
-			"delBuff":[1,2]
-		},
-		{
-			"attacker":1,
-			"durationBuff":[
-				{
-					"id":1,
-					"hp":200
-				}
-			],
-			"cards":[
-				{
-					"type":1,
-					"skill":0,
-					"atkHp":123,
-					"atkBuff":[1,2],
-					"otherHp":0,
-					"otherBuff":[1,2]
-				},
-				{
-					"type":0,
-					"skill":0,
-					"atkHp":234,
-					"atkBuff":[1,2],
-					"otherHp":0,
-					"otherBuff":[1,2]
-				},
-				{
-					"type":1,
-					"skill":1,
-					"atkHp":523,
-					"atkBuff":[1,2],
-					"otherHp":0,
-					"otherBuff":[1,2]
-				}
-			],
-			"aoyi":{
-				"atkHp":986,
-				"skill":10001,
-				"buff":[1,2],
-				"atkBuff":[1,2]
-			},
-			"delBuff":[1,2]
-		}
-	],
-	"result":{
-		"winnerID":1,
-		"cards":[1,2,3],
-		"gold":200
-	}
+    "type": 1,
+    "heros": [
+              {
+              "id": 1,
+              "name": "很厉害的英雄",
+              "xid": 21,
+              "hp": 1000000,
+              "friendID": 3,
+              "friendName": "好友1",
+              "friendXid": 33,
+              "icon": "neZha"
+              },
+              {
+              "id": 2,
+              "name": "很厉害的NPC",
+              "xid": 22,
+              "hp": 1000000,
+              "friendID": 3,
+              "friendName": "好友2",
+              "friendXid": 333,
+              "icon": "longNv"
+              }
+              ],
+    "rounds": [
+               {
+               "attacker": 0,
+               "durationBuff": [
+                                {
+                                "id": 1,
+                                "hp": 200
+                                }
+                                ],
+               "cards": [
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 100,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 0,
+                         "skill": 0,
+                         "atkHp": 360,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 245,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         }
+                    ],
+                    "delBuff": [
+                           1,
+                           2
+                           ]
+               },
+               {
+               "attacker": 1,
+               "durationBuff": [
+                                {
+                                "id": 1,
+                                "hp": 200
+                                }
+                                ],
+               "cards": [
+                         {
+                         "type": 1,
+                         "skill": 0,
+                         "atkHp": 123,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 0,
+                         "skill": 0,
+                         "atkHp": 234,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 523,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         }
+                         ],
+               "aoyi": {
+               	"type":2,
+               "atkHp": 986,
+               "skill": 10001,
+               "buff": [
+                        1,
+                        2
+                        ],
+               "atkBuff": [
+                           1,
+                           2
+                           ]
+               },
+               "delBuff": [
+                           1,
+                           2
+                           ]
+               },
+               {
+               "attacker": 0,
+               "durationBuff": [
+                                {
+                                "id": 1,
+                                "hp": 200
+                                }
+                                ],
+               "cards": [
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 100,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 0,
+                         "skill": 0,
+                         "atkHp": 360,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 245,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         }
+                         ],
+                    "delBuff": [
+                           1,
+                           2
+                           ]
+               },
+               {
+               "attacker": 1,
+               "durationBuff": [
+                                {
+                                "id": 1,
+                                "hp": 200
+                                }
+                                ],
+               "cards": [
+                         {
+                         "type": 1,
+                         "skill": 0,
+                         "atkHp": 123,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 0,
+                         "skill": 0,
+                         "atkHp": 234,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 523,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         }
+                         ],
+               "aoyi": {
+               	"type":1,
+               "atkHp": 986,
+               "skill": 10001,
+               "buff": [
+                        1,
+                        2
+                        ],
+               "atkBuff": [
+                           1,
+                           2
+                           ]
+               },
+               "delBuff": [
+                           1,
+                           2
+                           ]
+               },
+               {
+               "attacker": 0,
+               "durationBuff": [
+                                {
+                                "id": 1,
+                                "hp": 200
+                                }
+                                ],
+               "cards": [
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 100,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 0,
+                         "skill": 0,
+                         "atkHp": 360,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 245,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         }
+                         ],
+               "aoyi": {
+               	"type":2,
+               "atkHp": 2289,
+               "skill": 10001,
+               "buff": [
+                        1,
+                        2
+                        ],
+               "atkBuff": [
+                           1,
+                           2
+                           ]
+               },
+               "delBuff": [
+                           1,
+                           2
+                           ]
+               },
+               {
+               "attacker": 1,
+               "durationBuff": [
+                                {
+                                "id": 1,
+                                "hp": 200
+                                }
+                                ],
+               "cards": [
+                         {
+                         "type": 1,
+                         "skill": 0,
+                         "atkHp": 123,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 0,
+                         "skill": 0,
+                         "atkHp": 234,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 523,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         }
+                         ],
+               "aoyi": {
+               	"type":1,
+               "atkHp": 986,
+               "skill": 10001,
+               "buff": [
+                        1,
+                        2
+                        ],
+               "atkBuff": [
+                           1,
+                           2
+                           ]
+               },
+               "delBuff": [
+                           1,
+                           2
+                           ]
+               },
+               {
+               "attacker": 0,
+               "durationBuff": [
+                                {
+                                "id": 1,
+                                "hp": 200
+                                }
+                                ],
+               "cards": [
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 100,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 0,
+                         "skill": 0,
+                         "atkHp": 360,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 245,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         }
+                         ],
+                    "delBuff": [
+                           1,
+                           2
+                           ]
+               },
+               {
+               "attacker": 1,
+               "durationBuff": [
+                                {
+                                "id": 1,
+                                "hp": 200
+                                }
+                                ],
+               "cards": [
+                         {
+                         "type": 1,
+                         "skill": 0,
+                         "atkHp": 123,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 0,
+                         "skill": 0,
+                         "atkHp": 234,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 523,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         }
+                         ],
+               "aoyi": {
+               	"type":2,
+               "atkHp": 986,
+               "skill": 10001,
+               "buff": [
+                        1,
+                        2
+                        ],
+               "atkBuff": [
+                           1,
+                           2
+                           ]
+               },
+               "delBuff": [
+                           1,
+                           2
+                           ]
+               },
+               {
+               "attacker": 0,
+               "durationBuff": [
+                                {
+                                "id": 1,
+                                "hp": 200
+                                }
+                                ],
+               "cards": [
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 100,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 0,
+                         "skill": 0,
+                         "atkHp": 360,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 245,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         }
+                         ],
+               "aoyi": {
+               	"type":1,
+               "atkHp": 2289,
+               "skill": 10001,
+               "buff": [
+                        1,
+                        2
+                        ],
+               "atkBuff": [
+                           1,
+                           2
+                           ]
+               },
+               "delBuff": [
+                           1,
+                           2
+                           ]
+               },
+               {
+               "attacker": 1,
+               "durationBuff": [
+                                {
+                                "id": 1,
+                                "hp": 200
+                                }
+                                ],
+               "cards": [
+                         {
+                         "type": 1,
+                         "skill": 0,
+                         "atkHp": 123,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 0,
+                         "skill": 0,
+                         "atkHp": 234,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         },
+                         {
+                         "type": 1,
+                         "skill": 1,
+                         "atkHp": 523,
+                         "atkBuff": [
+                                     1,
+                                     2
+                                     ],
+                         "otherHp": 0,
+                         "otherBuff": [
+                                       1,
+                                       2
+                                       ]
+                         }
+                         ],
+               "aoyi": {
+               	"type":2,
+               "atkHp": 986,
+               "skill": 10001,
+               "buff": [
+                        1,
+                        2
+                        ],
+               "atkBuff": [
+                           1,
+                           2
+                           ]
+               },
+               "delBuff": [
+                           1,
+                           2
+                           ]
+               }
+               ],
+    "result": {
+        "winnerID": 1,
+        "cards": [
+                  1,
+                  2,
+                  3
+                  ],
+        "gold": 200
+    }
 }

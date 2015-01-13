@@ -20,6 +20,8 @@ Team2* Team2::create()
 
 bool Team2::init()
 {
+    //SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/teamcard.plist");
+
     if(!BaseUI::init("Team2.csb", "team2.plist")){
         return false;
     }
@@ -35,10 +37,12 @@ bool Team2::init()
     auto listener = EventListenerTouchOneByOne::create();
     listener->onTouchBegan = [&](Touch *touch, Event *unused_event)->bool {return true;};
     listener->onTouchEnded = CC_CALLBACK_2(Team2::onTouchEnded, this);
-    this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this->ui->getChildByName("Button_1"));
+    this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this->ui->getChildByName("btn_goHome"));
     
+    this->teamData = DataManager::getInstance()->getTeamData();
+    log("===%s",json_dumps(teamData, 0));
     this->resetUI();
-    this->request();
+    //this->request();
     
     return true;
 }
@@ -52,13 +56,71 @@ void Team2::request()
 
 void Team2::resetUI()
 {
-    //DataManager::getInstance()->teamData;
-    
+    int dataSize=json_array_size(teamData);
     for(int i=0;i<this->items.size();i++){
         Node* item=this->items.at(i);
-        item->getChildByName("itemBg")->setVisible(false);
-        item->getChildByName("add")->setVisible(i<2);
-        item->getChildByName("lock")->setVisible(i>=2);
+        Node* lock=item->getChildByName("lock");
+        Node* add=item->getChildByName("add");
+        Node* card=item->getChildByName("card");
+        
+        lock->setVisible(false);
+        add->setVisible(false);
+        card->setVisible(false);
+        
+        if(i>=dataSize){
+            lock->setVisible(true);
+            continue;
+        }else{
+            json_t* data=json_array_get(teamData, i);
+            json_t* cards=json_object_get(data, "cards");
+            if(cards)log("size:%zu,%s",json_array_size(cards),json_dumps(data, 0));
+            //if(cards==NULL || json_array_size(cards)==0 || json_object_get(json_array_get(cards, 0), "xid")==NULL){
+            if(cards==NULL || json_array_size(cards)==1){
+                add->setVisible(true);
+                continue;
+            }else{
+                card->setVisible(true);
+            }
+            
+            int cardNum=json_array_size(cards);
+            for(int i=0;i<4;i++){
+                Text* atkTxt=dynamic_cast<Text*>(card->getChildByName("atk"+Value(i).asString()));
+                Sprite* typeIcon=dynamic_cast<Sprite*>(card->getChildByName("type"+Value(i).asString()));
+                Sprite* atkTypeIcon=dynamic_cast<Sprite*>(card->getChildByName("atkType"+Value(i).asString()));
+                atkTxt->setVisible(false);
+                atkTypeIcon->setVisible(false);
+
+                if(typeIcon != nullptr){
+                    typeIcon->setVisible(false);
+                }
+                
+                json_t* cardData=json_array_get(cards, i);
+                
+                if(json_object_get(cardData, "xid") == NULL){
+                    continue;
+                }
+                
+                if(i<cardNum){
+                    int atkNum=json_integer_value(json_object_get(cardData, "atk"));
+                    int xid=json_integer_value(json_object_get(cardData, "xid"));
+                    atkTxt->setVisible(true);
+                    atkTypeIcon->setVisible(true);
+                    if(i==0){
+                        XGroup* xgroup=XGroup::record(Value(xid));
+                        XSkill* xskill=XSkill::record(Value(xgroup->getSkillId()));
+                        atkTxt->setString(Value(atkNum).asString());
+                        atkTypeIcon->setDisplayFrame(Sprite::createWithSpriteFrameName("atkType"+Value(xskill->getAtkType()).asString()+".png")->displayFrame());
+                    }else{
+                        XCard* xcard=XCard::record(Value(xid));
+                        typeIcon->setVisible(true);
+                        atkTxt->setString(Value(atkNum).asString());
+                        typeIcon->setDisplayFrame(Sprite::createWithSpriteFrameName("cardType_"+Value(xcard->getCardType()).asString()+".png")->displayFrame());
+                        atkTypeIcon->setDisplayFrame(Sprite::createWithSpriteFrameName("atkType"+Value(xcard->getAtkType()).asString()+".png")->displayFrame());
+                    }
+                   
+                }
+            }
+        }
     }
 }
 
@@ -70,7 +132,12 @@ void Team2::onTouchEnded(Touch *touch, Event *unusedEvent)
         Vec2 itemVec=this->ui->convertToWorldSpace(item->getPosition());
         Rect rect=Rect(itemVec.x,itemVec.y,size.width,size.height);
         if(rect.containsPoint(touch->getLocation())){
-            TeamCard* card=TeamCard::create();
+            json_t* tdata=json_array_get(this->teamData, i);
+            if(i >= json_array_size(this->teamData)){
+                Manager::getInstance()->showMsg("请先解锁卡组");
+                continue;
+            }
+            TeamCard* card=TeamCard::create(tdata,i);
             card->show(this);
         }
     }
@@ -82,6 +149,8 @@ void Team2::onButtonClick(cocos2d::Ref *pSender)
     switch (btn->getTag()) {
         case 1000:
         {
+            DataManager::getInstance()->setTeamData(this->teamData);
+            log("teamdata:%s",json_dumps(DataManager::getInstance()->getTeamData(), 0));
             Manager::getInstance()->switchScence(HomeScene::createScene());
             break;
         }

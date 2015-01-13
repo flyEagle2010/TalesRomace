@@ -11,26 +11,32 @@
 
 #include <stdio.h>
 #include "BaseUI.h"
+#include "XCard.h"
+#include "XSkill.h"
 
 class Card : public BaseUI {
     Sprite* icon;
-    Sprite* atkIcon;
-    Sprite* skillIcon;
+    ImageView* atkIcon;
+    ImageView* skillIcon;
     Text* level;
+    Text* useTxt;
     Clip* selectRim;
     Vector<Sprite*> stars;
     typedef std::function<void(Widget*)> clickCallBack;
-    json_t* data;
 public:
-    Sprite* rim;
     clickCallBack click;
+    ImageView* rim;
+    bool isUse;
+    json_t* data;
 
 public:
-    static Card* create();
-    bool init();
-    void setData();
+    static Card* create(json_t* data);
+    bool init(json_t* data);
+    void resetUI();
+
     void setSelect(bool isSelect);
     Size getSize();
+    void setUse(bool isUse);
 private:
     virtual void onTouchEnded(Touch *touch, Event *unusedEvent);
 };

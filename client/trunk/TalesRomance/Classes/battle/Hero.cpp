@@ -71,7 +71,7 @@ void Hero::move(Vec2 vec)
 
 void Hero::attack()
 {
-    std::string name=type==1?ani_attack1:ani_attack2;
+    std::string name=json_integer_value(json_object_get(data, "type"))==1?ani_attack1:ani_attack2;
     this->setAnimation(TrackIndex::ANI_ATTACK, name, false);
 }
 
@@ -83,7 +83,6 @@ void Hero::attacked(int num)
     this->attackedEffect();
     this->hp-=num;
     this->fallHp(num);
-    //this->die(pHit);
 }
 
 void Hero::attackedEffect()
@@ -116,12 +115,24 @@ void Hero::jumpOut()
     //CallFunc* removeFun=CallFunc::create(std::bind(&Hero::removeFromParent, this));
     //this->runAction(Sequence::create(sp,removeFun, NULL));
     this->setAnimation(TrackIndex::ANI_JUMPOUT, ani_jumpOut, false);
-    this->runAction(Sequence::create(DelayTime::create(2),CallFunc::create(CC_CALLBACK_0(Hero::removeFromParent, this)), NULL));
+    //this->runAction(Sequence::create(DelayTime::create(1.2),CallFunc::create(CC_CALLBACK_0(Hero::jumpOutOver, this)), NULL));
+    
+//    spTrackEntry* jumpEntry=this->skeletonNode->setAnimation(TrackIndex::ANI_JUMPOUT, ani_jumpOut, false);
+//    this->skeletonNode->setTrackCompleteListener(jumpEntry, std::bind(&Hero::jumpOutOver, this,TrackIndex::ANI_JUMPOUT));
+}
+
+void Hero::jumpOutOver(TrackIndex index)
+{
+    this->skeletonNode->unscheduleUpdate();
+    //this->skeletonNode->removeFromParent();
+//    this->setVisible(false);
+    this->removeFromParent();
 }
 
 void Hero::die(int num)
 {
     this->skeletonNode->clearTracks();
+    
     this->skeletonNode->setAnimation(TrackIndex::ANI_DIE, ani_die, false);
 
     this->fallHp(num);
@@ -157,20 +168,20 @@ void Hero::fallHp(int num)
     
     std::string str=(num>0?";":":")+Value(abs(num)).asString();
     label->setString(str);
-    label->setScale(1);
+    label->setScale(1.3);
     BattleMgr::getInstance()->view->addChild(label,2);
     
     //label->setPosition(this->convertToWorldSpace(Vec2(body->worldX,body->worldY+180)));
-    label->setPosition(this->convertToWorldSpace(Vec2(0,240)));
-    ScaleTo* scale1=ScaleTo::create(0.15, 0.5);
+    label->setPosition(this->convertToWorldSpace(Vec2(0,260)));
+    ScaleTo* scale1=ScaleTo::create(0.15, 0.6);
     
-    MoveBy* move=MoveBy::create(0.4, Vec2(0, 80));
-    Sequence* sq=Sequence::create(DelayTime::create(0.2),FadeOut::create(0.3), NULL);
+    MoveBy* move=MoveBy::create(0.3, Vec2(0, 80));
+    Sequence* sq=Sequence::create(DelayTime::create(0.1),FadeOut::create(0.3), NULL);
     
     Spawn* sp3=Spawn::create(move,sq, NULL);
     CallFunc* cf4=CallFunc::create(CC_CALLBACK_0(Label::removeFromParent, label));
     
-    label->runAction(Sequence::create(scale1,DelayTime::create(0.3),sp3,cf4, NULL));
+    label->runAction(Sequence::create(scale1,DelayTime::create(0.2),sp3,cf4, NULL));
 
 }
 
@@ -225,9 +236,9 @@ void Hero::onAnimationEnd(int trackIndex)
         }
         case TrackIndex::ANI_JUMPOUT:
         {
-            this->setVisible(false);
             this->skeletonNode->unscheduleUpdate();
-            //this->removeFromParent();
+            this->skeletonNode->clearTracks();
+            this->setVisible(false);
             break;
         }
         case TrackIndex::ANI_DIE:

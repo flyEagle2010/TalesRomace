@@ -545,8 +545,11 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/team/AoyiItem.o: \
  jni/../../cocos2d/external/libpomelo/deps/jansson/src/jansson_config.h \
  jni/../../cocos2d/external/libpomelo/include/pomelo-private/map.h \
  jni/../../cocos2d/external/libpomelo/include/pomelo-private/ngx-queue.h \
- jni/../../Classes/common/Mask.h \
- jni/../../Classes/common/compoment/Clip.h
+ jni/../../Classes/common/BlackBg.h \
+ jni/../../Classes/common/compoment/Clip.h \
+ jni/../../Classes/common/Utils.h jni/../../Classes/xls/XGroup.h \
+ jni/../../cocos2d/cocos/./../external/json/document.h \
+ jni/../../Classes/xls/XSkill.h
 
 jni/../../Classes/team/AoyiItem.h:
 
@@ -1654,6 +1657,14 @@ jni/../../cocos2d/external/libpomelo/include/pomelo-private/map.h:
 
 jni/../../cocos2d/external/libpomelo/include/pomelo-private/ngx-queue.h:
 
-jni/../../Classes/common/Mask.h:
+jni/../../Classes/common/BlackBg.h:
 
 jni/../../Classes/common/compoment/Clip.h:
+
+jni/../../Classes/common/Utils.h:
+
+jni/../../Classes/xls/XGroup.h:
+
+jni/../../cocos2d/cocos/./../external/json/document.h:
+
+jni/../../Classes/xls/XSkill.h:

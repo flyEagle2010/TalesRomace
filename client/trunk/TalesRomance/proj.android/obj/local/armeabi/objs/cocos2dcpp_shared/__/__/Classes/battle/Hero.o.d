@@ -501,9 +501,9 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/battle/Hero.o: \
  jni/../../cocos2d/cocos/editor-support/spine/../cocostudio/ActionTimeline/CCActionTimeline.h \
  jni/../../cocos2d/cocos/editor-support/spine/../cocostudio/ActionTimeline/CCTimeLine.h \
  jni/../../cocos2d/cocos/editor-support/spine/../cocostudio/ActionTimeline/CSLoader.h \
- jni/../../Classes/common/Mask.h \
  jni/../../Classes/common/compoment/Clip.h \
- jni/../../Classes/global/GConfig.h jni/../../Classes/net/WSocket.h \
+ jni/../../Classes/common/Utils.h jni/../../Classes/global/GConfig.h \
+ jni/../../Classes/net/WSocket.h \
  jni/../../cocos2d/cocos/3d/../network/WebSocket.h \
  jni/../../Classes/net/PomeloMsg.h jni/../../Classes/net/PomeloSocket.h \
  jni/../../cocos2d/external/libpomelo/include/pomelo.h \
@@ -531,7 +531,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/battle/Hero.o: \
  jni/../../cocos2d/external/libpomelo/deps/jansson/src/jansson_config.h \
  jni/../../cocos2d/external/libpomelo/include/pomelo-private/map.h \
  jni/../../cocos2d/external/libpomelo/include/pomelo-private/ngx-queue.h \
- jni/../../Classes/proto/fight.pb.h jni/../../Classes/common/BezierMove.h \
+ jni/../../Classes/common/BlackBg.h jni/../../Classes/proto/fight.pb.h \
+ jni/../../Classes/common/BezierMove.h \
  jni/../../cocos2d/cocos/editor-support/spine/../spine/spine-cocos2dx.h \
  jni/../../cocos2d/cocos/editor-support/spine/../spine/spine.h \
  jni/../../cocos2d/cocos/editor-support/spine/../spine/Animation.h \
@@ -570,12 +571,15 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/battle/Hero.o: \
  jni/../../Classes/battle/BattleMgr.h \
  jni/../../Classes/battle/BattleCard.h \
  jni/../../Classes/battle/StandDraw.h jni/../../Classes/map/GateInfo.h \
- jni/../../Classes/team/Card.h jni/../../Classes/map/Maze.h \
- jni/../../Classes/xls/XMap.h jni/../../Classes/team/Team.h \
- jni/../../Classes/team/Card.h jni/../../Classes/team/AoyiItem.h \
+ jni/../../Classes/team/Card.h jni/../../Classes/xls/XCard.h \
+ jni/../../Classes/xls/XSkill.h jni/../../Classes/map/Maze.h \
+ jni/../../Classes/xls/XMap.h jni/../../Classes/map/MapScene.h \
+ jni/../../Classes/common/ImageBtton.h jni/../../Classes/map/GateInfo.h \
+ jni/../../Classes/battle/BattleResult.h jni/../../Classes/home/LuoLi.h \
+ jni/../../Classes/team/TeamCard.h \
  jni/../../Classes/common/compoment/TabBar.h \
- jni/../../Classes/map/MapScene.h jni/../../Classes/common/ImageBtton.h \
- jni/../../Classes/map/GateInfo.h jni/../../Classes/battle/BattleResult.h
+ jni/../../Classes/xls/XGroup.h jni/../../Classes/team/AoyiItem.h \
+ jni/../../Classes/team/Team2.h jni/../../Classes/global/DataManager.h
 
 jni/../../Classes/battle/Hero.h:
 
@@ -1589,9 +1593,9 @@ jni/../../cocos2d/cocos/editor-support/spine/../cocostudio/ActionTimeline/CCTime
 
 jni/../../cocos2d/cocos/editor-support/spine/../cocostudio/ActionTimeline/CSLoader.h:
 
-jni/../../Classes/common/Mask.h:
-
 jni/../../Classes/common/compoment/Clip.h:
+
+jni/../../Classes/common/Utils.h:
 
 jni/../../Classes/global/GConfig.h:
 
@@ -1652,6 +1656,8 @@ jni/../../cocos2d/external/libpomelo/deps/jansson/src/jansson_config.h:
 jni/../../cocos2d/external/libpomelo/include/pomelo-private/map.h:
 
 jni/../../cocos2d/external/libpomelo/include/pomelo-private/ngx-queue.h:
+
+jni/../../Classes/common/BlackBg.h:
 
 jni/../../Classes/proto/fight.pb.h:
 
@@ -1741,17 +1747,13 @@ jni/../../Classes/map/GateInfo.h:
 
 jni/../../Classes/team/Card.h:
 
+jni/../../Classes/xls/XCard.h:
+
+jni/../../Classes/xls/XSkill.h:
+
 jni/../../Classes/map/Maze.h:
 
 jni/../../Classes/xls/XMap.h:
-
-jni/../../Classes/team/Team.h:
-
-jni/../../Classes/team/Card.h:
-
-jni/../../Classes/team/AoyiItem.h:
-
-jni/../../Classes/common/compoment/TabBar.h:
 
 jni/../../Classes/map/MapScene.h:
 
@@ -1760,3 +1762,17 @@ jni/../../Classes/common/ImageBtton.h:
 jni/../../Classes/map/GateInfo.h:
 
 jni/../../Classes/battle/BattleResult.h:
+
+jni/../../Classes/home/LuoLi.h:
+
+jni/../../Classes/team/TeamCard.h:
+
+jni/../../Classes/common/compoment/TabBar.h:
+
+jni/../../Classes/xls/XGroup.h:
+
+jni/../../Classes/team/AoyiItem.h:
+
+jni/../../Classes/team/Team2.h:
+
+jni/../../Classes/global/DataManager.h:

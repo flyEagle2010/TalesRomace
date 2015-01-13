@@ -26,16 +26,20 @@ class TeamCard : public BaseUI {
     Card* card;
     json_t* data;
     json_t* cards;
+    int index;
 public:
-    static TeamCard* create();
-    bool init();
+    static TeamCard* create(json_t* data,int index);
+    bool init(json_t* data,int index);
     void resetUI();
 private:
     void onButtonClick(cocos2d::Ref *pSender);
+    void onIconClick(Ref* pSender);
     void selectCard(Widget* card);
-    std::vector<int> getAoYiData(int type1,int type2);
+    std::vector<int> getAoYiData(int num);
     void filterCard(int type);
-    void initCards(json_t* jsonArr);
+    void initCard();
+    void initBag(json_t* jsonArr);
+    void initAoYi();
 };
 
 #endif /* defined(__TalesRomance__TeamCard__) */

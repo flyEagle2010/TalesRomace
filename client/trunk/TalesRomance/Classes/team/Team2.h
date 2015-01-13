@@ -19,6 +19,8 @@ class Team2 : public BaseUI {
     ListView* list;
     Vector<Node*> items;
 public:
+    json_t* teamData;
+public:
     static Team2* create();
     bool init();
     void resetUI();

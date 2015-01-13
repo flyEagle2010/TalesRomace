@@ -30,6 +30,8 @@ void BattleMgr::init()
     json_object_set(msg, "targetID", json_integer(1001));
     
    //Manager::getInstance()->psocket->sendMsg(route, msg);
+    
+    log("teamdata:%s",json_dumps(DataManager::getInstance()->getTeamData(), 0));
 
 }
 
@@ -65,6 +67,6 @@ void BattleMgr::initNetEvent(){
 
 void BattleMgr::clear()
 {
-    SpriteFrameCache::getInstance()->removeSpriteFrames();
+    //SpriteFrameCache::getInstance()->removeSpriteFrames();
     Director::getInstance()->getEventDispatcher()->removeEventListener(this->listener);
 }

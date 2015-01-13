@@ -26,20 +26,20 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <Size X="97.0000" Y="146.0000" />
+                <Size X="46.0000" Y="46.0000" />
                 <PrePosition X="0.0000" Y="0.0000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="kaPai_2.png" Plist="common.plist" />
+                <FileData Type="Default" Path="Default/Sprite.png" />
               </NodeObjectData>
               <NodeObjectData Name="role2" ActionTag="-1802074488" FrameEvent="" Tag="25" ObjectIndex="6" ctype="SpriteObjectData">
                 <Position X="654.5000" Y="317.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <Size X="97.0000" Y="146.0000" />
+                <Size X="46.0000" Y="46.0000" />
                 <PrePosition X="0.0000" Y="0.0000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="kaPai_3.png" Plist="common.plist" />
+                <FileData Type="Default" Path="Default/Sprite.png" />
               </NodeObjectData>
               <NodeObjectData Name="btn_create" ActionTag="243981134" FrameEvent="" Tag="26" ObjectIndex="6" TouchEnable="True" FontSize="36" ButtonText="创建角色" Scale9Width="93" Scale9Height="93" ctype="ButtonObjectData">
                 <Position X="566.5000" Y="137.5000" />

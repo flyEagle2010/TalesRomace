@@ -66,14 +66,17 @@ void Maze::resetUI()
 
 Vec2 Maze::position2Grid(Vec2 position)
 {
-    int x = (position.x-map->getPositionX()) / map->getTileSize().width;
-    int y =((map->getMapSize().height * map->getTileSize().height) - position.y+map->getPositionY()) / map->getTileSize().height;
+    float x = (position.x-map->getPositionX()) / map->getTileSize().width;
+    float y =((map->getMapSize().height * map->getTileSize().height) - position.y+map->getPositionY()) / map->getTileSize().height;
     return Vec2(x, y);
 }
 
 void Maze::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unusedEvent)
 {
     Vec2 grid=this->position2Grid(touch->getLocation());
+    if(grid.x >= this->map->getMapSize().width || grid.y >= this->map->getMapSize().height || grid.x<0 || grid.y<0){
+        return;
+    }
     Sprite* sprite=this->topLayer->getTileAt(grid);
     if(sprite){
         this->topLayer->removeTileAt(grid);
