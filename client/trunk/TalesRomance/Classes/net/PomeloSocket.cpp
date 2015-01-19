@@ -9,10 +9,15 @@
 #include "PomeloSocket.h"
 static std::vector<json_t*> messageQueue;
 static pthread_mutex_t     mMutex;
+static PomeloSocket* pomeloSocket=nullptr;
 
-PomeloSocket::PomeloSocket()
+PomeloSocket* PomeloSocket::getInstance()
 {
-    pthread_mutex_init(&mMutex, NULL);
+    if(pomeloSocket == nullptr){
+        pomeloSocket=new PomeloSocket();
+        pthread_mutex_init(&mMutex, NULL);
+    }
+    return pomeloSocket;
 }
 
 int PomeloSocket::connect(const char* addr, int port)
@@ -40,7 +45,7 @@ int PomeloSocket::connect(const char* addr, int port)
     void (*on_pushData)(pc_client_t *client, const char *event, void *data) = &PomeloSocket::onPushDataCallback;
     pc_add_listener(client, PC_EVENT_DISCONNECT, on_disconnect);
     pc_add_listener(client, PC_EVENT_KICK, on_disconnect);
-    pc_add_listener(client, "onTest", on_pushData);
+    pc_add_listener(client, "onTest", on_pushData); //onMsg
     
     Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
 
@@ -57,11 +62,6 @@ int PomeloSocket::sendMsg(const char* route, json_t* json)
     
     pc_request_t *request = pc_request_new();
     void (*request_cb)(pc_request_t *req, int status, json_t *resp )= &PomeloSocket::requstCallback;
-    
-    //json_error_t err;
-    //json_t* json = json_loads(msg.c_str(), JSON_COMPACT, &err);
-    
-    //json_object_set(json, "reqId", json_integer(reqId++));
 
     int ret=pc_request(client, request, route, json, request_cb);
     log("发送数据:route:%s,msg:%s",route,json_dumps(json,0));
@@ -75,9 +75,15 @@ void PomeloSocket::update(float dt)
     while (messageQueue.size()>0) {
         json_t* msg=messageQueue.at(0);
         messageQueue.erase(messageQueue.begin());
-        cocos2d::EventCustom evt(NET_MESSAGE);
-        evt.setUserData(msg);
-        Director::getInstance()->getEventDispatcher()->dispatchEvent(&evt);
+        if(json_integer_value(json_object_get(msg, "code")) != 200){
+            int err=json_integer_value(json_object_get(msg, "err"));
+            XError* xerror=XError::record(Value(err));
+            Manager::getInstance()->showMsg(xerror->getMsg());
+        }else{
+            cocos2d::EventCustom evt(NET_MESSAGE);
+            evt.setUserData(msg);
+            Director::getInstance()->getEventDispatcher()->dispatchEvent(&evt);
+        }
         //json_decref(msg);
     }
     pthread_mutex_unlock(&mMutex);

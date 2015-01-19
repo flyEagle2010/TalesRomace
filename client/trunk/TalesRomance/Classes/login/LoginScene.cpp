@@ -6,6 +6,7 @@
 #include "ShaderNode.h"
 
 #include "BattleMgr.h"
+
 Scene* LoginScene::createScene()
 {
     auto scene = Scene::create();
@@ -54,7 +55,7 @@ void LoginScene::onEnter()
     this->btn_reg->addClickEventListener(CC_CALLBACK_1(LoginScene::onButtonClick, this));
     
     
-    return;
+//    return;
     this->initAccount();
     
 
@@ -148,18 +149,21 @@ void LoginScene::initGameCallback(std::vector<char> *data)
     }
     
     if(code==200){
-        Manager::getInstance()->psocket=new PomeloSocket();
-        int connectOk=Manager::getInstance()->psocket->connect(NET_GATE_IP, NET_GATE_PORT);
+        int connectOk=PomeloSocket::getInstance()->connect(NET_GATE_IP, NET_GATE_PORT);
         json_t* token=json_object_get(json, "token");
         json_t* uid=json_object_get(json, "uid");
         log("token:%s",json_string_value(token));
         if(!connectOk){
             json_t* msg=json_object();
             json_object_set(msg, "uid", uid);
-            Manager::getInstance()->psocket->sendMsg("gate.gateHandler.entry", msg);
-            
-            Manager::getInstance()->psocket->token=token;
+            //PomeloSocket::getInstance()->sendMsg("gate.gateHandler.entry", msg);
+            PomeloSocket::getInstance()->sendMsg(ROTE_GATE_ENTRY, msg);
+            PomeloSocket::getInstance()->token=token;
         }
+    }else{
+        int err=json_integer_value(json_object_get(json, "err"));
+        XError* xerror=XError::record(Value(err));
+        Manager::getInstance()->showMsg(xerror->getMsg());
     }
 }
 
@@ -170,9 +174,9 @@ void LoginScene::onButtonClick(Ref *pSender)
     switch (tag) {
         case 100:   //登陆
         {
-            Scene* home=HomeScene::createScene();
-            Manager::getInstance()->switchScence(home);
-            break;
+//            Scene* home=HomeScene::createScene();
+//            Manager::getInstance()->switchScence(home);
+//            break;
             
             std::string str="name="+this->accountTxt->getString()+"&password="+this->passwordTxt->getString();
             WebHttp::getInstance()->send(LOGIN_URL, CC_CALLBACK_1(LoginScene::initGameCallback, this),str.c_str());
@@ -210,36 +214,36 @@ void LoginScene::onButtonClick(Ref *pSender)
 void LoginScene::initNetEvent(){
     auto listener = EventListenerCustom::create(NET_MESSAGE, [=](EventCustom* event){
         json_t* msg=(json_t*)event->getUserData();
-        const char* route=json_string_value(json_object_get(msg, "route"));
-        log("route:%s,%s",route,json_dumps(msg, 0));
-        int msgID=msges[route];
+        int msgID=json_integer_value(json_object_get(msg, "msgID"));
         switch (msgID)
         {
-            case GATE_GATEHANDLER_ENTRY:
+            case C_GATE_ENTRY:
             {
-                Manager::getInstance()->psocket->host=json_object_get(msg, "host");
-                Manager::getInstance()->psocket->port=json_object_get(msg, "port");
+                PomeloSocket::getInstance()->host=json_object_get(msg, "host");
+                PomeloSocket::getInstance()->port=json_object_get(msg, "port");
                 
                 const char* host=json_string_value(json_object_get(msg, "host"));
                 int port=json_integer_value(json_object_get(msg, "port"));
-                Manager::getInstance()->psocket->stop();
-                if(!Manager::getInstance()->psocket->connect(host, port)){
+                PomeloSocket::getInstance()->stop();
+                
+                if(!PomeloSocket::getInstance()->connect(host, port)){
                     json_t* msg=json_object();
-                    json_object_set(msg, "token", Manager::getInstance()->psocket->token);
-                    Manager::getInstance()->psocket->sendMsg("connector.entryHandler.entry", msg);
+                    json_object_set(msg, "token", PomeloSocket::getInstance()->token);
+                    //PomeloSocket::getInstance()->sendMsg("connector.entryHandler.entry", msg);
+                    PomeloSocket::getInstance()->sendMsg(ROTE_CONNECT_ENTRY, msg);
                 }
                 break;
             }
-            case CONNECTOR_ENTRYHANDLER_ENTRY:
+            case C_CONNECT_ENTRY:
             {
                 int isNew=json_integer_value(json_object_get(msg, "isNew"));
-                isNew=2;
+                //isNew=2;
                 //新的
                 if(isNew==1){
                     RoleCreate* create=RoleCreate::create();
                     create->show(this);
                 }
-                if(isNew==2){
+                if(isNew==0){
                     Scene* home=HomeScene::createScene();
                     Manager::getInstance()->switchScence(home);
                 }

@@ -95,6 +95,9 @@ void BattleScene::startAnimation(json_t* data)
     for(int i=0;i<2;i++){
         json_t* json=json_array_get(heros, i);
         Node* node=this->heroInfos.at(i);
+        Node* buff=Node::create();
+        buff->setTag(100);
+        node->addChild(buff);
         Text* heroName=(Text*)node->getChildByName("name");
         const char* name=json_string_value(json_object_get(json, "name"));
         heroName->setString(name);
@@ -125,7 +128,6 @@ void BattleScene::startAnimation(json_t* data)
     }
                         
     this->runAction(Sequence::create(DelayTime::create(1.2),CallFunc::create(CC_CALLBACK_0(BattleScene::playRound, this)), NULL));
-
 }
 
 void BattleScene::playRound()
@@ -200,7 +202,7 @@ void BattleScene::commonAttack()
     }
     this->attacker->data=json_array_get(cards, this->cardIndex);
     this->attacker->attack();
-    this->showBuff(this->attacker->pos);
+    this->showBuff(this->attacker->pos,json_object_get(attacker->data, "atkBuff"));
     this->cardIndex++;
 }
 
@@ -239,7 +241,7 @@ void BattleScene::petAttack()
     CallFunc* heroAttack=CallFunc::create(std::bind(&Hero::attack, this->attacker));
     this->attacker->runAction(Sequence::create(DelayTime::create(0.8),heroAttack, NULL));
     
-    this->showBuff(this->attacker->pos);
+    this->showBuff(this->attacker->pos,json_object_get(attacker->data, "atkBuff"));
 }
 
 void BattleScene::attacked()
@@ -251,17 +253,31 @@ void BattleScene::attacked()
     }else{
         this->defender->attacked(hp);
     }
-    this->showBuff(this->defender->pos);
+    this->showBuff(this->defender->pos,json_object_get(attacker->data, "defBuff"));
 }
 
-void BattleScene::showBuff(int pos)
+void BattleScene::showBuff(int pos,json_t* buffers)
 {
     Sprite* icon=(Sprite*)this->heroInfos.at(pos)->getChildByName("parter");
     float startX=icon->getPositionX()+icon->getContentSize().width*0.5-50;
-    for(int i=1;i<6;i++){
-        Sprite* icon=Sprite::createWithSpriteFrameName("skillIcon"+Value(i).asString()+".png");
-        this->heroInfos.at(pos)->addChild(icon);
-        icon->setPosition(Vec2(startX+50*i, 100));
+    
+//    for(int i=1;i<6;i++){
+//        Sprite* icon=Sprite::createWithSpriteFrameName("skillIcon"+Value(i).asString()+".png");
+//        this->heroInfos.at(pos)->addChild(icon);
+//        icon->setPosition(Vec2(startX+50*i, 100));
+//    }
+    Node* node=this->heroInfos.at(pos)->getChildByTag(100);
+    node->removeAllChildren();
+    for(int i=0;i<json_array_size(buffers);i++){
+        /*
+        int buffID=json_integer_value(json_array_get(buffers, i));
+        if(find(this->buffer1.begin(),this->buffer2.begin(),buffID) != buffer1.end()){
+            continue;
+        }
+        */
+        Sprite* icon=Sprite::createWithSpriteFrameName("skillIcon"+Value(i+1).asString()+".png");
+        node->addChild(icon);
+        icon->setPosition(Vec2(startX+50*(i+1), 100));
     }
 }
 
@@ -285,6 +301,5 @@ void BattleScene::touchButtonEvent(cocos2d::Ref *pSender, Widget::TouchEventType
 void BattleScene::onExit()
 {
     BattleMgr::getInstance()->clear();
-
     Node::onExit();
 }

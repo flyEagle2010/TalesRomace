@@ -14,6 +14,9 @@
 #include "pomelo.h"
 #include "MsgID.h"
 #include "Loading.h"
+#include "XError.h"
+#include "Manager.h"
+
 using namespace cocos2d;
 
 enum SOCKET_STATE
@@ -40,7 +43,9 @@ class PomeloSocket : public Ref{
     SOCKET_STATE state;
     int reqId;
 public:
-    PomeloSocket();
+    //PomeloSocket();
+    static PomeloSocket* getInstance();
+    
     int connect(const char* addr,int port);
     int sendMsg(const char* route,json_t* json);
     void stop();

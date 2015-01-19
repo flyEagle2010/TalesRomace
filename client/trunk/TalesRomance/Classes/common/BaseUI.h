@@ -16,6 +16,8 @@
 #include "Manager.h"
 #include "Clip.h"
 #include "Utils.h"
+#include "Socket.h"
+
 using namespace cocostudio;
 
 using namespace cocos2d;

@@ -51,7 +51,7 @@ void BattleMgr::initNetEvent(){
         int reqId=json_integer_value(json_object_get(msg, "reqId"));
         switch (reqId)
         {
-            case C_BATTLE:
+            case 0:
             {
                 this->view->startAnimation(msg);
                 break;

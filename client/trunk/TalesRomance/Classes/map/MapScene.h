@@ -20,6 +20,7 @@
 class MapScene : public BaseUI{
     Sprite* bg;
     Vector<Sprite*> gates;
+    json_t* jnodes;
 public:
     static Scene* createScene();
     static MapScene* create();
@@ -31,5 +32,6 @@ public:
 private:
     void onButtonClick(Ref* pSender);
     void onTouchEnded(Widget* pSender);
+    void initNetEvent();
 };
 #endif /* defined(__TalesRomance__MapScene__) */

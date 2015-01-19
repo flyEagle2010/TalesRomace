@@ -5,37 +5,54 @@
 5.功能调试
 
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝Role＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-101 ROLE_INFO
+5001 ROLE_INFO
 {
+	"msgID":5001,
 	"id":100,
+	"xid":1001,		//数据表id
 	"name":"哇哈哈",
-	"coin":1000, //金币 (游戏币)
-	"rmb":200,    //钻石（充的钱）
-	"stamin":10   //体力
+	"coin":1000,  	//金币 (游戏币)
+	"rmb":200,    	//钻石（充的钱）
+	"stamin":10  	//体力
 }
 
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝team＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-301 TEAM_LIST  //卡组列表
+6001 TEAM_LIST  //卡组列表
+response:
 {
+	"msgID":6001,
 	  "teams":[
         {
              "cardsAtk":200, //卡牌总攻击
+             "state":1，    // 1可编辑 2不可编辑
              "cards":[
                 {			//0项为奥义信息，没有奥义为空对象{}  (不是null)
                 },
                 {
+                	  "cardID":1,  //服务器唯一ID
                       "xid":1001,  //卡牌（奥义）数据表ID 
-                      "atk":40,    //卡牌（奥义）的攻击力
-                       "state":1    // 1可编辑 2不可编辑
+                      "atk":40    //卡牌（奥义）的攻击力
                 }
              ]
         },
 }
-
-302 TEAM_CARD //开组中卡牌信息
+6002 TEAM_UNLOCK  //解锁
+request:
 {
+	"msgID":6004
+}
+response:
+	推送6001
+
+6003 TEAM_CARD //卡组中卡牌信息
+response:
+{
+	"msgID":6002,
+	"cardNum":10,
+	"maxNum":100,
 	"cards":[
 		{
+			“cardID":1,
 			"xid":1001,  //卡牌策划表的id
 			"isUse":1,   //是否已经编组（使用）
 			"star":3,    //星级
@@ -44,22 +61,42 @@
 	]
 }
 
-303 TEAM_JOIN //上场(下场)
+6004 TEAM_CHANGE_CARD //上场(下场)
+request:
 {
+	"msgID":6003,
 	"team":1, //卡组id(0-11)
 	"cardID":1001, //卡牌ID
 	"type":1 //1上场 2下场
 }
+response:
+	推送6003  6001
 
-304 TEAM_UNLOCK  //解锁
+
 
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝关卡＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-401 GATE_INFO
+7001 GATE_INFO
+response:
 {
+	"msgID":7001,
 	"nodes":[
 		{
-			"xid":1001, //节点ID
-			"star":2    //星级 没有打过星级为0
+			"xid":1001, 	//节点ID
+			"star":2，       //星级 没有打过星级为0
+			"num":1,
+			"cd":100	 	//秒
 		}
 	]
+}
+
+迷宫
+{
+	"hp":100,
+	"maxHp":1000,
+	"grids":[1,2,0]  // 每个格子的事件类型
+}
+
+request:
+{
+	grid:1  //0-29
 }

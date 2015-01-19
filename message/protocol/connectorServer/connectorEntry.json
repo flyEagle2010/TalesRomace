@@ -14,6 +14,7 @@ request:
 
 response:
 {
+    "msgID":3001
     code:200,           //结果 200成功  500失败
     err:1,              //返回的失败枚举ID 见errEnum
     isNew:1             //玩家是否是新玩家 1是 2否 如果是新玩家需要初始化角色

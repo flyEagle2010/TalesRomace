@@ -32,6 +32,7 @@ public:
     bool init(json_t* data,int index);
     void resetUI();
 private:
+    void initNetEvent();
     void onButtonClick(cocos2d::Ref *pSender);
     void onIconClick(Ref* pSender);
     void selectCard(Widget* card);

@@ -268,7 +268,7 @@ void TeamCard::onButtonClick(cocos2d::Ref *pSender)
         {
             Team2* team=dynamic_cast<Team2*>(this->preUI);
             json_object_set(data, "cards", this->cards);
-            json_array_set(team->teamData, this->index, this->data);
+            json_array_set(team->teamsJson, this->index, this->data);
             team->resetUI();
 
             this->clear(true);
@@ -320,4 +320,27 @@ void TeamCard::onButtonClick(cocos2d::Ref *pSender)
         }
 
     }
+}
+
+void TeamCard::initNetEvent(){
+    auto listener = EventListenerCustom::create(NET_MESSAGE, [=](EventCustom* event){
+        json_t* msg=(json_t*)event->getUserData();
+        int msgID=json_integer_value(json_object_get(msg, "msgID"));
+        switch (msgID)
+        {
+            case C_TEAM_CARD:
+            {
+                break;
+            }
+            case C_TEAM_CHANGE_CARD:
+            {
+                break;
+            }
+            default:
+                break;
+        }
+        
+    });
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+    
 }

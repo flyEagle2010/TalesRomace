@@ -58,8 +58,16 @@ bool GateInfo::init(int gateID)
     listener->onTouchEnded = CC_CALLBACK_2(GateInfo::onTouchEnded, this);
     this->_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
+    
+//    XMap* xmap=XMap::record(Value(this->gateID));
+//    this->numLabel->setString(xmap->getName());
+//    this->desLabel->setString(xmap->getDesc());
+    
     this->resetUI();
     
+    json_t* msg=json_object();
+    json_object_set(msg, "xid", json_integer(gateID));
+//    PomeloSocket::getInstance()->sendMsg(ROTE_ROOM_MAZE_LIST, msg);
     return true;
 }
 
@@ -81,16 +89,19 @@ void GateInfo::resetUI()
 
         if(i==0){
             card->setSelect(true);
+            this->card=card;
         }
     }
-    //XMap* xmap=XMap::record(Value(this->gateID));
-    //this->numLabel->setString(xmap->getName());
-    //this->desLabel->setString(xmap->getDesc());
 }
 
 void GateInfo::selectFriend(cocos2d::ui::Widget *card)
 {
-    log("------");
+    if(this->card==nullptr){
+        this->card=dynamic_cast<Card*>(card);
+    }
+    this->card->setSelect(false);
+    this->card=dynamic_cast<Card*>(card);
+    this->card->setSelect(true);
 }
 
 void GateInfo::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unusedEvent)
@@ -124,4 +135,28 @@ void GateInfo::onButtonClick(cocos2d::Ref *pSender)
             break;
         }
     }
+}
+void GateInfo::initNetEvent(){
+    auto listener = EventListenerCustom::create(NET_MESSAGE, [=](EventCustom* event){
+        json_t* msg=(json_t*)event->getUserData();
+        int msgID=json_integer_value(json_object_get(msg, "msgID"));
+        switch (msgID)
+        {
+            case C_PARTER_LIST:
+            {
+                this->jitems=json_object_get(msg, "items");
+                this->resetUI();
+                break;
+            }
+            case C_PARTER_SELECT:
+            {
+                break;
+            }
+            default:
+                break;
+        }
+        
+    });
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+    
 }

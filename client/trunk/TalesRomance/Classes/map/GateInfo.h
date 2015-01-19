@@ -25,6 +25,7 @@ public:
 private:
     void selectFriend(Widget* card);
     virtual void onTouchEnded(Touch *touch, Event *unusedEvent);
+    void initNetEvent();
 
 private:
     ui::ScrollView* friendList;
@@ -39,7 +40,8 @@ private:
     Vector<Node*> groups;
     
     int gateID;
-
+    json_t* jitems;
+    Card* card;
 };
 
 #endif /* defined(__TalesRomance__GateInfo__) */

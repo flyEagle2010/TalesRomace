@@ -81,6 +81,6 @@ void Clip::play(int times)
 
 void Clip::onExit()
 {
-    Node::onExit();
     this->animation->release();
+    Node::onExit();
 }

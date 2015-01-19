@@ -46,6 +46,8 @@ bool MapScene::init()
     
     this->resetUI();
     
+//    PomeloSocket::getInstance()->sendMsg(ROTE_ROOM_MAP_LIST, json_object());
+    
     return true;
 }
 
@@ -100,4 +102,30 @@ void MapScene::onButtonClick(cocos2d::Ref *pSender)
             break;
         }
     }
+}
+
+void MapScene::initNetEvent(){
+    auto listener = EventListenerCustom::create(NET_MESSAGE, [=](EventCustom* event){
+        json_t* msg=(json_t*)event->getUserData();
+        int msgID=json_integer_value(json_object_get(msg, "msgID"));
+        switch (msgID)
+        {
+            case C_MAP_LIST:
+            {
+                json_t* items=json_object_get(msg, "items");
+                PomeloSocket::getInstance()->sendMsg(ROTE_ROOM_NODE_LIST, json_array_get(items, 0));
+                break;
+            }
+            case C_NODE_LIST:
+            {
+                this->jnodes=json_object_get(msg, "items");
+                break;
+            }
+            default:
+                break;
+        }
+        
+    });
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+    
 }

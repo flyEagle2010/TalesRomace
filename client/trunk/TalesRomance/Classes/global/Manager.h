@@ -40,7 +40,7 @@ public:
     Scene* scene;
     //Socket* socket;
     //WSocket* wsocket;
-    PomeloSocket* psocket;
+//    PomeloSocket* psocket;
     int childNum;
 public:
     static Manager* getInstance();

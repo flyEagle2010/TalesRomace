@@ -1,0 +1,23 @@
+http:  register login 
+
+gate:  uid  分配有效的connector
+
+connector:  游戏服务器
+
+判断是否为新角色
+	－－走角色创建
+	－－
+
+
+
+//角色基本信息全部推送
+//角色信息批处理只推送一次角色基本信息
+//请求信息和中间处理完后推送的消息顺序是混乱的
+
+
+msg
+string
+
+
+ 世界地图 －> mapGate
+ 进关卡   mapGate 里面的数据    选节点

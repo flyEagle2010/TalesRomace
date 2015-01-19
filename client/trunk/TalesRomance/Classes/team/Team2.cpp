@@ -39,24 +39,24 @@ bool Team2::init()
     listener->onTouchEnded = CC_CALLBACK_2(Team2::onTouchEnded, this);
     this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this->ui->getChildByName("btn_goHome"));
     
-    this->teamData = DataManager::getInstance()->getTeamData();
-    log("===%s",json_dumps(teamData, 0));
+    this->teamsJson = DataManager::getInstance()->getTeamData();
     this->resetUI();
-    //this->request();
+    
+    
+    
+    this->request();
     
     return true;
 }
 
 void Team2::request()
 {
-    //json_t* msg=json_object();
-    //json_object_set(msg, "token", Manager::getInstance()->psocket->token);
-    //Manager::getInstance()->psocket->sendMsg("connector.entryHandler.entry", msg);
+    PomeloSocket::getInstance()->sendMsg(ROTE_ROOM_TEAM_LIST, json_object());
 }
 
 void Team2::resetUI()
 {
-    int dataSize=json_array_size(teamData);
+    int dataSize=json_array_size(teamsJson);
     for(int i=0;i<this->items.size();i++){
         Node* item=this->items.at(i);
         Node* lock=item->getChildByName("lock");
@@ -71,10 +71,8 @@ void Team2::resetUI()
             lock->setVisible(true);
             continue;
         }else{
-            json_t* data=json_array_get(teamData, i);
+            json_t* data=json_array_get(teamsJson, i);
             json_t* cards=json_object_get(data, "cards");
-            if(cards)log("size:%zu,%s",json_array_size(cards),json_dumps(data, 0));
-            //if(cards==NULL || json_array_size(cards)==0 || json_object_get(json_array_get(cards, 0), "xid")==NULL){
             if(cards==NULL || json_array_size(cards)==1){
                 add->setVisible(true);
                 continue;
@@ -132,13 +130,22 @@ void Team2::onTouchEnded(Touch *touch, Event *unusedEvent)
         Vec2 itemVec=this->ui->convertToWorldSpace(item->getPosition());
         Rect rect=Rect(itemVec.x,itemVec.y,size.width,size.height);
         if(rect.containsPoint(touch->getLocation())){
-            json_t* tdata=json_array_get(this->teamData, i);
-            if(i >= json_array_size(this->teamData)){
-                Manager::getInstance()->showMsg("请先解锁卡组");
-                continue;
+            json_t* tdata=json_array_get(this->teamsJson, i);
+            int state=json_integer_value(json_object_get(tdata, "state"));
+            if(i >= json_array_size(this->teamsJson)){
+                //Manager::getInstance()->showMsg("请先解锁卡组");
+                PomeloSocket::getInstance()->sendMsg(ROTE_ROOM_TEAM_UNLOCK, json_object());
+                break;
             }
-            TeamCard* card=TeamCard::create(tdata,i);
-            card->show(this);
+            if(state==1){
+                TeamCard* card=TeamCard::create(tdata,i);
+                card->show(this);
+                break;
+            }
+            if(state==2){
+                //Manager::getInstance()->showMsg("");
+                break;
+            }
         }
     }
 }
@@ -149,8 +156,7 @@ void Team2::onButtonClick(cocos2d::Ref *pSender)
     switch (btn->getTag()) {
         case 1000:
         {
-            DataManager::getInstance()->setTeamData(this->teamData);
-            log("teamdata:%s",json_dumps(DataManager::getInstance()->getTeamData(), 0));
+            DataManager::getInstance()->setTeamData(this->teamsJson);
             Manager::getInstance()->switchScence(HomeScene::createScene());
             break;
         }
@@ -165,16 +171,18 @@ void Team2::onButtonClick(cocos2d::Ref *pSender)
 void Team2::initNetEvent(){
     auto listener = EventListenerCustom::create(NET_MESSAGE, [=](EventCustom* event){
         json_t* msg=(json_t*)event->getUserData();
-        const char* route=json_string_value(json_object_get(msg, "route"));
-        int msgID=msges[route];
+        int msgID=json_integer_value(json_object_get(msg, "msgID"));
         switch (msgID)
         {
-            case GATE_GATEHANDLER_ENTRY:
+            case C_TEAM_LIST:
             {
+                this->teamsJson=json_object_get(msg, "teams");
+                this->resetUI();
                 break;
             }
-            case CONNECTOR_ENTRYHANDLER_ENTRY:
+            case C_TEAM_UNLOCK:
             {
+                this->request();
                 break;
             }
             default:

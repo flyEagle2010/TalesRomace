@@ -14,6 +14,7 @@ pomelo.request('gate.gateHandler.entry', {uid:6}, function(data) {});
 
 response:
 {
+    "msgID":2001,
     code:200,           //结果 200成功  500失败
     err:1,              //返回的失败枚举ID 见errEnum
     host:"123.57.6.164",//分配的connector服务器ip

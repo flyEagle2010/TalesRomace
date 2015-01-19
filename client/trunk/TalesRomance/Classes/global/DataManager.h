@@ -17,6 +17,9 @@ using namespace cocos2d;
 
 class DataManager : public Ref {
     CC_SYNTHESIZE(json_t*, teamData, TeamData);
+    CC_SYNTHESIZE(json_t*, roleData, RoleData);
+    
+    
     json_t* data;
     void initData();
 

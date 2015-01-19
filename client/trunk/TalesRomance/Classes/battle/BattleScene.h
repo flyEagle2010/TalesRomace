@@ -56,7 +56,7 @@ public:
     
     void playBattleCard();
     void petAttack();
-    void showBuff(int pos);
+    void showBuff(int pos,json_t* buffers);
     void playEnd();
     void showResult();
     
@@ -74,9 +74,12 @@ public:
 
     Vector<Hero*> heros;
     Vector<Node*> heroInfos;
-
+    
+    std::vector<int> buffer1;
+    std::vector<int> buffer2;
+    
     Vector<BattleCard*> cards;
-
+    
 
 };
 #endif /* defined(__fancyHeart__BattleScene__) */

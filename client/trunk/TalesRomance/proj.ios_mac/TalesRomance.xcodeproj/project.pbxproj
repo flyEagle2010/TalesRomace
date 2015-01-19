@@ -147,11 +147,13 @@
 		5D48E2DC1A64C3CD00A2DDF5 /* tree_block_bottom.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 5D48E27C1A64C3CD00A2DDF5 /* tree_block_bottom.tmx */; };
 		5D48E2DD1A64C3CD00A2DDF5 /* tree_block_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D48E27D1A64C3CD00A2DDF5 /* tree_block_test.json */; };
 		5D48E2DE1A64C3CD00A2DDF5 /* tree_block_top.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 5D48E27E1A64C3CD00A2DDF5 /* tree_block_top.tmx */; };
-		5D48E2E01A64C3DB00A2DDF5 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 5D48E2DF1A64C3DB00A2DDF5 /* res */; };
 		5D8297B31A428829004915AE /* RoleCreate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D8297B11A428829004915AE /* RoleCreate.cpp */; };
 		5DB724B41A4C27120018A813 /* libjansson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB714091A4C1FC80018A813 /* libjansson.a */; };
 		5DB724B51A4C27120018A813 /* libpomelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB7140A1A4C1FC80018A813 /* libpomelo.a */; };
 		5DB724B61A4C27120018A813 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB7140B1A4C1FC80018A813 /* libuv.a */; };
+		5DBC44501A6652150067D456 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 5DBC444F1A6652150067D456 /* res */; };
+		5DBC44531A665A180067D456 /* XError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC44511A665A180067D456 /* XError.cpp */; };
+		5DBC44551A665A200067D456 /* XError.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DBC44541A665A200067D456 /* XError.json */; };
 		5DBC68141A5D007F0091873B /* XSkill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC68121A5D007F0091873B /* XSkill.cpp */; };
 		5DBDAA7C1A5A9EB700FFDCE9 /* Team2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDAA7A1A5A9EB700FFDCE9 /* Team2.cpp */; };
 		5DC0C0761A5B91E90006CEB4 /* TeamCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C0741A5B91E90006CEB4 /* TeamCard.cpp */; };
@@ -432,12 +434,15 @@
 		5D48E27C1A64C3CD00A2DDF5 /* tree_block_bottom.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tree_block_bottom.tmx; sourceTree = "<group>"; };
 		5D48E27D1A64C3CD00A2DDF5 /* tree_block_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tree_block_test.json; sourceTree = "<group>"; };
 		5D48E27E1A64C3CD00A2DDF5 /* tree_block_top.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tree_block_top.tmx; sourceTree = "<group>"; };
-		5D48E2DF1A64C3DB00A2DDF5 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		5D8297B11A428829004915AE /* RoleCreate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoleCreate.cpp; sourceTree = "<group>"; };
 		5D8297B21A428829004915AE /* RoleCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleCreate.h; sourceTree = "<group>"; };
 		5DB714091A4C1FC80018A813 /* libjansson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjansson.a; path = ../cocos2d/external/libpomelo/libjansson.a; sourceTree = "<group>"; };
 		5DB7140A1A4C1FC80018A813 /* libpomelo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpomelo.a; path = ../cocos2d/external/libpomelo/libpomelo.a; sourceTree = "<group>"; };
 		5DB7140B1A4C1FC80018A813 /* libuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libuv.a; path = ../cocos2d/external/libpomelo/libuv.a; sourceTree = "<group>"; };
+		5DBC444F1A6652150067D456 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../../../../ui/TalesRomac/res; sourceTree = "<group>"; };
+		5DBC44511A665A180067D456 /* XError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XError.cpp; sourceTree = "<group>"; };
+		5DBC44521A665A180067D456 /* XError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XError.h; sourceTree = "<group>"; };
+		5DBC44541A665A200067D456 /* XError.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XError.json; sourceTree = "<group>"; };
 		5DBC68121A5D007F0091873B /* XSkill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XSkill.cpp; sourceTree = "<group>"; };
 		5DBC68131A5D007F0091873B /* XSkill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSkill.h; sourceTree = "<group>"; };
 		5DBDAA7A1A5A9EB700FFDCE9 /* Team2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Team2.cpp; sourceTree = "<group>"; };
@@ -764,7 +769,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5D48E2DF1A64C3DB00A2DDF5 /* res */,
+				5DBC444F1A6652150067D456 /* res */,
 				5D48E20E1A64C3CD00A2DDF5 /* bg */,
 				5D48E2141A64C3CD00A2DDF5 /* bone */,
 				5D48E2271A64C3CD00A2DDF5 /* CloseNormal.png */,
@@ -929,6 +934,7 @@
 		5D48E22F1A64C3CD00A2DDF5 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				5DBC44541A665A200067D456 /* XError.json */,
 				5D48E2301A64C3CD00A2DDF5 /* battle.json */,
 				5D48E2311A64C3CD00A2DDF5 /* testData.json */,
 				5D48E2321A64C3CD00A2DDF5 /* XCard.json */,
@@ -1387,6 +1393,8 @@
 		BFDAB2F41A1A0E2100E450EC /* xls */ = {
 			isa = PBXGroup;
 			children = (
+				5DBC44511A665A180067D456 /* XError.cpp */,
+				5DBC44521A665A180067D456 /* XError.h */,
 				5DBC68121A5D007F0091873B /* XSkill.cpp */,
 				5DBC68131A5D007F0091873B /* XSkill.h */,
 				5DC0C07E1A5BEB6D0006CEB4 /* XCard.cpp */,
@@ -1527,6 +1535,7 @@
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5D48E2801A64C3CD00A2DDF5 /* cardTest.png in Resources */,
 				5D48E2DA1A64C3CD00A2DDF5 /* tree_block.plist in Resources */,
+				5DBC44501A6652150067D456 /* res in Resources */,
 				5D48E2B01A64C3CD00A2DDF5 /* cardXiaoShi.plist in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5D48E2B21A64C3CD00A2DDF5 /* hurt_fire2.plist in Resources */,
@@ -1578,11 +1587,11 @@
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				5D48E2DC1A64C3CD00A2DDF5 /* tree_block_bottom.tmx in Resources */,
 				5D48E29C1A64C3CD00A2DDF5 /* XCard.json in Resources */,
+				5DBC44551A665A200067D456 /* XError.json in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5D48E28A1A64C3CD00A2DDF5 /* juqi_3.atlas in Resources */,
 				5D48E2C01A64C3CD00A2DDF5 /* immunity.png in Resources */,
 				5D48E2A41A64C3CD00A2DDF5 /* aoyi.plist in Resources */,
-				5D48E2E01A64C3DB00A2DDF5 /* res in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				5D48E2C51A64C3CD00A2DDF5 /* Marker Felt.ttf in Resources */,
 				5D48E2D11A64C3CD00A2DDF5 /* ghostB.plist in Resources */,
@@ -1684,6 +1693,7 @@
 				BFDAB3211A1A0E2100E450EC /* Effect.cpp in Sources */,
 				BFDAB3461A1A0E2100E450EC /* googletest.cc in Sources */,
 				BFDAB31A1A1A0E2100E450EC /* BezierMove.cpp in Sources */,
+				5DBC44531A665A180067D456 /* XError.cpp in Sources */,
 				BFDAB3471A1A0E2100E450EC /* text_format.cc in Sources */,
 				BFDAB32F1A1A0E2100E450EC /* generated_message_reflection.cc in Sources */,
 				BFDAB3501A1A0E2100E450EC /* Socket.cpp in Sources */,

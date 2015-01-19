@@ -1,0 +1,60 @@
+7001 MAP_LIST   世界关卡列表
+{
+	"items":[
+		{
+			"id":10,
+			"isOpen":1 //1已开启 0未开启
+		}
+	]
+}
+
+7002 NODE_LIST  节点列表
+request:
+{
+	gateID:10
+}
+response:
+{
+	items:{
+		"xid":10001,  //mapGate表里的ID
+		"star":1,      //0
+		"isOpen":1,    //1开启 0未开启
+		"leftNum":2,   //剩余次数
+		"cd":300   	   //秒
+	}
+}
+
+7003  PARTER_LIST
+{
+	"items":[
+		{
+			"xid":1001,
+			"favor":10,  //好感度
+			"isSelect":1 //1当前选中的 0非选中
+		}
+	]
+}
+
+7004  PARTER_SELECT
+requset:
+{
+	"xid":1001  //选中的伙伴ID
+}
+
+7005 MAZE_INFO
+request:
+{
+	"xid":1001
+}
+response:
+{
+	"hp":100,
+	"maxHp":1000,
+	"grids":[1,2,0]  // 每个格子的事件类型
+}
+
+7006 CLEAR_REWARD 通关奖励
+{
+	cards:[1,2,3],// 获得卡牌
+	gold:200 //获得金币
+}

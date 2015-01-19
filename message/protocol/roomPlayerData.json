@@ -1,0 +1,23 @@
+//获得玩家基础数据
+request:
+{
+    ip:"123.57.6.164",//外网测试IP  gate.gateHandler.entry 返回的host
+    port:6010,        //外网测试端口 gate.gateHandler.entry 返回的port
+    route:"room.playerHandler.playerData",  //消息route
+    msg:{
+    }
+}
+
+
+response:
+{
+    msgID:5001,          //消息ID
+    code:200,           //结果 200成功  500失败
+    err:1,              //返回的失败枚举ID 见errEnum
+    id:100,   //玩家pid
+    xid:1001, //数据表id
+    name:"哇哈哈",
+    coin:1000,   //金币 (游戏币)
+    rmb:200,     //钻石（充的钱）
+    stamin:10   //体力
+}
